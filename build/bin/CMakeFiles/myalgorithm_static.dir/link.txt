@@ -1,0 +1,2 @@
+/usr/bin/ar qc libmyalgorithm_static.a  CMakeFiles/myalgorithm_static.dir/myalgorithm.cpp.o
+/usr/bin/ranlib libmyalgorithm_static.a

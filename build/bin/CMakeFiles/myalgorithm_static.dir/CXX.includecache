@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/xu/Desktop/myAlgorithm/lib/myalgorithm.cpp
+iostream
+-
+vector
+-
+list
+-
+string
+-
+stack
+-
+queue
+-
+map
+-
+set
+-
+algorithm
+-
+memory
+-
+functional
+-
+
