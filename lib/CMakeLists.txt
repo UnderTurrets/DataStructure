@@ -11,5 +11,5 @@ SET_TARGET_PROPERTIES(myalgorithm_shared PROPERTIES
                       
 INSTALL(FILES myalgorithm.h DESTINATION include/myalgorithm)
 INSTALL(TARGETS myalgorithm_static myalgorithm_shared 
-        LIBRARY DESTINATION ilb/myalgorithm
+        LIBRARY DESTINATION lib/myalgorithm
         ARCHIVE DESTINATION lib/myalgorithm )                      
