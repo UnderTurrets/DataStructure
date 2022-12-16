@@ -239,3 +239,55 @@ using namespace placeholders;
 //    i++;
 //    cout<<"间隔："<<result<<"ms"<<endl;
 //}
+
+
+//字符串
+//给定一个字符串 s ，找到 它的第一个不重复的字符，并返回它的索引 。如果不存在，则返回 -1 。
+int firstUniqChar(string s) {
+    int ret=-1;
+    for(int i=0;i<s.size();i++){
+        int x=s.find(s[i]);
+        int y=s.rfind(s[i]);
+        if(x==y) {
+            ret=i;
+            break;
+        }
+    }
+    return ret;
+}
+
+//给你两个字符串：ransomNote 和 magazine ，判断 ransomNote 能不能由 magazine 里面的字符构成。
+//如果可以，返回 true ；否则返回 false 。
+//magazine 中的每个字符只能在 ransomNote 中使用一次。
+bool canConstruct(string ransomNote, string magazine) {
+        bool  ret=1;
+        for(int i =0;i<ransomNote.size();i++){
+            int x=magazine.find(ransomNote[i]);
+            if(x!=-1){
+                magazine.erase(x,1);
+            }else if(x==-1){
+                ret=0;
+                break;
+            }
+        }
+    return ret;
+}
+
+//给定两个字符串 s 和 t ，编写一个函数来判断 t 是否是 s 的字母异位词。
+//注意：若s 和 t中每个字符出现的次数都相同，则称s 和 t互为字母异位词。
+bool isAnagram(string s, string t) {
+    bool ret = 0;
+    if(s.size()==t.size()) {
+        ret=1;
+            for (int i = 0; i < t.size(); i++) {
+                int x = s.find(t[i]);
+                if (x != -1) {
+                    s.erase(x, 1);
+                } else if (x == -1) {
+                    ret = 0;
+                    break;
+                }
+            }
+        }
+    return ret;
+}
