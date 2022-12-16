@@ -13,7 +13,7 @@
 #include <algorithm>
 #include <memory>
 #include <functional>
-
+#include <exception>
 
 using namespace std;
 using namespace placeholders;
@@ -60,6 +60,160 @@ bool isValidSudoku(vector<vector<char>>& board);
 //给定一个 m x n 的矩阵，如果一个元素为 0 ，则将其所在行和列的所有元素都设为 0 。请使用 原地 算法。
 void setZeroes(vector<vector<int>>& matrix);
 
+//给定一个字符串 s ，找到 它的第一个不重复的字符，并返回它的索引 。如果不存在，则返回 -1 。
+int firstUniqChar(string s);
+
+//给你两个字符串：ransomNote 和 magazine ，判断 ransomNote 能不能由 magazine 里面的字符构成。
+//如果可以，返回 true ；否则返回 false 。
+//magazine 中的每个字符只能在 ransomNote 中使用一次。
+bool canConstruct(string ransomNote, string magazine);
+
+//给定两个字符串 s 和 t ，编写一个函数来判断 t 是否是 s 的字母异位词。
+//注意：若s 和 t中每个字符出现的次数都相同，则称s 和 t互为字母异位词。
+bool isAnagram(string s, string t);
+
+//树
+
+template<class T>
+class BinTree{
+public:
+    T val;
+    BinTree<T> *left=NULL;
+    BinTree<T> *right=NULL;
+    BinTree<T>(){}
+    BinTree<T>( const BinTree<T> &that){
+        val=(that.val);left=(that.left);right=(that.right);
+    }
+
+    //中序遍历非递归
+    void Travsal_inorder_common(){
+        BinTree<T> *temp;
+        temp= this;
+        stack<BinTree<T>> S;
+        while (temp||  !S.empty()){
+            while (temp){
+                S.push(*temp);
+                temp=temp->left;
+            }
+            if(!S.empty()){
+                temp=&S.top();S.pop();
+                //在此进行你要执行的操作
+                cout<<temp->val<<endl;
 
 
+
+                //在此以上进行你要执行的操作
+                temp=temp->right;
+            }
+        }
+    }
+
+
+    //先序遍历非递归
+    void Travsal_preorder_common(){
+        BinTree<T> *temp;
+        temp= this;
+        stack<BinTree<T>> S;
+        while (temp||  !S.empty()){
+            while (temp){
+                //在此进行你要执行的操作
+                cout<<temp->val<<endl;
+
+
+
+                //在此以上进行你要执行的操作
+                S.push(*temp);
+                temp=temp->left;
+            }
+            if(!S.empty()){
+                temp=&S.top();S.pop();
+                temp=temp->right;
+            }
+        }
+    }
+
+
+
+    //层序遍历
+    void Travesal_levelorder(){
+        BinTree<T> *temp;
+        temp=this;
+        queue<BinTree<T>> Q;
+        if(!temp)return;
+        Q.push(*temp);
+        while (!Q.empty()){
+            temp=&Q.front();
+            Q.pop();
+            //在此进行你要执行的操作
+
+           cout<<temp->val<<endl;
+
+            //在此以上进行你要执行的操作
+            if(temp->left){Q.push(*(temp->left));}
+            if(temp->right){Q.push(*(temp->right));}
+        }
+    }
+};
+
+//得到树的高度
+template<class T>
+int GetHeight (BinTree<T> *bt){
+    int heifht_left,height_right,height;
+    if(bt){
+        heifht_left=GetHeight(bt->left);
+        height_right=GetHeight(bt->right);
+        height= max(heifht_left,height_right);
+        return (height+1);
+    } else{
+        return 0;
+    }
+}
+
+//先序遍历递归
+template<class T>
+void Travesal_preorder_recurrence (BinTree<T> *bt){
+    if(bt){
+        //在此进行你要执行的操作
+        cout<<bt->val<<endl;
+
+
+
+
+        //在此以上进行你要执行的操作
+        Travesal_preorder_recurrence(bt->left);
+        Travesal_preorder_recurrence(bt->right);
+    }
+}
+
+//中序遍历递归
+template<class T>
+void Travesal_inorder_recurrence (BinTree<T> bt){
+    BinTree<T> *temp=bt;
+    if(temp){
+        Travesal_preorder_recurrence(temp->left);
+        //在此进行你要执行的操作
+        cout<<temp->val<<endl;
+
+
+
+
+
+        //在此以上进行你要执行的操作
+        Travesal_preorder_recurrence(temp->right);
+    }
+}
+//后序遍历递归
+template<class T>
+void Travesal_postorder_recurrence (BinTree<T> bt){
+    BinTree<T> *temp=bt;
+    if(temp){
+        Travesal_preorder_recurrence(temp->left);
+        Travesal_preorder_recurrence(temp->right);
+        //在此进行你要执行的操作
+
+
+
+        //在此以上进行你要执行的操作
+    }
+}
 #endif

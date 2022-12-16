@@ -1,17 +1,4 @@
-#include <iostream>
-#include <vector>
-#include <list>
-#include <string>
-#include <stack>
-#include <queue>
-#include <map>
-#include <set>
-#include <algorithm>
-#include <memory>
-#include <functional>
-
-using namespace std;
-using namespace placeholders;
+#include "myalgorithm.h"
 
 //数组类
     //判断一个数组中是否有相同元素
@@ -291,3 +278,8 @@ bool isAnagram(string s, string t) {
         }
     return ret;
 }
+
+
+
+
+
