@@ -334,6 +334,32 @@ ListNode* removeElements(ListNode* head, int val){
     return head->val == val ? head->next : head;
 }
 
+//给定一个已排序的链表的头 head ， 删除所有重复的元素，使每个元素只出现一次 。返回 已排序的链表 。
+ListNode* deleteDuplicates(ListNode* head) {
+    if(!head) {
+        return NULL;
+    }else if(!head->next) {
+        return head;
+    }
+    head->next= deleteDuplicates(head->next);
+    if(head->val==head->next->val) {
+        return head->next;
+    }else {
+        return head;
+    }
+}
+
+//给你单链表的头节点 head ，请你反转链表，并返回反转后的链表。
+ListNode* reverseList(ListNode* head) {
+        ListNode* last=NULL;
+        while (head){
+            ListNode* next=head->next;
+            head->next=last;
+            last=head;
+            head=next;
+        }
+    return last;
+}
 
 
 
