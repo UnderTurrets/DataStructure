@@ -390,4 +390,199 @@ public:
         return instack.empty()&&outstack.empty();
     }
 };
+
+//堆
+//最大堆的定义，最小堆可仿照此定义
+template<typename T>
+class MaxHeap{
+public:
+    T *array;//从下标1开始存储
+    int size;
+    int capacity;
+    T LimitData;//这是一个大于或小于堆中所有元素的极限元素，目的是为了以后更快地操作
+
+    //不给出大小是不能定义堆的
+//    heap(){
+//        this->array=new T(size+1);
+//        array[0]=LimitData;
+//    }
+
+    //创建一个堆
+    MaxHeap(int Maxsize){
+        this->array=new T(Maxsize+1);
+        this->size=0;
+        this->capacity=Maxsize;
+        this->array[0]=LimitData;
+    }
+
+    //判断是否满员
+    bool IsFull(){
+        return (this->Size == this->Capacity);
+    }
+
+    //判断是否为空
+    bool IsEmpty(){
+        return (this->Size == 0);
+    }
+
+    //插入一个元素
+    void insert(T val){
+        int i;
+        if(this->IsFull()){
+            cout<<"This heap is full and your operation has failed!"<<endl;
+            return;
+        }
+        this->size++;
+        i= this->size;
+        for(;this->array[i/2]<val && i>1;i/=2){
+            this->array[i]= this->array[i/2];
+        }
+        this->array[i]=val;
+    }
+
+    //删除顶部元素,返回值就是顶部元素
+    T deleteMax(){
+        int parent,child;
+        T temp= this->array[this->size];T max=this->array[1];
+        this->size--;
+        if(this->IsEmpty()){
+            cout<<"The heap is empty and your operation has failed!"<<endl;
+            return;
+        }
+        for(parent=1;parent*2<= this->size;parent=child){
+            child=parent*2;
+            if(child!= this->size && this->array[child]< this->array[child+1]){
+                child++;
+            }
+            if(temp>= this->array[child]){
+                break;
+            }else{
+                this->array[parent]=this->array[child];
+            }
+        }
+        this->array[parent]=temp;
+        return max;
+    }
+
+    //将这个堆整理成最大堆
+    void TidyUp(){
+        for(int i= this->size/2;i>0;i--){
+            int parent,child;
+            T x;
+            x= this->array[i];
+            for(parent=i;parent*2 <= this->size;parent=child){
+                child=parent*2;
+                if(child!= this->size && this->array[child]< this->array[child+1]){
+                    child++;
+                }
+                if(x >= this->array[child]){
+                    break;
+                } else{
+                    this->array[parent]= this->array[child];
+                }
+            }
+            this->array[parent]=x;
+        }
+    }
+};
+
+//最小堆的定义
+template<typename T>
+class MinHeap{
+public:
+    T *array;//从下标1开始存储
+    int size;
+    int capacity;
+    T LimitData;//这是一个大于或小于堆中所有元素的极限元素，目的是为了以后更快地操作
+
+    //不给出大小是不能定义堆的
+//    heap(){
+//        this->array=new T(size+1);
+//        array[0]=LimitData;
+//    }
+
+    //创建一个堆
+    MinHeap(int Maxsize){
+        this->array=new T(Maxsize+1);
+        this->size=0;
+        this->capacity=Maxsize;
+        this->array[0]=LimitData;
+    }
+
+    //判断是否满员
+    bool IsFull(){
+        return (this->Size == this->Capacity);
+    }
+
+    //判断是否为空
+    bool IsEmpty(){
+        return (this->Size == 0);
+    }
+
+    //插入一个元素
+    void insert(T val){
+        int i;
+        if(this->IsFull()){
+            cout<<"This heap is full and your operation has failed!"<<endl;
+            return;
+        }
+        this->size++;
+        i= this->size;
+        for(;this->array[i/2]>val && i>1;i/=2){
+            this->array[i]= this->array[i/2];
+        }
+        this->array[i]=val;
+    }
+
+    //删除顶部元素,返回值就是顶部元素
+    T deleteMax(){
+        int parent,child;
+        T temp= this->array[this->size];T min=this->array[1];
+        this->size--;
+        if(this->IsEmpty()){
+            cout<<"The heap is empty and your operation has failed!"<<endl;
+            return;
+        }
+        for(parent=1;parent*2<= this->size;parent=child){
+            child=parent*2;
+            if(child!= this->size && this->array[child]> this->array[child+1]){
+                child++;
+            }
+            if(temp<= this->array[child]){
+                break;
+            }else{
+                this->array[parent]=this->array[child];
+            }
+        }
+        this->array[parent]=temp;
+        return max;
+    }
+
+    //将这个堆整理成最小堆
+    void TidyUp(){
+        for(int i= this->size/2;i>0;i--){
+            int parent,child;
+            T x;
+            x= this->array[i];
+            for(parent=i;parent*2 <= this->size;parent=child){
+                child=parent*2;
+                if(child!= this->size && this->array[child]> this->array[child+1]){
+                    child++;
+                }
+                if(x <= this->array[child]){
+                    break;
+                } else{
+                    this->array[parent]= this->array[child];
+                }
+            }
+            this->array[parent]=x;
+        }
+    }
+};
+
+
+
+
+
+
 #endif
