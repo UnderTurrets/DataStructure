@@ -74,6 +74,13 @@ bool canConstruct(string ransomNote, string magazine);
 //注意：若s 和 t中每个字符出现的次数都相同，则称s 和 t互为字母异位词。
 bool isAnagram(string s, string t);
 
+//给定一个只包括 '('，')'，'{'，'}'，'['，']'的字符串 s ，判断字符串是否有效。
+//有效字符串需满足：
+//左括号必须用相同类型的右括号闭合。
+//左括号必须以正确的顺序闭合。
+//每个右括号都有一个对应的相同类型的左括号。
+bool isValid(string s);
+
 //给你一个链表的头节点 head ，判断链表中是否有环。
 //如果链表中有某个节点，可以通过连续跟踪 next 指针再次到达，则链表中存在环。 为了表示给定链表中的环，评测系统内部使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。注意：pos 不作为参数进行传递 。仅仅是为了标识链表的实际情况。
 //如果链表中存在环，则返回 true 。 否则，返回 false 。
@@ -335,5 +342,52 @@ ListNode* deleteDuplicates(ListNode* head);
 //给你单链表的头节点 head ，请你反转链表，并返回反转后的链表。
 ListNode* reverseList(ListNode* head);
 
+//栈
+//请你仅使用两个栈实现先入先出队列。队列应当支持一般队列支持的所有操作（push、pop、peek、empty）：
+//实现 MyQueue 类：
+//void push(int x) 将元素 x 推到队列的末尾
+//T pop() 从队列的开头移除并返回元素
+//T peek() 返回队列开头的元素
+//boolean empty() 如果队列为空，返回 true ；否则，返回 false
+//说明：
+//你 只能 使用标准的栈操作 —— 也就是只有push to top,peek/pop from top,size, 和is empty操作是合法的。
+template<class T>
+class MyQueue {
+public:
+    stack<T>instack;
+    stack<T>outstack;
+    MyQueue<T>() {}
+    void push(T x) {
+        instack.push(x);
+    }
 
+    T pop() {
+        T ret;
+        if(outstack.empty()){
+            while (!instack.empty()){
+                T temp=instack.top();instack.pop();
+                outstack.push(temp);
+            }
+        }
+        ret=outstack.top();
+        outstack.pop();
+        return ret;
+    }
+
+    T peek() {
+        T ret;
+        if(outstack.empty()){
+            while (!instack.empty()){
+                T temp=instack.top();instack.pop();
+                outstack.push(temp);
+            }
+        }
+        ret=outstack.top();
+        return ret;
+    }
+
+    bool empty() {
+        return instack.empty()&&outstack.empty();
+    }
+};
 #endif

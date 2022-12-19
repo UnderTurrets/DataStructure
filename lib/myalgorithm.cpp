@@ -278,6 +278,35 @@ bool isAnagram(string s, string t) {
         }
     return ret;
 }
+
+//给定一个只包括 '('，')'，'{'，'}'，'['，']'的字符串 s ，判断字符串是否有效。
+//有效字符串需满足：
+//左括号必须用相同类型的右括号闭合。
+//左括号必须以正确的顺序闭合。
+//每个右括号都有一个对应的相同类型的左括号。
+bool isValid(string s) {
+    if (s.size() % 2 != 0)return false;
+
+    unordered_map<char, char> pairs = {
+            {')', '('},
+            {']', '['},
+            {'}', '{'}
+    };
+    stack<char> stk;
+    for (int i =0;i<s.size();i++) {
+        if (pairs.count(s[i])) {
+            if (stk.empty() || stk.top() != pairs[s[i]]) {
+                return false;
+            }
+            stk.pop();
+        }
+        else {
+            stk.push(s[i]);
+        }
+    }
+    return stk.empty();
+}
+
 //链表
 class ListNode {
 public:
@@ -360,6 +389,5 @@ ListNode* reverseList(ListNode* head) {
         }
     return last;
 }
-
 
 
