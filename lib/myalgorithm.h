@@ -16,6 +16,7 @@
 #include <memory>
 #include <functional>
 #include <exception>
+#include <cmath>
 
 using namespace std;
 using namespace placeholders;
@@ -117,49 +118,80 @@ public:
         val=(that.val);left=(that.left);right=(that.right);
     }
 
-    //中序遍历非递归
-    void Travsal_inorder_common(){
-        BinTree<T> *temp;
-        temp= this;
-        stack<BinTree<T>> S;
-        while (temp||  !S.empty()){
-            while (temp){
-                S.push(*temp);
-                temp=temp->left;
-            }
-            if(!S.empty()){
-                temp=&S.top();S.pop();
+    //先序遍历非递归
+    void Travesal_preorder_common(){
+        stack<BinTree<T>*> S;
+        if(this)S.push(this);
+        while (!S.empty()){
+            BinTree<T>* temp=S.top();
+            if(temp){
+                S.pop();
+                if(temp->right)S.push(temp->right);
+                if(temp->left)S.push(temp->left);
+                S.push(temp);
+                S.push(NULL);
+            }else{
+                S.pop();
+                temp=S.top();
+                S.pop();
                 //在此进行你要执行的操作
                 cout<<temp->val<<endl;
 
 
 
                 //在此以上进行你要执行的操作
-                temp=temp->right;
             }
         }
     }
 
-
-    //先序遍历非递归
-    void Travsal_preorder_common(){
-        BinTree<T> *temp;
-        temp= this;
-        stack<BinTree<T>> S;
-        while (temp||  !S.empty()){
-            while (temp){
+    //中序遍历非递归
+    void Travesal_inorder_common(){
+        stack<BinTree<T>*> S;
+        if(this)S.push(this);
+        while (!S.empty()){
+            BinTree<T>* temp=S.top();
+            if(temp){
+                S.pop();
+                if(temp->right)S.push(temp->right);
+                S.push(temp);
+                S.push(NULL);
+                if(temp->left)S.push(temp->left);
+            }else{
+                S.pop();
+                temp=S.top();
+                S.pop();
                 //在此进行你要执行的操作
                 cout<<temp->val<<endl;
 
 
 
                 //在此以上进行你要执行的操作
-                S.push(*temp);
-                temp=temp->left;
             }
-            if(!S.empty()){
-                temp=&S.top();S.pop();
-                temp=temp->right;
+        }
+    }
+
+    //后序遍历非递归
+    void Travesal_postorder_common(){
+        stack<BinTree<T>*> S;
+        if(this)S.push(this);
+        while (!S.empty()){
+            BinTree<T>* temp=S.top();
+            if(temp){
+                S.pop();
+                S.push(temp);
+                S.push(NULL);
+                if(temp->right)S.push(temp->right);
+                if(temp->left)S.push(temp->left);
+            }else{
+                S.pop();
+                temp=S.top();
+                S.pop();
+                //在此进行你要执行的操作
+                cout<<temp->val<<endl;
+
+
+
+                //在此以上进行你要执行的操作
             }
         }
     }
@@ -392,14 +424,14 @@ public:
 };
 
 //堆
-//最大堆的定义，最小堆可仿照此定义
+//堆的定义，最大堆和最小堆是其子类
 template<typename T>
-class MaxHeap{
+class Heap {
 public:
-    T *array;//从下标1开始存储
-    int size;
-    int capacity;
-    T LimitData;//这是一个大于或小于堆中所有元素的极限元素，目的是为了以后更快地操作
+    T *array=NULL;//从下标1开始存储
+    int size=0;
+    int capacity=0;
+    T LimitData=0;//这是一个大于或小于堆中所有元素的极限元素，目的是为了以后更快地操作
 
     //不给出大小是不能定义堆的
 //    heap(){
@@ -407,37 +439,102 @@ public:
 //        array[0]=LimitData;
 //    }
 
-    //创建一个堆
-    MaxHeap(int Maxsize){
-        this->array=new T(Maxsize+1);
-        this->size=0;
-        this->capacity=Maxsize;
-        this->array[0]=LimitData;
+    //拷贝构造（深拷贝）
+    Heap(Heap<T> &H ){
+        delete this->array;
+        this->array=new T(H.size+1);
+        this->size=H.size;
+        this->capacity=H.capacity;
+        for(int i=1;i<H.size;i++){
+            this->array[i]=H.array[i];
+        }
+    }
+
+    //以某一容量创建一个堆
+    Heap(int Maxsize) {
+        this->array = new T(Maxsize + 1);
+        this->size = 0;
+        this->capacity = Maxsize;
+        this->array[0] = LimitData;
+    }
+
+    //以一个完全二叉树创建一个堆，记住：输入的树必须是 完全二叉树！！！
+    Heap(BinTree<T> bt){
+        delete this->array;
+        this->array=new T(pow(2,bt.GetHeight(&bt)+1)+1);
+        this->capacity=pow(2,bt.GetHeight(&bt)+1);
+        this->size=0;T max=bt.val;
+        BinTree<T> *temp;
+        temp=&bt;int i =1;
+        queue<BinTree<T>> Q;
+        if(!temp)return;
+        Q.push(*temp);
+        while (!Q.empty()){
+            temp=&Q.front();
+            Q.pop();
+            //在此进行你要执行的操作
+            this->size++;
+            this->array[i]=temp->val;
+            i++;
+            //在此以上进行你要执行的操作
+            if(temp->left){Q.push(*(temp->left));}
+            if(temp->right){Q.push(*(temp->right));}
+        }
+    }
+
+    //以一个数组创建一个堆
+    Heap(vector<T> v){
+        delete this->array;
+        this->array=new T(v.capacity());
+        this->size=v.size();
+        this->capacity=v.capacity();
+        for(int i=0;i<v.size();i++){
+            this->array[i+1]=v[i];
+        }
     }
 
     //判断是否满员
-    bool IsFull(){
+    bool IsFull() {
         return (this->Size == this->Capacity);
     }
 
     //判断是否为空
-    bool IsEmpty(){
+    bool IsEmpty() {
         return (this->Size == 0);
     }
 
+};
+
+//最大堆的定义
+template<typename T>
+class MaxHeap:public Heap<T>{
+public:
+
+    //以某一容量创建一个堆
+    MaxHeap(int Maxsize): Heap<T>(Maxsize){}
+
+    //以一个完全二叉树创建一个堆，记住：输入的树必须是 完全二叉树！！！
+    MaxHeap(BinTree<T> bt): Heap<T>(bt){}
+
+    //以一个数组创建一个堆
+    MaxHeap(vector<T> v): Heap<T>(v){}
+
+    //以其父类创建一个堆，记住要进行整理
+    MaxHeap(Heap<T> &H): Heap<T>(H){}
+
     //插入一个元素
-    void insert(T val){
+    void insert(T val) {
         int i;
-        if(this->IsFull()){
-            cout<<"This heap is full and your operation has failed!"<<endl;
+        if (this->IsFull()) {
+            cout << "This heap is full and your operation has failed!" << endl;
             return;
         }
         this->size++;
-        i= this->size;
-        for(;this->array[i/2]<val && i>1;i/=2){
-            this->array[i]= this->array[i/2];
+        i = this->size;
+        for (; this->array[i / 2] < val && i > 1; i /= 2) {
+            this->array[i] = this->array[i / 2];
         }
-        this->array[i]=val;
+        this->array[i] = val;
     }
 
     //删除顶部元素,返回值就是顶部元素
@@ -488,36 +585,21 @@ public:
 
 //最小堆的定义
 template<typename T>
-class MinHeap{
+class MinHeap:public Heap<T>{
 public:
-    T *array;//从下标1开始存储
-    int size;
-    int capacity;
-    T LimitData;//这是一个大于或小于堆中所有元素的极限元素，目的是为了以后更快地操作
 
-    //不给出大小是不能定义堆的
-//    heap(){
-//        this->array=new T(size+1);
-//        array[0]=LimitData;
-//    }
+    //以某一容量创建一个堆
+    MinHeap(int Maxsize): Heap<T>(Maxsize){}
 
-    //创建一个堆
-    MinHeap(int Maxsize){
-        this->array=new T(Maxsize+1);
-        this->size=0;
-        this->capacity=Maxsize;
-        this->array[0]=LimitData;
-    }
 
-    //判断是否满员
-    bool IsFull(){
-        return (this->Size == this->Capacity);
-    }
+    //以一个完全二叉树创建一个堆，记住：输入的树必须是 完全二叉树！！！
+    MinHeap(BinTree<T> bt): Heap<T>(bt){}
 
-    //判断是否为空
-    bool IsEmpty(){
-        return (this->Size == 0);
-    }
+    //以一个数组创建一个堆
+    MinHeap(vector<T> v): Heap<T>(v){}
+
+    //以其父类创建一个堆，记住要进行整理
+    MinHeap(Heap<T> &H): Heap<T>(H){}
 
     //插入一个元素
     void insert(T val){
@@ -535,7 +617,7 @@ public:
     }
 
     //删除顶部元素,返回值就是顶部元素
-    T deleteMax(){
+    T deleteMin(){
         int parent,child;
         T temp= this->array[this->size];T min=this->array[1];
         this->size--;
