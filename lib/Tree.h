@@ -21,8 +21,14 @@ public:
     bool operator< (BinTree<T> that){
         return this->val<that.val;
     }
+    bool operator<= (BinTree<T> that){
+        return this->val<=that.val;
+    }
     bool operator> (BinTree<T> that){
-        return this->val=that.val;
+        return this->val>that.val;
+    }
+    bool operator>= (BinTree<T> that){
+        return this->val>=that.val;
     }
     bool operator== (BinTree<T> that){
         return this->val==that.val;
@@ -132,6 +138,25 @@ public:
         }
     }
 
+    //按层形成二维数组（层序遍历的应用）
+    vector<vector<int>> levelOrder() {
+        vector<vector<int>>ret;
+        queue<BinTree<T>*> Q;
+        if(!this)return {{}};
+        Q.push(this);
+        while (!Q.empty()){
+            int x=Q.size();
+            ret.push_back(vector<int>());
+            for(int i=0;i<x;i++){
+                auto node=Q.front();Q.pop();
+                ret.back().push_back(node->val);
+                if(node->left){Q.push(node->left);}
+                if(node->right){Q.push(node->right);}
+            }
+        }
+        return ret;
+    }
+
     //先序遍历递归，以所给参数为根节点开始遍历
     void Travesal_preorder_recurrence (BinTree<T> *myself){
         if(myself){
@@ -190,6 +215,20 @@ public:
         }
     }
 
+    //检验对称二叉树
+    inline bool IsSymmetric(){
+        check(this, this);
+    }
+private:
+    bool check(BinTree<T>root1,BinTree<T>root2){
+        BinTree<T>* p= this;
+        BinTree<T>* q= this;
+        if (!p && !q) return true;
+        if (!p || !q) return false;
+        return p->val == q->val && check(p->left, q->right) && check(p->right, q->left);
+    }
+
+public:
     //基于二叉搜索树的查找操作，返回值为所找到的元素的节点，若找不到则返回NULL，以所给参数为根节点开始查找
     BinTree<T>* Find_recurrence(T val,BinTree<T> *bt){
         if(!bt)return NULL;
