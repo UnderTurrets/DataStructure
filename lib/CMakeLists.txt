@@ -1,4 +1,4 @@
-SET(LIB_LIST myalgorithm.h;authority.h;Heap.h;leetcode.h;leetcode.cpp;Tree.h )
+SET(LIB_LIST myAlgorithm.h;authority.h;Heap.h;leetcode.h;leetcode.cpp;Tree.h )
 ADD_LIBRARY(myalgorithm_static STATIC ${LIB_LIST} )
 SET_TARGET_PROPERTIES(myalgorithm_static PROPERTIES 
                       OUT_PUT_NAME "myalgorithm"

@@ -1,6 +1,5 @@
 file(REMOVE_RECURSE
   "CMakeFiles/myalgorithm_static.dir/leetcode.cpp.o"
-  "CMakeFiles/myalgorithm_static.dir/myalgorithm.cpp.o"
   "libmyalgorithm_static.a"
   "libmyalgorithm_static.pdb"
 )

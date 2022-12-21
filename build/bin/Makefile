@@ -216,36 +216,6 @@ leetcode.cpp.s:
 	cd /home/xu/Desktop/myAlgorithm/build && $(MAKE) -f bin/CMakeFiles/myalgorithm_static.dir/build.make bin/CMakeFiles/myalgorithm_static.dir/leetcode.cpp.s
 .PHONY : leetcode.cpp.s
 
-myalgorithm.o: myalgorithm.cpp.o
-
-.PHONY : myalgorithm.o
-
-# target to build an object file
-myalgorithm.cpp.o:
-	cd /home/xu/Desktop/myAlgorithm/build && $(MAKE) -f bin/CMakeFiles/myalgorithm_shared.dir/build.make bin/CMakeFiles/myalgorithm_shared.dir/myalgorithm.cpp.o
-	cd /home/xu/Desktop/myAlgorithm/build && $(MAKE) -f bin/CMakeFiles/myalgorithm_static.dir/build.make bin/CMakeFiles/myalgorithm_static.dir/myalgorithm.cpp.o
-.PHONY : myalgorithm.cpp.o
-
-myalgorithm.i: myalgorithm.cpp.i
-
-.PHONY : myalgorithm.i
-
-# target to preprocess a source file
-myalgorithm.cpp.i:
-	cd /home/xu/Desktop/myAlgorithm/build && $(MAKE) -f bin/CMakeFiles/myalgorithm_shared.dir/build.make bin/CMakeFiles/myalgorithm_shared.dir/myalgorithm.cpp.i
-	cd /home/xu/Desktop/myAlgorithm/build && $(MAKE) -f bin/CMakeFiles/myalgorithm_static.dir/build.make bin/CMakeFiles/myalgorithm_static.dir/myalgorithm.cpp.i
-.PHONY : myalgorithm.cpp.i
-
-myalgorithm.s: myalgorithm.cpp.s
-
-.PHONY : myalgorithm.s
-
-# target to generate assembly for a file
-myalgorithm.cpp.s:
-	cd /home/xu/Desktop/myAlgorithm/build && $(MAKE) -f bin/CMakeFiles/myalgorithm_shared.dir/build.make bin/CMakeFiles/myalgorithm_shared.dir/myalgorithm.cpp.s
-	cd /home/xu/Desktop/myAlgorithm/build && $(MAKE) -f bin/CMakeFiles/myalgorithm_static.dir/build.make bin/CMakeFiles/myalgorithm_static.dir/myalgorithm.cpp.s
-.PHONY : myalgorithm.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -263,9 +233,6 @@ help:
 	@echo "... leetcode.o"
 	@echo "... leetcode.i"
 	@echo "... leetcode.s"
-	@echo "... myalgorithm.o"
-	@echo "... myalgorithm.i"
-	@echo "... myalgorithm.s"
 .PHONY : help
 
 

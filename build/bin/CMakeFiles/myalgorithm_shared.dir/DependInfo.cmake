@@ -5,7 +5,6 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/xu/Desktop/myAlgorithm/lib/leetcode.cpp" "/home/xu/Desktop/myAlgorithm/build/bin/CMakeFiles/myalgorithm_shared.dir/leetcode.cpp.o"
-  "/home/xu/Desktop/myAlgorithm/lib/myalgorithm.cpp" "/home/xu/Desktop/myAlgorithm/build/bin/CMakeFiles/myalgorithm_shared.dir/myalgorithm.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

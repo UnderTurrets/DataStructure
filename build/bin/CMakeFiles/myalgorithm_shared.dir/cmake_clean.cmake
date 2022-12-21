@@ -1,6 +1,5 @@
 file(REMOVE_RECURSE
   "CMakeFiles/myalgorithm_shared.dir/leetcode.cpp.o"
-  "CMakeFiles/myalgorithm_shared.dir/myalgorithm.cpp.o"
   "libmyalgorithm_shared.pdb"
   "libmyalgorithm_shared.so"
 )

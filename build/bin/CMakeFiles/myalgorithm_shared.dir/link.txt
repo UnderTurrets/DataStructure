@@ -1,1 +1,1 @@
-/usr/bin/c++ -fPIC   -shared -Wl,-soname,libmyalgorithm_shared.so -o libmyalgorithm_shared.so CMakeFiles/myalgorithm_shared.dir/myalgorithm.cpp.o CMakeFiles/myalgorithm_shared.dir/leetcode.cpp.o 
+/usr/bin/c++ -fPIC   -shared -Wl,-soname,libmyalgorithm_shared.so -o libmyalgorithm_shared.so CMakeFiles/myalgorithm_shared.dir/leetcode.cpp.o 

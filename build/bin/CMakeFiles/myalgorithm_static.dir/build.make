@@ -57,22 +57,9 @@ include bin/CMakeFiles/myalgorithm_static.dir/progress.make
 # Include the compile flags for this target's objects.
 include bin/CMakeFiles/myalgorithm_static.dir/flags.make
 
-bin/CMakeFiles/myalgorithm_static.dir/myalgorithm.cpp.o: bin/CMakeFiles/myalgorithm_static.dir/flags.make
-bin/CMakeFiles/myalgorithm_static.dir/myalgorithm.cpp.o: ../lib/myalgorithm.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xu/Desktop/myAlgorithm/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object bin/CMakeFiles/myalgorithm_static.dir/myalgorithm.cpp.o"
-	cd /home/xu/Desktop/myAlgorithm/build/bin && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/myalgorithm_static.dir/myalgorithm.cpp.o -c /home/xu/Desktop/myAlgorithm/lib/myalgorithm.cpp
-
-bin/CMakeFiles/myalgorithm_static.dir/myalgorithm.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/myalgorithm_static.dir/myalgorithm.cpp.i"
-	cd /home/xu/Desktop/myAlgorithm/build/bin && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/xu/Desktop/myAlgorithm/lib/myalgorithm.cpp > CMakeFiles/myalgorithm_static.dir/myalgorithm.cpp.i
-
-bin/CMakeFiles/myalgorithm_static.dir/myalgorithm.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/myalgorithm_static.dir/myalgorithm.cpp.s"
-	cd /home/xu/Desktop/myAlgorithm/build/bin && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/xu/Desktop/myAlgorithm/lib/myalgorithm.cpp -o CMakeFiles/myalgorithm_static.dir/myalgorithm.cpp.s
-
 bin/CMakeFiles/myalgorithm_static.dir/leetcode.cpp.o: bin/CMakeFiles/myalgorithm_static.dir/flags.make
 bin/CMakeFiles/myalgorithm_static.dir/leetcode.cpp.o: ../lib/leetcode.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xu/Desktop/myAlgorithm/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object bin/CMakeFiles/myalgorithm_static.dir/leetcode.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xu/Desktop/myAlgorithm/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object bin/CMakeFiles/myalgorithm_static.dir/leetcode.cpp.o"
 	cd /home/xu/Desktop/myAlgorithm/build/bin && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/myalgorithm_static.dir/leetcode.cpp.o -c /home/xu/Desktop/myAlgorithm/lib/leetcode.cpp
 
 bin/CMakeFiles/myalgorithm_static.dir/leetcode.cpp.i: cmake_force
@@ -85,17 +72,15 @@ bin/CMakeFiles/myalgorithm_static.dir/leetcode.cpp.s: cmake_force
 
 # Object files for target myalgorithm_static
 myalgorithm_static_OBJECTS = \
-"CMakeFiles/myalgorithm_static.dir/myalgorithm.cpp.o" \
 "CMakeFiles/myalgorithm_static.dir/leetcode.cpp.o"
 
 # External object files for target myalgorithm_static
 myalgorithm_static_EXTERNAL_OBJECTS =
 
-bin/libmyalgorithm_static.a: bin/CMakeFiles/myalgorithm_static.dir/myalgorithm.cpp.o
 bin/libmyalgorithm_static.a: bin/CMakeFiles/myalgorithm_static.dir/leetcode.cpp.o
 bin/libmyalgorithm_static.a: bin/CMakeFiles/myalgorithm_static.dir/build.make
 bin/libmyalgorithm_static.a: bin/CMakeFiles/myalgorithm_static.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/xu/Desktop/myAlgorithm/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libmyalgorithm_static.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/xu/Desktop/myAlgorithm/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libmyalgorithm_static.a"
 	cd /home/xu/Desktop/myAlgorithm/build/bin && $(CMAKE_COMMAND) -P CMakeFiles/myalgorithm_static.dir/cmake_clean_target.cmake
 	cd /home/xu/Desktop/myAlgorithm/build/bin && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/myalgorithm_static.dir/link.txt --verbose=$(VERBOSE)
 

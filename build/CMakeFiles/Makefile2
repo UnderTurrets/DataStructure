@@ -94,12 +94,12 @@ bin/clean: bin/CMakeFiles/myalgorithm_static.dir/clean
 bin/CMakeFiles/myalgorithm_shared.dir/all:
 	$(MAKE) -f bin/CMakeFiles/myalgorithm_shared.dir/build.make bin/CMakeFiles/myalgorithm_shared.dir/depend
 	$(MAKE) -f bin/CMakeFiles/myalgorithm_shared.dir/build.make bin/CMakeFiles/myalgorithm_shared.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/xu/Desktop/myAlgorithm/build/CMakeFiles --progress-num=1,2,3 "Built target myalgorithm_shared"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/xu/Desktop/myAlgorithm/build/CMakeFiles --progress-num=1,2 "Built target myalgorithm_shared"
 .PHONY : bin/CMakeFiles/myalgorithm_shared.dir/all
 
 # Build rule for subdir invocation for target.
 bin/CMakeFiles/myalgorithm_shared.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/xu/Desktop/myAlgorithm/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/xu/Desktop/myAlgorithm/build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 bin/CMakeFiles/myalgorithm_shared.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/xu/Desktop/myAlgorithm/build/CMakeFiles 0
 .PHONY : bin/CMakeFiles/myalgorithm_shared.dir/rule
@@ -121,12 +121,12 @@ bin/CMakeFiles/myalgorithm_shared.dir/clean:
 bin/CMakeFiles/myalgorithm_static.dir/all:
 	$(MAKE) -f bin/CMakeFiles/myalgorithm_static.dir/build.make bin/CMakeFiles/myalgorithm_static.dir/depend
 	$(MAKE) -f bin/CMakeFiles/myalgorithm_static.dir/build.make bin/CMakeFiles/myalgorithm_static.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/xu/Desktop/myAlgorithm/build/CMakeFiles --progress-num=4,5,6 "Built target myalgorithm_static"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/xu/Desktop/myAlgorithm/build/CMakeFiles --progress-num=3,4 "Built target myalgorithm_static"
 .PHONY : bin/CMakeFiles/myalgorithm_static.dir/all
 
 # Build rule for subdir invocation for target.
 bin/CMakeFiles/myalgorithm_static.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/xu/Desktop/myAlgorithm/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/xu/Desktop/myAlgorithm/build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 bin/CMakeFiles/myalgorithm_static.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/xu/Desktop/myAlgorithm/build/CMakeFiles 0
 .PHONY : bin/CMakeFiles/myalgorithm_static.dir/rule
