@@ -12,33 +12,42 @@ public:
     T *array=NULL;//从下标1开始存储
     int size=0;
     int capacity=0;
-//    T LimitData=0;//这是一个大于或小于堆中所有元素的极限元素，目的是为了以后更快地操作
+    T LimitData=0;//这是一个大于或小于堆中所有元素的极限元素，目的是为了以后更快地操作
 
-    Heap(){}
+    Heap(){
+        if(this->array)delete this->array;
+        this->size=0;
+        this->capacity=0;
+        this->array=new T[this->capacity+1];
+        this->array[0]=this->LimitData;
+    }
 
     //拷贝构造（深拷贝）
     Heap(Heap<T> &H ){
-        delete this->array;
-        this->array=new T(H.size+1);
+        if(this->array)delete this->array;
+        this->array=new T[H.capacity+1];
         this->size=H.size;
         this->capacity=H.capacity;
+        this->LimitData=H.LimitData;
         for(int i=1;i<H.size;i++){
             this->array[i]=H.array[i];
         }
     }
 
     //以某一容量创建一个堆
-    Heap(int Maxsize) {
-        this->array = new T(Maxsize + 1);
+    Heap(int Maxcapacity) {
+        if(this->array)delete this->array;
+        this->array = new T[Maxcapacity + 1];
         this->size = 0;
-        this->capacity = Maxsize;
-//        this->array[0] = LimitData;
+        this->capacity = Maxcapacity;
+        this->array[0] = this->LimitData;
     }
 
     //以一个完全二叉树创建一个堆，记住：输入的树必须是 完全二叉树！！！
     Heap(BinTree<T> bt){
-        delete this->array;
-        this->array=new T(pow(2,bt.GetHeight(&bt)+1)+1);
+        if(this->array)delete this->array;
+        int x=pow(2,bt.GetHeight(&bt)+1);
+        this->array=new T[x+1];
         this->capacity=pow(2,bt.GetHeight(&bt)+1);
         this->size=0;T max=bt.val;
         BinTree<T> *temp;
@@ -61,8 +70,8 @@ public:
 
     //以一个数组创建一个堆
     Heap(vector<T> v){
-        delete this->array;
-        this->array=new T(v.capacity());
+        if(this->array)delete this->array;
+        this->array=new T[v.capacity()+1];
         this->size=v.size();
         this->capacity=v.capacity();
         for(int i=0;i<v.size();i++){
@@ -78,6 +87,14 @@ public:
     //判断是否为空
     bool IsEmpty() {
         return (this->size == 0);
+    }
+
+    //依次输出
+    void print_heap(){
+        for(int i=1;i<=this->size;i++){
+            cout<<this->array[i]<<' ';
+        }
+        cout<<endl;
     }
 
 };
@@ -108,13 +125,17 @@ public:
 
     //插入一个元素
     void insert(T val) {
-        int i;
         if (this->IsFull()) {
-            cout << "This heap is full and your operation has failed!" << endl;
-            return;
+            T *temp=this->array;
+            delete this->array;
+            this->array=new T[this->capacity+1];
+            this->capacity++;
+            for(int i=1;i<=this->size;i++){
+                this->array[i]=temp[i];
+            }
         }
         this->size++;
-        i = this->size;
+        int i= this->size;
         for (; this->array[i / 2] < val && i > 1; i /= 2) {
             this->array[i] = this->array[i / 2];
         }
@@ -194,13 +215,17 @@ public:
 
     //插入一个元素
     void insert(T val){
-        int i;
-        if(this->IsFull()){
-            cout<<"This heap is full and your operation has failed!"<<endl;
-            return;
+        if (this->IsFull()) {
+            T *temp=this->array;
+            this->array=NULL;
+            this->array=new T[this->capacity+1];
+            this->capacity++;
+            for(int i=1;i<=this->size;i++){
+                this->array[i]=temp[i];
+            }
         }
         this->size++;
-        i= this->size;
+        int i= this->size;
         for(;this->array[i/2]>val && i>1;i/=2){
             this->array[i]= this->array[i/2];
         }

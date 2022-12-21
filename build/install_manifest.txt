@@ -1,3 +1,7 @@
 /usr/local/include/myalgorithm/myalgorithm.h
+/usr/local/include/myalgorithm/authority.h
+/usr/local/include/myalgorithm/Heap.h
+/usr/local/include/myalgorithm/leetcode.h
+/usr/local/include/myalgorithm/Tree.h
 /usr/local/lib/myalgorithm/libmyalgorithm_static.a
-/usr/local/ilb/myalgorithm/libmyalgorithm_shared.so
+/usr/local/lib/myalgorithm/libmyalgorithm_shared.so

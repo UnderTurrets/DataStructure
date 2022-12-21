@@ -42,21 +42,37 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/myalgorithm" TYPE FILE FILES "/home/xu/Desktop/myAlgorithm/lib/authority.h")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/myalgorithm" TYPE FILE FILES "/home/xu/Desktop/myAlgorithm/lib/Heap.h")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/myalgorithm" TYPE FILE FILES "/home/xu/Desktop/myAlgorithm/lib/leetcode.h")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/myalgorithm" TYPE FILE FILES "/home/xu/Desktop/myAlgorithm/lib/Tree.h")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/myalgorithm" TYPE STATIC_LIBRARY FILES "/home/xu/Desktop/myAlgorithm/build/bin/libmyalgorithm_static.a")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/ilb/myalgorithm/libmyalgorithm_shared.so" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/ilb/myalgorithm/libmyalgorithm_shared.so")
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/myalgorithm/libmyalgorithm_shared.so" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/myalgorithm/libmyalgorithm_shared.so")
     file(RPATH_CHECK
-         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/ilb/myalgorithm/libmyalgorithm_shared.so"
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/myalgorithm/libmyalgorithm_shared.so"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/ilb/myalgorithm" TYPE SHARED_LIBRARY FILES "/home/xu/Desktop/myAlgorithm/build/bin/libmyalgorithm_shared.so")
-  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/ilb/myalgorithm/libmyalgorithm_shared.so" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/ilb/myalgorithm/libmyalgorithm_shared.so")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/myalgorithm" TYPE SHARED_LIBRARY FILES "/home/xu/Desktop/myAlgorithm/build/bin/libmyalgorithm_shared.so")
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/myalgorithm/libmyalgorithm_shared.so" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/myalgorithm/libmyalgorithm_shared.so")
     if(CMAKE_INSTALL_DO_STRIP)
-      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/ilb/myalgorithm/libmyalgorithm_shared.so")
+      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/myalgorithm/libmyalgorithm_shared.so")
     endif()
   endif()
 endif()

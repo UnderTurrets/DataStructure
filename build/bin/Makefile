@@ -186,6 +186,36 @@ myalgorithm_static/fast:
 	cd /home/xu/Desktop/myAlgorithm/build && $(MAKE) -f bin/CMakeFiles/myalgorithm_static.dir/build.make bin/CMakeFiles/myalgorithm_static.dir/build
 .PHONY : myalgorithm_static/fast
 
+leetcode.o: leetcode.cpp.o
+
+.PHONY : leetcode.o
+
+# target to build an object file
+leetcode.cpp.o:
+	cd /home/xu/Desktop/myAlgorithm/build && $(MAKE) -f bin/CMakeFiles/myalgorithm_shared.dir/build.make bin/CMakeFiles/myalgorithm_shared.dir/leetcode.cpp.o
+	cd /home/xu/Desktop/myAlgorithm/build && $(MAKE) -f bin/CMakeFiles/myalgorithm_static.dir/build.make bin/CMakeFiles/myalgorithm_static.dir/leetcode.cpp.o
+.PHONY : leetcode.cpp.o
+
+leetcode.i: leetcode.cpp.i
+
+.PHONY : leetcode.i
+
+# target to preprocess a source file
+leetcode.cpp.i:
+	cd /home/xu/Desktop/myAlgorithm/build && $(MAKE) -f bin/CMakeFiles/myalgorithm_shared.dir/build.make bin/CMakeFiles/myalgorithm_shared.dir/leetcode.cpp.i
+	cd /home/xu/Desktop/myAlgorithm/build && $(MAKE) -f bin/CMakeFiles/myalgorithm_static.dir/build.make bin/CMakeFiles/myalgorithm_static.dir/leetcode.cpp.i
+.PHONY : leetcode.cpp.i
+
+leetcode.s: leetcode.cpp.s
+
+.PHONY : leetcode.s
+
+# target to generate assembly for a file
+leetcode.cpp.s:
+	cd /home/xu/Desktop/myAlgorithm/build && $(MAKE) -f bin/CMakeFiles/myalgorithm_shared.dir/build.make bin/CMakeFiles/myalgorithm_shared.dir/leetcode.cpp.s
+	cd /home/xu/Desktop/myAlgorithm/build && $(MAKE) -f bin/CMakeFiles/myalgorithm_static.dir/build.make bin/CMakeFiles/myalgorithm_static.dir/leetcode.cpp.s
+.PHONY : leetcode.cpp.s
+
 myalgorithm.o: myalgorithm.cpp.o
 
 .PHONY : myalgorithm.o
@@ -230,6 +260,9 @@ help:
 	@echo "... install/strip"
 	@echo "... myalgorithm_shared"
 	@echo "... myalgorithm_static"
+	@echo "... leetcode.o"
+	@echo "... leetcode.i"
+	@echo "... leetcode.s"
 	@echo "... myalgorithm.o"
 	@echo "... myalgorithm.i"
 	@echo "... myalgorithm.s"

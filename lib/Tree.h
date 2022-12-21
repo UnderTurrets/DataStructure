@@ -11,6 +11,7 @@ public:
     BinTree<T> *left=NULL;
     BinTree<T> *right=NULL;
     BinTree(){
+        val;
         this->left=NULL;
         this->right=NULL;
     }
@@ -160,6 +161,7 @@ public:
             Travesal_preorder_recurrence(myself->right);
         }
     }
+
     //后序遍历递归，以所给参数为根节点开始遍历
     void Travesal_postorder_recurrence (BinTree<T> *myself){
         if(myself){
@@ -282,6 +284,5 @@ public:
     }
 
 };
-
 
 #endif

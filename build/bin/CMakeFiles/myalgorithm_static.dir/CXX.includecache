@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/xu/Desktop/myAlgorithm/lib/myalgorithm.cpp
+/home/xu/Desktop/myAlgorithm/lib/authority.h
 iostream
 -
 vector
@@ -21,7 +21,11 @@ queue
 -
 map
 -
+unordered_map
+-
 set
+-
+unordered_set
 -
 algorithm
 -
@@ -29,4 +33,18 @@ memory
 -
 functional
 -
+exception
+-
+cmath
+-
+
+/home/xu/Desktop/myAlgorithm/lib/leetcode.cpp
+leetcode.h
+/home/xu/Desktop/myAlgorithm/lib/leetcode.h
+
+/home/xu/Desktop/myAlgorithm/lib/leetcode.h
+authority.h
+/home/xu/Desktop/myAlgorithm/lib/authority.h
+
+/home/xu/Desktop/myAlgorithm/lib/myalgorithm.cpp
 
