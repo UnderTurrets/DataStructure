@@ -1,0 +1,2 @@
+/usr/bin/ar qc libmyAlgorithm_static.a  CMakeFiles/myAlgorithm_static.dir/leetcode.cpp.o
+/usr/bin/ranlib libmyAlgorithm_static.a

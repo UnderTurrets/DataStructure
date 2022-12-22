@@ -216,6 +216,7 @@ public:
     }
 
     //检验对称二叉树
+public:
     inline bool IsSymmetric(){
         check(this, this);
     }
@@ -229,6 +230,26 @@ private:
     }
 
 public:
+    //翻转二叉树
+    BinTree<T>* InvertTree(BinTree<T> myself){
+        if (myself == nullptr) {
+            return nullptr;
+        }
+        BinTree<T>* left = invertTree(myself->left);
+        BinTree<T>* right = invertTree(myself->right);
+        myself->left = right;
+        myself->right = left;
+        return myself;
+
+    }
+
+    //给你二叉树的根节点root 和一个表示目标和的整数targetSum 。判断该树中是否存在 根节点到叶子节点 的路径，这条路径上所有节点值相加等于目标和targetSum 。如果存在，返回 true ；否则，返回 false 。
+    bool hasPathSum(BinTree<T>* myself, int targetSum) {
+        if(!myself)return false;
+        if(!myself->left&&!myself->right)return targetSum==myself->val;
+        return hasPathSum(myself->left,targetSum-myself->val) || hasPathSum(myself->right,targetSum-myself->val);
+    }
+
     //基于二叉搜索树的查找操作，返回值为所找到的元素的节点，若找不到则返回NULL，以所给参数为根节点开始查找
     BinTree<T>* Find_recurrence(T val,BinTree<T> *bt){
         if(!bt)return NULL;

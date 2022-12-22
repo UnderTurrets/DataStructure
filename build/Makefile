@@ -157,30 +157,30 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named myalgorithm_shared
+# Target rules for targets named myAlgorithm_shared
 
 # Build rule for target.
-myalgorithm_shared: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 myalgorithm_shared
-.PHONY : myalgorithm_shared
+myAlgorithm_shared: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 myAlgorithm_shared
+.PHONY : myAlgorithm_shared
 
 # fast build rule for target.
-myalgorithm_shared/fast:
-	$(MAKE) -f bin/CMakeFiles/myalgorithm_shared.dir/build.make bin/CMakeFiles/myalgorithm_shared.dir/build
-.PHONY : myalgorithm_shared/fast
+myAlgorithm_shared/fast:
+	$(MAKE) -f bin/CMakeFiles/myAlgorithm_shared.dir/build.make bin/CMakeFiles/myAlgorithm_shared.dir/build
+.PHONY : myAlgorithm_shared/fast
 
 #=============================================================================
-# Target rules for targets named myalgorithm_static
+# Target rules for targets named myAlgorithm_static
 
 # Build rule for target.
-myalgorithm_static: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 myalgorithm_static
-.PHONY : myalgorithm_static
+myAlgorithm_static: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 myAlgorithm_static
+.PHONY : myAlgorithm_static
 
 # fast build rule for target.
-myalgorithm_static/fast:
-	$(MAKE) -f bin/CMakeFiles/myalgorithm_static.dir/build.make bin/CMakeFiles/myalgorithm_static.dir/build
-.PHONY : myalgorithm_static/fast
+myAlgorithm_static/fast:
+	$(MAKE) -f bin/CMakeFiles/myAlgorithm_static.dir/build.make bin/CMakeFiles/myAlgorithm_static.dir/build
+.PHONY : myAlgorithm_static/fast
 
 # Help Target
 help:
@@ -194,8 +194,8 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... myalgorithm_shared"
-	@echo "... myalgorithm_static"
+	@echo "... myAlgorithm_shared"
+	@echo "... myAlgorithm_static"
 .PHONY : help
 
 

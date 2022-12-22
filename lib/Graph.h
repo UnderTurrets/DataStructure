@@ -1,6 +1,6 @@
 #ifndef __Graph_h__
 #define __Graph_h__
-#include "myAlgorithm.h"
+#include "authority.h"
 
 
 #define MaxVertexNum 100    /* 最大顶点数设为100 */

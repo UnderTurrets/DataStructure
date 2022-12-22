@@ -4,11 +4,11 @@
 /home/xu/Desktop/myAlgorithm/build/CMakeFiles/list_install_components.dir
 /home/xu/Desktop/myAlgorithm/build/CMakeFiles/rebuild_cache.dir
 /home/xu/Desktop/myAlgorithm/build/CMakeFiles/edit_cache.dir
+/home/xu/Desktop/myAlgorithm/build/bin/CMakeFiles/install/strip.dir
 /home/xu/Desktop/myAlgorithm/build/bin/CMakeFiles/install/local.dir
 /home/xu/Desktop/myAlgorithm/build/bin/CMakeFiles/install.dir
 /home/xu/Desktop/myAlgorithm/build/bin/CMakeFiles/list_install_components.dir
 /home/xu/Desktop/myAlgorithm/build/bin/CMakeFiles/rebuild_cache.dir
 /home/xu/Desktop/myAlgorithm/build/bin/CMakeFiles/edit_cache.dir
-/home/xu/Desktop/myAlgorithm/build/bin/CMakeFiles/install/strip.dir
-/home/xu/Desktop/myAlgorithm/build/bin/CMakeFiles/myalgorithm_shared.dir
-/home/xu/Desktop/myAlgorithm/build/bin/CMakeFiles/myalgorithm_static.dir
+/home/xu/Desktop/myAlgorithm/build/bin/CMakeFiles/myAlgorithm_shared.dir
+/home/xu/Desktop/myAlgorithm/build/bin/CMakeFiles/myAlgorithm_static.dir

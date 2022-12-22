@@ -56,6 +56,18 @@ CMAKE_BINARY_DIR = /home/xu/Desktop/myAlgorithm/build
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -112,18 +124,6 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
-
 # The main all target
 all: cmake_check_build_system
 	cd /home/xu/Desktop/myAlgorithm/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/xu/Desktop/myAlgorithm/build/CMakeFiles /home/xu/Desktop/myAlgorithm/build/bin/CMakeFiles/progress.marks
@@ -157,34 +157,34 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-bin/CMakeFiles/myalgorithm_shared.dir/rule:
-	cd /home/xu/Desktop/myAlgorithm/build && $(MAKE) -f CMakeFiles/Makefile2 bin/CMakeFiles/myalgorithm_shared.dir/rule
-.PHONY : bin/CMakeFiles/myalgorithm_shared.dir/rule
+bin/CMakeFiles/myAlgorithm_shared.dir/rule:
+	cd /home/xu/Desktop/myAlgorithm/build && $(MAKE) -f CMakeFiles/Makefile2 bin/CMakeFiles/myAlgorithm_shared.dir/rule
+.PHONY : bin/CMakeFiles/myAlgorithm_shared.dir/rule
 
 # Convenience name for target.
-myalgorithm_shared: bin/CMakeFiles/myalgorithm_shared.dir/rule
+myAlgorithm_shared: bin/CMakeFiles/myAlgorithm_shared.dir/rule
 
-.PHONY : myalgorithm_shared
+.PHONY : myAlgorithm_shared
 
 # fast build rule for target.
-myalgorithm_shared/fast:
-	cd /home/xu/Desktop/myAlgorithm/build && $(MAKE) -f bin/CMakeFiles/myalgorithm_shared.dir/build.make bin/CMakeFiles/myalgorithm_shared.dir/build
-.PHONY : myalgorithm_shared/fast
+myAlgorithm_shared/fast:
+	cd /home/xu/Desktop/myAlgorithm/build && $(MAKE) -f bin/CMakeFiles/myAlgorithm_shared.dir/build.make bin/CMakeFiles/myAlgorithm_shared.dir/build
+.PHONY : myAlgorithm_shared/fast
 
 # Convenience name for target.
-bin/CMakeFiles/myalgorithm_static.dir/rule:
-	cd /home/xu/Desktop/myAlgorithm/build && $(MAKE) -f CMakeFiles/Makefile2 bin/CMakeFiles/myalgorithm_static.dir/rule
-.PHONY : bin/CMakeFiles/myalgorithm_static.dir/rule
+bin/CMakeFiles/myAlgorithm_static.dir/rule:
+	cd /home/xu/Desktop/myAlgorithm/build && $(MAKE) -f CMakeFiles/Makefile2 bin/CMakeFiles/myAlgorithm_static.dir/rule
+.PHONY : bin/CMakeFiles/myAlgorithm_static.dir/rule
 
 # Convenience name for target.
-myalgorithm_static: bin/CMakeFiles/myalgorithm_static.dir/rule
+myAlgorithm_static: bin/CMakeFiles/myAlgorithm_static.dir/rule
 
-.PHONY : myalgorithm_static
+.PHONY : myAlgorithm_static
 
 # fast build rule for target.
-myalgorithm_static/fast:
-	cd /home/xu/Desktop/myAlgorithm/build && $(MAKE) -f bin/CMakeFiles/myalgorithm_static.dir/build.make bin/CMakeFiles/myalgorithm_static.dir/build
-.PHONY : myalgorithm_static/fast
+myAlgorithm_static/fast:
+	cd /home/xu/Desktop/myAlgorithm/build && $(MAKE) -f bin/CMakeFiles/myAlgorithm_static.dir/build.make bin/CMakeFiles/myAlgorithm_static.dir/build
+.PHONY : myAlgorithm_static/fast
 
 leetcode.o: leetcode.cpp.o
 
@@ -192,8 +192,8 @@ leetcode.o: leetcode.cpp.o
 
 # target to build an object file
 leetcode.cpp.o:
-	cd /home/xu/Desktop/myAlgorithm/build && $(MAKE) -f bin/CMakeFiles/myalgorithm_shared.dir/build.make bin/CMakeFiles/myalgorithm_shared.dir/leetcode.cpp.o
-	cd /home/xu/Desktop/myAlgorithm/build && $(MAKE) -f bin/CMakeFiles/myalgorithm_static.dir/build.make bin/CMakeFiles/myalgorithm_static.dir/leetcode.cpp.o
+	cd /home/xu/Desktop/myAlgorithm/build && $(MAKE) -f bin/CMakeFiles/myAlgorithm_shared.dir/build.make bin/CMakeFiles/myAlgorithm_shared.dir/leetcode.cpp.o
+	cd /home/xu/Desktop/myAlgorithm/build && $(MAKE) -f bin/CMakeFiles/myAlgorithm_static.dir/build.make bin/CMakeFiles/myAlgorithm_static.dir/leetcode.cpp.o
 .PHONY : leetcode.cpp.o
 
 leetcode.i: leetcode.cpp.i
@@ -202,8 +202,8 @@ leetcode.i: leetcode.cpp.i
 
 # target to preprocess a source file
 leetcode.cpp.i:
-	cd /home/xu/Desktop/myAlgorithm/build && $(MAKE) -f bin/CMakeFiles/myalgorithm_shared.dir/build.make bin/CMakeFiles/myalgorithm_shared.dir/leetcode.cpp.i
-	cd /home/xu/Desktop/myAlgorithm/build && $(MAKE) -f bin/CMakeFiles/myalgorithm_static.dir/build.make bin/CMakeFiles/myalgorithm_static.dir/leetcode.cpp.i
+	cd /home/xu/Desktop/myAlgorithm/build && $(MAKE) -f bin/CMakeFiles/myAlgorithm_shared.dir/build.make bin/CMakeFiles/myAlgorithm_shared.dir/leetcode.cpp.i
+	cd /home/xu/Desktop/myAlgorithm/build && $(MAKE) -f bin/CMakeFiles/myAlgorithm_static.dir/build.make bin/CMakeFiles/myAlgorithm_static.dir/leetcode.cpp.i
 .PHONY : leetcode.cpp.i
 
 leetcode.s: leetcode.cpp.s
@@ -212,8 +212,8 @@ leetcode.s: leetcode.cpp.s
 
 # target to generate assembly for a file
 leetcode.cpp.s:
-	cd /home/xu/Desktop/myAlgorithm/build && $(MAKE) -f bin/CMakeFiles/myalgorithm_shared.dir/build.make bin/CMakeFiles/myalgorithm_shared.dir/leetcode.cpp.s
-	cd /home/xu/Desktop/myAlgorithm/build && $(MAKE) -f bin/CMakeFiles/myalgorithm_static.dir/build.make bin/CMakeFiles/myalgorithm_static.dir/leetcode.cpp.s
+	cd /home/xu/Desktop/myAlgorithm/build && $(MAKE) -f bin/CMakeFiles/myAlgorithm_shared.dir/build.make bin/CMakeFiles/myAlgorithm_shared.dir/leetcode.cpp.s
+	cd /home/xu/Desktop/myAlgorithm/build && $(MAKE) -f bin/CMakeFiles/myAlgorithm_static.dir/build.make bin/CMakeFiles/myAlgorithm_static.dir/leetcode.cpp.s
 .PHONY : leetcode.cpp.s
 
 # Help Target
@@ -222,14 +222,14 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... install/strip"
 	@echo "... install/local"
 	@echo "... install"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... install/strip"
-	@echo "... myalgorithm_shared"
-	@echo "... myalgorithm_static"
+	@echo "... myAlgorithm_shared"
+	@echo "... myAlgorithm_static"
 	@echo "... leetcode.o"
 	@echo "... leetcode.i"
 	@echo "... leetcode.s"
