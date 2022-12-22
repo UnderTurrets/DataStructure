@@ -235,10 +235,10 @@ public:
         if (myself == nullptr) {
             return nullptr;
         }
-        BinTree<T>* left = invertTree(myself->left);
-        BinTree<T>* right = invertTree(myself->right);
-        myself->left = right;
-        myself->right = left;
+        BinTree<T>* bt1 = invertTree(myself->left);
+        BinTree<T>* bt2 = invertTree(myself->right);
+        myself->left = bt2;
+        myself->right = bt1;
         return myself;
 
     }
@@ -251,22 +251,22 @@ public:
     }
 
     //基于二叉搜索树的查找操作，返回值为所找到的元素的节点，若找不到则返回NULL，以所给参数为根节点开始查找
-    BinTree<T>* Find_recurrence(T val,BinTree<T> *bt){
+    BinTree<T>* Find_recurrence(T x,BinTree<T> *bt){
         if(!bt)return NULL;
-        if(val>bt->val){
-            return Find_recurrence(val,bt->right);
-        } else if(val<bt->val){
-            return Find_recurrence(val,bt->left);
+        if(x>bt->val){
+            return Find_recurrence(x,bt->right);
+        } else if(x<bt->val){
+            return Find_recurrence(x,bt->left);
         }else{
             return bt;
         }
     }
-    BinTree<T>* Find_commone(T val,BinTree<T> * bt){
+    BinTree<T>* Find_commone(T x,BinTree<T> * bt){
         if(!bt)return NULL;
         while (bt){
-            if(val<bt->val){
+            if(x<bt->val){
                 bt=bt->left;
-            }else if(val>bt->val){
+            }else if(x>bt->val){
                 bt=bt->right;
             }else{
                 return bt;
@@ -307,30 +307,30 @@ public:
     }
 
     //基于二叉搜索树插入某个元素，需要给定二叉搜索树的根结点和所插入元素，返回值也是二叉搜索树的根结点,若插入的元素已经存在，返回NULL
-    BinTree<T>* insert(T val,BinTree<T>* bt){
-        if(!bt){
-            bt =new BinTree<T>;
-            bt->val=val;
+    BinTree<T>* insert(T x,BinTree<T>* myself){
+        if(!myself){
+            myself =new BinTree<T>;
+            myself->val=x;
         } else{
-            if(val<bt->val){
-                bt->left= insert(val,bt->left);
-            } else if(val>bt->val){
-                bt->right= insert(val,bt->right);
-            } else if(val==bt->val){
+            if(x<myself->val){
+                myself->left= insert(x,myself->left);
+            } else if(x>myself->val){
+                myself->right= insert(x,myself->right);
+            } else if(x==myself->val){
                 return NULL;
             }
         }
-        return bt;
+        return myself;
     }
 
     //基于二叉搜索树删除某个元素，需要给定二叉搜索树的根结点和所删除元素，返回值也是二叉搜索树的根结点
-    BinTree<T>* delete_BinTree (T val,BinTree<T>* bt){
+    BinTree<T>* delete_BinTree (T x,BinTree<T>* bt){
         if(!bt)cout<<"The element you want to delete doesn't exist!"<<endl;
-        else if(val<bt->val){
-            bt->left= delete_BinTree(val,bt->left);
-        }else if(val>bt->val){
-            bt->right= delete_BinTree(val,bt->right);
-        }else if(val==bt->val){
+        else if(x<bt->val){
+            bt->left= delete_BinTree(x,bt->left);
+        }else if(x>bt->val){
+            bt->right= delete_BinTree(x,bt->right);
+        }else if(x==bt->val){
             if(bt->left&&bt->right){
                 BinTree<T> *temp= FindMin_common(bt->right);
                 bt->val=temp->val;

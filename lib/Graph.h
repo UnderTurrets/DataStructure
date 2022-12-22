@@ -2,10 +2,9 @@
 #define __Graph_h__
 #include "authority.h"
 
-
+#define UndeterminedVertex 65535        /* ∞设为双字节无符号整数的最大值65535*/
 #define MaxVertexNum 100    /* 最大顶点数设为100 */
 typedef int Vertex;         /* 用顶点下标表示顶点,顶点存储为整型，没有什么意义 */
-#define INFINITY 65535        /* ∞设为双字节无符号整数的最大值65535*/
 typedef double WeightType;        /* 边的权值设为整型 */
 typedef char DataType;        /* 顶点存储的数据类型设为字符型 */
 
@@ -31,7 +30,7 @@ public:
         this->vertexNum=MaxVertexNum;
         this->edgeNum=0;
         vector<Vertex>temp;
-        temp.resize(vertexNum,INFINITY);
+        temp.resize(vertexNum,UndeterminedVertex);
         this->Rect.resize(vertexNum,temp);
     }
 
@@ -40,7 +39,7 @@ public:
         this->vertexNum=x;
         this->edgeNum=0;
         vector<Vertex>temp;
-        temp.resize(vertexNum,INFINITY);
+        temp.resize(vertexNum,UndeterminedVertex);
         this->Rect.resize(vertexNum,temp);
     }
 
@@ -73,13 +72,14 @@ public:
 };
 
 /* 作链表头的顶点结点的定义 */
+//多一个存储顶点的数据
 class GraphHeadNode{
 public:
-    GraphCommonNode* FirstEdge;/* 边表头指针 */
+    GraphCommonNode* FirstNode;/* 边表头指针 */
     DataType Data;            /* 存顶点的数据 */
     /* 注意：很多情况下，顶点无数据，此时Data可以不用出现 */
     GraphHeadNode(){
-        this->FirstEdge=NULL;
+        this->FirstNode=NULL;
     }
 };
 
@@ -95,7 +95,7 @@ public:
         this->vertexNum=MaxVertexNum;
         this->edgeNum=0;
         for(int i=0;i<vertexNum;i++){
-            GraphHeadNodeVector[i].FirstEdge=NULL;
+            GraphHeadNodeVector[i].FirstNode=NULL;
         }
     }
 
@@ -104,7 +104,7 @@ public:
         this->vertexNum=x;
         this->edgeNum=0;
         for(int i=0;i<vertexNum;i++){
-            GraphHeadNodeVector[i].FirstEdge=NULL;
+            GraphHeadNodeVector[i].FirstNode=NULL;
         }
     }
 
@@ -113,8 +113,8 @@ public:
         GraphCommonNode * NewNode;
         NewNode->index=E->destinction;
         NewNode->Weight=E->Weight;
-        NewNode->Next=this->GraphHeadNodeVector[E->origin].FirstEdge;
-        this->GraphHeadNodeVector[E->origin].FirstEdge=NewNode;
+        NewNode->Next=this->GraphHeadNodeVector[E->origin].FirstNode;
+        this->GraphHeadNodeVector[E->origin].FirstNode=NewNode;
     };
 
     //插入一条无序边
@@ -122,14 +122,14 @@ public:
         GraphCommonNode * NewNode1;
         NewNode1->index=E->destinction;
         NewNode1->Weight=E->Weight;
-        NewNode1->Next=this->GraphHeadNodeVector[E->origin].FirstEdge;
-        this->GraphHeadNodeVector[E->origin].FirstEdge=NewNode1;
+        NewNode1->Next=this->GraphHeadNodeVector[E->origin].FirstNode;
+        this->GraphHeadNodeVector[E->origin].FirstNode=NewNode1;
 
         GraphCommonNode * NewNode2;
         NewNode2->index=E->origin;
         NewNode2->Weight=E->Weight;
-        NewNode2->Next=this->GraphHeadNodeVector[E->destinction].FirstEdge;
-        this->GraphHeadNodeVector[E->destinction].FirstEdge=NewNode2;
+        NewNode2->Next=this->GraphHeadNodeVector[E->destinction].FirstNode;
+        this->GraphHeadNodeVector[E->destinction].FirstNode=NewNode2;
     };
 };
 

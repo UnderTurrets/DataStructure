@@ -12,7 +12,6 @@
 #include <unordered_map>
 #include <set>
 #include <unordered_set>
-#include <algorithm>
 #include <memory>
 #include <functional>
 #include <exception>

@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/xu/Desktop/myAlgorithm/lib/authority.h
+iostream
+-
+vector
+-
+list
+-
+string
+-
+stack
+-
+queue
+-
+map
+-
+unordered_map
+-
+set
+-
+unordered_set
+-
+memory
+-
+functional
+-
+exception
+-
+cmath
+-
+
+/home/xu/Desktop/myAlgorithm/lib/leetcode.cpp
+leetcode.h
+/home/xu/Desktop/myAlgorithm/lib/leetcode.h
+
+/home/xu/Desktop/myAlgorithm/lib/leetcode.h
+authority.h
+/home/xu/Desktop/myAlgorithm/lib/authority.h
+
