@@ -17,7 +17,7 @@
 #include <exception>
 #include <cmath>
 #include <climits>
-
+#include <bits/stdc++.h>
 using namespace std;
 using namespace placeholders;
 

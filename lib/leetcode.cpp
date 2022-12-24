@@ -79,6 +79,77 @@ vector<int> intersect(vector<int>& nums1, vector<int>& nums2) {
     return ret;
 }
 
+//给你一个 非空 整数数组 nums ，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。
+//你必须设计并实现线性时间复杂度的算法来解决此问题，且该算法只使用常量额外空间。
+int singleNumber(vector<int>& nums) {
+    unordered_set<int> S;
+    for(int i=0;i<nums.size();i++){
+        if(S.count(nums[i])){
+            S.erase(nums[i]);
+        }else if(!S.count(nums[i])){
+            S.insert(nums[i]);
+        }
+    }
+    return *S.begin();
+}
+
+//给定一个大小为 n 的数组nums ，返回其中的多数元素。多数元素是指在数组中出现次数 大于⌊ n/2 ⌋的元素。
+//你可以假设数组是非空的，并且给定的数组总是存在多数元素。
+int majorityElement(vector<int>& nums) {
+    unordered_map<int ,int > M;
+    int ret=0;int times=0;
+    for(int i=0;i<nums.size();i++){
+        if(M.count(nums[i])) {
+            M[nums[i]]++;
+        }else if(!M.count(nums[i])){
+            M[nums[i]]=1;
+        }
+        if(M[nums[i]]>times){
+            times=M[nums[i]];
+            ret=nums[i];
+        }
+    }
+    return ret;
+}
+
+//给你一个整数数组 nums ，判断是否存在三元组 [nums[i], nums[j], nums[k]] 满足 i != j、i != k 且 j != k ，同时还满足 nums[i] + nums[j] + nums[k] == 0 。请
+//你返回所有和为 0 且不重复的三元组。
+//注意：答案中不可以包含重复的三元组。
+vector<vector<int>> threeSum(vector<int>& nums) {
+    int n = nums.size();
+    sort(nums.begin(), nums.end());
+    vector<vector<int>> ans;
+    // 枚举 a
+    for (int first = 0; first < n; ++first) {
+        // 需要和上一次枚举的数不相同
+        if (first > 0 && nums[first] == nums[first - 1]) {
+            continue;
+        }
+        // c 对应的指针初始指向数组的最右端
+        int third = n - 1;
+        int target = -nums[first];
+        // 枚举 b
+        for (int second = first + 1; second < n; ++second) {
+            // 需要和上一次枚举的数不相同
+            if (second > first + 1 && nums[second] == nums[second - 1]) {
+                continue;
+            }
+            // 需要保证 b 的指针在 c 的指针的左侧
+            while (second < third && nums[second] + nums[third] > target) {
+                --third;
+            }
+            // 如果指针重合，随着 b 后续的增加
+            // 就不会有满足 a+b+c=0 并且 b<c 的 c 了，可以退出循环
+            if (second == third) {
+                break;
+            }
+            if (nums[second] + nums[third] == target) {
+                ans.push_back({nums[first], nums[second], nums[third]});
+            }
+        }
+    }
+    return ans;
+}
 
 //    给定一个数组 prices ，它的第i 个元素prices[i] 表示一支给定股票第 i 天的价格。
 //    你只能选择 某一天 买入这只股票，并选择在 未来的某一个不同的日子 卖出该股票。设计一个算法来计算你所能获取的最大利润。
