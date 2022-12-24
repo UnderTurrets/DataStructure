@@ -218,7 +218,7 @@ public:
     //检验对称二叉树
 public:
     inline bool IsSymmetric(){
-        check(this, this);
+        return check(this, this);
     }
 private:
     bool check(BinTree<T>root1,BinTree<T>root2){

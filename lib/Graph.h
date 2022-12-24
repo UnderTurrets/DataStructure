@@ -12,8 +12,10 @@ typedef char DataType;        /* 顶点存储的数据类型设为字符型 */
 typedef class EdgeNode *Edge;
 class EdgeNode{
 public:
-    Vertex origin, destinction;      /* 边连接的两个顶点 */
+    Vertex origin, destination;      /* 边连接的两个顶点 */
     WeightType Weight;  /* 边权重 */
+    EdgeNode(){}
+    EdgeNode(Vertex x,Vertex y,WeightType value):origin(x),destination(y),Weight(value){}
 };
 
 /* 用邻接矩阵定义的图 */
@@ -44,17 +46,23 @@ public:
     }
 
     //插入一条有序边
-    void InsertOrderedEdge( Edge E )
-    {
+    void InsertOrderedEdge( Edge E ){
+        if(E->origin>this->vertexNum||E->destination>this->vertexNum){
+            cout<<"This graph doesn't have enough vertexs!"<<endl;
+            return;
+        }
         /* 插入边 <vertex1, vertex2> */
-        this->Rect[E->origin][E->destinction] = E->Weight;
+        this->Rect[E->origin][E->destination] = E->Weight;
     }
 
     //插入一条无序边
-    void InsertUnorderedEdge( Edge E )
-    {
-        this->Rect[E->origin][E->destinction] = E->Weight;
-        this->Rect[E->destinction][E->origin] = E->Weight;
+    void InsertUnorderedEdge( Edge E ){
+        if(E->origin>this->vertexNum||E->destination>this->vertexNum){
+            cout<<"This graph doesn't have enough vertexs!"<<endl;
+            return;
+        }
+        this->Rect[E->origin][E->destination] = E->Weight;
+        this->Rect[E->destination][E->origin] = E->Weight;
     }
 };
 
@@ -63,7 +71,7 @@ class GraphCommonNode{
 public:
     Vertex index=-1;        /* 这个邻接点的下标 */
     GraphCommonNode* Next=NULL;    /* 指向下一个邻接点的指针 */
-    WeightType Weight=-1;  /* 两个点之间的边的权重 */
+    WeightType Weight=-1;  /* 从链表头顶点到这个点之间的边的权重 */
     GraphCommonNode(){
         this->index=-1;
         this->Next=NULL;
@@ -94,8 +102,11 @@ public:
     GraphList(){
         this->vertexNum=MaxVertexNum;
         this->edgeNum=0;
+        GraphHeadNodeVector.resize(vertexNum);
         for(int i=0;i<vertexNum;i++){
-            GraphHeadNodeVector[i].FirstNode=NULL;
+            if(GraphHeadNodeVector[i].FirstNode) {
+                GraphHeadNodeVector[i].FirstNode = NULL;
+            }
         }
     }
 
@@ -103,34 +114,106 @@ public:
     GraphList(int x){
         this->vertexNum=x;
         this->edgeNum=0;
+        GraphHeadNodeVector.resize(vertexNum);
         for(int i=0;i<vertexNum;i++){
-            GraphHeadNodeVector[i].FirstNode=NULL;
+            if(GraphHeadNodeVector[i].FirstNode) {
+                GraphHeadNodeVector[i].FirstNode = NULL;
+            }
         }
     }
 
     //插入一条有序边
     void InsertOrderedEdge(Edge E){
         GraphCommonNode * NewNode;
-        NewNode->index=E->destinction;
+        NewNode->index=E->destination;
         NewNode->Weight=E->Weight;
-        NewNode->Next=this->GraphHeadNodeVector[E->origin].FirstNode;
-        this->GraphHeadNodeVector[E->origin].FirstNode=NewNode;
+        if(!this->GraphHeadNodeVector[E->origin].FirstNode) {
+            this->GraphHeadNodeVector[E->origin].FirstNode = NewNode;
+        }else if(this->GraphHeadNodeVector[E->origin].FirstNode){
+            GraphCommonNode* temp=this->GraphHeadNodeVector[E->origin].FirstNode;
+            while (temp->Next){
+                temp=temp->Next;
+            }
+            temp->Next=NewNode;
+        }
+    };
+    void InsertOrderedEdge(Vertex origin,Vertex destination,WeightType weight){
+        if(origin>this->vertexNum || destination>this->vertexNum){
+            cout<<"The vertex you has typed in doesn't exist!"<<endl;
+            return;
+        }
+        GraphCommonNode * NewNode=new GraphCommonNode;
+        NewNode->index=destination;
+        NewNode->Weight=weight;
+        if(!this->GraphHeadNodeVector[origin].FirstNode) {
+            this->GraphHeadNodeVector[origin].FirstNode = NewNode;
+        }else if(this->GraphHeadNodeVector[origin].FirstNode){
+            GraphCommonNode* temp=this->GraphHeadNodeVector[origin].FirstNode;
+            while (temp->Next){
+                temp=temp->Next;
+            }
+            temp->Next=NewNode;
+        }
     };
 
     //插入一条无序边
     void InsertUnorderedEdge(Edge E){
-        GraphCommonNode * NewNode1;
-        NewNode1->index=E->destinction;
+        GraphCommonNode * NewNode1=new GraphCommonNode;
+        NewNode1->index=E->destination;
         NewNode1->Weight=E->Weight;
-        NewNode1->Next=this->GraphHeadNodeVector[E->origin].FirstNode;
-        this->GraphHeadNodeVector[E->origin].FirstNode=NewNode1;
+        if(!this->GraphHeadNodeVector[E->origin].FirstNode) {
+            this->GraphHeadNodeVector[E->origin].FirstNode = NewNode1;
+        }else if(this->GraphHeadNodeVector[E->origin].FirstNode){
+            GraphCommonNode* temp=this->GraphHeadNodeVector[E->origin].FirstNode;
+            while (temp->Next){
+                temp=temp->Next;
+            }
+            temp->Next=NewNode1;
+        }
 
-        GraphCommonNode * NewNode2;
+        GraphCommonNode * NewNode2=new GraphCommonNode;
         NewNode2->index=E->origin;
         NewNode2->Weight=E->Weight;
-        NewNode2->Next=this->GraphHeadNodeVector[E->destinction].FirstNode;
-        this->GraphHeadNodeVector[E->destinction].FirstNode=NewNode2;
+        if(!this->GraphHeadNodeVector[E->destination].FirstNode) {
+            this->GraphHeadNodeVector[E->destination].FirstNode = NewNode2;
+        }else if(this->GraphHeadNodeVector[E->destination].FirstNode){
+            GraphCommonNode* temp=this->GraphHeadNodeVector[E->destination].FirstNode;
+            while (temp->Next){
+                temp=temp->Next;
+            }
+            temp->Next=NewNode2;
+        }
     };
+
+    //给定一个顶点，DFS遍历其连通分量
+    void DFS_ConnectedComponent(Vertex x){
+        if(x>vertexNum){
+            cout<<"The vertex you has typed in doesn't exist!"<<endl;
+            return;
+        }
+        //在此可以进行对顶点数据的操作
+        cout<<"This is in Vertex "<<x<<"."<<endl;
+
+
+
+        //在此以上可以进行对顶点数据的操作
+        for(GraphCommonNode* temp=this->GraphHeadNodeVector[x].FirstNode;temp;temp=temp->Next){
+            //在此可以进行对边的权重的操作
+            cout<<"Vertex "<<x<<" to "<<"Vertex "<<temp->index<<":weight="<<temp->Weight<<endl;
+            //在此以上可以进行对边的权重的操作
+            DFS_ConnectedComponent(temp->index);
+        }
+    }
+
+    //DFS遍历这个图，无论是否连通
+    void DFS(){
+        for(Vertex x=0;x<this->vertexNum;x++){
+            DFS_ConnectedComponent(x);
+        }
+    }
+
+    //给定一个顶点，BFS遍历其连通分量
+
 };
 
 
