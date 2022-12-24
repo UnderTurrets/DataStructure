@@ -122,19 +122,19 @@ public:
     void Travesal_levelorder(){
         BinTree<T> *temp;
         temp=this;
-        queue<BinTree<T>> Q;
+        queue<BinTree<T>*> Q;
         if(!temp)return;
-        Q.push(*temp);
+        Q.push(temp);
         while (!Q.empty()){
-            temp=&Q.front();
+            temp=Q.front();
             Q.pop();
             //在此进行你要执行的操作
 
             cout<<temp->val<<endl;
 
             //在此以上进行你要执行的操作
-            if(temp->left){Q.push(*(temp->left));}
-            if(temp->right){Q.push(*(temp->right));}
+            if(temp->left){Q.push(temp->left);}
+            if(temp->right){Q.push(temp->right);}
         }
     }
 
@@ -250,6 +250,23 @@ public:
         return hasPathSum(myself->left,targetSum-myself->val) || hasPathSum(myself->right,targetSum-myself->val);
     }
 
+    //给你一个二叉树的根节点 root ，判断其是否是一个有效的二叉搜索树。
+private:
+    bool inline_IsValidBST(BinTree<T>* root, long long lower, long long upper) {
+        if (root == nullptr) {
+            return true;
+        }
+        if (root -> val <= lower || root -> val >= upper) {
+            return false;
+        }
+        return inline_IsValidBST(root -> left, lower, root -> val) && inline_IsValidBST(root -> right, root -> val, upper);
+    }
+public:
+    bool IsValidBST() {
+        return inline_IsValidBST(this, LONG_MIN, LONG_MAX);
+    }
+
+public:
     //基于二叉搜索树的查找操作，返回值为所找到的元素的节点，若找不到则返回NULL，以所给参数为根节点开始查找
     BinTree<T>* Find_recurrence(T x,BinTree<T> *bt){
         if(!bt)return NULL;
@@ -272,6 +289,43 @@ public:
                 return bt;
             }
         }
+    }
+
+    //给定一个二叉搜索树 root 和一个目标结果 k，如果二叉搜索树中存在两个元素且它们的和等于给定的目标结果，则返回 true。
+    bool findTarget(BinTree<T>* root, int k) {
+        BinTree<T> *temp;unordered_set<int>S;
+        temp=root;
+        queue<BinTree<T>*> Q;
+        if(!temp)return false;
+        Q.push(temp);
+        while (!Q.empty()){
+            temp=Q.front();
+            Q.pop();
+            if(S.count(k-(temp->val)))return true;
+            S.insert(temp->val);
+            if(temp->left){Q.push(temp->left);}
+            if(temp->right){Q.push(temp->right);}
+        }
+        return false;
+
+    }
+
+    //给定一个二叉搜索树, 找到该树中两个指定节点的最近公共祖先。
+    //百度百科中最近公共祖先的定义为：“对于有根树 T 的两个结点 p、q，最近公共祖先表示为一个结点 x，满足 x 是 p、q 的祖先且 x 的深度尽可能大（一个节点也可以是它自己的祖先）。”
+    BinTree<T>* lowestCommonAncestor(BinTree<T>* p, BinTree<T>* q) {
+        BinTree<T>* ancestor = this;
+        while (true) {
+            if (p->val < ancestor->val && q->val < ancestor->val) {
+                ancestor = ancestor->left;
+            }
+            else if (p->val > ancestor->val && q->val > ancestor->val) {
+                ancestor = ancestor->right;
+            }
+            else {
+                break;
+            }
+        }
+        return ancestor;
     }
 
     //基于二叉搜索树找最大值，若找到则返回其最大值的结点，若不存在则返回NULL,以所给参数为根结点进行查找

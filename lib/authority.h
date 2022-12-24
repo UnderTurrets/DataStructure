@@ -16,6 +16,7 @@
 #include <functional>
 #include <exception>
 #include <cmath>
+#include <climits>
 
 using namespace std;
 using namespace placeholders;
