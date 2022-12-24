@@ -58,7 +58,7 @@ void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
 
 
 
-//给你两个整数数组 nums1 和 nums2 ，请你以数组形式返回两数组的交集。返回结果中每个元素出现的次数，应与元素在两个数组中都出现的次数一致（如果出现次数不一致，则考虑取较小值）。可以不考虑输出结果的顺序。
+//给你两个整数数组nums1 和 nums2 ，请你以数组形式返回两数组的交集。返回结果中每个元素出现的次数，应与元素在两个数组中都出现的次数一致（如果出现次数不一致，则考虑取较小值）。可以不考虑输出结果的顺序。
 vector<int> intersect(vector<int>& nums1, vector<int>& nums2) {
     vector<int> ret;int j=0;
     sort(nums1.begin(),nums1.end());
@@ -80,7 +80,7 @@ vector<int> intersect(vector<int>& nums1, vector<int>& nums2) {
 }
 
 
-//    给定一个数组 prices ，它的第 i 个元素 prices[i] 表示一支给定股票第 i 天的价格。
+//    给定一个数组 prices ，它的第i 个元素prices[i] 表示一支给定股票第 i 天的价格。
 //    你只能选择 某一天 买入这只股票，并选择在 未来的某一个不同的日子 卖出该股票。设计一个算法来计算你所能获取的最大利润。
 //    返回你可以从这笔交易中获取的最大利润。如果你不能获取任何利润，返回 0 。
 int maxProfit(vector<int>& prices) {
