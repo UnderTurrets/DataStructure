@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/xu/Desktop/myAlgorithm/lib/authority.h
+/home/xu736946693/Desktop/myAlgorithm/lib/authority.h
 iostream
 -
 vector
@@ -35,12 +35,16 @@ exception
 -
 cmath
 -
+climits
+-
+bits/stdc++.h
+-
 
-/home/xu/Desktop/myAlgorithm/lib/leetcode.cpp
+/home/xu736946693/Desktop/myAlgorithm/lib/leetcode.cpp
 leetcode.h
-/home/xu/Desktop/myAlgorithm/lib/leetcode.h
+/home/xu736946693/Desktop/myAlgorithm/lib/leetcode.h
 
-/home/xu/Desktop/myAlgorithm/lib/leetcode.h
+/home/xu736946693/Desktop/myAlgorithm/lib/leetcode.h
 authority.h
-/home/xu/Desktop/myAlgorithm/lib/authority.h
+/home/xu736946693/Desktop/myAlgorithm/lib/authority.h
 
