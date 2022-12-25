@@ -40,6 +40,14 @@ vector<vector<int>> threeSum(vector<int>& nums);
 //    返回你可以从这笔交易中获取的最大利润。如果你不能获取任何利润，返回 0 。
 int maxProfit(vector<int>& prices);
 
+//给定一个包含红色、白色和蓝色、共n 个元素的数组nums，原地对它们进行排序，使得相同颜色的元素相邻，并按照红色、白色、蓝色顺序排列。
+//我们使用整数 0、1 和 2 分别表示红色、白色和蓝色。
+//必须在不使用库内置的 sort 函数的情况下解决这个问题。
+void sortColors(vector<int>& nums);
+
+//以数组 intervals 表示若干个区间的集合，其中单个区间为 intervals[i] = [starti, endi] 。请你合并所有重叠的区间，并返回一个不重叠的区间数组，该数组需恰好覆盖输入中的所有区间。
+vector<vector<int>> merge(vector<vector<int>>& intervals);
+
 //    在 MATLAB 中，有一个非常有用的函数 reshape ，它可以将一个m x n 矩阵重塑为另一个大小不同（r x c）的新矩阵，但保留其原始数据。
 //    给你一个由二维数组 mat 表示的m x n 矩阵，以及两个正整数 r 和 c ，分别表示想要的重构的矩阵的行数和列数。
 //    重构后的矩阵需要将原始矩阵的所有元素以相同的 行遍历顺序 填充。
@@ -79,7 +87,7 @@ bool isAnagram(string s, string t);
 bool isValid(string s);
 
 //给你一个链表的头节点 head ，判断链表中是否有环。
-//如果链表中有某个节点，可以通过连续跟踪 next 指针再次到达，则链表中存在环。 为了表示给定链表中的环，评测系统内部使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。注意：pos 不作为参数进行传递 。仅仅是为了标识链表的实际情况。
+//如果链表中有某个节点，可以通过连续跟踪 next 指针再次到达，则链表中存在环。 为了表示给定链表中的环，评测系统内部使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。注意：pos 不作为参数进行传递。仅仅是为了标识链表的实际情况。
 //如果链表中存在环，则返回 true 。 否则，返回 false 。
 // Definition for singly-linked list.
 struct ListNode;
@@ -145,6 +153,7 @@ public:
         return instack.empty()&&outstack.empty();
     }
 };
+
 
 
 #endif
