@@ -64,6 +64,8 @@ public:
         this->Rect[E->origin][E->destination] = E->Weight;
         this->Rect[E->destination][E->origin] = E->Weight;
     }
+
+
 };
 
 /* 不作链表头的邻接点结点的定义 */
@@ -213,6 +215,36 @@ public:
     }
 
     //给定一个顶点，BFS遍历其连通分量
+    void BFS_ConnectedComponent(Vertex x){
+        if(x>vertexNum){
+            cout<<"The vertex you has typed in doesn't exist!"<<endl;
+            return;
+        }
+        queue<Vertex>Q;
+        Q.push(x);
+        while (!Q.empty()){
+            Vertex temp=Q.front();
+            Q.pop();
+            //在此可以进行对顶点数据的操作
+            cout<<"This is in Vertex "<<temp<<"."<<endl;
+            //在此以上可以进行对顶点数据的操作
+            if(this->GraphHeadNodeVector[temp].FirstNode) {
+                for (GraphCommonNode *NewNode = this->GraphHeadNodeVector[temp].FirstNode;NewNode;NewNode=NewNode->Next){
+                    Q.push(NewNode->index);
+                    //在此可以进行对边的权重的操作
+                    cout<<"Vertex "<<temp<<" to "<<"Vertex "<<NewNode->index<<":weight="<<NewNode->Weight<<endl;
+                    //在此以上可以进行对边的权重的操作
+                }
+            }
+        }
+    }
+
+    //BFS遍历这个图，无论是否连通
+    void BFS(){
+        for(Vertex x=0;x<this->vertexNum;x++){
+            BFS_ConnectedComponent(x);
+        }
+    }
 
 };
 
