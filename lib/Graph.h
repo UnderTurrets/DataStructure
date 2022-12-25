@@ -23,7 +23,7 @@ class GraphRect{
 public:
     int vertexNum;  /* 顶点数 */
     int edgeNum;  /* 边数   */
-    vector<vector<Vertex>> Rect; /* 邻接矩阵 */
+    vector<vector<WeightType>> Rect; /* 邻接矩阵 */
     vector<DataType>Data;      /* 存顶点的数据 */
     /* 注意：很多情况下，顶点无数据，此时Data[]可以不用出现 */
 
@@ -31,38 +31,123 @@ public:
     GraphRect(){
         this->vertexNum=MaxVertexNum;
         this->edgeNum=0;
-        vector<Vertex>temp;
+        vector<WeightType>temp;
         temp.resize(vertexNum,UndeterminedVertex);
         this->Rect.resize(vertexNum,temp);
     }
 
     //指定顶点个数初始化一个图
-    GraphRect(Vertex x){
-        this->vertexNum=x;
+    GraphRect(Vertex n){
+        this->vertexNum=n;
         this->edgeNum=0;
-        vector<Vertex>temp;
+        vector<WeightType>temp;
         temp.resize(vertexNum,UndeterminedVertex);
         this->Rect.resize(vertexNum,temp);
     }
 
     //插入一条有序边
     void InsertOrderedEdge( Edge E ){
-        if(E->origin>this->vertexNum||E->destination>this->vertexNum){
-            cout<<"This graph doesn't have enough vertexs!"<<endl;
+        if(E->origin >= this->vertexNum){
+            cout<<"Vertex "<<E->origin<<":"<<"The vertex you has typed in doesn't exist!"<<endl;
+            return;
+        }
+        if(E->destination >= this->vertexNum){
+            cout<<"Vertex "<<E->destination<<":"<<"The vertex you has typed in doesn't exist!"<<endl;
             return;
         }
         /* 插入边 <vertex1, vertex2> */
         this->Rect[E->origin][E->destination] = E->Weight;
     }
+    void InsertOrderedEdge( Vertex origin,Vertex destinaiton,WeightType weight ){
+        if(origin >= this->vertexNum){
+            cout<<"Vertex "<<origin<<":"<<"The vertex you has typed in doesn't exist!"<<endl;
+            return;
+        }
+        if(destinaiton >= this->vertexNum){
+            cout<<"Vertex "<<destinaiton<<":"<<"The vertex you has typed in doesn't exist!"<<endl;
+            return;
+        }
+        /* 插入边 <vertex1, vertex2> */
+        this->Rect[origin][destinaiton] = weight;
+    }
 
     //插入一条无序边
     void InsertUnorderedEdge( Edge E ){
-        if(E->origin>this->vertexNum||E->destination>this->vertexNum){
-            cout<<"This graph doesn't have enough vertexs!"<<endl;
+        if(E->origin >= this->vertexNum){
+            cout<<"Vertex "<<E->origin<<":"<<"The vertex you has typed in doesn't exist!"<<endl;
+            return;
+        }
+        if(E->destination >= this->vertexNum){
+            cout<<"Vertex "<<E->destination<<":"<<"The vertex you has typed in doesn't exist!"<<endl;
             return;
         }
         this->Rect[E->origin][E->destination] = E->Weight;
         this->Rect[E->destination][E->origin] = E->Weight;
+    }
+
+    //给定一个顶点，DFS遍历其连通分量
+    void DFS_ConnectedComponent(Vertex squence){
+        if(squence>=vertexNum){
+            cout<<"Vertex "<<squence<<":"<<"The vertex you has typed in doesn't exist!"<<endl;
+            return;
+        }
+        //在此可以进行对顶点数据的操作
+        cout<<"This is in Vertex "<<squence<<"."<<endl;
+
+
+
+        //在此以上可以进行对顶点数据的操作
+        for(int i=0;i<this->Rect[squence].size();i++){
+            if(Rect[squence][i]!=UndeterminedVertex){
+                //在此可以进行对边的权重的操作
+                cout<<"Vertex "<<squence<<" to "<<"Vertex "<<i<<":weight="<<Rect[squence][i]<<endl;
+                //在此以上可以进行对边的权重的操作
+                DFS_ConnectedComponent(i);
+            }
+        }
+    }
+
+    //DFS遍历这个图，无论是否连通
+    void DFS(){
+        for(Vertex x=0;x<this->vertexNum;x++){
+            DFS_ConnectedComponent(x);
+        }
+    }
+
+    //给定一个顶点，BFS遍历其连通分量
+    void BFS_ConnectedComponent(Vertex squence){
+        if(squence>=vertexNum){
+            cout<<"Vertex "<<squence<<":"<<"The vertex you has typed in doesn't exist!"<<endl;
+            return;
+        }
+        queue<Vertex>Q;
+        Q.push(squence);
+        while(!Q.empty()){
+            Vertex temp;
+            temp=Q.front();
+            Q.pop();
+            //在此可以进行对顶点数据的操作
+            cout<<"This is in Vertex "<<temp<<"."<<endl;
+
+
+
+            //在此以上可以进行对顶点数据的操作
+            for(int i =0;i<this->Rect[temp].size();i++){
+                if(this->Rect[temp][i]!=UndeterminedVertex) {
+                    Q.push(i);
+                    //在此可以进行对边的权重的操作
+                    cout << "Vertex " << temp << " to " << "Vertex " << i << ":weight=" << Rect[temp][i] << endl;
+                    //在此以上可以进行对边的权重的操作
+                }
+            }
+        }
+    }
+
+    //BFS遍历这个图，无论是否连通
+    void BFS(){
+        for(Vertex x=0;x<this->vertexNum;x++){
+            BFS_ConnectedComponent(x);
+        }
     }
 
 
@@ -113,8 +198,8 @@ public:
     }
 
     //创建一个没有边的图,指定顶点个数
-    GraphList(int x){
-        this->vertexNum=x;
+    GraphList(int n){
+        this->vertexNum=n;
         this->edgeNum=0;
         GraphHeadNodeVector.resize(vertexNum);
         for(int i=0;i<vertexNum;i++){
@@ -126,6 +211,14 @@ public:
 
     //插入一条有序边
     void InsertOrderedEdge(Edge E){
+        if(E->origin >= this->vertexNum){
+            cout<<"Vertex "<<E->origin<<":"<<"The vertex you has typed in doesn't exist!"<<endl;
+            return;
+        }
+        if(E->destination >= this->vertexNum){
+            cout<<"Vertex "<<E->destination<<":"<<"The vertex you has typed in doesn't exist!"<<endl;
+            return;
+        }
         GraphCommonNode * NewNode;
         NewNode->index=E->destination;
         NewNode->Weight=E->Weight;
@@ -140,8 +233,12 @@ public:
         }
     };
     void InsertOrderedEdge(Vertex origin,Vertex destination,WeightType weight){
-        if(origin>this->vertexNum || destination>this->vertexNum){
-            cout<<"The vertex you has typed in doesn't exist!"<<endl;
+        if(origin >= this->vertexNum){
+            cout<<"Vertex "<<origin<<":"<<"The vertex you has typed in doesn't exist!"<<endl;
+            return;
+        }
+        if(destination >= this->vertexNum){
+            cout<<"Vertex "<<destination<<":"<<"The vertex you has typed in doesn't exist!"<<endl;
             return;
         }
         GraphCommonNode * NewNode=new GraphCommonNode;
@@ -160,6 +257,14 @@ public:
 
     //插入一条无序边
     void InsertUnorderedEdge(Edge E){
+        if(E->origin >= this->vertexNum){
+            cout<<"Vertex "<<E->origin<<":"<<"The vertex you has typed in doesn't exist!"<<endl;
+            return;
+        }
+        if(E->destination >= this->vertexNum){
+            cout<<"Vertex "<<E->destination<<":"<<"The vertex you has typed in doesn't exist!"<<endl;
+            return;
+        }
         GraphCommonNode * NewNode1=new GraphCommonNode;
         NewNode1->index=E->destination;
         NewNode1->Weight=E->Weight;
@@ -188,20 +293,20 @@ public:
     };
 
     //给定一个顶点，DFS遍历其连通分量
-    void DFS_ConnectedComponent(Vertex x){
-        if(x>vertexNum){
-            cout<<"The vertex you has typed in doesn't exist!"<<endl;
+    void DFS_ConnectedComponent(Vertex squence){
+        if(squence>=vertexNum){
+            cout<<"Vertex "<<squence<<":"<<"The vertex you has typed in doesn't exist!"<<endl;
             return;
         }
         //在此可以进行对顶点数据的操作
-        cout<<"This is in Vertex "<<x<<"."<<endl;
+        cout<<"This is in Vertex "<<squence<<"."<<endl;
 
 
 
         //在此以上可以进行对顶点数据的操作
-        for(GraphCommonNode* temp=this->GraphHeadNodeVector[x].FirstNode;temp;temp=temp->Next){
+        for(GraphCommonNode* temp=this->GraphHeadNodeVector[squence].FirstNode;temp;temp=temp->Next){
             //在此可以进行对边的权重的操作
-            cout<<"Vertex "<<x<<" to "<<"Vertex "<<temp->index<<":weight="<<temp->Weight<<endl;
+            cout<<"Vertex "<<squence<<" to "<<"Vertex "<<temp->index<<":weight="<<temp->Weight<<endl;
             //在此以上可以进行对边的权重的操作
             DFS_ConnectedComponent(temp->index);
         }
@@ -215,13 +320,13 @@ public:
     }
 
     //给定一个顶点，BFS遍历其连通分量
-    void BFS_ConnectedComponent(Vertex x){
-        if(x>vertexNum){
-            cout<<"The vertex you has typed in doesn't exist!"<<endl;
+    void BFS_ConnectedComponent(Vertex squence){
+        if(squence>=vertexNum){
+            cout<<"Vertex "<<squence<<":"<<"The vertex you has typed in doesn't exist!"<<endl;
             return;
         }
         queue<Vertex>Q;
-        Q.push(x);
+        Q.push(squence);
         while (!Q.empty()){
             Vertex temp=Q.front();
             Q.pop();
