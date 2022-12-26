@@ -25,6 +25,7 @@ public:
     int edgeNum;  /* 边数   */
     vector<vector<WeightType>> Rect; /* 邻接矩阵 */
     vector<DataType>Data;      /* 存顶点的数据 */
+    vector<bool>Isvisited;   /*判断顶点是否被访问过*/
     /* 注意：很多情况下，顶点无数据，此时Data[]可以不用出现 */
 
     //初始化一个图,默认100个顶点
@@ -34,6 +35,7 @@ public:
         vector<WeightType>temp;
         temp.resize(vertexNum,UndeterminedVertex);
         this->Rect.resize(vertexNum,temp);
+        this->Isvisited.resize(this->vertexNum, false);
     }
 
     //指定顶点个数初始化一个图
@@ -43,6 +45,7 @@ public:
         vector<WeightType>temp;
         temp.resize(vertexNum,UndeterminedVertex);
         this->Rect.resize(vertexNum,temp);
+        this->Isvisited.resize(this->vertexNum, false);
     }
 
     //插入一条有序边
@@ -86,11 +89,13 @@ public:
     }
 
     //给定一个顶点，DFS遍历其连通分量
-    void DFS_ConnectedComponent(Vertex squence){
+private:
+    void DFS_ConnectedComponent_helper(Vertex squence){
         if(squence>=vertexNum){
             cout<<"Vertex "<<squence<<":"<<"The vertex you has typed in doesn't exist!"<<endl;
             return;
         }
+        this->Isvisited[squence]=true;
         //在此可以进行对顶点数据的操作
         cout<<"This is in Vertex "<<squence<<"."<<endl;
 
@@ -102,16 +107,25 @@ public:
                 //在此可以进行对边的权重的操作
                 cout<<"Vertex "<<squence<<" to "<<"Vertex "<<i<<":weight="<<Rect[squence][i]<<endl;
                 //在此以上可以进行对边的权重的操作
-                DFS_ConnectedComponent(i);
+                if(!this->Isvisited[i])DFS_ConnectedComponent_helper(i);
             }
         }
     }
+public:
+    void DFS_ConnectedComponent(Vertex squence){
+        this->Isvisited.resize(this->vertexNum, false);
+        DFS_ConnectedComponent_helper(squence);
+        this->Isvisited.resize(this->vertexNum, false);
+    }
 
+public:
     //DFS遍历这个图，无论是否连通
     void DFS(){
+        this->Isvisited.resize(this->vertexNum, false);
         for(Vertex x=0;x<this->vertexNum;x++){
-            DFS_ConnectedComponent(x);
+            if(!this->Isvisited[x])DFS_ConnectedComponent_helper(x);
         }
+        this->Isvisited.resize(this->vertexNum, false);
     }
 
     //给定一个顶点，BFS遍历其连通分量
@@ -126,6 +140,7 @@ public:
             Vertex temp;
             temp=Q.front();
             Q.pop();
+            this->Isvisited[temp]= true;
             //在此可以进行对顶点数据的操作
             cout<<"This is in Vertex "<<temp<<"."<<endl;
 
@@ -133,8 +148,8 @@ public:
 
             //在此以上可以进行对顶点数据的操作
             for(int i =0;i<this->Rect[temp].size();i++){
-                if(this->Rect[temp][i]!=UndeterminedVertex) {
-                    Q.push(i);
+                if(this->Rect[temp][i]!=UndeterminedVertex  ) {
+                    if(!this->Isvisited[i])Q.push(i);
                     //在此可以进行对边的权重的操作
                     cout << "Vertex " << temp << " to " << "Vertex " << i << ":weight=" << Rect[temp][i] << endl;
                     //在此以上可以进行对边的权重的操作
@@ -145,9 +160,11 @@ public:
 
     //BFS遍历这个图，无论是否连通
     void BFS(){
+        this->Isvisited.resize(this->vertexNum, false);
         for(Vertex x=0;x<this->vertexNum;x++){
-            BFS_ConnectedComponent(x);
+            if(!this->Isvisited[x])BFS_ConnectedComponent(x);
         }
+        this->Isvisited.resize(this->vertexNum, false);
     }
 
 
@@ -184,11 +201,14 @@ public:
     int vertexNum;     /* 顶点数 */
     int edgeNum;     /* 边数   */
     vector<GraphHeadNode> GraphHeadNodeVector;  /* 邻接表 */
+    vector<bool>Isvisited;   /*判断顶点是否被访问过*/
+
 
     //创建一个没有边的图,默认100个顶点
     GraphList(){
         this->vertexNum=MaxVertexNum;
         this->edgeNum=0;
+        this->Isvisited.resize(this->vertexNum, false);
         GraphHeadNodeVector.resize(vertexNum);
         for(int i=0;i<vertexNum;i++){
             if(GraphHeadNodeVector[i].FirstNode) {
@@ -201,6 +221,7 @@ public:
     GraphList(int n){
         this->vertexNum=n;
         this->edgeNum=0;
+        this->Isvisited.resize(this->vertexNum, false);
         GraphHeadNodeVector.resize(vertexNum);
         for(int i=0;i<vertexNum;i++){
             if(GraphHeadNodeVector[i].FirstNode) {
@@ -293,11 +314,13 @@ public:
     };
 
     //给定一个顶点，DFS遍历其连通分量
-    void DFS_ConnectedComponent(Vertex squence){
+private:
+    void DFS_ConnectedComponent_helper(Vertex squence){
         if(squence>=vertexNum){
             cout<<"Vertex "<<squence<<":"<<"The vertex you has typed in doesn't exist!"<<endl;
             return;
         }
+        this->Isvisited[squence]= true;
         //在此可以进行对顶点数据的操作
         cout<<"This is in Vertex "<<squence<<"."<<endl;
 
@@ -308,14 +331,21 @@ public:
             //在此可以进行对边的权重的操作
             cout<<"Vertex "<<squence<<" to "<<"Vertex "<<temp->index<<":weight="<<temp->Weight<<endl;
             //在此以上可以进行对边的权重的操作
-            DFS_ConnectedComponent(temp->index);
+            if(!this->Isvisited[temp->index])DFS_ConnectedComponent_helper(temp->index);
         }
     }
+public:
+    void DFS_ConnectedComponent(Vertex squence){
+        this->Isvisited.resize(this->vertexNum, false);
+        DFS_ConnectedComponent(squence);
+        this->Isvisited.resize(this->vertexNum, false);
+    }
 
+public:
     //DFS遍历这个图，无论是否连通
     void DFS(){
         for(Vertex x=0;x<this->vertexNum;x++){
-            DFS_ConnectedComponent(x);
+            if(!this->Isvisited[x])DFS_ConnectedComponent_helper(x);
         }
     }
 
@@ -330,12 +360,13 @@ public:
         while (!Q.empty()){
             Vertex temp=Q.front();
             Q.pop();
+            this->Isvisited[temp]= true;
             //在此可以进行对顶点数据的操作
             cout<<"This is in Vertex "<<temp<<"."<<endl;
             //在此以上可以进行对顶点数据的操作
             if(this->GraphHeadNodeVector[temp].FirstNode) {
                 for (GraphCommonNode *NewNode = this->GraphHeadNodeVector[temp].FirstNode;NewNode;NewNode=NewNode->Next){
-                    Q.push(NewNode->index);
+                    if(!this->Isvisited[NewNode->index])Q.push(NewNode->index);
                     //在此可以进行对边的权重的操作
                     cout<<"Vertex "<<temp<<" to "<<"Vertex "<<NewNode->index<<":weight="<<NewNode->Weight<<endl;
                     //在此以上可以进行对边的权重的操作
@@ -346,9 +377,11 @@ public:
 
     //BFS遍历这个图，无论是否连通
     void BFS(){
+        this->Isvisited.resize(this->vertexNum, false);
         for(Vertex x=0;x<this->vertexNum;x++){
-            BFS_ConnectedComponent(x);
+            if(!this->Isvisited[x])BFS_ConnectedComponent(x);
         }
+        this->Isvisited.resize(this->vertexNum, false);
     }
 
 };

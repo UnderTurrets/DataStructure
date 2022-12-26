@@ -67,6 +67,13 @@ bool isValidSudoku(vector<vector<char>>& board);
 //给定一个 m x n 的矩阵，如果一个元素为 0 ，则将其所在行和列的所有元素都设为 0 。请使用 原地 算法。
 void setZeroes(vector<vector<int>>& matrix);
 
+//给你一个正整数 n ，生成一个包含 1 到 n2 所有元素，且元素按顺时针顺序螺旋排列的 n x n 正方形矩阵 matrix 。
+vector<vector<int>> generateMatrix(int n);
+
+//给定一个 n×n 的二维矩阵matrix 表示一个图像。请你将图像顺时针旋转 90 度。
+//你必须在 原地 旋转图像，这意味着你需要直接修改输入的二维矩阵。请不要 使用另一个矩阵来旋转图像。
+void rotate(vector<vector<int>>& matrix);
+
 //给定一个字符串 s ，找到 它的第一个不重复的字符，并返回它的索引 。如果不存在，则返回 -1 。
 int firstUniqChar(string s);
 
