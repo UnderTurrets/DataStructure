@@ -52,16 +52,16 @@ public:
                 if(temp->left)S.push(temp->left);
                 S.push(temp);
                 S.push(NULL);
-            }else{
-                S.pop();
-                temp=S.top();
-                S.pop();
                 //在此进行你要执行的操作
                 cout<<temp->val<<endl;
 
 
 
                 //在此以上进行你要执行的操作
+            }else{
+                S.pop();
+                temp=S.top();
+                S.pop();
             }
         }
     }
@@ -78,16 +78,16 @@ public:
                 S.push(temp);
                 S.push(NULL);
                 if(temp->left)S.push(temp->left);
-            }else{
-                S.pop();
-                temp=S.top();
-                S.pop();
                 //在此进行你要执行的操作
                 cout<<temp->val<<endl;
 
 
 
                 //在此以上进行你要执行的操作
+            }else{
+                S.pop();
+                temp=S.top();
+                S.pop();
             }
         }
     }
@@ -104,16 +104,16 @@ public:
                 S.push(NULL);
                 if(temp->right)S.push(temp->right);
                 if(temp->left)S.push(temp->left);
-            }else{
-                S.pop();
-                temp=S.top();
-                S.pop();
                 //在此进行你要执行的操作
                 cout<<temp->val<<endl;
 
 
 
                 //在此以上进行你要执行的操作
+            }else{
+                S.pop();
+                temp=S.top();
+                S.pop();
             }
         }
     }
