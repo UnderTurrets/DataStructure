@@ -24,7 +24,7 @@ class GraphRect{
 public:
     int vertexNum;  /* 顶点数 */
     int edgeNum;  /* 边数   */
-    vector<vector<WeightType>> Rect; /* 邻接矩阵 */
+    vector<vector<WeightType>> WeightRect; /* 邻接矩阵 */
     vector<DataType>Data;      /* 存顶点的数据 */
     vector<bool>Isvisited;   /*判断顶点是否被访问过*/
     /* 注意：很多情况下，顶点无数据，此时Data[]可以不用出现 */
@@ -37,7 +37,7 @@ public:
         this->edgeNum=0;
         vector<WeightType>temp;
         temp.resize(vertexNum,UndeterminedWeight);
-        this->Rect.resize(vertexNum,temp);
+        this->WeightRect.resize(vertexNum,temp);
         this->Isvisited.resize(this->vertexNum, false);
         vector<WeightType>temp_dist;temp_dist.resize(vertexNum,UndeterminedWeight);
         vector<Vertex>temp_path;temp_path.resize(vertexNum,UndeterminedVertex);
@@ -45,7 +45,7 @@ public:
         for(Vertex i=0;i<vertexNum;i++){
             this->dist[i][i]=0;
             this->path[i][i]=i;
-            this->Rect[i][i]=0;
+            this->WeightRect[i][i]=0;
         }
     }
 
@@ -55,7 +55,7 @@ public:
         this->edgeNum=0;
         vector<WeightType>temp;
         temp.resize(vertexNum,UndeterminedWeight);
-        this->Rect.resize(vertexNum,temp);
+        this->WeightRect.resize(vertexNum,temp);
         this->Isvisited.resize(this->vertexNum, false);
         vector<WeightType>temp_dist;temp_dist.resize(vertexNum,UndeterminedWeight);
         vector<Vertex>temp_path;temp_path.resize(vertexNum,UndeterminedVertex);
@@ -63,7 +63,7 @@ public:
         for(Vertex i=0;i<vertexNum;i++){
             this->dist[i][i]=0;
             this->path[i][i]=i;
-            this->Rect[i][i]=0;
+            this->WeightRect[i][i]=0;
         }
     }
 
@@ -78,7 +78,7 @@ public:
             return;
         }
         /* 插入边 <vertex1, vertex2> */
-        this->Rect[E->source][E->destination] = E->Weight;
+        this->WeightRect[E->source][E->destination] = E->Weight;
     }
     void InsertOrderedEdge( Vertex source,Vertex destinaiton,WeightType weight ){
         if(source >= this->vertexNum){
@@ -90,7 +90,7 @@ public:
             return;
         }
         /* 插入边 <vertex1, vertex2> */
-        this->Rect[source][destinaiton] = weight;
+        this->WeightRect[source][destinaiton] = weight;
     }
 
     //插入一条无序边
@@ -103,8 +103,8 @@ public:
             cout<<"Vertex "<<E->destination<<":"<<"The vertex you has typed in doesn't exist!"<<endl;
             return;
         }
-        this->Rect[E->source][E->destination] = E->Weight;
-        this->Rect[E->destination][E->source] = E->Weight;
+        this->WeightRect[E->source][E->destination] = E->Weight;
+        this->WeightRect[E->destination][E->source] = E->Weight;
     }
 
     //给定一个顶点，DFS遍历其连通分量
@@ -121,10 +121,10 @@ private:
 
 
         //在此以上可以进行对顶点数据的操作
-        for(int i=0;i<this->Rect[squence].size();i++){
-            if(Rect[squence][i]!=UndeterminedWeight){
+        for(int i=0;i<this->WeightRect[squence].size();i++){
+            if(this->WeightRect[squence][i]!=UndeterminedWeight){
                 //在此可以进行对边的权重的操作
-                cout<<"Vertex "<<squence<<" to "<<"Vertex "<<i<<":weight="<<Rect[squence][i]<<endl;
+                cout<<"Vertex "<<squence<<" to "<<"Vertex "<<i<<":weight="<<this->WeightRect[squence][i]<<endl;
                 //在此以上可以进行对边的权重的操作
                 if(!this->Isvisited[i])DFS_ConnectedComponent_helper(i);
             }
@@ -167,11 +167,11 @@ private:
 
 
             //在此以上可以进行对顶点数据的操作
-            for(int i =0;i<this->Rect[temp].size();i++){
-                if(this->Rect[temp][i]!=UndeterminedWeight  ) {
+            for(int i =0;i<this->WeightRect[temp].size();i++){
+                if(this->WeightRect[temp][i]!=UndeterminedWeight  ) {
                     if(!this->Isvisited[i])Q.push(i);
                     //在此可以进行对边的权重的操作
-                    cout << "Vertex " << temp << " to " << "Vertex " << i << ":weight=" << Rect[temp][i] << endl;
+                    cout << "Vertex " << temp << " to " << "Vertex " << i << ":weight=" << this->WeightRect[temp][i] << endl;
                     //在此以上可以进行对边的权重的操作
                 }
             }
@@ -218,7 +218,7 @@ private:
             return false;
         }
         for(Vertex temp=0;temp<this->vertexNum;temp++){
-            this->dist[source][temp]=this->Rect[source][temp];
+            this->dist[source][temp]=this->WeightRect[source][temp];
             if(this->dist[source][temp]!=UndeterminedWeight) {
                 this->path[source][temp] = source;
             }else{
@@ -233,12 +233,12 @@ private:
             }
             this->Isvisited[V]= true;
             for(Vertex temp=0;temp<this->vertexNum;temp++){
-                if(!this->Isvisited[temp] && this->Rect[V][temp]!=UndeterminedWeight){
-                    if(this->Rect[V][temp]<0){
+                if(!this->Isvisited[temp] && this->WeightRect[V][temp]!=UndeterminedWeight){
+                    if(this->WeightRect[V][temp]<0){
                         return false;
                     }
-                    if(this->dist[source][V]+this->Rect[V][temp] < this->dist[source][temp]){
-                        this->dist[source][temp]=this->dist[source][V]+this->Rect[V][temp];
+                    if(this->dist[source][V]+this->WeightRect[V][temp] < this->dist[source][temp]){
+                        this->dist[source][temp]=this->dist[source][V]+this->WeightRect[V][temp];
                         this->path[source][temp]=V;
                     }
                 }
