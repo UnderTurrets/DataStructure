@@ -45,6 +45,7 @@ public:
         for(Vertex i=0;i<vertexNum;i++){
             this->dist[i][i]=0;
             this->path[i][i]=i;
+            this->Rect[i][i]=0;
         }
     }
 
@@ -62,6 +63,7 @@ public:
         for(Vertex i=0;i<vertexNum;i++){
             this->dist[i][i]=0;
             this->path[i][i]=i;
+            this->Rect[i][i]=0;
         }
     }
 
@@ -175,6 +177,7 @@ private:
             }
         }
     }
+
 public:
     void BFS_ConnectedComponent(Vertex squence){
         this->Isvisited.resize(this->vertexNum, false);
@@ -203,14 +206,13 @@ private:
                 minVertex = temp; /* 更新对应顶点 */
             }
         }
-        if (minWeight < INFINITY) /* 若找到最小dist */
+        if (minWeight != UndeterminedWeight) /* 若找到最小dist */
             return minVertex; /* 返回对应的顶点下标 */
         else return UndeterminedVertex;  /* 若这样的顶点不存在，返回错误标记 */
     }
 
-public:
     //单源最短路径unsigned
-    bool FindSingleMinWeight (Vertex source){
+    bool FindSingleMinWeight_helper (Vertex source){
         if(source>=vertexNum){
             cout<<"Vertex "<<source<<":"<<"The vertex you has typed in doesn't exist!"<<endl;
             return false;
@@ -245,11 +247,21 @@ public:
         return true;
     }
 
+public:
+    bool FindSingleMinWeight(Vertex source){
+        this->Isvisited.resize(this->vertexNum, false);
+        bool ret=this->FindSingleMinWeight_helper(source);
+        this->Isvisited.resize(this->vertexNum, false);
+        return ret;
+    }
+
     //多源最短路径unsigned
     void FinAllMinWeight(){
+        this->Isvisited.resize(this->vertexNum, false);
         for(Vertex V=0;V< this->vertexNum;V++){
-            this->FindSingleMinWeight(V);
+            this->FindSingleMinWeight_helper(V);
         }
+        this->Isvisited.resize(this->vertexNum, false);
     }
 };
 
@@ -493,6 +505,7 @@ public:
         this->Isvisited.resize(this->vertexNum, false);
     }
 
+private:
     // 返回this->dist[source]中未被收录的顶点且weight最小者
     Vertex FindMinVertex(Vertex source){
         if(source>=vertexNum){
@@ -514,14 +527,14 @@ public:
     }
 
     //单源最短路径unsigned
-    bool FindSingleMinWeight (Vertex source){
+    bool FindSingleMinWeight_helper (Vertex source){
         if(source>=vertexNum){
             cout<<"Vertex "<<source<<":"<<"The vertex you has typed in doesn't exist!"<<endl;
             return false;
         }
         for(GraphCommonNode* temp=this->GraphHeadNodeVector[source].FirstNode;temp;temp=temp->Next){
             this->dist[source][temp->index]=temp->Weight;
-            this->path[source][temp->index]=UndeterminedVertex;
+            this->path[source][temp->index]=source;
         }
         this->Isvisited[source]= true;
         while (1){
@@ -549,11 +562,21 @@ public:
         return true;
     }
 
+public:
+    bool FindSingleMinWeight(Vertex source){
+        this->Isvisited.resize(this->vertexNum, false);
+        bool ret=this->FindSingleMinWeight_helper(source);
+        this->Isvisited.resize(this->vertexNum, false);
+        return ret;
+    }
+
     //多源最短路径unsigned
     void FinAllMinWeight(){
+        this->Isvisited.resize(this->vertexNum, false);
         for(Vertex V=0;V< this->vertexNum;V++){
-            this->FindSingleMinWeight(V);
+            this->FindSingleMinWeight_helper(V);
         }
+        this->Isvisited.resize(this->vertexNum, false);
     }
 
 };
