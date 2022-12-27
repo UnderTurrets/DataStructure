@@ -7,6 +7,7 @@
 #include "Heap.h"
 #include "Tree.h"
 #include "Graph.h"
+#include "Graph.cpp"
 
 
 

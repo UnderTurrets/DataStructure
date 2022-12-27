@@ -2,7 +2,16 @@
 
 
 
-SET(LIB_LIST myAlgorithm.h;authority.h;Heap.h;leetcode.h;leetcode.cpp;Tree.h;Graph.h )
+SET(LIB_LIST myAlgorithm.h
+             authority.h
+             Heap.h   
+             leetcode.h
+             leetcode.cpp
+             Tree.h
+             Tree.cpp 
+             Graph.h
+             Graph.cpp         )
+             
 ADD_LIBRARY(myAlgorithm_static STATIC ${LIB_LIST} )
 SET_TARGET_PROPERTIES(myAlgorithm_static PROPERTIES 
                       OUT_PUT_NAME "myAlgorithm"
@@ -17,8 +26,11 @@ INSTALL(FILES myAlgorithm.h DESTINATION include/myAlgorithm/)
 INSTALL(FILES authority.h DESTINATION include/myAlgorithm/)
 INSTALL(FILES Heap.h DESTINATION include/myAlgorithm/)
 INSTALL(FILES leetcode.h DESTINATION include/myAlgorithm/)
+INSTALL(FILES leetcode.cpp DESTINATION include/myAlgorithm/)
 INSTALL(FILES Tree.h DESTINATION include/myAlgorithm/)
+INSTALL(FILES Tree.cpp DESTINATION include/myAlgorithm/)
 INSTALL(FILES Graph.h DESTINATION include/myAlgorithm/)
+INSTALL(FILES Graph.cpp DESTINATION include/myAlgorithm/)
 INSTALL(TARGETS myAlgorithm_static myAlgorithm_shared 
         LIBRARY DESTINATION lib/myAlgorithm/
         ARCHIVE DESTINATION lib/myAlgorithm/ )                      
