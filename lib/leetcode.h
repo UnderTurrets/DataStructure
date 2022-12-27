@@ -74,6 +74,14 @@ vector<vector<int>> generateMatrix(int n);
 //你必须在 原地 旋转图像，这意味着你需要直接修改输入的二维矩阵。请不要 使用另一个矩阵来旋转图像。
 void rotate(vector<vector<int>>& matrix);
 
+//编写一个高效的算法来搜索mxn矩阵 matrix 中的一个目标值 target 。该矩阵具有以下特性：
+//每行的元素从左到右升序排列。
+//每列的元素从上到下升序排列。
+bool searchMatrix(vector<vector<int>>& matrix, int target);
+
+//给定一个区间的集合intervals，其中 intervals[i] = [starti, endi]。返回 需要移除区间的最小数量，使剩余区间互不重叠。
+int eraseOverlapIntervals(vector<vector<int>>& intervals);
+
 //给定一个字符串 s ，找到 它的第一个不重复的字符，并返回它的索引 。如果不存在，则返回 -1 。
 int firstUniqChar(string s);
 

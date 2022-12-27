@@ -350,6 +350,47 @@ void rotate(vector<vector<int>>& matrix) {
     }
 }
 
+//编写一个高效的算法来搜索mxn矩阵 matrix 中的一个目标值 target 。该矩阵具有以下特性：
+//每行的元素从左到右升序排列。
+//每列的元素从上到下升序排列。
+bool searchMatrix(vector<vector<int>>& matrix, int target) {
+    for(int i=0;i<matrix.size();i++){
+        if(matrix[i].front()<=target && matrix[i].back()>=target){
+            for(int j=0;j<matrix[i].size();j++){
+                if(matrix[i][j]==target)return true;
+            }
+        }else{
+            continue;
+        }
+    }
+    return false;
+}
+
+//给定一个区间的集合intervals，其中 intervals[i] = [starti, endi]。返回 需要移除区间的最小数量，使剩余区间互不重叠。
+int eraseOverlapIntervals(vector<vector<int>>& intervals) {
+    if (intervals.empty()) {
+        return 0;
+    }
+    sort(intervals.begin(), intervals.end(), [](const vector<int>& u, const vector<int>& v) {
+        return u[1] < v[1];
+    });
+    int n = intervals.size();
+    int right = intervals[0][1];
+    int ans = 1;
+    for (int i = 1; i < n; ++i) {
+        if (intervals[i][0] >= right) {
+            ++ans;
+            right = intervals[i][1];
+        }
+    }
+    return n - ans;
+}
+
+
+
+
+
+
 //计时函数(请配置getTickCount函数对应的库，如opencv)
 //void PrintMs ( ){
 //    static short i =1;static long long last =0;
