@@ -5,6 +5,7 @@
 SET(LIB_LIST myAlgorithm.h
              authority.h
              Heap.h   
+             Heap.cpp
              leetcode.h
              leetcode.cpp
              Tree.h
@@ -25,6 +26,7 @@ SET_TARGET_PROPERTIES(myAlgorithm_shared PROPERTIES
 INSTALL(FILES myAlgorithm.h DESTINATION include/myAlgorithm/)
 INSTALL(FILES authority.h DESTINATION include/myAlgorithm/)
 INSTALL(FILES Heap.h DESTINATION include/myAlgorithm/)
+INSTALL(FILES Heap.cpp DESTINATION include/myAlgorithm/)
 INSTALL(FILES leetcode.h DESTINATION include/myAlgorithm/)
 INSTALL(FILES leetcode.cpp DESTINATION include/myAlgorithm/)
 INSTALL(FILES Tree.h DESTINATION include/myAlgorithm/)

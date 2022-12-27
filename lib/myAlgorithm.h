@@ -5,7 +5,9 @@
 #include "authority.h"
 #include "leetcode.h"
 #include "Heap.h"
+#include "Heap.cpp"
 #include "Tree.h"
+#include "Tree.cpp"
 #include "Graph.h"
 #include "Graph.cpp"
 
