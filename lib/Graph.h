@@ -203,8 +203,11 @@ public:
     //多源最短路径unsigned
     void FinAllMinWeight();
 
-    // 将最小生成树保存为邻接表存储的图并返回
-    GraphList* Prim();
+    // prim算法：将最小生成树保存为邻接表存储的图并返回其指针，若不存在最小生成树则返回NULL
+    GraphList* PrimToGraphList();
+
+    // prim算法：将最小生成树保存为邻接矩阵存储的图并返回其指针，若不存在最小生成树则返回NULL
+    GraphRect* PrimToGraphRect();
 
 
 
