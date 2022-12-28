@@ -48,6 +48,18 @@ void sortColors(vector<int>& nums);
 //以数组 intervals 表示若干个区间的集合，其中单个区间为 intervals[i] = [starti, endi] 。请你合并所有重叠的区间，并返回一个不重叠的区间数组，该数组需恰好覆盖输入中的所有区间。
 vector<vector<int>> merge(vector<vector<int>>& intervals);
 
+//给你一个整数数组nums ，判断这个数组中是否存在长度为 3 的递增子序列。
+//如果存在这样的三元组下标 (i, j, k)且满足 i < j < k ，使得nums[i] < nums[j] < nums[k] ，返回 true ；否则，返回 false 。
+bool increasingTriplet(vector<int>& nums);
+
+//给你一个整数数组nums，返回 数组answer，其中answer[i]等于nums中除nums[i]之外其余各元素的乘积。
+//题目数据 保证 数组nums之中任意元素的全部前缀元素和后缀的乘积都在 32 位 整数范围内。
+//请不要使用除法，且在O(n) 时间复杂度内完成此题。
+vector<int> productExceptSelf(vector<int>& nums);
+
+//给你一个整数数组 nums 和一个整数 k ，请你统计并返回 该数组中和为 k 的连续子数组的个数 。
+int subarraySum(vector<int>& nums, int k);
+
 //    在 MATLAB 中，有一个非常有用的函数 reshape ，它可以将一个m x n 矩阵重塑为另一个大小不同（r x c）的新矩阵，但保留其原始数据。
 //    给你一个由二维数组 mat 表示的m x n 矩阵，以及两个正整数 r 和 c ，分别表示想要的重构的矩阵的行数和列数。
 //    重构后的矩阵需要将原始矩阵的所有元素以相同的 行遍历顺序 填充。

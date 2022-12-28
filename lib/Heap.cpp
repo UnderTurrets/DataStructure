@@ -202,25 +202,31 @@
         return max;
     }
 
+    //将这个堆中this->array[i]为根的子堆整理成最大堆
+    template<typename T>
+    void MaxHeap<T>::PercDown(int i){
+        int parent,child;
+        T x;
+        x= this->array[i];
+        for(parent=i;parent*2 <= this->size;parent=child){
+            child=parent*2;
+            if(child!= this->size && this->array[child]< this->array[child+1]){
+                child++;
+            }
+            if(x >= this->array[child]){
+                break;
+            } else{
+                this->array[parent]= this->array[child];
+            }
+        }
+        this->array[parent]=x;
+    }
+
     //将这个堆整理成最大堆
     template<typename T>
     void MaxHeap<T>::TidyUp(){
         for(int i= this->size/2;i>0;i--){
-            int parent,child;
-            T x;
-            x= this->array[i];
-            for(parent=i;parent*2 <= this->size;parent=child){
-                child=parent*2;
-                if(child!= this->size && this->array[child]< this->array[child+1]){
-                    child++;
-                }
-                if(x >= this->array[child]){
-                    break;
-                } else{
-                    this->array[parent]= this->array[child];
-                }
-            }
-            this->array[parent]=x;
+            this->PercDown(i);
         }
     }
 
@@ -313,25 +319,31 @@
         return min;
     }
 
+    //将这个堆中this->array[i]为根的子堆整理成最大堆
+    template<typename T>
+    void MinHeap<T>::PercDown(int i){
+        int parent,child;
+        T x;
+        x= this->array[i];
+        for(parent=i;parent*2 <= this->size;parent=child){
+            child=parent*2;
+            if(child!= this->size && this->array[child]> this->array[child+1]){
+                child++;
+            }
+            if(x <= this->array[child]){
+                break;
+            } else{
+                this->array[parent]= this->array[child];
+            }
+        }
+        this->array[parent]=x;
+    }
+
     //将这个堆整理成最小堆
     template<typename T>
     void MinHeap<T>::TidyUp(){
         for(int i= this->size/2;i>0;i--){
-            int parent,child;
-            T x;
-            x= this->array[i];
-            for(parent=i;parent*2 <= this->size;parent=child){
-                child=parent*2;
-                if(child!= this->size && this->array[child]> this->array[child+1]){
-                    child++;
-                }
-                if(x <= this->array[child]){
-                    break;
-                } else{
-                    this->array[parent]= this->array[child];
-                }
-            }
-            this->array[parent]=x;
+            this->PercDown(i);
         }
     }
 

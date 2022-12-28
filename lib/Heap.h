@@ -70,6 +70,9 @@ public:
     //删除顶部元素,返回值就是顶部元素
     T deleteMax();
 
+    //将这个堆中this->array[i]为根的子堆整理成最大堆
+    void PercDown(int i);
+
     //将这个堆整理成最大堆
     void TidyUp();
 };
@@ -102,6 +105,9 @@ public:
 
     //删除顶部元素,返回值就是顶部元素
     T deleteMin();
+
+    //将这个堆中this->array[i]为根的子堆整理成最小堆
+    void PercDown(int i);
 
     //将这个堆整理成最小堆
     void TidyUp();

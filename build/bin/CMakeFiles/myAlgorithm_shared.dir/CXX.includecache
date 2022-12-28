@@ -6,6 +6,32 @@
 
 #IncludeRegexTransform: 
 
+/home/xu736946693/Desktop/myAlgorithm/lib/Graph.cpp
+Graph.h
+/home/xu736946693/Desktop/myAlgorithm/lib/Graph.h
+
+/home/xu736946693/Desktop/myAlgorithm/lib/Graph.h
+authority.h
+/home/xu736946693/Desktop/myAlgorithm/lib/authority.h
+
+/home/xu736946693/Desktop/myAlgorithm/lib/Heap.cpp
+Heap.h
+/home/xu736946693/Desktop/myAlgorithm/lib/Heap.h
+
+/home/xu736946693/Desktop/myAlgorithm/lib/Heap.h
+authority.h
+/home/xu736946693/Desktop/myAlgorithm/lib/authority.h
+Tree.h
+/home/xu736946693/Desktop/myAlgorithm/lib/Tree.h
+
+/home/xu736946693/Desktop/myAlgorithm/lib/Tree.cpp
+Tree.h
+/home/xu736946693/Desktop/myAlgorithm/lib/Tree.h
+
+/home/xu736946693/Desktop/myAlgorithm/lib/Tree.h
+authority.h
+/home/xu736946693/Desktop/myAlgorithm/lib/authority.h
+
 /home/xu736946693/Desktop/myAlgorithm/lib/authority.h
 iostream
 -
