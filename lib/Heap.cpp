@@ -179,32 +179,28 @@
 
     //删除顶部元素,返回值就是顶部元素
     template<typename T>
-    T* MaxHeap<T>::deleteMax(){
-        if(this->size>0) {
-            int parent, child;
-            T temp = this->array[this->size];
-            T *max = this->array[1];
-            if (this->IsEmpty()) {
-                cout << "The heap is empty and your operation has failed!" << endl;
-                return this->array[0];
-            }
-            this->size--;
-            for (parent = 1; parent * 2 <= this->size; parent = child) {
-                child = parent * 2;
-                if (child != this->size && this->array[child] < this->array[child + 1]) {
-                    child++;
-                }
-                if (temp >= this->array[child]) {
-                    break;
-                } else {
-                    this->array[parent] = this->array[child];
-                }
-            }
-            this->array[parent] = temp;
-            return max;
-        }else{
-            return NULL;
+    T MaxHeap<T>::deleteMax(){
+        int parent, child;
+        T temp = this->array[this->size];
+        T max = this->array[1];
+        if (this->IsEmpty()) {
+            cout << "The heap is empty and your operation has failed!" << endl;
+            return this->array[0];
         }
+        this->size--;
+        for (parent = 1; parent * 2 <= this->size; parent = child) {
+            child = parent * 2;
+            if (child != this->size && this->array[child] < this->array[child + 1]) {
+                child++;
+            }
+            if (temp >= this->array[child]) {
+                break;
+            } else {
+                this->array[parent] = this->array[child];
+            }
+        }
+        this->array[parent] = temp;
+        return max;
     }
 
     //将这个堆中this->array[i]为根的子堆整理成最大堆
@@ -301,32 +297,28 @@
 
     //删除顶部元素,返回值就是顶部元素
     template<typename T>
-    T* MinHeap<T>::deleteMin(){
-        if(this->size>0 ) {
-            int parent, child;
-            T temp = this->array[this->size];
-            T* min = this->array[1];
-            if (this->IsEmpty()) {
-                cout << "The heap is empty and your operation has failed!" << endl;
-                return this->array[0];
-            }
-            this->size--;
-            for (parent = 1; parent * 2 <= this->size; parent = child) {
-                child = parent * 2;
-                if (child != this->size && this->array[child] > this->array[child + 1]) {
-                    child++;
-                }
-                if (temp <= this->array[child]) {
-                    break;
-                } else {
-                    this->array[parent] = this->array[child];
-                }
-            }
-            this->array[parent] = temp;
-            return min;
-        } else{
-            return NULL;
+    T MinHeap<T>::deleteMin(){
+        int parent, child;
+        T temp = this->array[this->size];
+        T min= this->array[1];
+        if (this->IsEmpty()) {
+            cout << "The heap is empty and your operation has failed!" << endl;
+            return this->array[0];
         }
+        this->size--;
+        for (parent = 1; parent * 2 <= this->size; parent = child) {
+            child = parent * 2;
+            if (child != this->size && this->array[child] > this->array[child + 1]) {
+                child++;
+            }
+            if (temp <= this->array[child]) {
+                break;
+            } else {
+                this->array[parent] = this->array[child];
+            }
+        }
+        this->array[parent] = temp;
+        return min;
     }
 
     //将这个堆中this->array[i]为根的子堆整理成最大堆
@@ -357,25 +349,22 @@
         }
     }
 
-
-
-
 //用最小堆构建一个哈夫曼树
 template<typename T>
-BinTree<T> HuffMan (MinHeap<BinTree<T>> *minHeap){
+BinTree<T> HuffMan (MinHeap<BinTree<T>>* minHeap){
     int i;BinTree<T>* temp;
     minHeap->TidyUp();
     for(i=1;i< minHeap->size;i++){
         temp=new BinTree<T>;
-        BinTree<T>*x1=minHeap->deleteMin();
-        BinTree<T>*x2=minHeap->deleteMin();
-        temp->left = x1;
-        temp->right= x2;
-        temp->val=x1->val+x2->val;
+        BinTree<T>x1=minHeap->deleteMin();
+        BinTree<T>x2=minHeap->deleteMin();
+        temp->left = &x1;
+        temp->right= &x2;
+        temp->val=x1.val+x2.val;
         minHeap->insert(*temp);
     }
     BinTree<T>x=minHeap->deleteMin();
-    temp=x;
+    temp=&x;
     return *temp;
 }
 

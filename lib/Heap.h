@@ -68,7 +68,7 @@ public:
     void insert(T val) ;
 
     //删除顶部元素,返回值就是顶部元素
-    T* deleteMax();
+    T deleteMax();
 
     //将这个堆中this->array[i]为根的子堆整理成最大堆
     void PercDown(int i);
@@ -104,7 +104,7 @@ public:
     void insert(T val);
 
     //删除顶部元素,返回值就是顶部元素
-    T* deleteMin();
+    T deleteMin();
 
     //将这个堆中this->array[i]为根的子堆整理成最小堆
     void PercDown(int i);

@@ -2,9 +2,7 @@
 #define __Graph_h__
 #include "authority.h"
 #include "SetType.h"
-#include "SetType.cpp"
 #include "Heap.h"
-#include "Heap.cpp"
 
 #define UndeterminedWeight 77777        /* ∞设为双字节无符号整数的最大值77777*/
 #define UndeterminedVertex -1        /* ∞设为双字节无符号整数的最大值77777*/
@@ -14,7 +12,7 @@ typedef double WeightType;        /* 边的权值设为整型 */
 typedef char DataType;        /* 顶点存储的数据类型设为字符型 */
 
 /* 边的定义 */
-typedef class EdgeNode *Edge;
+typedef class EdgeNode* Edge;
 class EdgeNode{
 public:
     Vertex source, destination;      /* 边连接的两个顶点 */
@@ -52,7 +50,6 @@ class GraphList{
 public:
     int vertexNum;     /* 顶点数 */
     int edgeNum;     /* 边数   */
-    MinHeap<EdgeNode> EdgeHeap;
     vector<GraphHeadNode> GraphHeadNodeVector;  /* 邻接表 */
     vector<bool>Isvisited;   /*判断顶点是否被访问过*/
     vector<vector<WeightType>> dist; /*dist[index1][index2]表示index1到index2的最短距离，不考虑权重为负数*/
@@ -60,9 +57,6 @@ public:
     WeightType TotalWeight;   /*最小生成树的权重和*/
 
 private:
-    //EdgeHeap的初始化方法
-    void EdgeHeap_initialize();
-
     //GraphHeadNodeVector的初始化方法
     void GraphHeadNodeVector_initialize();
 
