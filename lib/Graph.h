@@ -1,6 +1,10 @@
 #ifndef __Graph_h__
 #define __Graph_h__
 #include "authority.h"
+#include "SetType.h"
+#include "SetType.cpp"
+#include "Heap.h"
+#include "Heap.cpp"
 
 #define UndeterminedWeight 77777        /* ∞设为双字节无符号整数的最大值77777*/
 #define UndeterminedVertex -1        /* ∞设为双字节无符号整数的最大值77777*/
@@ -17,6 +21,11 @@ public:
     WeightType Weight;  /* 边权重 */
     EdgeNode():source(UndeterminedVertex),destination(UndeterminedVertex),Weight(UndeterminedWeight){}
     EdgeNode(Vertex x,Vertex y,WeightType value):source(x),destination(y),Weight(value){}
+    bool operator> (EdgeNode that);
+    bool operator>= (EdgeNode that);
+    bool operator< (EdgeNode that);
+    bool operator<= (EdgeNode that);
+
 };
 
 /* 不作链表头的邻接点结点的定义 */
@@ -43,6 +52,7 @@ class GraphList{
 public:
     int vertexNum;     /* 顶点数 */
     int edgeNum;     /* 边数   */
+    MinHeap<EdgeNode> EdgeHeap;
     vector<GraphHeadNode> GraphHeadNodeVector;  /* 邻接表 */
     vector<bool>Isvisited;   /*判断顶点是否被访问过*/
     vector<vector<WeightType>> dist; /*dist[index1][index2]表示index1到index2的最短距离，不考虑权重为负数*/
@@ -50,6 +60,9 @@ public:
     WeightType TotalWeight;   /*最小生成树的权重和*/
 
 private:
+    //EdgeHeap的初始化方法
+    void EdgeHeap_initialize();
+
     //GraphHeadNodeVector的初始化方法
     void GraphHeadNodeVector_initialize();
 
@@ -118,6 +131,9 @@ public:
 
     //多源最短路径unsigned
     void FinAllMinWeight();
+
+    //Kruskal算法：将最小生成树保存为邻接表存储的图并返回其指针，若不存在最小生成树则返回NULL
+    GraphList* Kruskal();
 
 };
 
@@ -202,9 +218,6 @@ public:
 
     //多源最短路径unsigned
     void FinAllMinWeight();
-
-    // prim算法：将最小生成树保存为邻接表存储的图并返回其指针，若不存在最小生成树则返回NULL
-    GraphList* PrimToGraphList();
 
     // prim算法：将最小生成树保存为邻接矩阵存储的图并返回其指针，若不存在最小生成树则返回NULL
     GraphRect* PrimToGraphRect();

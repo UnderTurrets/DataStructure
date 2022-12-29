@@ -1,6 +1,36 @@
 #include "Graph.h"
 
+//边
+bool EdgeNode::operator> (EdgeNode that){
+    return this->Weight>that.Weight;
+}
+bool EdgeNode::operator>= (EdgeNode that){
+    return this->Weight>=that.Weight;
+}
+bool EdgeNode::operator< (EdgeNode that){
+    return this->Weight<that.Weight;
+}
+bool EdgeNode::operator<= (EdgeNode that){
+    return this->Weight<=that.Weight;
+}
+
 /* 用邻接表定义的图 */
+
+    //EdgeHeap的初始化方法
+    void GraphList::EdgeHeap_initialize(){
+        Vertex V;
+        GraphCommonNode* W;
+        EdgeNode temp;
+        for ( V=0; V<this->vertexNum; V++ )
+            for ( W=this->GraphHeadNodeVector[V].FirstNode; W; W=W->Next )
+                if ( V < W->index ) { /* 避免重复录入无向图的边，只收V1<V2的边 */
+                    temp.source = V;
+                    temp.destination = W->index;
+                    temp.Weight = W->Weight;
+                    this->EdgeHeap.insert(temp);
+                }
+    }
+
     //GraphHeadNodeVector的初始化方法
     void GraphList::GraphHeadNodeVector_initialize(){
         GraphHeadNodeVector.resize(vertexNum);
@@ -66,6 +96,7 @@
         this->GraphHeadNodeVector_initialize();
         this->Isvisited_initialize();
         this->TotalWeight_initialize();
+        this->EdgeHeap_initialize();
     }
 
     //创建一个没有边的图,指定顶点个数
@@ -77,7 +108,7 @@
         this->GraphHeadNodeVector_initialize();
         this->Isvisited_initialize();
         this->TotalWeight_initialize();
-        return;
+        this->EdgeHeap_initialize();
     }
 
     //插入一条有序边
@@ -97,6 +128,7 @@
         this->dist_initialize();
         this->path_initialize();
         this->TotalWeight_initialize();
+        this->EdgeHeap.insert(*E);
 
         //开始插入操作
         GraphCommonNode * NewNode = new GraphCommonNode;
@@ -128,6 +160,7 @@
         this->dist_initialize();
         this->path_initialize();
         this->TotalWeight_initialize();
+        this->EdgeHeap.insert(EdgeNode(source,destination,weight));
 
         //开始插入操作
         GraphCommonNode * NewNode=new GraphCommonNode;
@@ -161,6 +194,8 @@
         this->dist_initialize();
         this->path_initialize();
         this->TotalWeight_initialize();
+        this->EdgeHeap.insert(EdgeNode(E->source,E->destination,E->Weight));
+        this->EdgeHeap.insert(EdgeNode(E->destination,E->source,E->Weight));
 
         //开始插入操作
         GraphCommonNode * NewNode1=new GraphCommonNode;
@@ -345,6 +380,11 @@
             this->FindSingleMinWeight_helper(V);
         }
         this->Isvisited_initialize();
+    }
+
+    //Kruskal算法：将最小生成树保存为邻接表存储的图并返回其指针，若不存在最小生成树则返回NULL
+    GraphList* GraphList::Kruskal(){
+
     }
 
 
@@ -639,66 +679,6 @@
             this->FindSingleMinWeight_helper(V);
         }
         this->Isvisited_initialize();
-    }
-
-    // prim算法：将最小生成树保存为邻接表存储的图并返回其指针，若不存在最小生成树则返回NULL
-     GraphList* GraphRect::PrimToGraphList(){
-        vector<Vertex>parent;parent.resize(this->vertexNum,0);//parent[index]表示 Vertex index的根,从顶点0开始
-        Vertex  V, W;
-        int VCount;
-        Edge E;
-
-        WeightType temp_TotalWeight = 0; /* 初始化权重和     */
-        VCount = 0;      /* 初始化收录的顶点数 */
-        /* 创建包含所有顶点但没有边的图。注意用邻接表版本 */
-        GraphList* ret=new GraphList(this->vertexNum);
-        E = (Edge)malloc( sizeof(EdgeNode) ); /* 建立空的边结点 */
-
-        /* 将初始点0收录进ret */
-        VCount ++;
-        V=0;
-        this->Isvisited[0]=true;
-
-        while (1) {
-            Vertex source=V;
-
-            /* 初始化。默认初始点下标是0 */
-            for (Vertex temp=0; temp<this->vertexNum; temp++) {
-                /* 这里假设若V到W没有直接的边，则Graph->G[V][W]定义为INFINITY */
-                dist[source][temp] = this->EdgeWeightRect[source][temp];
-            }
-
-            V = this->FindMinVertex( source );
-            /* V = 未被收录顶点中dist最小者 */
-            if ( V==UndeterminedVertex ) /* 若这样的V不存在 */
-                break;   /* 算法结束 */
-            /* 将V及相应的边<parent[V], V>收录进ret */
-            E->source = parent[V];
-            E->destination = V;
-            E->Weight = dist[source][V];
-            ret->InsertOrderedEdge(E);
-            temp_TotalWeight += dist[source][V];
-            VCount++;
-            this->Isvisited[V]=true;
-            for( W=0; W<this->vertexNum; W++ ) /* 对图中的每个顶点W */
-                if ( !this->Isvisited[W] && this->EdgeWeightRect[V][W]!=UndeterminedWeight ) {
-                    /* 若W是V的邻接点并且未被收录 */
-                    if ( this->EdgeWeightRect[V][W] < dist[source][W] ) {
-                        /* 若收录V使得dist[W]变小 */
-                        dist[source][W] = this->EdgeWeightRect[V][W]; /* 更新dist[W] */
-                        parent[W] = V; /* 更新树 */
-                    }
-                }
-        } /* while结束*/
-        if ( VCount < this->vertexNum ) { /* ret中收的顶点不到|V|个，不存在最小生存树 */
-            this->TotalWeight_initialize();
-            delete ret;
-            return NULL;
-        }else {
-            this->TotalWeight=temp_TotalWeight;
-            ret->TotalWeight=temp_TotalWeight;
-            return ret;
-        }/* 算法执行完毕，返回 */
     }
 
     // prim算法：将最小生成树保存为邻接矩阵存储的图并返回其指针，若不存在最小生成树则返回NULL

@@ -113,12 +113,20 @@ bool isAnagram(string s, string t);
 //每个右括号都有一个对应的相同类型的左括号。
 bool isValid(string s);
 
+//给定两个字符串形式的非负整数num1 和num2，计算它们的和并同样以字符串形式返回。
+//你不能使用任何內建的用于处理大整数的库（比如 BigInteger），也不能直接将输入的字符串转换为整数形式。
+string addStrings(string num1, string num2);
+
 //给你一个链表的头节点 head ，判断链表中是否有环。
 //如果链表中有某个节点，可以通过连续跟踪 next 指针再次到达，则链表中存在环。 为了表示给定链表中的环，评测系统内部使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。注意：pos 不作为参数进行传递。仅仅是为了标识链表的实际情况。
 //如果链表中存在环，则返回 true 。 否则，返回 false 。
 // Definition for singly-linked list.
 struct ListNode;
 bool hasCycle(ListNode *head);
+
+//给定一个包含大写字母和小写字母的字符串s，返回通过这些字母构造成的 最长的回文串。
+//在构造过程中，请注意 区分大小写 。比如"Aa"不能当做一个回文字符串。
+int longestPalindrome(string s);
 
 //将两个升序链表合并为一个新的 升序 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。
 ListNode* mergeTwoLists(ListNode* list1, ListNode* list2);

@@ -9,7 +9,9 @@ SET(LIB_LIST myAlgorithm.h
              leetcode.h
              leetcode.cpp
              Tree.h
-             Tree.cpp 
+             Tree.cpp
+             SetType.h
+             SetType.cpp 
              Graph.h
              Graph.cpp         )
              
@@ -31,6 +33,8 @@ INSTALL(FILES leetcode.h DESTINATION include/myAlgorithm/)
 INSTALL(FILES leetcode.cpp DESTINATION include/myAlgorithm/)
 INSTALL(FILES Tree.h DESTINATION include/myAlgorithm/)
 INSTALL(FILES Tree.cpp DESTINATION include/myAlgorithm/)
+INSTALL(FILES SetType.h DESTINATION include/myAlgorithm/)
+INSTALL(FILES SetType.cpp DESTINATION include/myAlgorithm/)
 INSTALL(FILES Graph.h DESTINATION include/myAlgorithm/)
 INSTALL(FILES Graph.cpp DESTINATION include/myAlgorithm/)
 INSTALL(TARGETS myAlgorithm_static myAlgorithm_shared 

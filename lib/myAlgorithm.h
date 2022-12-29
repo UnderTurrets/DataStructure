@@ -4,12 +4,15 @@
 
 #include "authority.h"
 #include "leetcode.h"
+#include "leetcode.cpp"
 #include "Heap.h"
 #include "Heap.cpp"
 #include "Tree.h"
 #include "Tree.cpp"
 #include "Graph.h"
 #include "Graph.cpp"
+#include "SetType.h"
+#include "SetType.cpp"
 
 
 
