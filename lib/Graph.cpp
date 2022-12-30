@@ -15,6 +15,21 @@ bool EdgeNode::operator<= (EdgeNode that){
 }
 
 /* 用邻接表定义的图 */
+    //EdgeHeap的初始化方法
+    void GraphList::EdgeHeap_initialize(){
+        Vertex V;
+        GraphCommonNode* W;
+        EdgeNode temp;
+        for ( V=0; V<this->vertexNum; V++ )
+            for ( W=this->GraphHeadNodeVector[V].FirstNode; W; W=W->Next )
+                if ( V < W->index ) { /* 避免重复录入无向图的边，只收V1<V2的边 */
+                    temp.source = V;
+                    temp.destination = W->index;
+                    temp.Weight = W->Weight;
+                    this->EdgeHeap.insert(temp);
+                }
+        this->EdgeHeap.LimitData=EdgeNode(UndeterminedVertex,UndeterminedVertex,UndeterminedWeight);
+    }
 
     //GraphHeadNodeVector的初始化方法
     void GraphList::GraphHeadNodeVector_initialize(){
@@ -81,6 +96,7 @@ bool EdgeNode::operator<= (EdgeNode that){
         this->GraphHeadNodeVector_initialize();
         this->Isvisited_initialize();
         this->TotalWeight_initialize();
+        this->EdgeHeap_initialize();
     }
 
     //创建一个没有边的图,指定顶点个数
@@ -92,6 +108,7 @@ bool EdgeNode::operator<= (EdgeNode that){
         this->GraphHeadNodeVector_initialize();
         this->Isvisited_initialize();
         this->TotalWeight_initialize();
+        this->EdgeHeap_initialize();
     }
 
     //插入一条有序边
@@ -111,6 +128,7 @@ bool EdgeNode::operator<= (EdgeNode that){
         this->dist_initialize();
         this->path_initialize();
         this->TotalWeight_initialize();
+        this->EdgeHeap.insert(*E);
 
         //开始插入操作
         GraphCommonNode * NewNode = new GraphCommonNode;
@@ -142,6 +160,7 @@ bool EdgeNode::operator<= (EdgeNode that){
         this->dist_initialize();
         this->path_initialize();
         this->TotalWeight_initialize();
+        this->EdgeHeap.insert(EdgeNode(source,destination,weight));
 
         //开始插入操作
         GraphCommonNode * NewNode=new GraphCommonNode;
@@ -175,6 +194,8 @@ bool EdgeNode::operator<= (EdgeNode that){
         this->dist_initialize();
         this->path_initialize();
         this->TotalWeight_initialize();
+        this->EdgeHeap.insert(EdgeNode(E->source,E->destination,E->Weight));
+        this->EdgeHeap.insert(EdgeNode(E->destination,E->source,E->Weight));
 
         //开始插入操作
         GraphCommonNode * NewNode1=new GraphCommonNode;
@@ -363,22 +384,11 @@ bool EdgeNode::operator<= (EdgeNode that){
 
     //Kruskal算法：将最小生成树保存为邻接表存储的图并返回其指针，若不存在最小生成树则返回NULL
     GraphList* GraphList::Kruskal(){
-        MinHeap<EdgeNode>EdgeHeap(this->vertexNum);
-        Vertex V;
-        GraphCommonNode* W;
-        EdgeNode temp;
-        for ( V=0; V<this->vertexNum; V++ )
-            for ( W=this->GraphHeadNodeVector[V].FirstNode; W; W=W->Next )
-                if ( V < W->index ) { /* 避免重复录入无向图的边，只收V1<V2的边 */
-                    temp.source = V;
-                    temp.destination = W->index;
-                    temp.Weight = W->Weight;
-                    EdgeHeap.insert(temp);
-                }
-        EdgeHeap.LimitData=EdgeNode(UndeterminedVertex,UndeterminedVertex,UndeterminedWeight);
-
         int ECount;
-        SetType<Vertex> VSet(this->vertexNum); /* 顶点数组 */
+        SetType<Vertex> VSet(this->vertexNum); /* 顶点数组并初始化 */
+        for(Vertex V=0;V<this->vertexNum;V++){
+            VSet.collection[V].val=V;
+        }
         EdgeNode NextEdge;
         VSet.Initialize(); /* 初始化顶点并查集 */
 
@@ -388,11 +398,11 @@ bool EdgeNode::operator<= (EdgeNode that){
         ECount = 0;      /* 初始化收录的边数 */
 
         while ( ECount < this->vertexNum-1 ) {  /* 当收集的边不足以构成树时 */
-            NextEdge = EdgeHeap.deleteMin(); /* 从边集中得到最小边的位置 */
+            NextEdge = this->EdgeHeap.deleteMin(); /* 从边集中得到最小边的位置 */
             if (NextEdge.source==UndeterminedVertex) /* 边集已空 */
                 break;
             /* 如果该边的加入不构成回路，即两端结点不属于同一连通集 */
-            if ( !VSet.Check(NextEdge.source,NextEdge.destination) ) {
+            if ( !VSet.Check(VSet.GetIndex(NextEdge.source),VSet.GetIndex(NextEdge.destination) ) ) {
                 VSet.Union(NextEdge.source,NextEdge.destination);
 
                 /* 将该边插入ret */

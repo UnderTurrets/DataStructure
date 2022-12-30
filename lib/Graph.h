@@ -50,6 +50,7 @@ class GraphList{
 public:
     int vertexNum;     /* 顶点数 */
     int edgeNum;     /* 边数   */
+    MinHeap<EdgeNode>EdgeHeap; /*边构成的最小堆*/
     vector<GraphHeadNode> GraphHeadNodeVector;  /* 邻接表 */
     vector<bool>Isvisited;   /*判断顶点是否被访问过*/
     vector<vector<WeightType>> dist; /*dist[index1][index2]表示index1到index2的最短距离，不考虑权重为负数*/
@@ -57,6 +58,9 @@ public:
     WeightType TotalWeight;   /*最小生成树的权重和*/
 
 private:
+    //Edge的初始化方法
+    void EdgeHeap_initialize();
+
     //GraphHeadNodeVector的初始化方法
     void GraphHeadNodeVector_initialize();
 

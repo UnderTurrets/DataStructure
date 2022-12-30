@@ -7,6 +7,7 @@ class SetTypeElement{
 public:
     T val;
     int parent=-1;
+    bool operator== (SetTypeElement<T>that);
 };
 
 
@@ -20,6 +21,9 @@ public:
 
     //初始化并查集
     void Initialize();
+
+    //给出元素得到其在集合中的下标
+    int GetIndex(T set);
 
     //把集合合并,必须给出两个根节点
     void Union(int Root1_index,int Root2_index);

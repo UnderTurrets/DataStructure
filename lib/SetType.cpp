@@ -1,4 +1,9 @@
 #include "SetType.h"
+template<typename T>
+bool SetTypeElement<T>::operator== (SetTypeElement<T>that){
+    return this->val==that.val && this->parent==that.parent;
+}
+
 
 template<typename T>
 SetType<T>::SetType(){
@@ -22,6 +27,16 @@ void SetType<T>::Initialize(){
     }
 }
 
+//给出元素得到其在集合中的下标
+template<typename T>
+int SetType<T>::GetIndex(T val){
+    for(int i=0;i<this->totalNumber;i++){
+        if(this->collection[i].val==val){
+            return i;
+        }
+    }
+}
+
 //把集合合并,必须给出两个根节点的下标
 template<typename T>
 void SetType<T>::Union(int Root1_index,int Root2_index) {
@@ -42,7 +57,7 @@ int SetType<T>::Find(int index){
     if(this->collection[index].parent<0){
         return index;
     }else{
-        return this->collection[index].parent=Find(this->collection[index].parent);
+        return this->collection[index].parent=Find(this->collection[index].parent);//路径压缩
     }
 }
 

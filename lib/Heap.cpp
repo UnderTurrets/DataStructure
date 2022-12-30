@@ -19,7 +19,7 @@
     Heap<T>::Heap(){
         if(this->array)delete[] this->array;
         this->size=0;
-        this->capacity=0;
+        this->capacity=100;
         this->array=new T[this->capacity+1];
         this->array[0]=this->LimitData;
     }
@@ -163,7 +163,7 @@
         if (this->IsFull()) {
             T *temp=this->array;
             this->array=NULL;
-            this->array=new T[(this->capacity)*2];
+            this->array=new T[(this->capacity)+100];
             this->capacity++;
             for(int i=1;i<=this->size;i++){
                 this->array[i]=temp[i];
@@ -281,7 +281,7 @@
         if (this->IsFull()) {
             T *temp=this->array;
             this->array=NULL;
-            this->array=new T[(this->capacity)*2];
+            this->array=new T[(this->capacity)+100];
             this->capacity++;
             for(int i=1;i<=this->size;i++){
                 this->array[i]=temp[i];
