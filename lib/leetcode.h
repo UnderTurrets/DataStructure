@@ -128,6 +128,15 @@ bool hasCycle(ListNode *head);
 //在构造过程中，请注意 区分大小写 。比如"Aa"不能当做一个回文字符串。
 int longestPalindrome(string s);
 
+//给定一种规律 pattern和一个字符串s，判断 s是否遵循相同的规律。
+//这里的遵循指完全匹配，例如，pattern里的每个字母和字符串s中的每个非空单词之间存在着双向连接的对应规律。
+bool wordPattern(string pattern, string s);
+
+//给你一个字符串 s 。我们要把这个字符串划分为尽可能多的片段，同一字母最多出现在一个片段中。
+//注意，划分结果需要满足：将所有划分结果按顺序连接，得到的字符串仍然是 s 。
+//返回一个表示每个字符串片段的长度的列表。
+vector<int> partitionLabels(string s);
+
 //将两个升序链表合并为一个新的 升序 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。
 ListNode* mergeTwoLists(ListNode* list1, ListNode* list2);
 

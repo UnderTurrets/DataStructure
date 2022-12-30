@@ -589,6 +589,69 @@ int longestPalindrome(string s) {
     return ret;
 }
 
+//给定一种规律 pattern和一个字符串s，判断 s是否遵循相同的规律。
+//这里的遵循指完全匹配，例如，pattern里的每个字母和字符串s中的每个非空单词之间存在着双向连接的对应规律。
+bool wordPattern(string pattern, string s){
+    s.push_back(' ');
+    string temp;int j=0;string used;
+    unordered_map<string ,char>M;
+    for(int i=0;i<s.size();i++){
+        if(s[i] !=' '){
+            temp.push_back(s[i]);
+        }else if(s[i]==' '){
+            if(M.count(temp)){
+                if(M[temp]==pattern[j]){
+
+                }else{
+                    return false;
+                }
+            }else if(!M.count(temp)){
+                if(used.find(pattern[j])==-1) {
+                    M[temp] = pattern[j];
+                    used.push_back(pattern[j]);
+                }else{
+                    return false;
+                }
+            }
+            temp.clear();
+            j++;
+        }
+    }
+    if(j!= pattern.size())return false;
+    return true;
+}
+
+//给你一个字符串 s 。我们要把这个字符串划分为尽可能多的片段，同一字母最多出现在一个片段中。
+//注意，划分结果需要满足：将所有划分结果按顺序连接，得到的字符串仍然是 s 。
+//返回一个表示每个字符串片段的长度的列表。
+vector<int> partitionLabels(string s){
+    vector<int>ret;
+    vector<string>ans;
+    for(int i=0;i<s.size();i++){
+        bool B=1;
+        for(int j=0;j<ans.size();j++){
+            if(ans[j].find(s[i])!=-1){
+                for(int k=ans.size()-2;k>=j;k--){
+                    ans[k].append(ans[k+1]);
+                }
+                ans.resize(j+1);
+                ans[j].push_back(s[i]);
+                B=0;
+                break;
+            }
+        }
+        if(B==1){
+            string temp;
+            temp.push_back(s[i]);
+            ans.push_back(temp);
+        }
+    }
+    for(int i=0;i<ans.size();i++){
+        ret.push_back(ans[i].size());
+    }
+    return ret;
+}
+
 //链表
 class ListNode {
 public:
