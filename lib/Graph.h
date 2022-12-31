@@ -9,7 +9,7 @@
 #define MaxVertexNum 100    /* 最大顶点数设为100 */
 typedef int Vertex;         /* 用顶点下标表示顶点,顶点存储为整型，没有什么意义 */
 typedef double WeightType;        /* 边的权值设为整型 */
-typedef char DataType;        /* 顶点存储的数据类型设为字符型 */
+typedef string VertexDataType;        /* 顶点存储的数据类型设为字符型 */
 
 /* 边的定义 */
 typedef class EdgeNode* Edge;
@@ -40,7 +40,7 @@ public:
 class GraphHeadNode{
 public:
     GraphCommonNode* FirstNode;/* 边表头指针 */
-    DataType Data;            /* 存顶点的数据 */
+    VertexDataType Data;            /* 存顶点的数据 */
     /* 注意：很多情况下，顶点无数据，此时Data可以不用出现 */
     GraphHeadNode():FirstNode(NULL){}
 };
@@ -144,7 +144,7 @@ public:
     int vertexNum;  /* 顶点数 */
     int edgeNum;  /* 边数   */
     vector<vector<WeightType>> EdgeWeightRect; /* 邻接矩阵 */
-    vector<DataType>Data;      /* 存顶点的数据 */
+    vector<VertexDataType>Data;      /* 存顶点的数据 */
     vector<bool>Isvisited;   /*判断顶点是否被访问过*/
     /* 注意：很多情况下，顶点无数据，此时Data[]可以不用出现 */
     vector<vector<WeightType>> dist; /*dist[index1][index2]表示index1到index2的最短距离，不考虑权重为负数*/

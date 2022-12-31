@@ -27,7 +27,7 @@ void SetType<T>::Initialize(){
     }
 }
 
-//给出元素得到其在集合中的下标
+//给出元素得到其在集合中的下标,不存在则返回-1
 template<typename T>
 int SetType<T>::GetIndex(T val){
     for(int i=0;i<this->totalNumber;i++){
@@ -35,6 +35,7 @@ int SetType<T>::GetIndex(T val){
             return i;
         }
     }
+    return -1;
 }
 
 //把集合合并,必须给出两个根节点的下标

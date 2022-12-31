@@ -450,25 +450,25 @@ int eraseOverlapIntervals(vector<vector<int>>& intervals) {
 
 
 //计时函数(请配置getTickCount函数对应的库，如opencv)
-//void PrintMs ( ){
-//    static short i =1;static long long last =0;
-//    long long current=getTickCount();
-//    if(i%2==1){
-//        last =0;
-//        cout<<"开始计时"<<endl;
-//    }else{
-//        i-=2;
-//        cout<<"结束计时"<<endl;
-//    }
-//    if (last==0){
-//        last = current;
-//        i++;
-//        return;
-//    }
-//    long long result = (double)((current-last)/getTickFrequency())*1000;
-//    i++;
-//    cout<<"间隔："<<result<<"ms"<<endl;
-//}
+void PrintMs ( ){
+    static short i =1;static long long last =0;
+    long long current=cv::getTickCount();
+    if(i%2==1){
+        last =0;
+        cout<<"开始计时"<<endl;
+    }else{
+        i-=2;
+        cout<<"结束计时"<<endl;
+    }
+    if (last==0){
+        last = current;
+        i++;
+        return;
+    }
+    long long result = (double)((current-last)/cv::getTickFrequency())*1000;
+    i++;
+    cout<<"间隔："<<result<<"ms"<<endl;
+}
 
 
 //字符串
