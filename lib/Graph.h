@@ -133,6 +133,9 @@ public:
     //Kruskal算法：将最小生成树保存为邻接表存储的图并返回其指针，若不存在最小生成树则返回NULL
     GraphList* Kruskal();
 
+    /* 邻接表存储 - 拓扑排序算法 */
+    bool TopSort(vector<Vertex> TopOrder );/* 对GraphList进行拓扑排序,  TopOrder顺序存储排序后的顶点下标 */
+
 };
 
 /* 用邻接矩阵定义的图 */

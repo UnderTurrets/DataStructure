@@ -137,6 +137,14 @@ bool wordPattern(string pattern, string s);
 //返回一个表示每个字符串片段的长度的列表。
 vector<int> partitionLabels(string s);
 
+//给你一个字符串数组，请你将 字母异位词 组合在一起。可以按任意顺序返回结果列表。
+//字母异位词 是由重新排列源单词的字母得到的一个新单词，所有源单词中的字母通常恰好只用一次。
+vector<vector<string>> groupAnagrams(vector<string>& strs);
+
+//给定两个以字符串形式表示的非负整数num1和num2，返回num1和num2的乘积，它们的乘积也表示为字符串形式。
+//注意：不能使用任何内置的 BigInteger 库或直接将输入转换为整数。
+string multiply(string num1, string num2);
+
 //将两个升序链表合并为一个新的 升序 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。
 ListNode* mergeTwoLists(ListNode* list1, ListNode* list2);
 

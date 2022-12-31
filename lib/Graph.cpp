@@ -422,6 +422,50 @@ bool EdgeNode::operator<= (EdgeNode that){
         }
     }
 
+    /* 邻接表存储 - 拓扑排序算法 */
+    bool GraphList::TopSort(vector<Vertex> TopOrder ){
+        /* 对Graph进行拓扑排序,  TopOrder顺序存储排序后的顶点下标 */
+        vector<int>Indegree(this->vertexNum);
+        int cnt;
+        Vertex V;
+        GraphCommonNode* W;
+        queue<Vertex> Q;
+
+        /* 初始化Indegree */
+        for (int temp:Indegree){
+            temp=0;
+        }
+
+        /* 遍历图，得到Indegree */
+        for (V=0; V<this->vertexNum; V++) {
+            for (W = this->GraphHeadNodeVector[V].FirstNode; W; W = W->Next) {
+                Indegree[W->index]++; /* 对有向边<V, W->index>累计终点的入度 */
+            }
+        }
+
+        /* 将所有入度为0的顶点入列 */
+        for (V=0; V<this->vertexNum; V++) {
+            if (Indegree[V] == 0)
+                Q.push(V);
+        }
+
+        /* 下面进入拓扑排序 */
+        cnt = 0;
+        while( !Q.empty() ){
+            V=Q.front();Q.pop(); /* 弹出一个入度为0的顶点 */
+            TopOrder[cnt++] = V; /* 将之存为结果序列的下一个元素 */
+            /* 对V的每个邻接点W->index */
+            for ( W=this->GraphHeadNodeVector[V].FirstNode; W; W=W->Next )
+                if ( --Indegree[W->index] == 0 )/* 若删除V使得W->index入度为0 */
+                    Q.push(W->index); /* 则该顶点入列 */
+        } /* while结束*/
+
+        if ( cnt != this->vertexNum )
+            return false; /* 说明图中有回路, 返回不成功标志 */
+        else
+            return true;
+    }
+
 
 /* 用邻接矩阵定义的图 */
     //EdgeWeightRect的初始化方法

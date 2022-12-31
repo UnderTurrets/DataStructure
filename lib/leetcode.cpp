@@ -625,31 +625,68 @@ bool wordPattern(string pattern, string s){
 //注意，划分结果需要满足：将所有划分结果按顺序连接，得到的字符串仍然是 s 。
 //返回一个表示每个字符串片段的长度的列表。
 vector<int> partitionLabels(string s){
-    vector<int>ret;
-    vector<string>ans;
-    for(int i=0;i<s.size();i++){
-        bool B=1;
-        for(int j=0;j<ans.size();j++){
-            if(ans[j].find(s[i])!=-1){
-                for(int k=ans.size()-2;k>=j;k--){
-                    ans[k].append(ans[k+1]);
-                }
-                ans.resize(j+1);
-                ans[j].push_back(s[i]);
-                B=0;
-                break;
-            }
-        }
-        if(B==1){
-            string temp;
-            temp.push_back(s[i]);
-            ans.push_back(temp);
+    int last[26];
+    int length = s.size();
+    for (int i = 0; i < length; i++) {
+        last[s[i] - 'a'] = i;
+    }
+    vector<int> partition;
+    int start = 0, end = 0;
+    for (int i = 0; i < length; i++) {
+        end = max(end, last[s[i] - 'a']);
+        if (i == end) {
+            partition.push_back(end - start + 1);
+            start = end + 1;
         }
     }
-    for(int i=0;i<ans.size();i++){
-        ret.push_back(ans[i].size());
+    return partition;
+}
+
+//给你一个字符串数组，请你将 字母异位词 组合在一起。可以按任意顺序返回结果列表。
+//字母异位词 是由重新排列源单词的字母得到的一个新单词，所有源单词中的字母通常恰好只用一次。
+vector<vector<string>> groupAnagrams(vector<string>& strs){
+    unordered_map<string, vector<string>> mp;
+    for (string& str: strs) {
+        string key = str;
+        sort(key.begin(), key.end());
+        mp[key].emplace_back(str);
     }
-    return ret;
+    vector<vector<string>> ans;
+    for (auto it:mp) {
+        ans.emplace_back(it.second);
+    }
+    return ans;
+}
+
+//给定两个以字符串形式表示的非负整数num1和num2，返回num1和num2的乘积，它们的乘积也表示为字符串形式。
+//注意：不能使用任何内置的 BigInteger 库或直接将输入转换为整数。
+string multiply(string num1, string num2) {
+    if (num1 == "0" || num2 == "0") {
+        return "0";
+    }
+    int m = num1.size(), n = num2.size();
+    auto ansArr = vector<int>(m + n);
+    for (int i = m - 1; i >= 0; i--) {
+        int x = num1.at(i) - '0';
+        for (int j = n - 1; j >= 0; j--) {
+            int y = num2.at(j) - '0';
+            ansArr[i + j + 1] += x * y;
+        }
+    }
+    for (int i = m + n - 1; i > 0; i--) {
+        ansArr[i - 1] += ansArr[i] / 10;
+        ansArr[i] %= 10;
+    }
+    int index = ansArr[0] == 0 ? 1 : 0;
+    string ans;
+    while (index < m + n) {
+        ans.push_back(ansArr[index]);
+        index++;
+    }
+    for (auto &c: ans) {
+        c += '0';
+    }
+    return ans;
 }
 
 //链表
