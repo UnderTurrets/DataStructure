@@ -6,5 +6,5 @@ CXX_FLAGS = -fPIC   -std=gnu++17
 
 CXX_DEFINES = -DmyAlgorithm_shared_EXPORTS
 
-CXX_INCLUDES = 
+CXX_INCLUDES = -I/usr/local/include/opencv4 
 

@@ -4,10 +4,23 @@
 bin/CMakeFiles/myAlgorithm_static.dir/Graph.cpp.o
  /home/xu736946693/Desktop/myAlgorithm/lib/Graph.cpp
  /home/xu736946693/Desktop/myAlgorithm/lib/Graph.h
+ /home/xu736946693/Desktop/myAlgorithm/lib/Heap.h
+ /home/xu736946693/Desktop/myAlgorithm/lib/SetType.h
+ /home/xu736946693/Desktop/myAlgorithm/lib/Tree.h
  /home/xu736946693/Desktop/myAlgorithm/lib/authority.h
 bin/CMakeFiles/myAlgorithm_static.dir/Heap.cpp.o
  /home/xu736946693/Desktop/myAlgorithm/lib/Heap.cpp
  /home/xu736946693/Desktop/myAlgorithm/lib/Heap.h
+ /home/xu736946693/Desktop/myAlgorithm/lib/Tree.h
+ /home/xu736946693/Desktop/myAlgorithm/lib/authority.h
+bin/CMakeFiles/myAlgorithm_static.dir/SetType.cpp.o
+ /home/xu736946693/Desktop/myAlgorithm/lib/SetType.cpp
+ /home/xu736946693/Desktop/myAlgorithm/lib/SetType.h
+ /home/xu736946693/Desktop/myAlgorithm/lib/authority.h
+bin/CMakeFiles/myAlgorithm_static.dir/Sort.cpp.o
+ /home/xu736946693/Desktop/myAlgorithm/lib/Heap.h
+ /home/xu736946693/Desktop/myAlgorithm/lib/Sort.cpp
+ /home/xu736946693/Desktop/myAlgorithm/lib/Sort.h
  /home/xu736946693/Desktop/myAlgorithm/lib/Tree.h
  /home/xu736946693/Desktop/myAlgorithm/lib/authority.h
 bin/CMakeFiles/myAlgorithm_static.dir/Tree.cpp.o

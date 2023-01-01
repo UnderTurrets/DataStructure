@@ -13,6 +13,10 @@ Graph.h
 /home/xu736946693/Desktop/myAlgorithm/lib/Graph.h
 authority.h
 /home/xu736946693/Desktop/myAlgorithm/lib/authority.h
+SetType.h
+/home/xu736946693/Desktop/myAlgorithm/lib/SetType.h
+Heap.h
+/home/xu736946693/Desktop/myAlgorithm/lib/Heap.h
 
 /home/xu736946693/Desktop/myAlgorithm/lib/Heap.cpp
 Heap.h
@@ -23,6 +27,24 @@ authority.h
 /home/xu736946693/Desktop/myAlgorithm/lib/authority.h
 Tree.h
 /home/xu736946693/Desktop/myAlgorithm/lib/Tree.h
+
+/home/xu736946693/Desktop/myAlgorithm/lib/SetType.cpp
+SetType.h
+/home/xu736946693/Desktop/myAlgorithm/lib/SetType.h
+
+/home/xu736946693/Desktop/myAlgorithm/lib/SetType.h
+authority.h
+/home/xu736946693/Desktop/myAlgorithm/lib/authority.h
+
+/home/xu736946693/Desktop/myAlgorithm/lib/Sort.cpp
+Sort.h
+/home/xu736946693/Desktop/myAlgorithm/lib/Sort.h
+
+/home/xu736946693/Desktop/myAlgorithm/lib/Sort.h
+authority.h
+/home/xu736946693/Desktop/myAlgorithm/lib/authority.h
+Heap.h
+/home/xu736946693/Desktop/myAlgorithm/lib/Heap.h
 
 /home/xu736946693/Desktop/myAlgorithm/lib/Tree.cpp
 Tree.h
@@ -64,6 +86,8 @@ cmath
 climits
 -
 bits/stdc++.h
+-
+opencv4/opencv2/opencv.hpp
 -
 
 /home/xu736946693/Desktop/myAlgorithm/lib/leetcode.cpp

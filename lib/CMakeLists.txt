@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.23)
+cmake_minimum_required(VERSION 3.16)
 find_package(OpenCV REQUIRED)
 include_directories(${OpenCV_INCLUDE_DIRS})
 
@@ -14,7 +14,9 @@ SET(LIB_LIST myAlgorithm.h
              SetType.h
              SetType.cpp 
              Graph.h
-             Graph.cpp         )
+             Graph.cpp     
+             Sort.h
+             Sort.cpp    )
              
 ADD_LIBRARY(myAlgorithm_static STATIC ${LIB_LIST} )
 SET_TARGET_PROPERTIES(myAlgorithm_static PROPERTIES 
@@ -38,6 +40,8 @@ INSTALL(FILES SetType.h DESTINATION include/myAlgorithm/)
 INSTALL(FILES SetType.cpp DESTINATION include/myAlgorithm/)
 INSTALL(FILES Graph.h DESTINATION include/myAlgorithm/)
 INSTALL(FILES Graph.cpp DESTINATION include/myAlgorithm/)
+INSTALL(FILES Sort.h DESTINATION include/myAlgorithm/)
+INSTALL(FILES Sort.cpp DESTINATION include/myAlgorithm/)
 INSTALL(TARGETS myAlgorithm_static myAlgorithm_shared 
         LIBRARY DESTINATION lib/myAlgorithm/
         ARCHIVE DESTINATION lib/myAlgorithm/ )                      

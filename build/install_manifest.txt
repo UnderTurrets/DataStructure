@@ -1,0 +1,16 @@
+/usr/local/include/myAlgorithm/myAlgorithm.h
+/usr/local/include/myAlgorithm/authority.h
+/usr/local/include/myAlgorithm/Heap.h
+/usr/local/include/myAlgorithm/Heap.cpp
+/usr/local/include/myAlgorithm/leetcode.h
+/usr/local/include/myAlgorithm/leetcode.cpp
+/usr/local/include/myAlgorithm/Tree.h
+/usr/local/include/myAlgorithm/Tree.cpp
+/usr/local/include/myAlgorithm/SetType.h
+/usr/local/include/myAlgorithm/SetType.cpp
+/usr/local/include/myAlgorithm/Graph.h
+/usr/local/include/myAlgorithm/Graph.cpp
+/usr/local/include/myAlgorithm/Sort.h
+/usr/local/include/myAlgorithm/Sort.cpp
+/usr/local/lib/myAlgorithm/libmyAlgorithm_static.a
+/usr/local/lib/myAlgorithm/libmyAlgorithm_shared.so

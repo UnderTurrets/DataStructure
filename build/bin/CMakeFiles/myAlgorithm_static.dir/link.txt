@@ -1,2 +1,2 @@
-/usr/bin/ar qc libmyAlgorithm_static.a  CMakeFiles/myAlgorithm_static.dir/Heap.cpp.o CMakeFiles/myAlgorithm_static.dir/leetcode.cpp.o CMakeFiles/myAlgorithm_static.dir/Tree.cpp.o CMakeFiles/myAlgorithm_static.dir/Graph.cpp.o
+/usr/bin/ar qc libmyAlgorithm_static.a  CMakeFiles/myAlgorithm_static.dir/Heap.cpp.o CMakeFiles/myAlgorithm_static.dir/leetcode.cpp.o CMakeFiles/myAlgorithm_static.dir/Tree.cpp.o CMakeFiles/myAlgorithm_static.dir/SetType.cpp.o CMakeFiles/myAlgorithm_static.dir/Graph.cpp.o CMakeFiles/myAlgorithm_static.dir/Sort.cpp.o
 /usr/bin/ranlib libmyAlgorithm_static.a

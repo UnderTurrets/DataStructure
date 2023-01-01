@@ -246,6 +246,66 @@ Heap.cpp.s:
 	cd /home/xu736946693/Desktop/myAlgorithm/build && $(MAKE) -f bin/CMakeFiles/myAlgorithm_static.dir/build.make bin/CMakeFiles/myAlgorithm_static.dir/Heap.cpp.s
 .PHONY : Heap.cpp.s
 
+SetType.o: SetType.cpp.o
+
+.PHONY : SetType.o
+
+# target to build an object file
+SetType.cpp.o:
+	cd /home/xu736946693/Desktop/myAlgorithm/build && $(MAKE) -f bin/CMakeFiles/myAlgorithm_shared.dir/build.make bin/CMakeFiles/myAlgorithm_shared.dir/SetType.cpp.o
+	cd /home/xu736946693/Desktop/myAlgorithm/build && $(MAKE) -f bin/CMakeFiles/myAlgorithm_static.dir/build.make bin/CMakeFiles/myAlgorithm_static.dir/SetType.cpp.o
+.PHONY : SetType.cpp.o
+
+SetType.i: SetType.cpp.i
+
+.PHONY : SetType.i
+
+# target to preprocess a source file
+SetType.cpp.i:
+	cd /home/xu736946693/Desktop/myAlgorithm/build && $(MAKE) -f bin/CMakeFiles/myAlgorithm_shared.dir/build.make bin/CMakeFiles/myAlgorithm_shared.dir/SetType.cpp.i
+	cd /home/xu736946693/Desktop/myAlgorithm/build && $(MAKE) -f bin/CMakeFiles/myAlgorithm_static.dir/build.make bin/CMakeFiles/myAlgorithm_static.dir/SetType.cpp.i
+.PHONY : SetType.cpp.i
+
+SetType.s: SetType.cpp.s
+
+.PHONY : SetType.s
+
+# target to generate assembly for a file
+SetType.cpp.s:
+	cd /home/xu736946693/Desktop/myAlgorithm/build && $(MAKE) -f bin/CMakeFiles/myAlgorithm_shared.dir/build.make bin/CMakeFiles/myAlgorithm_shared.dir/SetType.cpp.s
+	cd /home/xu736946693/Desktop/myAlgorithm/build && $(MAKE) -f bin/CMakeFiles/myAlgorithm_static.dir/build.make bin/CMakeFiles/myAlgorithm_static.dir/SetType.cpp.s
+.PHONY : SetType.cpp.s
+
+Sort.o: Sort.cpp.o
+
+.PHONY : Sort.o
+
+# target to build an object file
+Sort.cpp.o:
+	cd /home/xu736946693/Desktop/myAlgorithm/build && $(MAKE) -f bin/CMakeFiles/myAlgorithm_shared.dir/build.make bin/CMakeFiles/myAlgorithm_shared.dir/Sort.cpp.o
+	cd /home/xu736946693/Desktop/myAlgorithm/build && $(MAKE) -f bin/CMakeFiles/myAlgorithm_static.dir/build.make bin/CMakeFiles/myAlgorithm_static.dir/Sort.cpp.o
+.PHONY : Sort.cpp.o
+
+Sort.i: Sort.cpp.i
+
+.PHONY : Sort.i
+
+# target to preprocess a source file
+Sort.cpp.i:
+	cd /home/xu736946693/Desktop/myAlgorithm/build && $(MAKE) -f bin/CMakeFiles/myAlgorithm_shared.dir/build.make bin/CMakeFiles/myAlgorithm_shared.dir/Sort.cpp.i
+	cd /home/xu736946693/Desktop/myAlgorithm/build && $(MAKE) -f bin/CMakeFiles/myAlgorithm_static.dir/build.make bin/CMakeFiles/myAlgorithm_static.dir/Sort.cpp.i
+.PHONY : Sort.cpp.i
+
+Sort.s: Sort.cpp.s
+
+.PHONY : Sort.s
+
+# target to generate assembly for a file
+Sort.cpp.s:
+	cd /home/xu736946693/Desktop/myAlgorithm/build && $(MAKE) -f bin/CMakeFiles/myAlgorithm_shared.dir/build.make bin/CMakeFiles/myAlgorithm_shared.dir/Sort.cpp.s
+	cd /home/xu736946693/Desktop/myAlgorithm/build && $(MAKE) -f bin/CMakeFiles/myAlgorithm_static.dir/build.make bin/CMakeFiles/myAlgorithm_static.dir/Sort.cpp.s
+.PHONY : Sort.cpp.s
+
 Tree.o: Tree.cpp.o
 
 .PHONY : Tree.o
@@ -326,6 +386,12 @@ help:
 	@echo "... Heap.o"
 	@echo "... Heap.i"
 	@echo "... Heap.s"
+	@echo "... SetType.o"
+	@echo "... SetType.i"
+	@echo "... SetType.s"
+	@echo "... Sort.o"
+	@echo "... Sort.i"
+	@echo "... Sort.s"
 	@echo "... Tree.o"
 	@echo "... Tree.i"
 	@echo "... Tree.s"

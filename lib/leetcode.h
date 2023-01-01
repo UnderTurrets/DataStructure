@@ -145,6 +145,16 @@ vector<vector<string>> groupAnagrams(vector<string>& strs);
 //注意：不能使用任何内置的 BigInteger 库或直接将输入转换为整数。
 string multiply(string num1, string num2);
 
+//DNA序列由一系列核苷酸组成，缩写为'A','C','G'和'T'.。
+//例如，"ACGAATTCCG"是一个 DNA序列 。
+//在研究 DNA 时，识别 DNA 中的重复序列非常有用。
+//给定一个表示 DNA序列 的字符串 s ，返回所有在 DNA 分子中出现不止一次的长度为10的序列(子字符串)。你可以按 任意顺序 返回答案。
+vector<string> findRepeatedDnaSequences(string s);
+
+//给你一个字符串 s，找到 s 中最长的回文子串。
+//如果字符串的反序与原始字符串相同，则该字符串称为回文字符串。
+string longestPalindrome_subseries(string s);
+
 //将两个升序链表合并为一个新的 升序 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。
 ListNode* mergeTwoLists(ListNode* list1, ListNode* list2);
 

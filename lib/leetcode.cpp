@@ -689,6 +689,60 @@ string multiply(string num1, string num2) {
     return ans;
 }
 
+//DNA序列由一系列核苷酸组成，缩写为'A','C','G'和'T'.。
+//例如，"ACGAATTCCG"是一个 DNA序列 。
+//在研究 DNA 时，识别 DNA 中的重复序列非常有用。
+//给定一个表示 DNA序列 的字符串 s ，返回所有在 DNA 分子中出现不止一次的长度为10的序列(子字符串)。你可以按 任意顺序 返回答案。
+vector<string> findRepeatedDnaSequences(string s){
+    vector<string>ret;
+    unordered_map<string,int>M;
+    string temp;
+    for(int i=0;i<s.size();i++){
+        if(temp.size()<10){
+            temp.push_back(s[i]);
+            if(temp.size()==10){
+                M[temp]++;
+            }
+        }else if(temp.size()==10){
+            temp.erase(temp.begin());
+            temp.push_back(s[i]);
+            if(M[temp]==0){
+                M[temp]++;
+            }else if(M[temp]==1){
+                ret.push_back(temp);
+                M[temp]++;
+            }
+        }
+    }
+    return ret;
+}
+
+//给你一个字符串 s，找到 s 中最长的回文子串。
+//如果字符串的反序与原始字符串相同，则该字符串称为回文字符串。
+pair<int, int> expandAroundCenter(const string& s, int left, int right) {
+    while (left >= 0 && right < s.size() && s[left] == s[right]) {
+        --left;
+        ++right;
+    }
+    return {left + 1, right - 1};
+}
+string longestPalindrome_subseries(string s) {
+    int start = 0, end = 0;
+    for (int i = 0; i < s.size(); ++i) {
+        auto [left1, right1] = expandAroundCenter(s, i, i);
+        auto [left2, right2] = expandAroundCenter(s, i, i + 1);
+        if (right1 - left1 > end - start) {
+            start = left1;
+            end = right1;
+        }
+        if (right2 - left2 > end - start) {
+            start = left2;
+            end = right2;
+        }
+    }
+    return s.substr(start, end - start + 1);
+}
+
 //链表
 class ListNode {
 public:

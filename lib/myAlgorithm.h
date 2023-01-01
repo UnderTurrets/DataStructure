@@ -13,6 +13,8 @@
 #include "Graph.cpp"
 #include "SetType.h"
 #include "SetType.cpp"
+#include "Sort.h"
+#include "Sort.cpp"
 
 
 

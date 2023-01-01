@@ -96,9 +96,22 @@ bin/CMakeFiles/myAlgorithm_shared.dir/Tree.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/myAlgorithm_shared.dir/Tree.cpp.s"
 	cd /home/xu736946693/Desktop/myAlgorithm/build/bin && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/xu736946693/Desktop/myAlgorithm/lib/Tree.cpp -o CMakeFiles/myAlgorithm_shared.dir/Tree.cpp.s
 
+bin/CMakeFiles/myAlgorithm_shared.dir/SetType.cpp.o: bin/CMakeFiles/myAlgorithm_shared.dir/flags.make
+bin/CMakeFiles/myAlgorithm_shared.dir/SetType.cpp.o: ../lib/SetType.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xu736946693/Desktop/myAlgorithm/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object bin/CMakeFiles/myAlgorithm_shared.dir/SetType.cpp.o"
+	cd /home/xu736946693/Desktop/myAlgorithm/build/bin && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/myAlgorithm_shared.dir/SetType.cpp.o -c /home/xu736946693/Desktop/myAlgorithm/lib/SetType.cpp
+
+bin/CMakeFiles/myAlgorithm_shared.dir/SetType.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/myAlgorithm_shared.dir/SetType.cpp.i"
+	cd /home/xu736946693/Desktop/myAlgorithm/build/bin && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/xu736946693/Desktop/myAlgorithm/lib/SetType.cpp > CMakeFiles/myAlgorithm_shared.dir/SetType.cpp.i
+
+bin/CMakeFiles/myAlgorithm_shared.dir/SetType.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/myAlgorithm_shared.dir/SetType.cpp.s"
+	cd /home/xu736946693/Desktop/myAlgorithm/build/bin && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/xu736946693/Desktop/myAlgorithm/lib/SetType.cpp -o CMakeFiles/myAlgorithm_shared.dir/SetType.cpp.s
+
 bin/CMakeFiles/myAlgorithm_shared.dir/Graph.cpp.o: bin/CMakeFiles/myAlgorithm_shared.dir/flags.make
 bin/CMakeFiles/myAlgorithm_shared.dir/Graph.cpp.o: ../lib/Graph.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xu736946693/Desktop/myAlgorithm/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object bin/CMakeFiles/myAlgorithm_shared.dir/Graph.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xu736946693/Desktop/myAlgorithm/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object bin/CMakeFiles/myAlgorithm_shared.dir/Graph.cpp.o"
 	cd /home/xu736946693/Desktop/myAlgorithm/build/bin && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/myAlgorithm_shared.dir/Graph.cpp.o -c /home/xu736946693/Desktop/myAlgorithm/lib/Graph.cpp
 
 bin/CMakeFiles/myAlgorithm_shared.dir/Graph.cpp.i: cmake_force
@@ -109,12 +122,27 @@ bin/CMakeFiles/myAlgorithm_shared.dir/Graph.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/myAlgorithm_shared.dir/Graph.cpp.s"
 	cd /home/xu736946693/Desktop/myAlgorithm/build/bin && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/xu736946693/Desktop/myAlgorithm/lib/Graph.cpp -o CMakeFiles/myAlgorithm_shared.dir/Graph.cpp.s
 
+bin/CMakeFiles/myAlgorithm_shared.dir/Sort.cpp.o: bin/CMakeFiles/myAlgorithm_shared.dir/flags.make
+bin/CMakeFiles/myAlgorithm_shared.dir/Sort.cpp.o: ../lib/Sort.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xu736946693/Desktop/myAlgorithm/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object bin/CMakeFiles/myAlgorithm_shared.dir/Sort.cpp.o"
+	cd /home/xu736946693/Desktop/myAlgorithm/build/bin && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/myAlgorithm_shared.dir/Sort.cpp.o -c /home/xu736946693/Desktop/myAlgorithm/lib/Sort.cpp
+
+bin/CMakeFiles/myAlgorithm_shared.dir/Sort.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/myAlgorithm_shared.dir/Sort.cpp.i"
+	cd /home/xu736946693/Desktop/myAlgorithm/build/bin && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/xu736946693/Desktop/myAlgorithm/lib/Sort.cpp > CMakeFiles/myAlgorithm_shared.dir/Sort.cpp.i
+
+bin/CMakeFiles/myAlgorithm_shared.dir/Sort.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/myAlgorithm_shared.dir/Sort.cpp.s"
+	cd /home/xu736946693/Desktop/myAlgorithm/build/bin && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/xu736946693/Desktop/myAlgorithm/lib/Sort.cpp -o CMakeFiles/myAlgorithm_shared.dir/Sort.cpp.s
+
 # Object files for target myAlgorithm_shared
 myAlgorithm_shared_OBJECTS = \
 "CMakeFiles/myAlgorithm_shared.dir/Heap.cpp.o" \
 "CMakeFiles/myAlgorithm_shared.dir/leetcode.cpp.o" \
 "CMakeFiles/myAlgorithm_shared.dir/Tree.cpp.o" \
-"CMakeFiles/myAlgorithm_shared.dir/Graph.cpp.o"
+"CMakeFiles/myAlgorithm_shared.dir/SetType.cpp.o" \
+"CMakeFiles/myAlgorithm_shared.dir/Graph.cpp.o" \
+"CMakeFiles/myAlgorithm_shared.dir/Sort.cpp.o"
 
 # External object files for target myAlgorithm_shared
 myAlgorithm_shared_EXTERNAL_OBJECTS =
@@ -122,10 +150,12 @@ myAlgorithm_shared_EXTERNAL_OBJECTS =
 bin/libmyAlgorithm_shared.so: bin/CMakeFiles/myAlgorithm_shared.dir/Heap.cpp.o
 bin/libmyAlgorithm_shared.so: bin/CMakeFiles/myAlgorithm_shared.dir/leetcode.cpp.o
 bin/libmyAlgorithm_shared.so: bin/CMakeFiles/myAlgorithm_shared.dir/Tree.cpp.o
+bin/libmyAlgorithm_shared.so: bin/CMakeFiles/myAlgorithm_shared.dir/SetType.cpp.o
 bin/libmyAlgorithm_shared.so: bin/CMakeFiles/myAlgorithm_shared.dir/Graph.cpp.o
+bin/libmyAlgorithm_shared.so: bin/CMakeFiles/myAlgorithm_shared.dir/Sort.cpp.o
 bin/libmyAlgorithm_shared.so: bin/CMakeFiles/myAlgorithm_shared.dir/build.make
 bin/libmyAlgorithm_shared.so: bin/CMakeFiles/myAlgorithm_shared.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/xu736946693/Desktop/myAlgorithm/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX shared library libmyAlgorithm_shared.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/xu736946693/Desktop/myAlgorithm/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX shared library libmyAlgorithm_shared.so"
 	cd /home/xu736946693/Desktop/myAlgorithm/build/bin && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/myAlgorithm_shared.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

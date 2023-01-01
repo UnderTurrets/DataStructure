@@ -3,12 +3,25 @@
 
 bin/CMakeFiles/myAlgorithm_static.dir/Graph.cpp.o: ../lib/Graph.cpp
 bin/CMakeFiles/myAlgorithm_static.dir/Graph.cpp.o: ../lib/Graph.h
+bin/CMakeFiles/myAlgorithm_static.dir/Graph.cpp.o: ../lib/Heap.h
+bin/CMakeFiles/myAlgorithm_static.dir/Graph.cpp.o: ../lib/SetType.h
+bin/CMakeFiles/myAlgorithm_static.dir/Graph.cpp.o: ../lib/Tree.h
 bin/CMakeFiles/myAlgorithm_static.dir/Graph.cpp.o: ../lib/authority.h
 
 bin/CMakeFiles/myAlgorithm_static.dir/Heap.cpp.o: ../lib/Heap.cpp
 bin/CMakeFiles/myAlgorithm_static.dir/Heap.cpp.o: ../lib/Heap.h
 bin/CMakeFiles/myAlgorithm_static.dir/Heap.cpp.o: ../lib/Tree.h
 bin/CMakeFiles/myAlgorithm_static.dir/Heap.cpp.o: ../lib/authority.h
+
+bin/CMakeFiles/myAlgorithm_static.dir/SetType.cpp.o: ../lib/SetType.cpp
+bin/CMakeFiles/myAlgorithm_static.dir/SetType.cpp.o: ../lib/SetType.h
+bin/CMakeFiles/myAlgorithm_static.dir/SetType.cpp.o: ../lib/authority.h
+
+bin/CMakeFiles/myAlgorithm_static.dir/Sort.cpp.o: ../lib/Heap.h
+bin/CMakeFiles/myAlgorithm_static.dir/Sort.cpp.o: ../lib/Sort.cpp
+bin/CMakeFiles/myAlgorithm_static.dir/Sort.cpp.o: ../lib/Sort.h
+bin/CMakeFiles/myAlgorithm_static.dir/Sort.cpp.o: ../lib/Tree.h
+bin/CMakeFiles/myAlgorithm_static.dir/Sort.cpp.o: ../lib/authority.h
 
 bin/CMakeFiles/myAlgorithm_static.dir/Tree.cpp.o: ../lib/Tree.cpp
 bin/CMakeFiles/myAlgorithm_static.dir/Tree.cpp.o: ../lib/Tree.h
