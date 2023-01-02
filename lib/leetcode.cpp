@@ -748,6 +748,7 @@ class ListNode {
 public:
     int val;
     ListNode *next;
+    ListNode() : val(0), next(nullptr) {}
     ListNode(int x) : val(x), next(NULL) {}
     ListNode(int x, ListNode *next) : val(x), next(next) {}
     bool operator< (ListNode that){
@@ -824,6 +825,51 @@ ListNode* reverseList(ListNode* head) {
         head=next;
     }
     return last;
+}
+
+//给你两个非空 的链表，表示两个非负的整数。它们每位数字都是按照逆序的方式存储的，并且每个节点只能存储一位数字。
+//请你将两个数相加，并以相同形式返回一个表示和的链表。
+//你可以假设除了数字 0 之外，这两个数都不会以 0开头。
+ListNode* addTwoNumbers(ListNode* l1, ListNode* l2){
+    ListNode *head = nullptr, *tail = nullptr;
+    int carry = 0;
+    while (l1 || l2) {
+        int n1 = l1 ? l1->val: 0;
+        int n2 = l2 ? l2->val: 0;
+        int sum = n1 + n2 + carry;
+        if (!head) {
+            head = tail = new ListNode(sum % 10);
+        } else {
+            tail->next = new ListNode(sum % 10);
+            tail = tail->next;
+        }
+        carry = sum / 10;
+        if (l1) {
+            l1 = l1->next;
+        }
+        if (l2) {
+            l2 = l2->next;
+        }
+    }
+    if (carry > 0) {
+        tail->next = new ListNode(carry);
+    }
+    return head;
+}
+
+//如果链表中有某个节点，可以通过连续跟踪 next 指针再次到达，则链表中存在环。 为了表示给定链表中的环，评测系统内部使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。如果 pos 是 -1，则在该链表中没有环。注意：pos 不作为参数进行传递，仅仅是为了标识链表的实际情况。
+//不允许修改 链表。
+ListNode *detectCycle(ListNode *head){
+    unordered_map<ListNode*,int>M;
+    ListNode* temp = head;
+    while (temp){
+        M[temp]++;
+        if(M[temp]==2){
+            return temp;
+        }
+        temp=temp->next;
+    }
+    return NULL;
 }
 
 //不使用任何内建的哈希表库设计一个哈希映射（HashMap）。

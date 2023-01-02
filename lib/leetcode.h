@@ -117,13 +117,6 @@ bool isValid(string s);
 //你不能使用任何內建的用于处理大整数的库（比如 BigInteger），也不能直接将输入的字符串转换为整数形式。
 string addStrings(string num1, string num2);
 
-//给你一个链表的头节点 head ，判断链表中是否有环。
-//如果链表中有某个节点，可以通过连续跟踪 next 指针再次到达，则链表中存在环。 为了表示给定链表中的环，评测系统内部使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。注意：pos 不作为参数进行传递。仅仅是为了标识链表的实际情况。
-//如果链表中存在环，则返回 true 。 否则，返回 false 。
-// Definition for singly-linked list.
-struct ListNode;
-bool hasCycle(ListNode *head);
-
 //给定一个包含大写字母和小写字母的字符串s，返回通过这些字母构造成的 最长的回文串。
 //在构造过程中，请注意 区分大小写 。比如"Aa"不能当做一个回文字符串。
 int longestPalindrome(string s);
@@ -155,6 +148,15 @@ vector<string> findRepeatedDnaSequences(string s);
 //如果字符串的反序与原始字符串相同，则该字符串称为回文字符串。
 string longestPalindrome_subseries(string s);
 
+//链表定义
+class ListNode;
+
+//给你一个链表的头节点 head ，判断链表中是否有环。
+//如果链表中有某个节点，可以通过连续跟踪 next 指针再次到达，则链表中存在环。 为了表示给定链表中的环，评测系统内部使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。注意：pos 不作为参数进行传递。仅仅是为了标识链表的实际情况。
+//如果链表中存在环，则返回 true 。 否则，返回 false 。
+// Definition for singly-linked list.
+bool hasCycle(ListNode *head);
+
 //将两个升序链表合并为一个新的 升序 链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。
 ListNode* mergeTwoLists(ListNode* list1, ListNode* list2);
 
@@ -166,6 +168,15 @@ ListNode* deleteDuplicates(ListNode* head);
 
 //给你单链表的头节点 head ，请你反转链表，并返回反转后的链表。
 ListNode* reverseList(ListNode* head);
+
+//给你两个非空 的链表，表示两个非负的整数。它们每位数字都是按照逆序的方式存储的，并且每个节点只能存储一位数字。
+//请你将两个数相加，并以相同形式返回一个表示和的链表。
+//你可以假设除了数字 0 之外，这两个数都不会以 0开头。
+ListNode* addTwoNumbers(ListNode* l1, ListNode* l2);
+
+//如果链表中有某个节点，可以通过连续跟踪 next 指针再次到达，则链表中存在环。 为了表示给定链表中的环，评测系统内部使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。如果 pos 是 -1，则在该链表中没有环。注意：pos 不作为参数进行传递，仅仅是为了标识链表的实际情况。
+//不允许修改 链表。
+ListNode *detectCycle(ListNode *head);
 
 //栈
 //请你仅使用两个栈实现先入先出队列。队列应当支持一般队列支持的所有操作（push、pop、peek、empty）：
