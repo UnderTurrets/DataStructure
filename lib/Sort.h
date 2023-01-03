@@ -76,8 +76,8 @@ int GetDigit ( int X, int D ){ /* 默认次位D=1, 主位D<=MaxDigit */
     return d;
 }
 
-void LSDRadixSort(vector<int>A){ /* 基数排序 - 次位优先 */
-    int D, Di, i;int N=A.size();
+void LSDRadixSort( int A[],int N){ /* 基数排序 - 次位优先 */
+    int D, Di, i;
     Bucket B;
     PtrToNode tmp, p, List = NULL;
 
@@ -126,7 +126,7 @@ void LSDRadixSort(vector<int>A){ /* 基数排序 - 次位优先 */
     }
 }
 
-void MSD(vector<int>A, int L, int R, int D )
+void MSD(int A[], int L, int R, int D )
 { /* 核心递归函数: 对A[L]...A[R]的第D位数进行排序 */
     int Di, i, j;
     Bucket B;
@@ -170,9 +170,9 @@ void MSD(vector<int>A, int L, int R, int D )
     }
 }
 
-void MSDRadixSort(vector<int>A)
+void MSDRadixSort(int A[],int N)
 { /* 统一接口 */
-    MSD(A, 0, A.size()-1, MaxDigit);
+    MSD(A, 0, N-1, MaxDigit);
 }
 
 
