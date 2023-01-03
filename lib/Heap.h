@@ -14,8 +14,10 @@ public:
     int capacity=0;    //不包含this->array[0]
     T LimitData;    //这是一个大于或小于堆中所有元素的极限元素，目的是为了以后更快地操作
 
+    //重载运算符进行赋值构造
     Heap<T> operator= (Heap<T>that);
 
+    //构造函数
     Heap();
 
     //拷贝构造（深拷贝）
@@ -38,15 +40,16 @@ public:
 
     //依次输出
     inline void print_heap();
-
 };
 
 //最大堆的定义
 template<typename T>
 class MaxHeap:public Heap<T>{
 public:
+    //构造函数
     MaxHeap();
 
+    //重载运算符进行赋值构造
     MaxHeap<T> operator= (MaxHeap<T>that);
 
     //拷贝构造
@@ -81,8 +84,10 @@ public:
 template<typename T>
 class MinHeap:public Heap<T>{
 public:
+    //构造函数
     MinHeap();
 
+    //重载运算符进行赋值构造
     MinHeap<T> operator= (MinHeap<T>that);
 
     //拷贝构造
@@ -111,8 +116,6 @@ public:
 
     //将这个堆整理成最小堆
     void TidyUp();
-
-
 };
 
 

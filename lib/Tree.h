@@ -13,6 +13,7 @@ public:
     BinTree();
     BinTree( const BinTree<T> &that);
 
+    //重载运算符，基于val进行比较
     bool operator< (BinTree<T> that);
     bool operator<= (BinTree<T> that);
     bool operator> (BinTree<T> that);
@@ -91,7 +92,6 @@ public:
 
     //基于二叉搜索树删除某个元素，需要给定二叉搜索树的根结点和所删除元素，返回值也是二叉搜索树的根结点
     BinTree<T>* delete_BinTree (T x,BinTree<T>* bt);
-
 };
 
 #endif

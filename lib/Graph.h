@@ -17,8 +17,12 @@ class EdgeNode{
 public:
     Vertex source, destination;      /* 边连接的两个顶点 */
     WeightType Weight;  /* 边权重 */
+
+    //构造函数
     EdgeNode():source(UndeterminedVertex),destination(UndeterminedVertex),Weight(UndeterminedWeight){}
     EdgeNode(Vertex x,Vertex y,WeightType value):source(x),destination(y),Weight(value){}
+
+    //重载运算符，基于权重进行比较
     bool operator> (EdgeNode that);
     bool operator>= (EdgeNode that);
     bool operator< (EdgeNode that);
@@ -32,6 +36,8 @@ public:
     Vertex index=UndeterminedVertex;        /* 这个邻接点的下标 */
     GraphCommonNode* Next=NULL;    /* 指向下一个邻接点的指针 */
     WeightType Weight=UndeterminedWeight;  /* 从链表头顶点到这个点之间的边的权重 */
+
+    //构造函数
     GraphCommonNode():index(UndeterminedVertex),Next(NULL),Weight(UndeterminedWeight){}
 };
 
@@ -42,6 +48,8 @@ public:
     GraphCommonNode* FirstNode;/* 边表头指针 */
     VertexDataType Data;            /* 存顶点的数据 */
     /* 注意：很多情况下，顶点无数据，此时Data可以不用出现 */
+
+    //构造函数
     GraphHeadNode():FirstNode(NULL){}
 };
 
@@ -83,9 +91,11 @@ public:
     //创建一个没有边的图,指定顶点个数
     GraphList(int n);
 
+    //拷贝构造
     GraphList(GraphList & that):vertexNum(that.vertexNum),edgeNum(that.edgeNum),GraphHeadNodeVector(that.GraphHeadNodeVector),\
                                 Isvisited(that.Isvisited),dist(that.dist),path(that.path),TotalWeight(that.TotalWeight){}
 
+    //重载运算符进行赋值
     GraphList operator= (GraphList that);
 
     //插入一条有序边
@@ -97,9 +107,10 @@ public:
 
 private:
     //给定一个顶点，DFS遍历其连通分量
+    //核心函数
     void DFS_ConnectedComponent_helper(Vertex squence);
-
 public:
+    //外部接口
     void DFS_ConnectedComponent(Vertex squence);
 
 public:
@@ -108,9 +119,11 @@ public:
 
 private:
     //给定一个顶点，BFS遍历其连通分量
+    //核心函数
     void BFS_ConnectedComponent_helper(Vertex squence);
 
 public:
+    //外部接口
     void BFS_ConnectedComponent(Vertex squence);
 
 public:
@@ -121,13 +134,14 @@ private:
     // 返回this->dist[source]中未被收录的顶点且weight最小者
     Vertex FindMinVertex(Vertex source);
 
-    //单源最短路径unsigned
+    //计算单源最短路径unsigned的核心函数
     bool FindSingleMinWeight_helper (Vertex source);
 
 public:
+    //计算单源最短路径unsigned的外部接口
     bool FindSingleMinWeight(Vertex source);
 
-    //多源最短路径unsigned
+    //计算多源最短路径unsigned的外部接口
     void FinAllMinWeight();
 
     //Kruskal算法：将最小生成树保存为邻接表存储的图并返回其指针，若不存在最小生成树则返回NULL
@@ -174,9 +188,11 @@ public:
     //指定顶点个数初始化一个图
     GraphRect(Vertex n);
 
+    //拷贝构造
     GraphRect(GraphRect & that):vertexNum(that.vertexNum),edgeNum(that.edgeNum),EdgeWeightRect(that.EdgeWeightRect),Data(that.Data),\
                                 Isvisited(that.Isvisited),dist(that.dist),path(that.path),TotalWeight(that.TotalWeight){}
 
+    //重载运算符进行赋值
     GraphRect operator= (GraphRect that);
 
     //插入一条有序边
@@ -188,8 +204,10 @@ public:
 
     //给定一个顶点，DFS遍历其连通分量
 private:
+    //核心函数
     void DFS_ConnectedComponent_helper(Vertex squence);
 public:
+    //外部接口
     void DFS_ConnectedComponent(Vertex squence);
 
 public:
@@ -198,9 +216,11 @@ public:
 
     //给定一个顶点，BFS遍历其连通分量
 private:
+    //核心函数
     void BFS_ConnectedComponent_helper(Vertex squence);
 
 public:
+    //外部接口
     void BFS_ConnectedComponent(Vertex squence);
 
 public:
@@ -211,38 +231,17 @@ private:
     // 返回this->dist[source]中未被收录的顶点且weight最小者
     Vertex FindMinVertex(Vertex source);
 
-    //单源最短路径unsigned
+    //计算单源最短路径unsigned的核心函数
     bool FindSingleMinWeight_helper (Vertex source);
 
 public:
+    //计算单源最短路径unsigned的外部接口
     bool FindSingleMinWeight(Vertex source);
 
-    //多源最短路径unsigned
+    //计算多源最短路径unsigned的外部接口
     void FinAllMinWeight();
 
     // prim算法：将最小生成树保存为邻接矩阵存储的图并返回其指针，若不存在最小生成树则返回NULL
     GraphRect* PrimToGraphRect();
-
-
-
-
-
-
-
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #endif
