@@ -200,3 +200,133 @@ vector<T> QuickSort( vector<T>A ){ /* 统一接口 */
     Qsort( ret, 0, N-1 );
     return ret;
 }
+
+/*基数排序*/
+//一个桶中每个元素的定义
+typedef struct ToNode *PtrToNode;
+struct ToNode {
+    int key;
+    ToNode* next;
+};
+
+//一个桶的定义
+struct HeadNode {
+    PtrToNode head, tail;
+};
+typedef struct HeadNode Bucket[Radix];
+
+/* 基数排序 - 次位优先 */
+// 获得元素X的第D位数字
+int GetDigit ( int X, int D ){ /* 默认次位D=1, 主位D<=MaxDigit */
+    int d, i;
+
+    for (i=1; i<=D; i++) {
+        d = X % Radix;
+        X /= Radix;
+    }
+    return d;
+}
+
+vector<int> LSDRadixSort(vector<int> input){ /* 基数排序 - 次位优先 */
+    vector<int>output(input);
+    int D, Di, i;int N=input.size();
+    Bucket B;
+    PtrToNode tmp, p, List = NULL;
+
+    for (i=0; i<Radix; i++) /* 初始化每个桶为空链表 */
+        B[i].head = B[i].tail = NULL;
+    for (i=0; i<N; i++) { /* 将原始序列逆序存入初始链表List */
+        tmp = (PtrToNode)malloc(sizeof(struct ToNode));
+        tmp->key = output[i];
+        tmp->next = List;
+        List = tmp;
+    }
+    /* 下面开始排序 */
+    for (D=1; D<=MaxDigit; D++) { /* 对数据的每一位循环处理 */
+        /* 下面是分配的过程 */
+        p = List;
+        while (p) {
+            Di = GetDigit(p->key, D); /* 获得当前元素的当前位数字 */
+            /* 从List中摘除 */
+            tmp = p; p = p->next;
+            /* 插入B[Di]号桶尾 */
+            tmp->next = NULL;
+            if (B[Di].head == NULL)
+                B[Di].head = B[Di].tail = tmp;
+            else {
+                B[Di].tail->next = tmp;
+                B[Di].tail = tmp;
+            }
+        }
+        /* 下面是收集的过程 */
+        List = NULL;
+        for (Di=Radix-1; Di>=0; Di--) { /* 将每个桶的元素顺序收集入List */
+            if (B[Di].head) { /* 如果桶不为空 */
+                /* 整桶插入List表头 */
+                B[Di].tail->next = List;
+                List = B[Di].head;
+                B[Di].head = B[Di].tail = NULL; /* 清空桶 */
+            }
+        }
+    }
+    /* 将List倒入output[]并释放空间 */
+    for (i=0; i<N; i++) {
+        tmp = List;
+        List = List->next;
+        output[i] = tmp->key;
+        free(tmp);
+    }
+    return output;
+}
+
+/* 基数排序 - 主位优先 */
+// 核心递归函数: 对input[L]...input[R]的第D位数进行排序
+void MSD(vector<int> &input, int L, int R, int D ){
+    int Di, i, j;
+    Bucket B;
+    PtrToNode tmp, p, List = NULL;
+    if (D==0) return; /* 递归终止条件 */
+
+    for (i=0; i<Radix; i++) /* 初始化每个桶为空链表 */
+        B[i].head = B[i].tail = NULL;
+    for (i=L; i<=R; i++) { /* 将原始序列逆序存入初始链表List */
+        tmp = (PtrToNode)malloc(sizeof(struct ToNode));
+        tmp->key = input[i];
+        tmp->next = List;
+        List = tmp;
+    }
+    /* 下面是分配的过程 */
+    p = List;
+    while (p) {
+        Di = GetDigit(p->key, D); /* 获得当前元素的当前位数字 */
+        /* 从List中摘除 */
+        tmp = p; p = p->next;
+        /* 插入B[Di]号桶 */
+        if (B[Di].head == NULL) B[Di].tail = tmp;
+        tmp->next = B[Di].head;
+        B[Di].head = tmp;
+    }
+    /* 下面是收集的过程 */
+    i = j = L; /* i, j记录当前要处理的input[]的左右端下标 */
+    for (Di=0; Di<Radix; Di++) { /* 对于每个桶 */
+        if (B[Di].head) { /* 将非空的桶整桶倒入input[], 递归排序 */
+            p = B[Di].head;
+            while (p) {
+                tmp = p;
+                p = p->next;
+                input[j++] = tmp->key;
+                free(tmp);
+            }
+            /* 递归对该桶数据排序, 位数减1 */
+            MSD(input, i, j-1, D-1);
+            i = j; /* 为下一个桶对应的input[]左端 */
+        }
+    }
+}
+
+vector<int> MSDRadixSort(vector<int> input)
+{ /* 统一接口 */
+    vector<int>ret(input);int N=input.size();
+    MSD(ret, 0, N-1, MaxDigit);
+    return ret;
+}
