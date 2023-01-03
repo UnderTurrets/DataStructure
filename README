@@ -8,4 +8,5 @@ Use cmake to install them!!!
 集合头文件：SetType.h
 图头文件：Graph.h
 排序头文件：Sort.h
+力扣头文件：leetcode.h
 一次性使用以上所有头文件库：myAlgorithm.h
