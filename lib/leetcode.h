@@ -178,6 +178,14 @@ ListNode* addTwoNumbers(ListNode* l1, ListNode* l2);
 //不允许修改 链表。
 ListNode *detectCycle(ListNode *head);
 
+//给你两个单链表的头节点headA 和 headB ，请你找出并返回两个单链表相交的起始节点。如果两个链表不存在相交节点，返回 null 。
+//题目数据 保证 整个链式结构中不存在环。
+//注意，函数返回结果后，链表必须 保持其原始结构 。
+ListNode *getIntersectionNode(ListNode *headA, ListNode *headB);
+
+//给定一个已排序的链表的头 head ， 删除原始链表中所有重复数字的节点，只留下不同的数字 。返回 已排序的链表 。
+ListNode* deleteDuplicates_all(ListNode* head);
+
 //栈
 //请你仅使用两个栈实现先入先出队列。队列应当支持一般队列支持的所有操作（push、pop、peek、empty）：
 //实现 MyQueue 类：

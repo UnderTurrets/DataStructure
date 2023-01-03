@@ -872,6 +872,42 @@ ListNode *detectCycle(ListNode *head){
     return NULL;
 }
 
+//给你两个单链表的头节点headA 和 headB ，请你找出并返回两个单链表相交的起始节点。如果两个链表不存在相交节点，返回 null 。
+//题目数据 保证 整个链式结构中不存在环。
+//注意，函数返回结果后，链表必须 保持其原始结构 。
+ListNode *getIntersectionNode(ListNode *headA, ListNode *headB){
+    if (headA == nullptr || headB == nullptr) {
+        return nullptr;
+    }
+    ListNode *pA = headA, *pB = headB;
+    while (pA != pB) {
+        pA = pA == nullptr ? headB : pA->next;
+        pB = pB == nullptr ? headA : pB->next;
+    }
+    return pA;
+}
+
+//给定一个已排序的链表的头 head ， 删除原始链表中所有重复数字的节点，只留下不同的数字 。返回 已排序的链表 。
+ListNode* deleteDuplicates_all(ListNode* head){
+    if(head==NULL)return NULL;
+    ListNode* dummy = new ListNode(0, head);
+    ListNode* cur = dummy;
+    while (cur->next && cur->next->next) {
+        if (cur->next->val == cur->next->next->val) {
+            int x = cur->next->val;
+            while (cur->next && cur->next->val == x) {
+                ListNode* temp=cur->next;
+                cur->next = cur->next->next;
+                delete temp;
+            }
+        }
+        else {
+            cur = cur->next;
+        }
+    }
+    return dummy->next;
+}
+
 //不使用任何内建的哈希表库设计一个哈希映射（HashMap）。
 //实现 MyHashMap 类：
 //MyHashMap() 用空映射初始化对象
