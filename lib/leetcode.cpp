@@ -63,7 +63,6 @@ vector<int> intersect(vector<int>& nums1, vector<int>& nums2) {
     vector<int> ret;int j=0;
     sort(nums1.begin(),nums1.end());
     sort(nums2.begin(),nums2.end());
-    vector<int>::iterator it=nums2.begin();
     for (int i =0;i<nums1.size();i++){
         for ( ;j<nums2.size();j++){
             if(nums1[i]==nums2[j]){
@@ -311,7 +310,7 @@ vector<vector<int>> generate(int numRows) {
 //数字1-9在每一列只能出现一次。
 //数字1-9在每一个以粗实线分隔的3x3宫内只能出现一次。（请参考示例图）
 bool find_repeat(vector<char> v){
-    vector<char> nums;bool ret =1;int x=0;
+    vector<char> nums;bool ret =1;
     for(int i=0;i<v.size();i++){
         if(v[i]>='0'&&v[i]<='9'){
             nums.push_back(v[i]);
@@ -906,6 +905,22 @@ ListNode* deleteDuplicates_all(ListNode* head){
         }
     }
     return dummy->next;
+}
+
+//给你一个链表，两两交换其中相邻的节点，并返回交换后链表的头节点。你必须在不修改节点内部的值的情况下完成本题（即，只能进行节点交换）。
+ListNode* swapPairs(ListNode* head){
+    ListNode* dummyHead = new ListNode(0);
+    dummyHead->next = head;
+    ListNode* temp = dummyHead;
+    while (temp->next != nullptr && temp->next->next != nullptr) {
+        ListNode* node1 = temp->next;
+        ListNode* node2 = temp->next->next;
+        temp->next = node2;
+        node1->next = node2->next;
+        node2->next = node1;
+        temp = node1;
+    }
+    return dummyHead->next;
 }
 
 //不使用任何内建的哈希表库设计一个哈希映射（HashMap）。

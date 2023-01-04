@@ -186,6 +186,9 @@ ListNode *getIntersectionNode(ListNode *headA, ListNode *headB);
 //给定一个已排序的链表的头 head ， 删除原始链表中所有重复数字的节点，只留下不同的数字 。返回 已排序的链表 。
 ListNode* deleteDuplicates_all(ListNode* head);
 
+//给你一个链表，两两交换其中相邻的节点，并返回交换后链表的头节点。你必须在不修改节点内部的值的情况下完成本题（即，只能进行节点交换）。
+ListNode* swapPairs(ListNode* head);
+
 //栈
 //请你仅使用两个栈实现先入先出队列。队列应当支持一般队列支持的所有操作（push、pop、peek、empty）：
 //实现 MyQueue 类：
