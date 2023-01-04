@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/xu736946693/Desktop/myAlgorithm
+CMAKE_SOURCE_DIR = /home/xu736946693/Desktop/DataStrcuture
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/xu736946693/Desktop/myAlgorithm/build
+CMAKE_BINARY_DIR = /home/xu736946693/Desktop/DataStrcuture/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -126,9 +126,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/xu736946693/Desktop/myAlgorithm/build/CMakeFiles /home/xu736946693/Desktop/myAlgorithm/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/xu736946693/Desktop/DataStrcuture/build/CMakeFiles /home/xu736946693/Desktop/DataStrcuture/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/xu736946693/Desktop/myAlgorithm/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/xu736946693/Desktop/DataStrcuture/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -157,30 +157,30 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named myAlgorithm_shared
+# Target rules for targets named DataStructure_shared
 
 # Build rule for target.
-myAlgorithm_shared: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 myAlgorithm_shared
-.PHONY : myAlgorithm_shared
+DataStructure_shared: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 DataStructure_shared
+.PHONY : DataStructure_shared
 
 # fast build rule for target.
-myAlgorithm_shared/fast:
-	$(MAKE) -f bin/CMakeFiles/myAlgorithm_shared.dir/build.make bin/CMakeFiles/myAlgorithm_shared.dir/build
-.PHONY : myAlgorithm_shared/fast
+DataStructure_shared/fast:
+	$(MAKE) -f bin/CMakeFiles/DataStructure_shared.dir/build.make bin/CMakeFiles/DataStructure_shared.dir/build
+.PHONY : DataStructure_shared/fast
 
 #=============================================================================
-# Target rules for targets named myAlgorithm_static
+# Target rules for targets named DataStructure_static
 
 # Build rule for target.
-myAlgorithm_static: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 myAlgorithm_static
-.PHONY : myAlgorithm_static
+DataStructure_static: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 DataStructure_static
+.PHONY : DataStructure_static
 
 # fast build rule for target.
-myAlgorithm_static/fast:
-	$(MAKE) -f bin/CMakeFiles/myAlgorithm_static.dir/build.make bin/CMakeFiles/myAlgorithm_static.dir/build
-.PHONY : myAlgorithm_static/fast
+DataStructure_static/fast:
+	$(MAKE) -f bin/CMakeFiles/DataStructure_static.dir/build.make bin/CMakeFiles/DataStructure_static.dir/build
+.PHONY : DataStructure_static/fast
 
 # Help Target
 help:
@@ -194,8 +194,8 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... myAlgorithm_shared"
-	@echo "... myAlgorithm_static"
+	@echo "... DataStructure_shared"
+	@echo "... DataStructure_static"
 .PHONY : help
 
 

@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_FLAGS = -fPIC   -std=gnu++17
 
-CXX_DEFINES = -DmyAlgorithm_shared_EXPORTS
+CXX_DEFINES = -DDataStructure_shared_EXPORTS
 
 CXX_INCLUDES = -I/usr/local/include/opencv4 
 

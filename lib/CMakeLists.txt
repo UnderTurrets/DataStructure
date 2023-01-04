@@ -3,7 +3,7 @@ find_package(OpenCV REQUIRED)
 include_directories(${OpenCV_INCLUDE_DIRS})
 
 
-SET(LIB_LIST myAlgorithm.h
+SET(LIB_LIST DataStructure.h
              authority.h
              Heap.h   
              Heap.cpp
@@ -18,30 +18,30 @@ SET(LIB_LIST myAlgorithm.h
              Sort.h
              Sort.cpp    )
              
-ADD_LIBRARY(myAlgorithm_static STATIC ${LIB_LIST} )
-SET_TARGET_PROPERTIES(myAlgorithm_static PROPERTIES 
-                      OUT_PUT_NAME "myAlgorithm"
+ADD_LIBRARY(DataStructure_static STATIC ${LIB_LIST} )
+SET_TARGET_PROPERTIES(DataStructure_static PROPERTIES 
+                      OUT_PUT_NAME "DataStructure"
                       CLEAN_DIRECT_OUPUT 1)
                       
-ADD_LIBRARY(myAlgorithm_shared SHARED ${LIB_LIST} )
-SET_TARGET_PROPERTIES(myAlgorithm_shared PROPERTIES 
-                      OUT_PUT_NAME "myAlgorithm"
+ADD_LIBRARY(DataStructure_shared SHARED ${LIB_LIST} )
+SET_TARGET_PROPERTIES(DataStructure_shared PROPERTIES 
+                      OUT_PUT_NAME "DataStructure"
                       CLEAN_DIRECT_OUPUT 1)
                       
-INSTALL(FILES myAlgorithm.h DESTINATION include/myAlgorithm/)
-INSTALL(FILES authority.h DESTINATION include/myAlgorithm/)
-INSTALL(FILES Heap.h DESTINATION include/myAlgorithm/)
-INSTALL(FILES Heap.cpp DESTINATION include/myAlgorithm/)
-INSTALL(FILES leetcode.h DESTINATION include/myAlgorithm/)
-INSTALL(FILES leetcode.cpp DESTINATION include/myAlgorithm/)
-INSTALL(FILES Tree.h DESTINATION include/myAlgorithm/)
-INSTALL(FILES Tree.cpp DESTINATION include/myAlgorithm/)
-INSTALL(FILES SetType.h DESTINATION include/myAlgorithm/)
-INSTALL(FILES SetType.cpp DESTINATION include/myAlgorithm/)
-INSTALL(FILES Graph.h DESTINATION include/myAlgorithm/)
-INSTALL(FILES Graph.cpp DESTINATION include/myAlgorithm/)
-INSTALL(FILES Sort.h DESTINATION include/myAlgorithm/)
-INSTALL(FILES Sort.cpp DESTINATION include/myAlgorithm/)
-INSTALL(TARGETS myAlgorithm_static myAlgorithm_shared 
-        LIBRARY DESTINATION lib/myAlgorithm/
-        ARCHIVE DESTINATION lib/myAlgorithm/ )                      
+INSTALL(FILES DataStructure.h DESTINATION include/DataStructure/)
+INSTALL(FILES authority.h DESTINATION include/DataStructure/)
+INSTALL(FILES Heap.h DESTINATION include/DataStructure/)
+INSTALL(FILES Heap.cpp DESTINATION include/DataStructure/)
+INSTALL(FILES leetcode.h DESTINATION include/DataStructure/)
+INSTALL(FILES leetcode.cpp DESTINATION include/DataStructure/)
+INSTALL(FILES Tree.h DESTINATION include/DataStructure/)
+INSTALL(FILES Tree.cpp DESTINATION include/DataStructure/)
+INSTALL(FILES SetType.h DESTINATION include/DataStructure/)
+INSTALL(FILES SetType.cpp DESTINATION include/DataStructure/)
+INSTALL(FILES Graph.h DESTINATION include/DataStructure/)
+INSTALL(FILES Graph.cpp DESTINATION include/DataStructure/)
+INSTALL(FILES Sort.h DESTINATION include/DataStructure/)
+INSTALL(FILES Sort.cpp DESTINATION include/DataStructure/)
+INSTALL(TARGETS DataStructure_static DataStructure_shared 
+        LIBRARY DESTINATION lib/DataStructure/
+        ARCHIVE DESTINATION lib/DataStructure/ )                      

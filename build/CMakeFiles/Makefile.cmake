@@ -124,6 +124,6 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "bin/CMakeFiles/myAlgorithm_shared.dir/DependInfo.cmake"
-  "bin/CMakeFiles/myAlgorithm_static.dir/DependInfo.cmake"
+  "bin/CMakeFiles/DataStructure_shared.dir/DependInfo.cmake"
+  "bin/CMakeFiles/DataStructure_static.dir/DependInfo.cmake"
   )
