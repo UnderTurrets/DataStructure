@@ -743,20 +743,72 @@ string longestPalindrome_subseries(string s) {
 }
 
 //链表
-class ListNode {
-public:
-    int val;
-    ListNode *next;
-    ListNode() : val(0), next(nullptr) {}
-    ListNode(int x) : val(x), next(NULL) {}
-    ListNode(int x, ListNode *next) : val(x), next(next) {}
-    bool operator< (ListNode that){
+    bool ListNode::operator< (ListNode that){
         return this->val<=that.val;
     }
-    bool operator> (ListNode that){
+    bool ListNode::operator> (ListNode that){
         return this->val>=that.val;
     }
-};
+
+//设计链表的实现。您可以选择使用单链表或双链表。单链表中的节点应该具有两个属性：valV_front和V_frontnext。valV_front是当前节点的值，nextV_front是指向下一个节点的指针/引用。如果要使用双向链表，则还需要一个属性V_frontprevV_front以指示链表中的上一个节点。假设链表中的所有节点都是 0-index 的。
+//在链表类中实现这些功能：
+//get(index)：获取链表中第V_frontindexV_front个节点的值。如果索引无效，则返回-1。
+//addAtHead(val)：在链表的第一个元素之前添加一个值为V_frontvalV_front的节点。插入后，新节点将成为链表的第一个节点。
+//addAtTail(val)：将值为V_frontval 的节点追加到链表的最后一个元素。
+//addAtIndex(index,val)：在链表中的第V_frontindexV_front个节点之前添加值为V_frontvalV_front 的节点。如果V_frontindexV_front等于链表的长度，则该节点将附加到链表的末尾。如果 index 大于链表长度，则不会插入节点。如果index小于0，则在头部插入节点。
+//deleteAtIndex(index)：如果索引V_frontindex 有效，则删除链表中的第V_frontindex 个节点。
+    MyLinkedList::MyLinkedList() {
+        this->size = 0;
+        this->head = new ListNode(0);
+    }
+
+    int MyLinkedList::get(int index) {
+        if (index < 0 || index >= size) {
+            return -1;
+        }
+        ListNode *cur = head;
+        for (int i = 0; i <= index; i++) {
+            cur = cur->next;
+        }
+        return cur->val;
+    }
+
+    void MyLinkedList::addAtHead(int val) {
+        addAtIndex(0, val);
+    }
+
+    void MyLinkedList::addAtTail(int val) {
+        addAtIndex(size, val);
+    }
+
+    void MyLinkedList::addAtIndex(int index, int val) {
+        if (index > size) {
+            return;
+        }
+        index = max(0, index);
+        size++;
+        ListNode *pred = head;
+        for (int i = 0; i < index; i++) {
+            pred = pred->next;
+        }
+        ListNode *toAdd = new ListNode(val);
+        toAdd->next = pred->next;
+        pred->next = toAdd;
+    }
+
+    void MyLinkedList::deleteAtIndex(int index) {
+        if (index < 0 || index >= size) {
+            return;
+        }
+        size--;
+        ListNode *pred = head;
+        for (int i = 0; i < index; i++) {
+            pred = pred->next;
+        }
+        ListNode *p = pred->next;
+        pred->next = pred->next->next;
+        delete p;
+    }
 
 //给你一个链表的头节点 head ，判断链表中是否有环。
 //如果链表中有某个节点，可以通过连续跟踪 next 指针再次到达，则链表中存在环。 为了表示给定链表中的环，评测系统内部使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。注意：pos 不作为参数进行传递。仅仅是为了标识链表的实际情况。
@@ -921,6 +973,56 @@ ListNode* swapPairs(ListNode* head){
         temp = node1;
     }
     return dummyHead->next;
+}
+
+//给你链表的头节点 head ，每k个节点一组进行翻转，请你返回修改后的链表。
+//k 是一个正整数，它的值小于或等于链表的长度。如果节点总数不是k的整数倍，那么请将最后剩余的节点保持原有顺序。
+//你不能只是单纯的改变节点内部的值，而是需要实际进行节点交换。
+ListNode* reverseKGroup(ListNode* head, int k){
+    ListNode* dummy=new ListNode(0);
+    ListNode* NewHead=head;
+    for(int i=0;i<k-1;i++){
+        NewHead=NewHead->next;
+    }
+    dummy->next=NewHead;
+    vector<ListNode*> V_back;vector<ListNode*>V_front;
+    while (head){
+        V_front.push_back(head);
+        head=head->next;
+        if(V_front.size()==k){
+            for(int i=V_front.size()-1;i>0;i--){
+                V_front[i]->next=V_front[i-1];
+            }
+            V_front[0]->next=head;
+            if(!V_back.empty()){
+                V_back[0]->next=V_front.back();
+            }
+            V_back=V_front;
+            V_front.clear();
+        }
+    }
+    return dummy->next;
+}
+
+//给定一个单链表 L 的头节点 head ，单链表 L 表示为：
+//L0 → L1 → … → Ln - 1 → Ln
+//请将其重新排列后变为：
+//L0 → Ln → L1 → Ln - 1 → L2 → Ln - 2 → …
+//不能只是单纯的改变节点内部的值，而是需要实际的进行节点交换。
+void reorderList(ListNode* head){
+    vector<ListNode*>V;
+    ListNode* temp=head;
+    while (temp){
+        V.push_back(temp);
+        temp=temp->next;
+    }
+    head->next=V.back();
+    for(int N=V.size()-1;N>V.size()/2;N--){
+        V[N]->next=V[V.size()-N];
+        if(V.size()-N<N-1)V[V.size()-N]->next=V[N-1];
+    }
+    V[V.size()/2]->next=NULL;
+    return;
 }
 
 //不使用任何内建的哈希表库设计一个哈希映射（HashMap）。

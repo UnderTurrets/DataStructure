@@ -149,7 +149,46 @@ vector<string> findRepeatedDnaSequences(string s);
 string longestPalindrome_subseries(string s);
 
 //链表定义
-class ListNode;
+class ListNode {
+public:
+    int val;
+    ListNode *next;
+    ListNode() : val(0), next(nullptr) {}
+    ListNode(int x) : val(x), next(NULL) {}
+    ListNode(int x, ListNode *next) : val(x), next(next) {}
+    bool operator< (ListNode that);
+    bool operator> (ListNode that);
+};
+
+//设计链表的实现。您可以选择使用单链表或双链表。单链表中的节点应该具有两个属性：valV_front和V_frontnext。valV_front是当前节点的值，nextV_front是指向下一个节点的指针/引用。如果要使用双向链表，则还需要一个属性V_frontprevV_front以指示链表中的上一个节点。假设链表中的所有节点都是 0-index 的。
+//在链表类中实现这些功能：
+//get(index)：获取链表中第V_frontindexV_front个节点的值。如果索引无效，则返回-1。
+//addAtHead(val)：在链表的第一个元素之前添加一个值为V_frontvalV_front的节点。插入后，新节点将成为链表的第一个节点。
+//addAtTail(val)：将值为V_frontval 的节点追加到链表的最后一个元素。
+//addAtIndex(index,val)：在链表中的第V_frontindexV_front个节点之前添加值为V_frontvalV_front 的节点。如果V_frontindexV_front等于链表的长度，则该节点将附加到链表的末尾。如果 index 大于链表长度，则不会插入节点。如果index小于0，则在头部插入节点。
+//deleteAtIndex(index)：如果索引V_frontindex 有效，则删除链表中的第V_frontindex 个节点。
+class MyLinkedList {
+
+public:
+
+    MyLinkedList();
+
+    int get(int index);
+
+    void addAtHead(int val);
+
+    void addAtTail(int val);
+
+    void addAtIndex(int index, int val);
+
+    void deleteAtIndex(int index);
+
+private:
+
+    int size;
+    ListNode *head;
+
+};
 
 //给你一个链表的头节点 head ，判断链表中是否有环。
 //如果链表中有某个节点，可以通过连续跟踪 next 指针再次到达，则链表中存在环。 为了表示给定链表中的环，评测系统内部使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。注意：pos 不作为参数进行传递。仅仅是为了标识链表的实际情况。
@@ -188,6 +227,18 @@ ListNode* deleteDuplicates_all(ListNode* head);
 
 //给你一个链表，两两交换其中相邻的节点，并返回交换后链表的头节点。你必须在不修改节点内部的值的情况下完成本题（即，只能进行节点交换）。
 ListNode* swapPairs(ListNode* head);
+
+//给你链表的头节点 head ，每k个节点一组进行翻转，请你返回修改后的链表。
+//k 是一个正整数，它的值小于或等于链表的长度。如果节点总数不是k的整数倍，那么请将最后剩余的节点保持原有顺序。
+//你不能只是单纯的改变节点内部的值，而是需要实际进行节点交换。
+ListNode* reverseKGroup(ListNode* head, int k);
+
+//给定一个单链表 L 的头节点 head ，单链表 L 表示为：
+//L0 → L1 → … → Ln - 1 → Ln
+//请将其重新排列后变为：
+//L0 → Ln → L1 → Ln - 1 → L2 → Ln - 2 → …
+//不能只是单纯的改变节点内部的值，而是需要实际的进行节点交换。
+void reorderList(ListNode* head);
 
 //栈
 //请你仅使用两个栈实现先入先出队列。队列应当支持一般队列支持的所有操作（push、pop、peek、empty）：
