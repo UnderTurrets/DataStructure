@@ -1,2 +1,2 @@
-# Empty dependencies file for myAlgorithm_static.
+# Empty dependencies file for DataStructure_shared.
 # This may be replaced when dependencies are built.

@@ -106,13 +106,6 @@ bool canConstruct(string ransomNote, string magazine);
 //注意：若s 和 t中每个字符出现的次数都相同，则称s 和 t互为字母异位词。
 bool isAnagram(string s, string t);
 
-//给定一个只包括 '('，')'，'{'，'}'，'['，']'的字符串 s ，判断字符串是否有效。
-//有效字符串需满足：
-//左括号必须用相同类型的右括号闭合。
-//左括号必须以正确的顺序闭合。
-//每个右括号都有一个对应的相同类型的左括号。
-bool isValid(string s);
-
 //给定两个字符串形式的非负整数num1 和num2，计算它们的和并同样以字符串形式返回。
 //你不能使用任何內建的用于处理大整数的库（比如 BigInteger），也不能直接将输入的字符串转换为整数形式。
 string addStrings(string num1, string num2);
@@ -148,13 +141,15 @@ vector<string> findRepeatedDnaSequences(string s);
 //如果字符串的反序与原始字符串相同，则该字符串称为回文字符串。
 string longestPalindrome_subseries(string s);
 
+
+
 //链表定义
 class ListNode {
 public:
     int val;
     ListNode *next;
     ListNode() : val(0), next(nullptr) {}
-    ListNode(int x) : val(x), next(NULL) {}
+    ListNode(int x) : val(x), next(nullptr) {}
     ListNode(int x, ListNode *next) : val(x), next(next) {}
     bool operator< (ListNode that);
     bool operator> (ListNode that);
@@ -243,7 +238,7 @@ void reorderList(ListNode* head);
 //栈
 //请你仅使用两个栈实现先入先出队列。队列应当支持一般队列支持的所有操作（push、pop、peek、empty）：
 //实现 MyQueue 类：
-//void push(int x) 将元素 x 推到队列的末尾
+//void push(T x) 将元素 x 推到队列的末尾
 //T pop() 从队列的开头移除并返回元素
 //T peek() 返回队列开头的元素
 //boolean empty() 如果队列为空，返回 true ；否则，返回 false
@@ -254,40 +249,114 @@ class MyQueue {
 public:
     stack<T>instack;
     stack<T>outstack;
-    MyQueue<T>() {}
-    void push(T x) {
-        instack.push(x);
-    }
+    MyQueue<T>();
 
-    T pop() {
-        T ret;
-        if(outstack.empty()){
-            while (!instack.empty()){
-                T temp=instack.top();instack.pop();
-                outstack.push(temp);
-            }
-        }
-        ret=outstack.top();
-        outstack.pop();
-        return ret;
-    }
+    __attribute__((unused)) void push(T x);
 
-    T peek() {
-        T ret;
-        if(outstack.empty()){
-            while (!instack.empty()){
-                T temp=instack.top();instack.pop();
-                outstack.push(temp);
-            }
-        }
-        ret=outstack.top();
-        return ret;
-    }
+    T pop();
 
-    bool empty() {
-        return instack.empty()&&outstack.empty();
-    }
+    T peek();
+
+    bool empty();
 };
+
+//设计一个支持 push ，pop ，top 操作，并能在常数时间内检索到最小元素的栈。
+//实现 MinStack 类:
+//MinStack() 初始化堆栈对象。
+//void push(T val) 将元素val推入堆栈。
+//void pop() 删除堆栈顶部的元素。
+//T top() 获取堆栈顶部的元素。
+//T getMin() 获取堆栈中的最小元素。
+template<typename T>
+class MinStack {
+public:
+    MinStack();
+
+    void push(T val);
+
+    void pop();
+
+    T top();
+
+    T getMin();
+
+private:
+    stack<T> S;
+    stack<T>min;
+};
+
+//给定一个只包括 '('，')'，'{'，'}'，'['，']'的字符串 s ，判断字符串是否有效。
+//有效字符串需满足：
+//左括号必须用相同类型的右括号闭合。
+//左括号必须以正确的顺序闭合。
+//每个右括号都有一个对应的相同类型的左括号。
+bool isValid(string s);
+
+//给你一个由 '('、')' 和小写字母组成的字符串 s。
+//你需要从字符串中删除最少数目的 '(' 或者 ')'（可以删除任意位置的括号)，使得剩下的「括号字符串」有效。
+//请返回任意一个合法字符串。
+//有效「括号字符串」应当符合以下任意一条要求：
+//空字符串或只包含小写字母的字符串
+//可以被写作AB（A连接B）的字符串，其中A和B都是有效「括号字符串」
+//可以被写作(A)的字符串，其中A是一个有效的「括号字符串」
+string minRemoveToMakeValid(string s);
+
+
+
+
+
+
+
+//队列
+
+//共有 n 名小伙伴一起做游戏。小伙伴们围成一圈，按 顺时针顺序 从 1 到 n 编号。确切地说，从第 i 名小伙伴顺时针移动一位会到达第 (i+1) 名小伙伴的位置，其中 1 <= i < n ，从第 n 名小伙伴顺时针移动一位会回到第 1 名小伙伴的位置。
+//游戏遵循如下规则：
+//从第 1 名小伙伴所在位置 开始 。
+//沿着顺时针方向数 k 名小伙伴，计数时需要 包含 起始时的那位小伙伴。逐个绕圈进行计数，一些小伙伴可能会被数过不止一次。
+//你数到的最后一名小伙伴需要离开圈子，并视作输掉游戏。
+//如果圈子中仍然有不止一名小伙伴，从刚刚输掉的小伙伴的 顺时针下一位 小伙伴 开始，回到步骤 2 继续执行。
+//否则，圈子中最后一名小伙伴赢得游戏。
+//给你参与游戏的小伙伴总数 n ，和一个整数 k ，返回游戏的获胜者。
+int findTheWinner(int n, int k);
+
+
+
+
+
+
+
+//不使用任何内建的哈希表库设计一个哈希映射（HashMap）。
+//实现 MyHashMap 类：
+//MyHashMap() 用空映射初始化对象
+//void put(int key, int value) 向 HashMap 插入一个键值对 (key, value) 。如果 key 已经存在于映射中，则更新其对应的值 value 。
+//int get(int key) 返回特定的 key 所映射的 value ；如果映射中不包含 key 的映射，返回 -1 。
+//void remove(key) 如果映射中存在 key 的映射，则移除 key 和它所对应的 value 。
+class MyHashMap {
+private:
+    vector<list<pair<int, int>>> data;
+    static const int base = 769;
+    static int hash(int key);
+public:
+    /** Initialize your data structure here. */
+    MyHashMap() ;
+
+    /** value will always be non-negative. */
+    void put(int key, int value) ;
+
+    /** Returns the value to which the specified key is mapped, or -1 if this map contains no mapping for the key */
+    int get(int key) ;
+
+    /** Removes the mapping of the specified value key if this map contains a mapping for the key */
+    void remove(int key);
+
+};
+
+
+
+
+
+
+
 
 
 

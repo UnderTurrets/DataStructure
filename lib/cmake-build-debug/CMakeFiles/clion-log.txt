@@ -1,4 +1,4 @@
-/home/xu736946693/CLion-2022.2.4/clion-2022.2.4/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/usr/bin/make -DCMAKE_C_COMPILER=/usr/bin/gcc -DCMAKE_CXX_COMPILER=/usr/bin/g++ -G "CodeBlocks - Unix Makefiles" -S /home/xu736946693/Desktop/myAlgorithm/lib -B /home/xu736946693/Desktop/myAlgorithm/lib/cmake-build-debug
+/home/xu736946693/CLion-2022.2.4/clion-2022.2.4/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/usr/bin/make -DCMAKE_C_COMPILER=/usr/bin/gcc -DCMAKE_CXX_COMPILER=/usr/bin/g++ -G "CodeBlocks - Unix Makefiles" -S /home/xu736946693/Desktop/DataStructure/lib -B /home/xu736946693/Desktop/DataStructure/lib/cmake-build-debug
 CMake Warning (dev) in CMakeLists.txt:
   No project() command is present.  The top-level CMakeLists.txt file must
   contain a literal, direct call to the project() command.  Add a line of
@@ -27,4 +27,4 @@ This warning is for project developers.  Use -Wno-dev to suppress it.
 -- Found OpenCV: /usr/local (found version "4.6.0") 
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/xu736946693/Desktop/myAlgorithm/lib/cmake-build-debug
+-- Build files have been written to: /home/xu736946693/Desktop/DataStructure/lib/cmake-build-debug

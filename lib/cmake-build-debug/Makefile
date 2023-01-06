@@ -57,10 +57,10 @@ RM = /home/xu736946693/CLion-2022.2.4/clion-2022.2.4/bin/cmake/linux/bin/cmake -
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/xu736946693/Desktop/myAlgorithm/lib
+CMAKE_SOURCE_DIR = /home/xu736946693/Desktop/DataStructure/lib
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/xu736946693/Desktop/myAlgorithm/lib/cmake-build-debug
+CMAKE_BINARY_DIR = /home/xu736946693/Desktop/DataStructure/lib/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -132,9 +132,9 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/xu736946693/Desktop/myAlgorithm/lib/cmake-build-debug/CMakeFiles /home/xu736946693/Desktop/myAlgorithm/lib/cmake-build-debug//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/xu736946693/Desktop/DataStructure/lib/cmake-build-debug/CMakeFiles /home/xu736946693/Desktop/DataStructure/lib/cmake-build-debug//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/xu736946693/Desktop/myAlgorithm/lib/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/xu736946693/Desktop/DataStructure/lib/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -162,38 +162,38 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named myAlgorithm_static
+# Target rules for targets named DataStructure_static
 
 # Build rule for target.
-myAlgorithm_static: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 myAlgorithm_static
-.PHONY : myAlgorithm_static
+DataStructure_static: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 DataStructure_static
+.PHONY : DataStructure_static
 
 # fast build rule for target.
-myAlgorithm_static/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myAlgorithm_static.dir/build.make CMakeFiles/myAlgorithm_static.dir/build
-.PHONY : myAlgorithm_static/fast
+DataStructure_static/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DataStructure_static.dir/build.make CMakeFiles/DataStructure_static.dir/build
+.PHONY : DataStructure_static/fast
 
 #=============================================================================
-# Target rules for targets named myAlgorithm_shared
+# Target rules for targets named DataStructure_shared
 
 # Build rule for target.
-myAlgorithm_shared: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 myAlgorithm_shared
-.PHONY : myAlgorithm_shared
+DataStructure_shared: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 DataStructure_shared
+.PHONY : DataStructure_shared
 
 # fast build rule for target.
-myAlgorithm_shared/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myAlgorithm_shared.dir/build.make CMakeFiles/myAlgorithm_shared.dir/build
-.PHONY : myAlgorithm_shared/fast
+DataStructure_shared/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DataStructure_shared.dir/build.make CMakeFiles/DataStructure_shared.dir/build
+.PHONY : DataStructure_shared/fast
 
 Graph.o: Graph.cpp.o
 .PHONY : Graph.o
 
 # target to build an object file
 Graph.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myAlgorithm_static.dir/build.make CMakeFiles/myAlgorithm_static.dir/Graph.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myAlgorithm_shared.dir/build.make CMakeFiles/myAlgorithm_shared.dir/Graph.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DataStructure_static.dir/build.make CMakeFiles/DataStructure_static.dir/Graph.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DataStructure_shared.dir/build.make CMakeFiles/DataStructure_shared.dir/Graph.cpp.o
 .PHONY : Graph.cpp.o
 
 Graph.i: Graph.cpp.i
@@ -201,8 +201,8 @@ Graph.i: Graph.cpp.i
 
 # target to preprocess a source file
 Graph.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myAlgorithm_static.dir/build.make CMakeFiles/myAlgorithm_static.dir/Graph.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myAlgorithm_shared.dir/build.make CMakeFiles/myAlgorithm_shared.dir/Graph.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DataStructure_static.dir/build.make CMakeFiles/DataStructure_static.dir/Graph.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DataStructure_shared.dir/build.make CMakeFiles/DataStructure_shared.dir/Graph.cpp.i
 .PHONY : Graph.cpp.i
 
 Graph.s: Graph.cpp.s
@@ -210,8 +210,8 @@ Graph.s: Graph.cpp.s
 
 # target to generate assembly for a file
 Graph.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myAlgorithm_static.dir/build.make CMakeFiles/myAlgorithm_static.dir/Graph.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myAlgorithm_shared.dir/build.make CMakeFiles/myAlgorithm_shared.dir/Graph.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DataStructure_static.dir/build.make CMakeFiles/DataStructure_static.dir/Graph.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DataStructure_shared.dir/build.make CMakeFiles/DataStructure_shared.dir/Graph.cpp.s
 .PHONY : Graph.cpp.s
 
 Heap.o: Heap.cpp.o
@@ -219,8 +219,8 @@ Heap.o: Heap.cpp.o
 
 # target to build an object file
 Heap.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myAlgorithm_static.dir/build.make CMakeFiles/myAlgorithm_static.dir/Heap.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myAlgorithm_shared.dir/build.make CMakeFiles/myAlgorithm_shared.dir/Heap.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DataStructure_static.dir/build.make CMakeFiles/DataStructure_static.dir/Heap.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DataStructure_shared.dir/build.make CMakeFiles/DataStructure_shared.dir/Heap.cpp.o
 .PHONY : Heap.cpp.o
 
 Heap.i: Heap.cpp.i
@@ -228,8 +228,8 @@ Heap.i: Heap.cpp.i
 
 # target to preprocess a source file
 Heap.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myAlgorithm_static.dir/build.make CMakeFiles/myAlgorithm_static.dir/Heap.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myAlgorithm_shared.dir/build.make CMakeFiles/myAlgorithm_shared.dir/Heap.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DataStructure_static.dir/build.make CMakeFiles/DataStructure_static.dir/Heap.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DataStructure_shared.dir/build.make CMakeFiles/DataStructure_shared.dir/Heap.cpp.i
 .PHONY : Heap.cpp.i
 
 Heap.s: Heap.cpp.s
@@ -237,8 +237,8 @@ Heap.s: Heap.cpp.s
 
 # target to generate assembly for a file
 Heap.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myAlgorithm_static.dir/build.make CMakeFiles/myAlgorithm_static.dir/Heap.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myAlgorithm_shared.dir/build.make CMakeFiles/myAlgorithm_shared.dir/Heap.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DataStructure_static.dir/build.make CMakeFiles/DataStructure_static.dir/Heap.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DataStructure_shared.dir/build.make CMakeFiles/DataStructure_shared.dir/Heap.cpp.s
 .PHONY : Heap.cpp.s
 
 SetType.o: SetType.cpp.o
@@ -246,8 +246,8 @@ SetType.o: SetType.cpp.o
 
 # target to build an object file
 SetType.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myAlgorithm_static.dir/build.make CMakeFiles/myAlgorithm_static.dir/SetType.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myAlgorithm_shared.dir/build.make CMakeFiles/myAlgorithm_shared.dir/SetType.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DataStructure_static.dir/build.make CMakeFiles/DataStructure_static.dir/SetType.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DataStructure_shared.dir/build.make CMakeFiles/DataStructure_shared.dir/SetType.cpp.o
 .PHONY : SetType.cpp.o
 
 SetType.i: SetType.cpp.i
@@ -255,8 +255,8 @@ SetType.i: SetType.cpp.i
 
 # target to preprocess a source file
 SetType.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myAlgorithm_static.dir/build.make CMakeFiles/myAlgorithm_static.dir/SetType.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myAlgorithm_shared.dir/build.make CMakeFiles/myAlgorithm_shared.dir/SetType.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DataStructure_static.dir/build.make CMakeFiles/DataStructure_static.dir/SetType.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DataStructure_shared.dir/build.make CMakeFiles/DataStructure_shared.dir/SetType.cpp.i
 .PHONY : SetType.cpp.i
 
 SetType.s: SetType.cpp.s
@@ -264,17 +264,44 @@ SetType.s: SetType.cpp.s
 
 # target to generate assembly for a file
 SetType.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myAlgorithm_static.dir/build.make CMakeFiles/myAlgorithm_static.dir/SetType.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myAlgorithm_shared.dir/build.make CMakeFiles/myAlgorithm_shared.dir/SetType.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DataStructure_static.dir/build.make CMakeFiles/DataStructure_static.dir/SetType.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DataStructure_shared.dir/build.make CMakeFiles/DataStructure_shared.dir/SetType.cpp.s
 .PHONY : SetType.cpp.s
+
+Sort.o: Sort.cpp.o
+.PHONY : Sort.o
+
+# target to build an object file
+Sort.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DataStructure_static.dir/build.make CMakeFiles/DataStructure_static.dir/Sort.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DataStructure_shared.dir/build.make CMakeFiles/DataStructure_shared.dir/Sort.cpp.o
+.PHONY : Sort.cpp.o
+
+Sort.i: Sort.cpp.i
+.PHONY : Sort.i
+
+# target to preprocess a source file
+Sort.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DataStructure_static.dir/build.make CMakeFiles/DataStructure_static.dir/Sort.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DataStructure_shared.dir/build.make CMakeFiles/DataStructure_shared.dir/Sort.cpp.i
+.PHONY : Sort.cpp.i
+
+Sort.s: Sort.cpp.s
+.PHONY : Sort.s
+
+# target to generate assembly for a file
+Sort.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DataStructure_static.dir/build.make CMakeFiles/DataStructure_static.dir/Sort.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DataStructure_shared.dir/build.make CMakeFiles/DataStructure_shared.dir/Sort.cpp.s
+.PHONY : Sort.cpp.s
 
 Tree.o: Tree.cpp.o
 .PHONY : Tree.o
 
 # target to build an object file
 Tree.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myAlgorithm_static.dir/build.make CMakeFiles/myAlgorithm_static.dir/Tree.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myAlgorithm_shared.dir/build.make CMakeFiles/myAlgorithm_shared.dir/Tree.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DataStructure_static.dir/build.make CMakeFiles/DataStructure_static.dir/Tree.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DataStructure_shared.dir/build.make CMakeFiles/DataStructure_shared.dir/Tree.cpp.o
 .PHONY : Tree.cpp.o
 
 Tree.i: Tree.cpp.i
@@ -282,8 +309,8 @@ Tree.i: Tree.cpp.i
 
 # target to preprocess a source file
 Tree.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myAlgorithm_static.dir/build.make CMakeFiles/myAlgorithm_static.dir/Tree.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myAlgorithm_shared.dir/build.make CMakeFiles/myAlgorithm_shared.dir/Tree.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DataStructure_static.dir/build.make CMakeFiles/DataStructure_static.dir/Tree.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DataStructure_shared.dir/build.make CMakeFiles/DataStructure_shared.dir/Tree.cpp.i
 .PHONY : Tree.cpp.i
 
 Tree.s: Tree.cpp.s
@@ -291,8 +318,8 @@ Tree.s: Tree.cpp.s
 
 # target to generate assembly for a file
 Tree.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myAlgorithm_static.dir/build.make CMakeFiles/myAlgorithm_static.dir/Tree.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myAlgorithm_shared.dir/build.make CMakeFiles/myAlgorithm_shared.dir/Tree.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DataStructure_static.dir/build.make CMakeFiles/DataStructure_static.dir/Tree.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DataStructure_shared.dir/build.make CMakeFiles/DataStructure_shared.dir/Tree.cpp.s
 .PHONY : Tree.cpp.s
 
 leetcode.o: leetcode.cpp.o
@@ -300,8 +327,8 @@ leetcode.o: leetcode.cpp.o
 
 # target to build an object file
 leetcode.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myAlgorithm_static.dir/build.make CMakeFiles/myAlgorithm_static.dir/leetcode.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myAlgorithm_shared.dir/build.make CMakeFiles/myAlgorithm_shared.dir/leetcode.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DataStructure_static.dir/build.make CMakeFiles/DataStructure_static.dir/leetcode.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DataStructure_shared.dir/build.make CMakeFiles/DataStructure_shared.dir/leetcode.cpp.o
 .PHONY : leetcode.cpp.o
 
 leetcode.i: leetcode.cpp.i
@@ -309,8 +336,8 @@ leetcode.i: leetcode.cpp.i
 
 # target to preprocess a source file
 leetcode.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myAlgorithm_static.dir/build.make CMakeFiles/myAlgorithm_static.dir/leetcode.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myAlgorithm_shared.dir/build.make CMakeFiles/myAlgorithm_shared.dir/leetcode.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DataStructure_static.dir/build.make CMakeFiles/DataStructure_static.dir/leetcode.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DataStructure_shared.dir/build.make CMakeFiles/DataStructure_shared.dir/leetcode.cpp.i
 .PHONY : leetcode.cpp.i
 
 leetcode.s: leetcode.cpp.s
@@ -318,8 +345,8 @@ leetcode.s: leetcode.cpp.s
 
 # target to generate assembly for a file
 leetcode.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myAlgorithm_static.dir/build.make CMakeFiles/myAlgorithm_static.dir/leetcode.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/myAlgorithm_shared.dir/build.make CMakeFiles/myAlgorithm_shared.dir/leetcode.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DataStructure_static.dir/build.make CMakeFiles/DataStructure_static.dir/leetcode.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/DataStructure_shared.dir/build.make CMakeFiles/DataStructure_shared.dir/leetcode.cpp.s
 .PHONY : leetcode.cpp.s
 
 # Help Target
@@ -334,8 +361,8 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... myAlgorithm_shared"
-	@echo "... myAlgorithm_static"
+	@echo "... DataStructure_shared"
+	@echo "... DataStructure_static"
 	@echo "... Graph.o"
 	@echo "... Graph.i"
 	@echo "... Graph.s"
@@ -345,6 +372,9 @@ help:
 	@echo "... SetType.o"
 	@echo "... SetType.i"
 	@echo "... SetType.s"
+	@echo "... Sort.o"
+	@echo "... Sort.i"
+	@echo "... Sort.s"
 	@echo "... Tree.o"
 	@echo "... Tree.i"
 	@echo "... Tree.s"

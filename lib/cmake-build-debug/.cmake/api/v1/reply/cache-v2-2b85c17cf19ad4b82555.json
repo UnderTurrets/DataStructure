@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/xu736946693/Desktop/myAlgorithm/lib/cmake-build-debug"
+			"value" : "/home/xu736946693/Desktop/DataStructure/lib/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -679,7 +679,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/xu736946693/Desktop/myAlgorithm/lib"
+			"value" : "/home/xu736946693/Desktop/DataStructure/lib"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1267,7 +1267,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/xu736946693/Desktop/myAlgorithm/lib/cmake-build-debug"
+			"value" : "/home/xu736946693/Desktop/DataStructure/lib/cmake-build-debug"
 		},
 		{
 			"name" : "Project_IS_TOP_LEVEL",
@@ -1291,7 +1291,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/xu736946693/Desktop/myAlgorithm/lib"
+			"value" : "/home/xu736946693/Desktop/DataStructure/lib"
 		}
 	],
 	"kind" : "cache",

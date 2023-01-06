@@ -1,4 +1,4 @@
-# Install script for directory: /home/xu736946693/Desktop/myAlgorithm/lib
+# Install script for directory: /home/xu736946693/Desktop/DataStructure/lib
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -43,69 +43,77 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/myAlgorithm" TYPE FILE FILES "/home/xu736946693/Desktop/myAlgorithm/lib/myAlgorithm.h")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/DataStructure" TYPE FILE FILES "/home/xu736946693/Desktop/DataStructure/lib/DataStructure.h")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/myAlgorithm" TYPE FILE FILES "/home/xu736946693/Desktop/myAlgorithm/lib/authority.h")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/DataStructure" TYPE FILE FILES "/home/xu736946693/Desktop/DataStructure/lib/authority.h")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/myAlgorithm" TYPE FILE FILES "/home/xu736946693/Desktop/myAlgorithm/lib/Heap.h")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/DataStructure" TYPE FILE FILES "/home/xu736946693/Desktop/DataStructure/lib/Heap.h")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/myAlgorithm" TYPE FILE FILES "/home/xu736946693/Desktop/myAlgorithm/lib/Heap.cpp")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/DataStructure" TYPE FILE FILES "/home/xu736946693/Desktop/DataStructure/lib/Heap.cpp")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/myAlgorithm" TYPE FILE FILES "/home/xu736946693/Desktop/myAlgorithm/lib/leetcode.h")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/DataStructure" TYPE FILE FILES "/home/xu736946693/Desktop/DataStructure/lib/leetcode.h")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/myAlgorithm" TYPE FILE FILES "/home/xu736946693/Desktop/myAlgorithm/lib/leetcode.cpp")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/DataStructure" TYPE FILE FILES "/home/xu736946693/Desktop/DataStructure/lib/leetcode.cpp")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/myAlgorithm" TYPE FILE FILES "/home/xu736946693/Desktop/myAlgorithm/lib/Tree.h")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/DataStructure" TYPE FILE FILES "/home/xu736946693/Desktop/DataStructure/lib/Tree.h")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/myAlgorithm" TYPE FILE FILES "/home/xu736946693/Desktop/myAlgorithm/lib/Tree.cpp")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/DataStructure" TYPE FILE FILES "/home/xu736946693/Desktop/DataStructure/lib/Tree.cpp")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/myAlgorithm" TYPE FILE FILES "/home/xu736946693/Desktop/myAlgorithm/lib/SetType.h")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/DataStructure" TYPE FILE FILES "/home/xu736946693/Desktop/DataStructure/lib/SetType.h")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/myAlgorithm" TYPE FILE FILES "/home/xu736946693/Desktop/myAlgorithm/lib/SetType.cpp")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/DataStructure" TYPE FILE FILES "/home/xu736946693/Desktop/DataStructure/lib/SetType.cpp")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/myAlgorithm" TYPE FILE FILES "/home/xu736946693/Desktop/myAlgorithm/lib/Graph.h")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/DataStructure" TYPE FILE FILES "/home/xu736946693/Desktop/DataStructure/lib/Graph.h")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/myAlgorithm" TYPE FILE FILES "/home/xu736946693/Desktop/myAlgorithm/lib/Graph.cpp")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/DataStructure" TYPE FILE FILES "/home/xu736946693/Desktop/DataStructure/lib/Graph.cpp")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/myAlgorithm" TYPE STATIC_LIBRARY FILES "/home/xu736946693/Desktop/myAlgorithm/lib/cmake-build-debug/libmyAlgorithm_static.a")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/DataStructure" TYPE FILE FILES "/home/xu736946693/Desktop/DataStructure/lib/Sort.h")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/myAlgorithm/libmyAlgorithm_shared.so" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/myAlgorithm/libmyAlgorithm_shared.so")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/DataStructure" TYPE FILE FILES "/home/xu736946693/Desktop/DataStructure/lib/Sort.cpp")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/DataStructure" TYPE STATIC_LIBRARY FILES "/home/xu736946693/Desktop/DataStructure/lib/cmake-build-debug/libDataStructure_static.a")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/DataStructure/libDataStructure_shared.so" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/DataStructure/libDataStructure_shared.so")
     file(RPATH_CHECK
-         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/myAlgorithm/libmyAlgorithm_shared.so"
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/DataStructure/libDataStructure_shared.so"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/myAlgorithm" TYPE SHARED_LIBRARY FILES "/home/xu736946693/Desktop/myAlgorithm/lib/cmake-build-debug/libmyAlgorithm_shared.so")
-  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/myAlgorithm/libmyAlgorithm_shared.so" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/myAlgorithm/libmyAlgorithm_shared.so")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/DataStructure" TYPE SHARED_LIBRARY FILES "/home/xu736946693/Desktop/DataStructure/lib/cmake-build-debug/libDataStructure_shared.so")
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/DataStructure/libDataStructure_shared.so" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/DataStructure/libDataStructure_shared.so")
     if(CMAKE_INSTALL_DO_STRIP)
-      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/myAlgorithm/libmyAlgorithm_shared.so")
+      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/DataStructure/libDataStructure_shared.so")
     endif()
   endif()
 endif()
@@ -121,5 +129,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/xu736946693/Desktop/myAlgorithm/lib/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/xu736946693/Desktop/DataStructure/lib/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

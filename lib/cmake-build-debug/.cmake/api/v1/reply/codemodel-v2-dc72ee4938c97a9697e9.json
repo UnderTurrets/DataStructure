@@ -7,10 +7,10 @@
 				{
 					"build" : ".",
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-.-Debug-ba824de67ce4bbfea06f.json",
+					"jsonFile" : "directory-.-Debug-b7b54a5e126f4ba97096.json",
 					"minimumCMakeVersion" : 
 					{
-						"string" : "3.23"
+						"string" : "3.16"
 					},
 					"projectIndex" : 0,
 					"source" : ".",
@@ -41,16 +41,16 @@
 			[
 				{
 					"directoryIndex" : 0,
-					"id" : "myAlgorithm_shared::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-myAlgorithm_shared-Debug-68a42bbfe7d9692fabfb.json",
-					"name" : "myAlgorithm_shared",
+					"id" : "DataStructure_shared::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-DataStructure_shared-Debug-ef3ed98cd4b0fc652007.json",
+					"name" : "DataStructure_shared",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
-					"id" : "myAlgorithm_static::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-myAlgorithm_static-Debug-3ce2e842fadab43e4162.json",
-					"name" : "myAlgorithm_static",
+					"id" : "DataStructure_static::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-DataStructure_static-Debug-fe9dc8b44b7b21f35601.json",
+					"name" : "DataStructure_static",
 					"projectIndex" : 0
 				}
 			]
@@ -59,8 +59,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/xu736946693/Desktop/myAlgorithm/lib/cmake-build-debug",
-		"source" : "/home/xu736946693/Desktop/myAlgorithm/lib"
+		"build" : "/home/xu736946693/Desktop/DataStructure/lib/cmake-build-debug",
+		"source" : "/home/xu736946693/Desktop/DataStructure/lib"
 	},
 	"version" : 
 	{

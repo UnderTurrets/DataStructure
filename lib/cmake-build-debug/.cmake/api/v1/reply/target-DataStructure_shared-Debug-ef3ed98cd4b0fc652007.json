@@ -1,9 +1,8 @@
 {
-	"archive" : {},
 	"artifacts" : 
 	[
 		{
-			"path" : "libmyAlgorithm_static.a"
+			"path" : "libDataStructure_shared.so"
 		}
 	],
 	"backtrace" : 1,
@@ -27,13 +26,13 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 19,
+				"line" : 26,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 41,
+				"line" : 45,
 				"parent" : 0
 			},
 			{
@@ -50,7 +49,13 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g"
+					"fragment" : "-g -fPIC"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"define" : "DataStructure_shared_EXPORTS"
 				}
 			],
 			"includes" : 
@@ -67,18 +72,23 @@
 				5,
 				7,
 				9,
-				11
+				11,
+				13
 			]
 		}
 	],
-	"id" : "myAlgorithm_static::@6890427a1f51a3e7e1df",
+	"id" : "DataStructure_shared::@6890427a1f51a3e7e1df",
 	"install" : 
 	{
 		"destinations" : 
 		[
 			{
 				"backtrace" : 2,
-				"path" : "lib/myAlgorithm"
+				"path" : "lib/DataStructure"
+			},
+			{
+				"backtrace" : 2,
+				"path" : "lib/DataStructure"
 			}
 		],
 		"prefix" : 
@@ -86,8 +96,19 @@
 			"path" : "/usr/local"
 		}
 	},
-	"name" : "myAlgorithm_static",
-	"nameOnDisk" : "libmyAlgorithm_static.a",
+	"link" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "",
+				"role" : "flags"
+			}
+		],
+		"language" : "CXX"
+	},
+	"name" : "DataStructure_shared",
+	"nameOnDisk" : "libDataStructure_shared.so",
 	"paths" : 
 	{
 		"build" : ".",
@@ -105,7 +126,8 @@
 				4,
 				6,
 				8,
-				10
+				10,
+				12
 			]
 		},
 		{
@@ -116,7 +138,8 @@
 				5,
 				7,
 				9,
-				11
+				11,
+				13
 			]
 		}
 	],
@@ -124,7 +147,7 @@
 	[
 		{
 			"backtrace" : 1,
-			"path" : "myAlgorithm.h",
+			"path" : "DataStructure.h",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -186,7 +209,18 @@
 			"compileGroupIndex" : 0,
 			"path" : "Graph.cpp",
 			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "Sort.h",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "Sort.cpp",
+			"sourceGroupIndex" : 1
 		}
 	],
-	"type" : "STATIC_LIBRARY"
+	"type" : "SHARED_LIBRARY"
 }
