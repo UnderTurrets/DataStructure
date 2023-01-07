@@ -9,36 +9,97 @@ BinTree<T>::BinTree(){
 }
 
 template<typename T>
-BinTree<T>::BinTree( const BinTree<T> &that){
+BinTree<T>::BinTree( T x){
+    this->val=x;
+    this->left=NULL;
+    this->right=NULL;
+}
+
+//给你一个整数数组 nums ，其中元素已经按 升序 排列，请你将其转换为一棵 高度平衡 二叉搜索树。
+//高度平衡 二叉树是一棵满足「每个节点的左右两个子树的高度差的绝对值不超过 1 」的二叉树。
+template<typename T>
+BinTree<T>::BinTree(vector<T> nums){
+    this->val=sortedArrayToBST_helper(nums,0,nums.size()-1)->val;
+    this->left=sortedArrayToBST_helper(nums,0,nums.size()-1)->left;
+    this->left=sortedArrayToBST_helper(nums,0,nums.size()-1)->right;
+}
+template<typename T>
+BinTree<T>* BinTree<T>::sortedArrayToBST_helper(vector<T>& nums, int left, int right) {
+    if (left > right) {
+        return nullptr;
+    }
+    // 总是选择中间位置左边的数字作为根节点
+    int mid = (left + right) / 2;
+    BinTree<T>* root = new BinTree<T>(nums[mid]);
+    root->left = sortedArrayToBST_helper(nums, left, mid - 1);
+    root->right = sortedArrayToBST_helper(nums, mid + 1, right);
+    return root;
+}
+
+//给定两个整数数组preorder 和 inorder，其中preorder 是二叉树的先序遍历， inorder是同一棵树的中序遍历，请构造二叉树并返回其根节点。
+//1 <= preorder.length <= 3000
+//inorder.length == preorder.length
+//-3000 <= preorder[i], inorder[i] <= 3000
+//preorder和inorder均 无重复 元素
+//inorder均出现在preorder
+//preorder保证 为二叉树的前序遍历序列
+//inorder保证 为二叉树的中序遍历序列
+template<typename T>
+BinTree<T>::BinTree(vector<T> preorder, vector<T> inorder) {
+    this->val=preorder[0];
+    stack<BinTree<T>*> stk;
+    stk.push(this);
+    int inorderIndex = 0;
+    for (int i = 1; i < preorder.size(); ++i) {
+        int preorderVal = preorder[i];
+        BinTree<T>* node = stk.top();
+        if (node->val != inorder[inorderIndex]) {
+            node->left = new BinTree<T>(preorderVal);
+            stk.push(node->left);
+        }
+        else {
+            while (!stk.empty() && stk.top()->val == inorder[inorderIndex]) {
+                node = stk.top();
+                stk.pop();
+                ++inorderIndex;
+            }
+            node->right = new BinTree<T>(preorderVal);
+            stk.push(node->right);
+        }
+    }
+}
+
+    template<typename T>
+    BinTree<T>::BinTree( const BinTree<T> &that){
         val=(that.val);left=(that.left);right=(that.right);
-}
+    }
 
-template<typename T>
-bool BinTree<T>::operator< (BinTree<T> that){
+    template<typename T>
+    bool BinTree<T>::operator< (BinTree<T> that){
         return this->val<that.val;
-}
+    }
 
-template<typename T>
-bool BinTree<T>::operator<= (BinTree<T> that){
+    template<typename T>
+    bool BinTree<T>::operator<= (BinTree<T> that){
         return this->val<=that.val;
     }
 
-template<typename T>
-bool BinTree<T>::operator> (BinTree<T> that){
+    template<typename T>
+    bool BinTree<T>::operator> (BinTree<T> that){
         return this->val>that.val;
     }
 
-template<typename T>
-bool BinTree<T>::operator>= (BinTree<T> that){
+    template<typename T>
+    bool BinTree<T>::operator>= (BinTree<T> that){
         return this->val>=that.val;
     }
 
-template<typename T>
-bool BinTree<T>::operator== (BinTree<T> that){
+    template<typename T>
+    bool BinTree<T>::operator== (BinTree<T> that){
         return this->val==that.val;
     }
 
-template<typename T>
+    template<typename T>
     BinTree<T> BinTree<T>::operator= (BinTree<T> that){
         this->val=that.val;
         this->left=that.left;
@@ -164,6 +225,29 @@ template<typename T>
                 if(node->left){Q.push(node->left);}
                 if(node->right){Q.push(node->right);}
             }
+        }
+        return ret;
+    }
+
+    //给你二叉树的根节点 root ，返回其节点值的 锯齿形层序遍历 。（即先从左往右，再从右往左进行下一层遍历，以此类推，层与层之间交替进行）。
+    template<typename T>
+    vector<vector<int>> BinTree<T>::zigzagLevelOrder(){
+        vector<vector<int>>ret;
+        queue<BinTree<T>*> Q;
+        if(!this)return {{}};
+        Q.push(this);
+        int flag=0;
+        while (!Q.empty()){
+            int x=Q.size();
+            flag++;
+            ret.push_back(vector<int>());
+            for(int i=0;i<x;i++){
+                auto node=Q.front();Q.pop();
+                ret.back().push_back(node->val);
+                if(node->left){Q.push(node->left);}
+                if(node->right){Q.push(node->right);}
+            }
+            if(flag%2==0)reverse(ret.back().begin(),ret.back().end());
         }
         return ret;
     }

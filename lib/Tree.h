@@ -11,7 +11,26 @@ public:
     BinTree<T> *left=NULL;
     BinTree<T> *right=NULL;
     BinTree();
+    BinTree( T x);
     BinTree( const BinTree<T> &that);
+
+    //给你一个整数数组 nums ，其中元素已经按 升序 排列，请你将其转换为一棵 高度平衡 二叉搜索树。
+    //高度平衡 二叉树是一棵满足「每个节点的左右两个子树的高度差的绝对值不超过 1 」的二叉树。
+public:
+    BinTree(vector<T> nums);
+private:
+    BinTree<T>* sortedArrayToBST_helper(vector<T>& nums, int left, int right);
+    
+public:
+    //给定两个整数数组preorder 和 inorder，其中preorder 是二叉树的先序遍历， inorder是同一棵树的中序遍历，请构造二叉树并返回其根节点。
+    //1 <= preorder.length <= 3000
+    //inorder.length == preorder.length
+    //-3000 <= preorder[i], inorder[i] <= 3000
+    //preorder和inorder均 无重复 元素
+    //inorder均出现在preorder
+    //preorder保证 为二叉树的前序遍历序列
+    //inorder保证 为二叉树的中序遍历序列
+    BinTree(vector<T> preorder, vector<T> inorder);
 
     //重载运算符，基于val进行比较
     bool operator< (BinTree<T> that);
@@ -35,6 +54,9 @@ public:
 
     //按层形成二维数组（层序遍历的应用）
     vector<vector<int>> levelOrder() ;
+
+    //给你二叉树的根节点 root ，返回其节点值的 锯齿形层序遍历 。（即先从左往右，再从右往左进行下一层遍历，以此类推，层与层之间交替进行）。
+    vector<vector<int>> zigzagLevelOrder();
 
     //先序遍历递归，以所给参数为根节点开始遍历
     void Travesal_preorder_recurrence (BinTree<T> *myself);
