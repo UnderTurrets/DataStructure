@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/xu736946693/Desktop/DataStrcuture
+CMAKE_SOURCE_DIR = /home/xu736946693/Desktop/DataStructure
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/xu736946693/Desktop/DataStrcuture/build
+CMAKE_BINARY_DIR = /home/xu736946693/Desktop/DataStructure/build
 
 # Include any dependencies generated for this target.
 include bin/CMakeFiles/DataStructure_shared.dir/depend.make
@@ -59,81 +59,81 @@ include bin/CMakeFiles/DataStructure_shared.dir/flags.make
 
 bin/CMakeFiles/DataStructure_shared.dir/Heap.cpp.o: bin/CMakeFiles/DataStructure_shared.dir/flags.make
 bin/CMakeFiles/DataStructure_shared.dir/Heap.cpp.o: ../lib/Heap.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xu736946693/Desktop/DataStrcuture/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object bin/CMakeFiles/DataStructure_shared.dir/Heap.cpp.o"
-	cd /home/xu736946693/Desktop/DataStrcuture/build/bin && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/DataStructure_shared.dir/Heap.cpp.o -c /home/xu736946693/Desktop/DataStrcuture/lib/Heap.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xu736946693/Desktop/DataStructure/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object bin/CMakeFiles/DataStructure_shared.dir/Heap.cpp.o"
+	cd /home/xu736946693/Desktop/DataStructure/build/bin && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/DataStructure_shared.dir/Heap.cpp.o -c /home/xu736946693/Desktop/DataStructure/lib/Heap.cpp
 
 bin/CMakeFiles/DataStructure_shared.dir/Heap.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/DataStructure_shared.dir/Heap.cpp.i"
-	cd /home/xu736946693/Desktop/DataStrcuture/build/bin && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/xu736946693/Desktop/DataStrcuture/lib/Heap.cpp > CMakeFiles/DataStructure_shared.dir/Heap.cpp.i
+	cd /home/xu736946693/Desktop/DataStructure/build/bin && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/xu736946693/Desktop/DataStructure/lib/Heap.cpp > CMakeFiles/DataStructure_shared.dir/Heap.cpp.i
 
 bin/CMakeFiles/DataStructure_shared.dir/Heap.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/DataStructure_shared.dir/Heap.cpp.s"
-	cd /home/xu736946693/Desktop/DataStrcuture/build/bin && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/xu736946693/Desktop/DataStrcuture/lib/Heap.cpp -o CMakeFiles/DataStructure_shared.dir/Heap.cpp.s
+	cd /home/xu736946693/Desktop/DataStructure/build/bin && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/xu736946693/Desktop/DataStructure/lib/Heap.cpp -o CMakeFiles/DataStructure_shared.dir/Heap.cpp.s
 
 bin/CMakeFiles/DataStructure_shared.dir/leetcode.cpp.o: bin/CMakeFiles/DataStructure_shared.dir/flags.make
 bin/CMakeFiles/DataStructure_shared.dir/leetcode.cpp.o: ../lib/leetcode.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xu736946693/Desktop/DataStrcuture/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object bin/CMakeFiles/DataStructure_shared.dir/leetcode.cpp.o"
-	cd /home/xu736946693/Desktop/DataStrcuture/build/bin && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/DataStructure_shared.dir/leetcode.cpp.o -c /home/xu736946693/Desktop/DataStrcuture/lib/leetcode.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xu736946693/Desktop/DataStructure/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object bin/CMakeFiles/DataStructure_shared.dir/leetcode.cpp.o"
+	cd /home/xu736946693/Desktop/DataStructure/build/bin && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/DataStructure_shared.dir/leetcode.cpp.o -c /home/xu736946693/Desktop/DataStructure/lib/leetcode.cpp
 
 bin/CMakeFiles/DataStructure_shared.dir/leetcode.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/DataStructure_shared.dir/leetcode.cpp.i"
-	cd /home/xu736946693/Desktop/DataStrcuture/build/bin && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/xu736946693/Desktop/DataStrcuture/lib/leetcode.cpp > CMakeFiles/DataStructure_shared.dir/leetcode.cpp.i
+	cd /home/xu736946693/Desktop/DataStructure/build/bin && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/xu736946693/Desktop/DataStructure/lib/leetcode.cpp > CMakeFiles/DataStructure_shared.dir/leetcode.cpp.i
 
 bin/CMakeFiles/DataStructure_shared.dir/leetcode.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/DataStructure_shared.dir/leetcode.cpp.s"
-	cd /home/xu736946693/Desktop/DataStrcuture/build/bin && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/xu736946693/Desktop/DataStrcuture/lib/leetcode.cpp -o CMakeFiles/DataStructure_shared.dir/leetcode.cpp.s
+	cd /home/xu736946693/Desktop/DataStructure/build/bin && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/xu736946693/Desktop/DataStructure/lib/leetcode.cpp -o CMakeFiles/DataStructure_shared.dir/leetcode.cpp.s
 
 bin/CMakeFiles/DataStructure_shared.dir/Tree.cpp.o: bin/CMakeFiles/DataStructure_shared.dir/flags.make
 bin/CMakeFiles/DataStructure_shared.dir/Tree.cpp.o: ../lib/Tree.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xu736946693/Desktop/DataStrcuture/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object bin/CMakeFiles/DataStructure_shared.dir/Tree.cpp.o"
-	cd /home/xu736946693/Desktop/DataStrcuture/build/bin && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/DataStructure_shared.dir/Tree.cpp.o -c /home/xu736946693/Desktop/DataStrcuture/lib/Tree.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xu736946693/Desktop/DataStructure/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object bin/CMakeFiles/DataStructure_shared.dir/Tree.cpp.o"
+	cd /home/xu736946693/Desktop/DataStructure/build/bin && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/DataStructure_shared.dir/Tree.cpp.o -c /home/xu736946693/Desktop/DataStructure/lib/Tree.cpp
 
 bin/CMakeFiles/DataStructure_shared.dir/Tree.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/DataStructure_shared.dir/Tree.cpp.i"
-	cd /home/xu736946693/Desktop/DataStrcuture/build/bin && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/xu736946693/Desktop/DataStrcuture/lib/Tree.cpp > CMakeFiles/DataStructure_shared.dir/Tree.cpp.i
+	cd /home/xu736946693/Desktop/DataStructure/build/bin && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/xu736946693/Desktop/DataStructure/lib/Tree.cpp > CMakeFiles/DataStructure_shared.dir/Tree.cpp.i
 
 bin/CMakeFiles/DataStructure_shared.dir/Tree.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/DataStructure_shared.dir/Tree.cpp.s"
-	cd /home/xu736946693/Desktop/DataStrcuture/build/bin && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/xu736946693/Desktop/DataStrcuture/lib/Tree.cpp -o CMakeFiles/DataStructure_shared.dir/Tree.cpp.s
+	cd /home/xu736946693/Desktop/DataStructure/build/bin && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/xu736946693/Desktop/DataStructure/lib/Tree.cpp -o CMakeFiles/DataStructure_shared.dir/Tree.cpp.s
 
 bin/CMakeFiles/DataStructure_shared.dir/SetType.cpp.o: bin/CMakeFiles/DataStructure_shared.dir/flags.make
 bin/CMakeFiles/DataStructure_shared.dir/SetType.cpp.o: ../lib/SetType.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xu736946693/Desktop/DataStrcuture/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object bin/CMakeFiles/DataStructure_shared.dir/SetType.cpp.o"
-	cd /home/xu736946693/Desktop/DataStrcuture/build/bin && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/DataStructure_shared.dir/SetType.cpp.o -c /home/xu736946693/Desktop/DataStrcuture/lib/SetType.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xu736946693/Desktop/DataStructure/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object bin/CMakeFiles/DataStructure_shared.dir/SetType.cpp.o"
+	cd /home/xu736946693/Desktop/DataStructure/build/bin && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/DataStructure_shared.dir/SetType.cpp.o -c /home/xu736946693/Desktop/DataStructure/lib/SetType.cpp
 
 bin/CMakeFiles/DataStructure_shared.dir/SetType.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/DataStructure_shared.dir/SetType.cpp.i"
-	cd /home/xu736946693/Desktop/DataStrcuture/build/bin && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/xu736946693/Desktop/DataStrcuture/lib/SetType.cpp > CMakeFiles/DataStructure_shared.dir/SetType.cpp.i
+	cd /home/xu736946693/Desktop/DataStructure/build/bin && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/xu736946693/Desktop/DataStructure/lib/SetType.cpp > CMakeFiles/DataStructure_shared.dir/SetType.cpp.i
 
 bin/CMakeFiles/DataStructure_shared.dir/SetType.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/DataStructure_shared.dir/SetType.cpp.s"
-	cd /home/xu736946693/Desktop/DataStrcuture/build/bin && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/xu736946693/Desktop/DataStrcuture/lib/SetType.cpp -o CMakeFiles/DataStructure_shared.dir/SetType.cpp.s
+	cd /home/xu736946693/Desktop/DataStructure/build/bin && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/xu736946693/Desktop/DataStructure/lib/SetType.cpp -o CMakeFiles/DataStructure_shared.dir/SetType.cpp.s
 
 bin/CMakeFiles/DataStructure_shared.dir/Graph.cpp.o: bin/CMakeFiles/DataStructure_shared.dir/flags.make
 bin/CMakeFiles/DataStructure_shared.dir/Graph.cpp.o: ../lib/Graph.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xu736946693/Desktop/DataStrcuture/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object bin/CMakeFiles/DataStructure_shared.dir/Graph.cpp.o"
-	cd /home/xu736946693/Desktop/DataStrcuture/build/bin && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/DataStructure_shared.dir/Graph.cpp.o -c /home/xu736946693/Desktop/DataStrcuture/lib/Graph.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xu736946693/Desktop/DataStructure/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object bin/CMakeFiles/DataStructure_shared.dir/Graph.cpp.o"
+	cd /home/xu736946693/Desktop/DataStructure/build/bin && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/DataStructure_shared.dir/Graph.cpp.o -c /home/xu736946693/Desktop/DataStructure/lib/Graph.cpp
 
 bin/CMakeFiles/DataStructure_shared.dir/Graph.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/DataStructure_shared.dir/Graph.cpp.i"
-	cd /home/xu736946693/Desktop/DataStrcuture/build/bin && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/xu736946693/Desktop/DataStrcuture/lib/Graph.cpp > CMakeFiles/DataStructure_shared.dir/Graph.cpp.i
+	cd /home/xu736946693/Desktop/DataStructure/build/bin && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/xu736946693/Desktop/DataStructure/lib/Graph.cpp > CMakeFiles/DataStructure_shared.dir/Graph.cpp.i
 
 bin/CMakeFiles/DataStructure_shared.dir/Graph.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/DataStructure_shared.dir/Graph.cpp.s"
-	cd /home/xu736946693/Desktop/DataStrcuture/build/bin && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/xu736946693/Desktop/DataStrcuture/lib/Graph.cpp -o CMakeFiles/DataStructure_shared.dir/Graph.cpp.s
+	cd /home/xu736946693/Desktop/DataStructure/build/bin && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/xu736946693/Desktop/DataStructure/lib/Graph.cpp -o CMakeFiles/DataStructure_shared.dir/Graph.cpp.s
 
 bin/CMakeFiles/DataStructure_shared.dir/Sort.cpp.o: bin/CMakeFiles/DataStructure_shared.dir/flags.make
 bin/CMakeFiles/DataStructure_shared.dir/Sort.cpp.o: ../lib/Sort.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xu736946693/Desktop/DataStrcuture/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object bin/CMakeFiles/DataStructure_shared.dir/Sort.cpp.o"
-	cd /home/xu736946693/Desktop/DataStrcuture/build/bin && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/DataStructure_shared.dir/Sort.cpp.o -c /home/xu736946693/Desktop/DataStrcuture/lib/Sort.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/xu736946693/Desktop/DataStructure/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object bin/CMakeFiles/DataStructure_shared.dir/Sort.cpp.o"
+	cd /home/xu736946693/Desktop/DataStructure/build/bin && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/DataStructure_shared.dir/Sort.cpp.o -c /home/xu736946693/Desktop/DataStructure/lib/Sort.cpp
 
 bin/CMakeFiles/DataStructure_shared.dir/Sort.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/DataStructure_shared.dir/Sort.cpp.i"
-	cd /home/xu736946693/Desktop/DataStrcuture/build/bin && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/xu736946693/Desktop/DataStrcuture/lib/Sort.cpp > CMakeFiles/DataStructure_shared.dir/Sort.cpp.i
+	cd /home/xu736946693/Desktop/DataStructure/build/bin && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/xu736946693/Desktop/DataStructure/lib/Sort.cpp > CMakeFiles/DataStructure_shared.dir/Sort.cpp.i
 
 bin/CMakeFiles/DataStructure_shared.dir/Sort.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/DataStructure_shared.dir/Sort.cpp.s"
-	cd /home/xu736946693/Desktop/DataStrcuture/build/bin && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/xu736946693/Desktop/DataStrcuture/lib/Sort.cpp -o CMakeFiles/DataStructure_shared.dir/Sort.cpp.s
+	cd /home/xu736946693/Desktop/DataStructure/build/bin && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/xu736946693/Desktop/DataStructure/lib/Sort.cpp -o CMakeFiles/DataStructure_shared.dir/Sort.cpp.s
 
 # Object files for target DataStructure_shared
 DataStructure_shared_OBJECTS = \
@@ -155,8 +155,8 @@ bin/libDataStructure_shared.so: bin/CMakeFiles/DataStructure_shared.dir/Graph.cp
 bin/libDataStructure_shared.so: bin/CMakeFiles/DataStructure_shared.dir/Sort.cpp.o
 bin/libDataStructure_shared.so: bin/CMakeFiles/DataStructure_shared.dir/build.make
 bin/libDataStructure_shared.so: bin/CMakeFiles/DataStructure_shared.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/xu736946693/Desktop/DataStrcuture/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX shared library libDataStructure_shared.so"
-	cd /home/xu736946693/Desktop/DataStrcuture/build/bin && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/DataStructure_shared.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/xu736946693/Desktop/DataStructure/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX shared library libDataStructure_shared.so"
+	cd /home/xu736946693/Desktop/DataStructure/build/bin && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/DataStructure_shared.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 bin/CMakeFiles/DataStructure_shared.dir/build: bin/libDataStructure_shared.so
@@ -164,10 +164,10 @@ bin/CMakeFiles/DataStructure_shared.dir/build: bin/libDataStructure_shared.so
 .PHONY : bin/CMakeFiles/DataStructure_shared.dir/build
 
 bin/CMakeFiles/DataStructure_shared.dir/clean:
-	cd /home/xu736946693/Desktop/DataStrcuture/build/bin && $(CMAKE_COMMAND) -P CMakeFiles/DataStructure_shared.dir/cmake_clean.cmake
+	cd /home/xu736946693/Desktop/DataStructure/build/bin && $(CMAKE_COMMAND) -P CMakeFiles/DataStructure_shared.dir/cmake_clean.cmake
 .PHONY : bin/CMakeFiles/DataStructure_shared.dir/clean
 
 bin/CMakeFiles/DataStructure_shared.dir/depend:
-	cd /home/xu736946693/Desktop/DataStrcuture/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/xu736946693/Desktop/DataStrcuture /home/xu736946693/Desktop/DataStrcuture/lib /home/xu736946693/Desktop/DataStrcuture/build /home/xu736946693/Desktop/DataStrcuture/build/bin /home/xu736946693/Desktop/DataStrcuture/build/bin/CMakeFiles/DataStructure_shared.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/xu736946693/Desktop/DataStructure/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/xu736946693/Desktop/DataStructure /home/xu736946693/Desktop/DataStructure/lib /home/xu736946693/Desktop/DataStructure/build /home/xu736946693/Desktop/DataStructure/build/bin /home/xu736946693/Desktop/DataStructure/build/bin/CMakeFiles/DataStructure_shared.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : bin/CMakeFiles/DataStructure_shared.dir/depend
 

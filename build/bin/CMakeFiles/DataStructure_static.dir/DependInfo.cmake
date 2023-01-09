@@ -4,12 +4,12 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/xu736946693/Desktop/DataStrcuture/lib/Graph.cpp" "/home/xu736946693/Desktop/DataStrcuture/build/bin/CMakeFiles/DataStructure_static.dir/Graph.cpp.o"
-  "/home/xu736946693/Desktop/DataStrcuture/lib/Heap.cpp" "/home/xu736946693/Desktop/DataStrcuture/build/bin/CMakeFiles/DataStructure_static.dir/Heap.cpp.o"
-  "/home/xu736946693/Desktop/DataStrcuture/lib/SetType.cpp" "/home/xu736946693/Desktop/DataStrcuture/build/bin/CMakeFiles/DataStructure_static.dir/SetType.cpp.o"
-  "/home/xu736946693/Desktop/DataStrcuture/lib/Sort.cpp" "/home/xu736946693/Desktop/DataStrcuture/build/bin/CMakeFiles/DataStructure_static.dir/Sort.cpp.o"
-  "/home/xu736946693/Desktop/DataStrcuture/lib/Tree.cpp" "/home/xu736946693/Desktop/DataStrcuture/build/bin/CMakeFiles/DataStructure_static.dir/Tree.cpp.o"
-  "/home/xu736946693/Desktop/DataStrcuture/lib/leetcode.cpp" "/home/xu736946693/Desktop/DataStrcuture/build/bin/CMakeFiles/DataStructure_static.dir/leetcode.cpp.o"
+  "/home/xu736946693/Desktop/DataStructure/lib/Graph.cpp" "/home/xu736946693/Desktop/DataStructure/build/bin/CMakeFiles/DataStructure_static.dir/Graph.cpp.o"
+  "/home/xu736946693/Desktop/DataStructure/lib/Heap.cpp" "/home/xu736946693/Desktop/DataStructure/build/bin/CMakeFiles/DataStructure_static.dir/Heap.cpp.o"
+  "/home/xu736946693/Desktop/DataStructure/lib/SetType.cpp" "/home/xu736946693/Desktop/DataStructure/build/bin/CMakeFiles/DataStructure_static.dir/SetType.cpp.o"
+  "/home/xu736946693/Desktop/DataStructure/lib/Sort.cpp" "/home/xu736946693/Desktop/DataStructure/build/bin/CMakeFiles/DataStructure_static.dir/Sort.cpp.o"
+  "/home/xu736946693/Desktop/DataStructure/lib/Tree.cpp" "/home/xu736946693/Desktop/DataStructure/build/bin/CMakeFiles/DataStructure_static.dir/Tree.cpp.o"
+  "/home/xu736946693/Desktop/DataStructure/lib/leetcode.cpp" "/home/xu736946693/Desktop/DataStructure/build/bin/CMakeFiles/DataStructure_static.dir/leetcode.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

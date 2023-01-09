@@ -6,55 +6,55 @@
 
 #IncludeRegexTransform: 
 
-/home/xu736946693/Desktop/DataStrcuture/lib/Graph.cpp
+/home/xu736946693/Desktop/DataStructure/lib/Graph.cpp
 Graph.h
-/home/xu736946693/Desktop/DataStrcuture/lib/Graph.h
+/home/xu736946693/Desktop/DataStructure/lib/Graph.h
 
-/home/xu736946693/Desktop/DataStrcuture/lib/Graph.h
+/home/xu736946693/Desktop/DataStructure/lib/Graph.h
 authority.h
-/home/xu736946693/Desktop/DataStrcuture/lib/authority.h
+/home/xu736946693/Desktop/DataStructure/lib/authority.h
 SetType.h
-/home/xu736946693/Desktop/DataStrcuture/lib/SetType.h
+/home/xu736946693/Desktop/DataStructure/lib/SetType.h
 Heap.h
-/home/xu736946693/Desktop/DataStrcuture/lib/Heap.h
+/home/xu736946693/Desktop/DataStructure/lib/Heap.h
 
-/home/xu736946693/Desktop/DataStrcuture/lib/Heap.cpp
+/home/xu736946693/Desktop/DataStructure/lib/Heap.cpp
 Heap.h
-/home/xu736946693/Desktop/DataStrcuture/lib/Heap.h
+/home/xu736946693/Desktop/DataStructure/lib/Heap.h
 
-/home/xu736946693/Desktop/DataStrcuture/lib/Heap.h
+/home/xu736946693/Desktop/DataStructure/lib/Heap.h
 authority.h
-/home/xu736946693/Desktop/DataStrcuture/lib/authority.h
+/home/xu736946693/Desktop/DataStructure/lib/authority.h
 Tree.h
-/home/xu736946693/Desktop/DataStrcuture/lib/Tree.h
+/home/xu736946693/Desktop/DataStructure/lib/Tree.h
 
-/home/xu736946693/Desktop/DataStrcuture/lib/SetType.cpp
+/home/xu736946693/Desktop/DataStructure/lib/SetType.cpp
 SetType.h
-/home/xu736946693/Desktop/DataStrcuture/lib/SetType.h
+/home/xu736946693/Desktop/DataStructure/lib/SetType.h
 
-/home/xu736946693/Desktop/DataStrcuture/lib/SetType.h
+/home/xu736946693/Desktop/DataStructure/lib/SetType.h
 authority.h
-/home/xu736946693/Desktop/DataStrcuture/lib/authority.h
+/home/xu736946693/Desktop/DataStructure/lib/authority.h
 
-/home/xu736946693/Desktop/DataStrcuture/lib/Sort.cpp
+/home/xu736946693/Desktop/DataStructure/lib/Sort.cpp
 Sort.h
-/home/xu736946693/Desktop/DataStrcuture/lib/Sort.h
+/home/xu736946693/Desktop/DataStructure/lib/Sort.h
 
-/home/xu736946693/Desktop/DataStrcuture/lib/Sort.h
+/home/xu736946693/Desktop/DataStructure/lib/Sort.h
 authority.h
-/home/xu736946693/Desktop/DataStrcuture/lib/authority.h
+/home/xu736946693/Desktop/DataStructure/lib/authority.h
 Heap.h
-/home/xu736946693/Desktop/DataStrcuture/lib/Heap.h
+/home/xu736946693/Desktop/DataStructure/lib/Heap.h
 
-/home/xu736946693/Desktop/DataStrcuture/lib/Tree.cpp
+/home/xu736946693/Desktop/DataStructure/lib/Tree.cpp
 Tree.h
-/home/xu736946693/Desktop/DataStrcuture/lib/Tree.h
+/home/xu736946693/Desktop/DataStructure/lib/Tree.h
 
-/home/xu736946693/Desktop/DataStrcuture/lib/Tree.h
+/home/xu736946693/Desktop/DataStructure/lib/Tree.h
 authority.h
-/home/xu736946693/Desktop/DataStrcuture/lib/authority.h
+/home/xu736946693/Desktop/DataStructure/lib/authority.h
 
-/home/xu736946693/Desktop/DataStrcuture/lib/authority.h
+/home/xu736946693/Desktop/DataStructure/lib/authority.h
 iostream
 -
 vector
@@ -90,11 +90,11 @@ bits/stdc++.h
 opencv4/opencv2/opencv.hpp
 -
 
-/home/xu736946693/Desktop/DataStrcuture/lib/leetcode.cpp
+/home/xu736946693/Desktop/DataStructure/lib/leetcode.cpp
 leetcode.h
-/home/xu736946693/Desktop/DataStrcuture/lib/leetcode.h
+/home/xu736946693/Desktop/DataStructure/lib/leetcode.h
 
-/home/xu736946693/Desktop/DataStrcuture/lib/leetcode.h
+/home/xu736946693/Desktop/DataStructure/lib/leetcode.h
 authority.h
-/home/xu736946693/Desktop/DataStrcuture/lib/authority.h
+/home/xu736946693/Desktop/DataStructure/lib/authority.h
 

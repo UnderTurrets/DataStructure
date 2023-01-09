@@ -4,27 +4,28 @@
 template<typename T>
 BinTree<T>::BinTree(){
     val;
-    this->left=NULL;
-    this->right=NULL;
+    this->left=nullptr;
+    this->right=nullptr;
 }
 
 template<typename T>
 BinTree<T>::BinTree( T x){
     this->val=x;
-    this->left=NULL;
-    this->right=NULL;
+    this->left=nullptr;
+    this->right=nullptr;
 }
 
-//给你一个整数数组 nums ，其中元素已经按 升序 排列，请你将其转换为一棵 高度平衡 二叉搜索树。
+//给你一个整数数组 nums ，请你将其转换为一棵 高度平衡 二叉搜索树。
 //高度平衡 二叉树是一棵满足「每个节点的左右两个子树的高度差的绝对值不超过 1 」的二叉树。
 template<typename T>
 BinTree<T>::BinTree(vector<T> nums){
+    sort(nums.begin(),nums.end());
     this->val=sortedArrayToBST_helper(nums,0,nums.size()-1)->val;
     this->left=sortedArrayToBST_helper(nums,0,nums.size()-1)->left;
     this->right=sortedArrayToBST_helper(nums,0,nums.size()-1)->right;
 }
 template<typename T>
-BinTree<T>* BinTree<T>::sortedArrayToBST_helper(vector<T>& nums, int left, int right) {
+BinTree<T>* BinTree<T>::sortedArrayToBST_helper(vector<T> nums, int left, int right) {
     if (left > right) {
         return nullptr;
     }
@@ -119,17 +120,17 @@ BinTree<T>::BinTree(vector<T> preorder, vector<T> inorder) {
                 if(temp->right)S.push(temp->right);
                 if(temp->left)S.push(temp->left);
                 S.push(temp);
-                S.push(NULL);
+                S.push(nullptr);
+            }else{
+                S.pop();
+                temp=S.top();
+                S.pop();
                 //在此进行你要执行的操作
                 cout<<temp->val<<endl;
 
 
 
                 //在此以上进行你要执行的操作
-            }else{
-                S.pop();
-                temp=S.top();
-                S.pop();
             }
         }
     }
@@ -145,18 +146,18 @@ BinTree<T>::BinTree(vector<T> preorder, vector<T> inorder) {
                 S.pop();
                 if(temp->right)S.push(temp->right);
                 S.push(temp);
-                S.push(NULL);
+                S.push(nullptr);
                 if(temp->left)S.push(temp->left);
+            }else{
+                S.pop();
+                temp=S.top();
+                S.pop();
                 //在此进行你要执行的操作
                 cout<<temp->val<<endl;
 
 
 
                 //在此以上进行你要执行的操作
-            }else{
-                S.pop();
-                temp=S.top();
-                S.pop();
             }
         }
     }
@@ -171,19 +172,19 @@ BinTree<T>::BinTree(vector<T> preorder, vector<T> inorder) {
             if(temp){
                 S.pop();
                 S.push(temp);
-                S.push(NULL);
+                S.push(nullptr);
                 if(temp->right)S.push(temp->right);
                 if(temp->left)S.push(temp->left);
+            }else{
+                S.pop();
+                temp=S.top();
+                S.pop();
                 //在此进行你要执行的操作
                 cout<<temp->val<<endl;
 
 
 
                 //在此以上进行你要执行的操作
-            }else{
-                S.pop();
-                temp=S.top();
-                S.pop();
             }
         }
     }
@@ -364,16 +365,19 @@ BinTree<T>::BinTree(vector<T> preorder, vector<T> inorder) {
 
     //翻转二叉树
     template<typename T>
-    BinTree<T>* BinTree<T>::InvertTree(BinTree<T> root){
+    BinTree<T>* BinTree<T>::InvertTree_helper(BinTree<T>* root){
         if (root == nullptr) {
             return nullptr;
         }
-        BinTree<T>* bt1 = invertTree(root->left);
-        BinTree<T>* bt2 = invertTree(root->right);
+        BinTree<T>* bt1 = InvertTree_helper(root->left);
+        BinTree<T>* bt2 = InvertTree_helper(root->right);
         root->left = bt2;
         root->right = bt1;
         return root;
-
+    }
+    template<typename T>
+    void BinTree<T>::InvertTree(){
+        this->InvertTree_helper(this);
     }
 
     //给你二叉树的根节点root 和一个表示目标和的整数targetSum 。判断该树中是否存在 根节点到叶子节点 的路径，这条路径上所有节点值相加等于目标和targetSum 。如果存在，返回 true ；否则，返回 false 。
@@ -426,10 +430,13 @@ BinTree<T>::BinTree(vector<T> preorder, vector<T> inorder) {
         return IsValidBST_helper(this, LONG_MIN, LONG_MAX);
     }
 
-    //基于二叉搜索树的查找操作，返回值为所找到的元素的节点，若找不到则返回NULL，以所给参数为根节点开始查找
+    //基于二叉搜索树的查找操作，返回值为所找到的元素的节点，若找不到则返回nullptr，以所给参数为根节点开始查找
     template<typename T>
     BinTree<T>* BinTree<T>::Find_recurrence_helper(T x,BinTree<T> *root){
-        if(!root)return NULL;
+        if(!root){
+            cout<<"The element you want to find doesn't exist and your operation has failed!(nullptr has been returned)"<<endl;
+            return nullptr;
+        }
         if(x>root->val){
             return Find_recurrence_helper(x,root->right);
         } else if(x<root->val){
@@ -454,6 +461,38 @@ BinTree<T>::BinTree(vector<T> preorder, vector<T> inorder) {
                 return temp;
             }
         }
+        cout<<"The element you want to find doesn't exist and your operation has failed!(nullptr has been returned)"<<endl;
+        return nullptr;
+    }
+
+    //给定一个二叉搜索树的根节点 this ，和一个整数 k ，请你设计一个算法查找其中第 k 个最小元素（从 1 开始计数）。
+    template<typename T>
+    T BinTree<T>::kthSmallest(int k){
+        stack<BinTree<T>*> S;int flag=1;
+        if(this)S.push(this);
+        while (!S.empty()){
+            BinTree<T>* temp=S.top();
+            if(temp){
+                S.pop();
+                if(temp->right)S.push(temp->right);
+                S.push(temp);
+                S.push(nullptr);
+                if(temp->left)S.push(temp->left);
+            }else{
+                S.pop();
+                temp=S.top();
+                S.pop();
+                //在此进行你要执行的操作
+                cout<<temp->val<<endl;
+                if(flag==k)return temp->val;
+                flag++;
+                //在此以上进行你要执行的操作
+            }
+        }
+        if(flag<k){
+            cout<<"This tree doesn't have enough elements and your operation has failed!(the element of the root has been returned)"<<endl;
+        }
+        return this->val;
     }
 
     //给定一个二叉搜索树 this 和一个目标结果 k，如果二叉搜索树中存在两个元素且它们的和等于给定的目标结果，则返回 true。
@@ -473,7 +512,6 @@ BinTree<T>::BinTree(vector<T> preorder, vector<T> inorder) {
             if(temp->right){Q.push(temp->right);}
         }
         return false;
-
     }
 
     //给定一个二叉搜索树, 找到该树中两个指定节点的最近公共祖先。
@@ -495,11 +533,10 @@ BinTree<T>::BinTree(vector<T> preorder, vector<T> inorder) {
         return ancestor;
     }
 
-    //基于二叉搜索树找最大值，若找到则返回其最大值的结点，若不存在则返回NULL,以根结点进行查找
+    //基于二叉搜索树找最大值，返回其最大值的结点,以根结点进行查找
     template<typename T>
     BinTree<T>* BinTree<T>::FindMax_recurrence_helper(BinTree<T>* root){
-        if(!root)return NULL;
-        else if(!root->right)return root;
+        if(!root->right)return root;
         else if(root->right)return FindMax_recurrence_helper(root->right);
     }
     template<typename T>
@@ -515,11 +552,10 @@ BinTree<T>::BinTree(vector<T> preorder, vector<T> inorder) {
         return temp;
     }
 
-    //基于二叉搜索树找最小值，若找到则返回其最大值的结点，若不存在则返回NULL,以根结点进行查找
+    //基于二叉搜索树找最小值，返回其最大值的结点,以根结点进行查找
     template<typename T>
     BinTree<T>* BinTree<T>::FindMin_recurrence_helper(BinTree<T>* root){
-        if(!root)return NULL;
-        else if(!root->left)return root;
+        if(!root->left)return root;
         else if(root->left)return FindMin_recurrence_helper(root->left);
     }
     template<typename T>
@@ -535,7 +571,7 @@ BinTree<T>::BinTree(vector<T> preorder, vector<T> inorder) {
         return temp;
     }
 
-    //基于二叉搜索树插入某个元素，需要给定所插入元素，返回值是插入后二叉搜索树的根结点,若插入的元素已经存在，返回NULL
+    //基于二叉搜索树插入某个元素，需要给定所插入元素，返回值是插入后二叉搜索树的根结点,若插入的元素已经存在，返回nullptr
     template<typename T>
     BinTree<T>* BinTree<T>::insert_helper(T x,BinTree<T>* root){
         if(!root){
@@ -547,7 +583,8 @@ BinTree<T>::BinTree(vector<T> preorder, vector<T> inorder) {
             } else if(x>root->val){
                 root->right= insert_helper(x,root->right);
             } else if(x==root->val){
-                return NULL;
+                cout<<"The element you want to insert has existed and your operation has failed!(nullptr has been returned)"<<endl;
+                return nullptr;
             }
         }
         return root;
@@ -557,10 +594,10 @@ BinTree<T>::BinTree(vector<T> preorder, vector<T> inorder) {
         return this->insert_helper(x,this);
     }
 
-    //基于二叉搜索树删除某个元素，需要所删除元素，返回值是删除后二叉搜索树的根结点
+    //基于二叉搜索树删除某个元素，需要给定所删除元素，返回值是删除后二叉搜索树的根结点,若删除的元素不存在，返回nullptr
     template<typename T>
     BinTree<T>* BinTree<T>::delete_bt_helper ( T x, BinTree<T>* root ){
-        if( !root )cout<<"The element you want to delete doesn't exist!"<<endl;
+        if( !root )cout<<"The element you want to delete doesn't exist and your operation has failed!(nullptr has been returned)"<<endl;
         else if( x < root->val ){
             root->left = delete_bt_helper(x,root->left);
         }else if( x > root->val ){
@@ -591,6 +628,67 @@ BinTree<T>::BinTree(vector<T> preorder, vector<T> inorder) {
     BinTree<T>* BinTree<T>::delete_bt(T x){
         return this->delete_bt_helper(x,this);
     }
+
+
+
+
+//树的中序迭代器
+    //重载运算符
+    template<typename T>
+    InOrderBtIter<T> InOrderBtIter<T>::operator= (InOrderBtIter<T> that){
+        this->target=that.target;
+        this->S=that.S;
+    }
+    template<typename T>
+    InOrderBtIter<T> InOrderBtIter<T>::operator++ (){
+        this->next();
+        return this;
+    }
+    template<typename T>
+    T InOrderBtIter<T>::operator* (){
+        this->target = this->S.top();
+        return this->target->val;
+    }
+
+    template<typename T>
+    InOrderBtIter<T>::InOrderBtIter() {
+        this->target= nullptr;
+        while (!this->S.empty())this->S.pop();
+    }
+    template<typename T>
+    InOrderBtIter<T>::InOrderBtIter(BinTree<T>* root) {
+        this->target=root;
+        while (this->target){
+            this->S.push(this->target);
+            this->target=this->target->left;
+        }
+    }
+
+    template<typename T>
+    T InOrderBtIter<T>::next() {
+        if(hasNext()) {
+            this->target = this->S.top();
+            this->S.pop();
+            BinTree<T> *des = this->target;
+            if (this->target->right) {
+                this->target = this->target->right;
+                while (this->target) {
+                    this->S.push(this->target);
+                    this->target = this->target->left;
+                }
+            }
+            return des->val;
+        }else{
+            cout<<"The tree doesn't have next element and your operation has failed!(the last element has been returned)"<<endl;
+            return this->target->val;
+        }
+    }
+
+    template<typename T>
+    bool InOrderBtIter<T>::hasNext() {
+        return !this->S.empty();
+    }
+
 
 
 

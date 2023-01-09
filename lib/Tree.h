@@ -4,22 +4,22 @@
 #include "authority.h"
 
 //树
-template<class T>
+template<typename T>
 class BinTree{
 public:
     T val;
-    BinTree<T> *left=NULL;
-    BinTree<T> *right=NULL;
+    BinTree<T> *left=nullptr;
+    BinTree<T> *right=nullptr;
     BinTree();
     BinTree( T x);
     BinTree( const BinTree<T> &that);
 
-    //给你一个整数数组 nums ，其中元素已经按 升序 排列，请你将其转换为一棵 高度平衡 二叉搜索树。
+    //给你一个整数数组 nums ，请你将其转换为一棵 高度平衡 二叉搜索树。
     //高度平衡 二叉树是一棵满足「每个节点的左右两个子树的高度差的绝对值不超过 1 」的二叉树。
 public:
     BinTree(vector<T> nums);
 private:
-    BinTree<T>* sortedArrayToBST_helper(vector<T>& nums, int left, int right);
+    BinTree<T>* sortedArrayToBST_helper(vector<T>nums, int left, int right);
     
 public:
     //给定两个整数数组preorder 和 inorder，其中preorder 是二叉树的先序遍历， inorder是同一棵树的中序遍历，请构造二叉树并返回其根节点。
@@ -91,9 +91,11 @@ public:
 private:
     bool IsSymmetric_helper(BinTree<T>root1,BinTree<T>root2);
 
-public:
     //翻转二叉树
-    BinTree<T>* InvertTree(BinTree<T> root);
+private:
+    BinTree<T>* InvertTree_helper(BinTree<T>* root);
+public:
+    void InvertTree();
 
     //给你二叉树的根节点this 和一个表示目标和的数targetSum 。判断该树中是否存在 根节点到叶子节点 的路径，这条路径上所有节点值相加等于目标和targetSum 。如果存在，返回 true ；否则，返回 false 。
 private:
@@ -113,13 +115,16 @@ private:
 public:
     bool IsValidBST() ;
 
-    //基于二叉搜索树的查找操作，返回值为所找到的元素的节点，若找不到则返回NULL，以所给参数为根节点开始查找
+    //基于二叉搜索树的查找操作，返回值为所找到的元素的节点，若找不到则返回nullptr，以所给参数为根节点开始查找
 private:
     BinTree<T>* Find_recurrence_helper(T x,BinTree<T> *root);
 public:
     BinTree<T>* Find_recurrence(T x);
 public:
     BinTree<T>* Find_common(T x);
+
+    //给定一个二叉搜索树的根节点 root ，和一个整数 k ，请你设计一个算法查找其中第 k 个最小元素（从 1 开始计数）。
+    T kthSmallest(int k);
 
     //给定一个二叉搜索树 this 和一个目标结果 k，如果二叉搜索树中存在两个元素且它们的和等于给定的目标结果，则返回 true。
     bool findTarget(T k) ;
@@ -128,27 +133,51 @@ public:
     //百度百科中最近公共祖先的定义为：“对于有根树 T 的两个结点 p、q，最近公共祖先表示为一个结点 x，满足 x 是 p、q 的祖先且 x 的深度尽可能大（一个节点也可以是它自己的祖先）。”
     BinTree<T>* lowestCommonAncestor(BinTree<T>* p, BinTree<T>* q) ;
 
-    //基于二叉搜索树找最大值，若找到则返回其最大值的结点，若不存在则返回NULL,以所给参数为根结点进行查找
+    //基于二叉搜索树找最大值，返回其最大值的结点,以所给参数为根结点进行查找
+private:
     BinTree<T>* FindMax_recurrence_helper(BinTree<T>* root);
+public:
     BinTree<T>* FindMax_recurrence();
     BinTree<T>* FindMax_common();
 
-    //基于二叉搜索树找最小值，若找到则返回其最大值的结点，若不存在则返回NULL,以所给参数为根结点进行查找
+    //基于二叉搜索树找最小值，返回其最小值的结点，以所给参数为根结点进行查找
+private:
     BinTree<T>* FindMin_recurrence_helper(BinTree<T>* root);
+public:
     BinTree<T>* FindMin_recurrence();
     BinTree<T>* FindMin_common();
 
-    //基于二叉搜索树插入某个元素，需要给定所插入元素，返回值是插入后二叉搜索树的根结点,若插入的元素已经存在，返回NULL
+    //基于二叉搜索树插入某个元素，需要给定所插入元素，返回值是插入后二叉搜索树的根结点,若插入的元素已经存在，返回nullptr
 private:
     BinTree<T>* insert_helper(T x,BinTree<T>* root);
 public:
     BinTree<T>* insert(T x);
 
-    //基于二叉搜索树删除某个元素，需要给定所删除元素，返回值是删除后二叉搜索树的根结点,若删除的元素不存在，返回NULL
+    //基于二叉搜索树删除某个元素，需要给定所删除元素，返回值是删除后二叉搜索树的根结点,若删除的元素不存在，返回nullptr
 private:
     BinTree<T>* delete_bt_helper (T x,BinTree<T>* root);
 public:
     BinTree<T>* delete_bt(T x);
+};
+
+//树的中序迭代器
+template<typename T>
+class InOrderBtIter {
+public:
+    BinTree<T>* target;
+    stack<BinTree<T>*> S;
+
+    //重载运算符
+    InOrderBtIter<T> operator= (InOrderBtIter<T> that);
+    InOrderBtIter<T> operator++ ();
+    T operator* ();
+
+    InOrderBtIter();
+    InOrderBtIter(BinTree<T>* root);
+
+    T next();
+
+    bool hasNext();
 };
 
 #endif
