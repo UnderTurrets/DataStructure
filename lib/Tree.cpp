@@ -276,12 +276,13 @@ BinTree<T>::BinTree(vector<T> preorder, vector<T> inorder) {
             Q.pop();
             //在此进行你要执行的操作
 
-            cout<<temp->val<<endl;
+            cout<<temp->val<<" ";
 
             //在此以上进行你要执行的操作
             if(temp->left){Q.push(temp->left);}
             if(temp->right){Q.push(temp->right);}
         }
+        cout<<endl;
     }
 
     //按层形成二维数组（层序遍历的应用）
@@ -741,22 +742,77 @@ BinTree<T>* BinTree<T>::lowestCommonAncestor( BinTree<T>* p, BinTree<T>* q) {
     }
 
 //序列化是将一个数据结构或者对象转换为连续的比特位的操作，进而可以将转换后的数据存储在一个文件或者内存中，同时也可以通过网络传输到另一个计算机环境，采取相反方式重构得到原数据。
-//请设计一个算法来实现二叉树的序列化与反序列化。这里不限定你的序列 / 反序列化算法执行逻辑，你只需要保证一个二叉树可以被序列化并且反序列化为原始的树结构。
+//请设计一个算法来实现二叉树的序列化与反序列化。这里不限定你的序列 / 反序列化算法执行逻辑，你只需要保证一个二叉树可以被序列化为一个字符串并且将这个字符串反序列化为原始的树结构。
 // Encodes a tree to a single string.
 template<typename T>
-vector<vector<T>> BinTree<T>::serialize(){
-    vector<vector<T>>data;
-    data.push_back(this->preorder_BT2VECTOR());
-    data.push_back(this->inorder_BT2VECTOR());
-    return data;
+string BinTree<T>::serialize2String() {
+    queue<BinTree<T>*> q;
+    string ans;
+    q.push(this);
+    while(!q.empty()){
+        BinTree<T>* node = q.front();
+        q.pop();
+        if(node != nullptr){
+            ans += to_string(node->val) + ',';
+            q.push(node->left);
+            q.push(node->right);
+        }
+        else ans += "#,";
+    }
+    return ans;
 }
-
 // Decodes your encoded data to tree.
 template<typename T>
-BinTree<T>* deserialize2BT(vector<vector<T>> data){
-    BinTree<T>*ret=new BinTree<T>(data[0],data[1]);
-    return ret;
+BinTree<T>* Vector2BT(vector<BinTree<T>*>& v){
+/* 在反序列化时，既用到了节点数组v，又用到了队列q。两者都是层序，但v存储null，q不存储null
+ * 对于示例一：[1,2,3,null,null,4,5] ---- v = [1,2,3,null,null,4,5,null,null,null,null], q = [1,2,3,4,5]
+ * 而对于示例二：[1,null,3,4,5] ---- v = [1,null,3,4,5,null,null,null,null], q = [1,3,4,5]
+ * 不难发现：1. v.size == 2 * q.size() + 1;
+ *           2. q[i]的左孩子是v[2*i+1],右孩子是v[2*i+2];
+ *           3. v中非空节点的顺序与q中一样
+ *  由以上三点，初始化变量cur为1，在v中每次移动两步，而q每次取一个值相当于移动一步即可*/
+    queue<BinTree<T>*> q;
+    q.push(v[0]);
+    int cur = 1, sz = v.size();
+    while(cur < sz){
+        auto node = q.front();
+        q.pop();
+        if(v[cur] != nullptr){
+            // 由上述第三点，直接在遍历数组v的时候就可以形成不包含null的层序遍历结果q
+            q.push(v[cur]);
+            node->left = v[cur];
+        }
+        if(v[cur + 1] != nullptr){
+            q.push(v[cur + 1]);
+            node->right = v[cur + 1];
+        }
+        cur += 2;
+    }
+    return v[0];
 }
+template<typename T>
+BinTree<T>* deserialize2BT(string data) {
+    if(data[0] == '#') return nullptr;   // 特判
+    // 将序列化结果转化为节点vector（包含null）
+    vector<BinTree<T>*> v;
+    string str;
+    for(auto& c: data){
+        str.push_back(c);
+        // 按逗号分隔开
+        if(c == ','){
+            str.pop_back();
+            if(str == "#") v.emplace_back(nullptr);
+            else{
+                // 新建节点
+                BinTree<T>* tmp = new BinTree<T>(stoi(str));
+                v.emplace_back(tmp);
+            }
+            str.clear();
+        }
+    }
+    return Vector2BT<T>(v);
+}
+
 
 
 

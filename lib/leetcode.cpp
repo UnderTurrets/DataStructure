@@ -959,20 +959,20 @@ ListNode* reverseKGroup(ListNode* head, int k){
         NewHead=NewHead->next;
     }
     dummy->next=NewHead;
-    vector<ListNode*> V_back;vector<ListNode*>V_front;
+    ListNode* last;vector<ListNode*>V;
     while (head){
-        V_front.push_back(head);
+        V.push_back(head);
         head=head->next;
-        if(V_front.size()==k){
-            for(int i=V_front.size()-1;i>0;i--){
-                V_front[i]->next=V_front[i-1];
+        if(V.size()==k){
+            for(int i=V.size()-1;i>0;i--){
+                V[i]->next=V[i-1];
             }
-            V_front[0]->next=head;
-            if(!V_back.empty()){
-                V_back[0]->next=V_front.back();
+            V[0]->next=head;
+            if(last){
+                last->next=V.back();
             }
-            V_back=V_front;
-            V_front.clear();
+            last=V[0];
+            V.clear();
         }
     }
     return dummy->next;
