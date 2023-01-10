@@ -3,8 +3,7 @@
 
 CMakeFiles/TestEnvironment.dir/main.cpp.o: ../main.cpp \
   /usr/include/stdc-predef.h \
-  /home/xu736946693/Desktop/DataStructure/lib/Tree.cpp \
-  /home/xu736946693/Desktop/DataStructure/lib/Tree.h \
+  /home/xu736946693/Desktop/DataStructure/lib/DataStructure.h \
   /home/xu736946693/Desktop/DataStructure/lib/authority.h \
   /usr/include/c++/9/iostream \
   /usr/include/x86_64-linux-gnu/c++/9/bits/c++config.h \
@@ -513,8 +512,32 @@ CMakeFiles/TestEnvironment.dir/main.cpp.o: ../main.cpp \
   /usr/local/include/opencv4/opencv2/stitching/detail/camera.hpp \
   /usr/local/include/opencv4/opencv2/video.hpp \
   /usr/local/include/opencv4/opencv2/video/tracking.hpp \
-  /usr/local/include/opencv4/opencv2/video/background_segm.hpp
+  /usr/local/include/opencv4/opencv2/video/background_segm.hpp \
+  /home/xu736946693/Desktop/DataStructure/lib/leetcode.h \
+  /home/xu736946693/Desktop/DataStructure/lib/leetcode.cpp \
+  /home/xu736946693/Desktop/DataStructure/lib/Heap.h \
+  /home/xu736946693/Desktop/DataStructure/lib/Tree.h \
+  /home/xu736946693/Desktop/DataStructure/lib/Heap.cpp \
+  /home/xu736946693/Desktop/DataStructure/lib/Tree.cpp \
+  /home/xu736946693/Desktop/DataStructure/lib/Graph.h \
+  /home/xu736946693/Desktop/DataStructure/lib/SetType.h \
+  /home/xu736946693/Desktop/DataStructure/lib/Graph.cpp \
+  /home/xu736946693/Desktop/DataStructure/lib/SetType.cpp \
+  /home/xu736946693/Desktop/DataStructure/lib/Sort.h \
+  /home/xu736946693/Desktop/DataStructure/lib/Sort.cpp
 
+
+/home/xu736946693/Desktop/DataStructure/lib/SetType.cpp:
+
+/home/xu736946693/Desktop/DataStructure/lib/SetType.h:
+
+/home/xu736946693/Desktop/DataStructure/lib/Graph.h:
+
+/home/xu736946693/Desktop/DataStructure/lib/Tree.cpp:
+
+/home/xu736946693/Desktop/DataStructure/lib/Heap.h:
+
+/home/xu736946693/Desktop/DataStructure/lib/leetcode.h:
 
 /usr/local/include/opencv4/opencv2/video/background_segm.hpp:
 
@@ -622,6 +645,8 @@ CMakeFiles/TestEnvironment.dir/main.cpp.o: ../main.cpp \
 
 /usr/lib/gcc/x86_64-linux-gnu/9/include/xmmintrin.h:
 
+/usr/include/c++/9/bits/stl_heap.h:
+
 /usr/include/c++/9/bits/stl_stack.h:
 
 /usr/include/c++/9/bits/stl_deque.h:
@@ -654,9 +679,15 @@ CMakeFiles/TestEnvironment.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/c++/9/bits/ostream.tcc:
 
+/home/xu736946693/Desktop/DataStructure/lib/DataStructure.h:
+
 /usr/include/c++/9/bits/basic_ios.tcc:
 
 /usr/include/x86_64-linux-gnu/gnu/stubs.h:
+
+/usr/include/x86_64-linux-gnu/bits/signum.h:
+
+/usr/include/c++/9/bits/stringfwd.h:
 
 /usr/include/c++/9/bits/atomic_lockfree_defines.h:
 
@@ -734,10 +765,6 @@ CMakeFiles/TestEnvironment.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/waitstatus.h:
 
-/usr/local/include/opencv4/opencv2/core/cv_cpu_dispatch.h:
-
-/usr/include/c++/9/bits/forward_list.tcc:
-
 /usr/include/x86_64-linux-gnu/bits/waitflags.h:
 
 /usr/include/c++/9/exception:
@@ -751,6 +778,8 @@ CMakeFiles/TestEnvironment.dir/main.cpp.o: ../main.cpp \
 /usr/include/c++/9/shared_mutex:
 
 /usr/include/errno.h:
+
+/home/xu736946693/Desktop/DataStructure/lib/Sort.h:
 
 /usr/include/c++/9/bits/valarray_after.h:
 
@@ -822,8 +851,6 @@ CMakeFiles/TestEnvironment.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/fp-logb.h:
 
-../main.cpp:
-
 /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h:
@@ -866,41 +893,13 @@ CMakeFiles/TestEnvironment.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/wchar.h:
 
-/usr/local/include/opencv4/opencv2/flann/all_indices.h:
+/usr/include/c++/9/typeinfo:
 
-/usr/include/x86_64-linux-gnu/bits/fenv.h:
+/usr/include/c++/9/bits/ostream_insert.h:
 
-/usr/include/x86_64-linux-gnu/bits/errno.h:
+/usr/include/c++/9/any:
 
-/usr/include/x86_64-linux-gnu/bits/types/locale_t.h:
-
-/usr/local/include/opencv4/opencv2/photo.hpp:
-
-/usr/include/c++/9/bits/streambuf.tcc:
-
-/usr/include/c++/9/bits/stl_bvector.h:
-
-/usr/include/c++/9/bits/stl_construct.h:
-
-/usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h:
-
-/usr/include/c++/9/iostream:
-
-/usr/include/x86_64-linux-gnu/bits/cpu-set.h:
-
-/usr/include/c++/9/ciso646:
-
-/usr/include/x86_64-linux-gnu/bits/stdint-uintn.h:
-
-/usr/include/c++/9/bits/fs_dir.h:
-
-/usr/local/include/opencv4/opencv2/highgui.hpp:
-
-/usr/include/c++/9/bits/fs_fwd.h:
-
-/usr/include/c++/9/bits/locale_classes.tcc:
-
-/usr/include/c++/9/bits/postypes.h:
+../main.cpp:
 
 /usr/include/c++/9/ext/aligned_buffer.h:
 
@@ -916,19 +915,33 @@ CMakeFiles/TestEnvironment.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/c++/9/bits/algorithmfwd.h:
 
-/usr/include/c++/9/typeinfo:
+/usr/include/c++/9/ciso646:
 
-/usr/include/c++/9/bits/ostream_insert.h:
+/usr/include/x86_64-linux-gnu/bits/stdint-uintn.h:
 
-/usr/include/c++/9/any:
+/usr/include/c++/9/bits/fs_dir.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
+/usr/include/x86_64-linux-gnu/bits/time64.h:
 
-/usr/include/c++/9/bits/exception.h:
+/usr/local/include/opencv4/opencv2/ml.hpp:
 
-/usr/include/c++/9/bits/quoted_string.h:
+/usr/include/c++/9/bits/deque.tcc:
 
-/usr/include/c++/9/unordered_set:
+/usr/include/x86_64-linux-gnu/bits/sys_errlist.h:
+
+/usr/include/c++/9/iostream:
+
+/usr/include/x86_64-linux-gnu/bits/cpu-set.h:
+
+/usr/include/c++/9/bits/stl_bvector.h:
+
+/usr/local/include/opencv4/opencv2/highgui.hpp:
+
+/usr/include/c++/9/bits/fs_fwd.h:
+
+/usr/include/c++/9/bits/locale_classes.tcc:
+
+/usr/include/c++/9/bits/postypes.h:
 
 /usr/include/x86_64-linux-gnu/bits/floatn.h:
 
@@ -938,9 +951,13 @@ CMakeFiles/TestEnvironment.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/x86_64-linux-gnu/c++/9/bits/basic_file.h:
 
-/usr/include/x86_64-linux-gnu/c++/9/bits/cpu_defines.h:
+/usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
 
-/usr/local/include/opencv4/opencv2/opencv_modules.hpp:
+/usr/include/c++/9/bits/exception.h:
+
+/usr/include/c++/9/bits/quoted_string.h:
+
+/usr/include/c++/9/unordered_set:
 
 /usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
 
@@ -955,6 +972,10 @@ CMakeFiles/TestEnvironment.dir/main.cpp.o: ../main.cpp \
 /usr/include/c++/9/csetjmp:
 
 /usr/include/x86_64-linux-gnu/bits/typesizes.h:
+
+/usr/include/x86_64-linux-gnu/c++/9/bits/cpu_defines.h:
+
+/usr/local/include/opencv4/opencv2/opencv_modules.hpp:
 
 /usr/local/include/opencv4/opencv2/dnn/dict.hpp:
 
@@ -984,33 +1005,37 @@ CMakeFiles/TestEnvironment.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/c++/9/tr1/beta_function.tcc:
 
-/home/xu736946693/Desktop/DataStructure/lib/Tree.cpp:
-
-/usr/include/x86_64-linux-gnu/bits/types/stack_t.h:
-
 /usr/include/c++/9/mutex:
 
-/usr/local/include/opencv4/opencv2/ml.hpp:
+/usr/local/include/opencv4/opencv2/flann/all_indices.h:
 
-/usr/include/c++/9/bits/deque.tcc:
+/usr/include/x86_64-linux-gnu/bits/fenv.h:
 
-/usr/include/x86_64-linux-gnu/bits/sys_errlist.h:
+/usr/include/x86_64-linux-gnu/bits/errno.h:
 
-/usr/include/x86_64-linux-gnu/bits/time64.h:
+/usr/include/x86_64-linux-gnu/bits/types/locale_t.h:
+
+/usr/local/include/opencv4/opencv2/photo.hpp:
+
+/usr/include/c++/9/bits/streambuf.tcc:
 
 /usr/include/c++/9/bits/memoryfwd.h:
 
-/usr/include/c++/9/bits/fs_ops.h:
+/usr/include/c++/9/bits/stl_construct.h:
+
+/usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h:
 
 /usr/include/c++/9/ext/alloc_traits.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/error_t.h:
+/usr/include/c++/9/bits/fs_ops.h:
 
-/usr/include/limits.h:
+/usr/include/x86_64-linux-gnu/bits/types/error_t.h:
 
 /usr/include/c++/9/bits/nested_exception.h:
 
 /usr/include/c++/9/bits/move.h:
+
+/usr/include/limits.h:
 
 /usr/include/c++/9/bits/basic_string.h:
 
@@ -1020,9 +1045,9 @@ CMakeFiles/TestEnvironment.dir/main.cpp.o: ../main.cpp \
 
 /usr/local/include/opencv4/opencv2/core.hpp:
 
-/usr/local/include/opencv4/opencv2/objdetect.hpp:
-
 /home/xu736946693/Desktop/DataStructure/lib/Tree.h:
+
+/usr/local/include/opencv4/opencv2/objdetect.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/sched.h:
 
@@ -1043,6 +1068,8 @@ CMakeFiles/TestEnvironment.dir/main.cpp.o: ../main.cpp \
 /usr/include/x86_64-linux-gnu/bits/fp-fast.h:
 
 /usr/include/time.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/stack_t.h:
 
 /usr/include/c++/9/bits/uses_allocator.h:
 
@@ -1098,6 +1125,8 @@ CMakeFiles/TestEnvironment.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h:
 
+/home/xu736946693/Desktop/DataStructure/lib/Heap.cpp:
+
 /usr/include/stdio.h:
 
 /usr/include/c++/9/pstl/pstl_config.h:
@@ -1146,6 +1175,8 @@ CMakeFiles/TestEnvironment.dir/main.cpp.o: ../main.cpp \
 
 /usr/lib/gcc/x86_64-linux-gnu/9/include/stdint.h:
 
+/home/xu736946693/Desktop/DataStructure/lib/leetcode.cpp:
+
 /usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
 
 /usr/include/c++/9/algorithm:
@@ -1162,12 +1193,6 @@ CMakeFiles/TestEnvironment.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
 
-/usr/include/c++/9/bits/hashtable.h:
-
-/usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
-
 /usr/include/c++/9/tuple:
 
 /usr/local/include/opencv4/opencv2/core/mat.inl.hpp:
@@ -1177,12 +1202,6 @@ CMakeFiles/TestEnvironment.dir/main.cpp.o: ../main.cpp \
 /usr/include/c++/9/bits/gslice.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h:
-
-/usr/include/c++/9/bits/stl_heap.h:
-
-/usr/include/c++/9/bits/stringfwd.h:
-
-/usr/include/x86_64-linux-gnu/bits/signum.h:
 
 /usr/include/c++/9/bits/stl_queue.h:
 
@@ -1223,6 +1242,12 @@ CMakeFiles/TestEnvironment.dir/main.cpp.o: ../main.cpp \
 /usr/include/c++/9/bits/allocated_ptr.h:
 
 /usr/include/c++/9/unordered_map:
+
+/usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
+
+/usr/include/c++/9/bits/hashtable.h:
 
 /usr/include/c++/9/bits/hashtable_policy.h:
 
@@ -1434,6 +1459,8 @@ CMakeFiles/TestEnvironment.dir/main.cpp.o: ../main.cpp \
 
 /usr/include/uchar.h:
 
+/home/xu736946693/Desktop/DataStructure/lib/Sort.cpp:
+
 /usr/include/c++/9/bits/fstream.tcc:
 
 /usr/include/c++/9/iomanip:
@@ -1449,6 +1476,8 @@ CMakeFiles/TestEnvironment.dir/main.cpp.o: ../main.cpp \
 /usr/include/x86_64-linux-gnu/c++/9/bits/messages_members.h:
 
 /usr/include/c++/9/iterator:
+
+/home/xu736946693/Desktop/DataStructure/lib/Graph.cpp:
 
 /usr/include/c++/9/type_traits:
 
@@ -1519,6 +1548,10 @@ CMakeFiles/TestEnvironment.dir/main.cpp.o: ../main.cpp \
 /usr/include/c++/9/bits/gslice_array.h:
 
 /usr/include/c++/9/charconv:
+
+/usr/include/c++/9/bits/forward_list.tcc:
+
+/usr/local/include/opencv4/opencv2/core/cv_cpu_dispatch.h:
 
 /usr/local/include/opencv4/opencv2/opencv.hpp:
 
