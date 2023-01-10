@@ -1,3 +1,0 @@
-/home/xu736946693/Desktop/DataStructure/TestEnvironment/cmake-build-debug/CMakeFiles/TestEnvironment.dir
-/home/xu736946693/Desktop/DataStructure/TestEnvironment/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/xu736946693/Desktop/DataStructure/TestEnvironment/cmake-build-debug/CMakeFiles/rebuild_cache.dir
