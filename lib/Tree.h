@@ -43,11 +43,20 @@ public:
     //先序遍历非递归
     void Travesal_preorder_common();
 
+    //按先序顺序把二叉树转为数组
+    vector<T> preorder_BT2VECTOR();
+
     //中序遍历非递归
     void Travesal_inorder_common();
 
+    //按中序顺序把二叉树转为数组
+    vector<T> inorder_BT2VECTOR();
+
     //后序遍历非递归
     void Travesal_postorder_common();
+
+    //按后序顺序把二叉树转为数组
+    vector<T> postorder_BT2VECTOR();
 
     //层序遍历
     void Travesal_levelorder();
@@ -131,7 +140,17 @@ public:
 
     //给定一个二叉搜索树, 找到该树中两个指定节点的最近公共祖先。
     //百度百科中最近公共祖先的定义为：“对于有根树 T 的两个结点 p、q，最近公共祖先表示为一个结点 x，满足 x 是 p、q 的祖先且 x 的深度尽可能大（一个节点也可以是它自己的祖先）。”
-    BinTree<T>* lowestCommonAncestor(BinTree<T>* p, BinTree<T>* q) ;
+    BinTree<T>* lowestCommonAncestorBST(T p, T q) ;
+    BinTree<T>* lowestCommonAncestorBST(BinTree<T>* p, BinTree<T>* q) ;
+
+
+    //给定一个二叉树, 找到该树中两个指定节点的最近公共祖先。
+    //百度百科中最近公共祖先的定义为：“对于有根树 T 的两个节点 p、q，最近公共祖先表示为一个节点 x，满足 x 是 p、q 的祖先且 x 的深度尽可能大（一个节点也可以是它自己的祖先）。”
+private:
+    BinTree<T>* lowestCommonAncestor_helper(BinTree<T>* root, T p, T q);
+public:
+    BinTree<T>* lowestCommonAncestor( T p, T q);
+    BinTree<T>* lowestCommonAncestor( BinTree<T>* p, BinTree<T>* q);
 
     //基于二叉搜索树找最大值，返回其最大值的结点,以所给参数为根结点进行查找
 private:
@@ -158,7 +177,19 @@ private:
     BinTree<T>* delete_bt_helper (T x,BinTree<T>* root);
 public:
     BinTree<T>* delete_bt(T x);
+
+    //序列化是将一个数据结构或者对象转换为连续的比特位的操作，进而可以将转换后的数据存储在一个文件或者内存中，同时也可以通过网络传输到另一个计算机环境，采取相反方式重构得到原数据。
+    //请设计一个算法来实现二叉树的序列化与反序列化。这里不限定你的序列 / 反序列化算法执行逻辑，你只需要保证一个二叉树可以被序列化并且反序列化为原始的树结构。
+    // Encodes a tree to a single string.
+    vector<vector<T>> serialize();
+
+
 };
+//序列化是将一个数据结构或者对象转换为连续的比特位的操作，进而可以将转换后的数据存储在一个文件或者内存中，同时也可以通过网络传输到另一个计算机环境，采取相反方式重构得到原数据。
+//请设计一个算法来实现二叉树的序列化与反序列化。这里不限定你的序列 / 反序列化算法执行逻辑，你只需要保证一个二叉树可以被序列化并且反序列化为原始的树结构。
+// Decodes your encoded data to tree.
+template<typename T>
+BinTree<T>* deserialize2BT(vector<vector<T>> data);
 
 //树的中序迭代器
 template<typename T>
