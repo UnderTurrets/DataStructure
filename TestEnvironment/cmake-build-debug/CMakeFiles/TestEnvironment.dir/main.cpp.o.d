@@ -1,7 +1,8 @@
 CMakeFiles/TestEnvironment.dir/main.cpp.o: \
  /home/xu736946693/Desktop/DataStructure/TestEnvironment/main.cpp \
  /usr/include/stdc-predef.h \
- /home/xu736946693/Desktop/DataStructure/lib/DataStructure.h \
+ /home/xu736946693/Desktop/DataStructure/lib/Tree.cpp \
+ /home/xu736946693/Desktop/DataStructure/lib/Tree.h \
  /home/xu736946693/Desktop/DataStructure/lib/authority.h \
  /usr/include/c++/9/iostream \
  /usr/include/x86_64-linux-gnu/c++/9/bits/c++config.h \
@@ -412,16 +413,4 @@ CMakeFiles/TestEnvironment.dir/main.cpp.o: \
  /usr/local/include/opencv4/opencv2/stitching/detail/camera.hpp \
  /usr/local/include/opencv4/opencv2/video.hpp \
  /usr/local/include/opencv4/opencv2/video/tracking.hpp \
- /usr/local/include/opencv4/opencv2/video/background_segm.hpp \
- /home/xu736946693/Desktop/DataStructure/lib/leetcode.h \
- /home/xu736946693/Desktop/DataStructure/lib/leetcode.cpp \
- /home/xu736946693/Desktop/DataStructure/lib/Heap.h \
- /home/xu736946693/Desktop/DataStructure/lib/Tree.h \
- /home/xu736946693/Desktop/DataStructure/lib/Heap.cpp \
- /home/xu736946693/Desktop/DataStructure/lib/Tree.cpp \
- /home/xu736946693/Desktop/DataStructure/lib/Graph.h \
- /home/xu736946693/Desktop/DataStructure/lib/SetType.h \
- /home/xu736946693/Desktop/DataStructure/lib/Graph.cpp \
- /home/xu736946693/Desktop/DataStructure/lib/SetType.cpp \
- /home/xu736946693/Desktop/DataStructure/lib/Sort.h \
- /home/xu736946693/Desktop/DataStructure/lib/Sort.cpp
+ /usr/local/include/opencv4/opencv2/video/background_segm.hpp
