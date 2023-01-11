@@ -94,6 +94,13 @@ bool searchMatrix(vector<vector<int>>& matrix, int target);
 //给定一个区间的集合intervals，其中 intervals[i] = [starti, endi]。返回 需要移除区间的最小数量，使剩余区间互不重叠。
 int eraseOverlapIntervals(vector<vector<int>>& intervals);
 
+
+
+
+
+
+
+//字符串
 //给定一个字符串 s ，找到 它的第一个不重复的字符，并返回它的索引 。如果不存在，则返回 -1 。
 int firstUniqChar(string s);
 
@@ -143,6 +150,12 @@ string longestPalindrome_subseries(string s);
 
 
 
+
+
+
+
+
+//链表
 //链表定义
 class ListNode {
 public:
@@ -235,6 +248,15 @@ ListNode* reverseKGroup(ListNode* head, int k);
 //不能只是单纯的改变节点内部的值，而是需要实际的进行节点交换。
 void reorderList(ListNode* head);
 
+
+
+
+
+
+
+
+
+
 //栈
 //请你仅使用两个栈实现先入先出队列。队列应当支持一般队列支持的所有操作（push、pop、peek、empty）：
 //实现 MyQueue 类：
@@ -307,8 +329,9 @@ string minRemoveToMakeValid(string s);
 
 
 
-//队列
 
+
+//队列
 //共有 n 名小伙伴一起做游戏。小伙伴们围成一圈，按 顺时针顺序 从 1 到 n 编号。确切地说，从第 i 名小伙伴顺时针移动一位会到达第 (i+1) 名小伙伴的位置，其中 1 <= i < n ，从第 n 名小伙伴顺时针移动一位会回到第 1 名小伙伴的位置。
 //游戏遵循如下规则：
 //从第 1 名小伙伴所在位置 开始 。
@@ -318,6 +341,7 @@ string minRemoveToMakeValid(string s);
 //否则，圈子中最后一名小伙伴赢得游戏。
 //给你参与游戏的小伙伴总数 n ，和一个整数 k ，返回游戏的获胜者。
 int findTheWinner(int n, int k);
+
 
 
 
@@ -350,6 +374,33 @@ public:
     void remove(int key);
 
 };
+
+
+
+
+
+//图
+//小镇里有 n 个人，按从 1 到 n 的顺序编号。传言称，这些人中有一个暗地里是小镇法官。
+//如果小镇法官真的存在，那么：
+//小镇法官不会信任任何人。
+//每个人（除了小镇法官）都信任这位小镇法官。
+//只有一个人同时满足属性 1 和属性 2 。
+//给你一个数组 trust ，其中 trust[i] = [ai, bi] 表示编号为 ai 的人信任编号为 bi 的人。
+//如果小镇法官存在并且可以确定他的身份，请返回该法官的编号；否则，返回 -1 。
+int findJudge(int n, vector<vector<int>>& trust);
+
+//给你一个 有向无环图， n个节点编号为 0到 n-1，以及一个边数组 edges，其中 edges[i] = [fromi, toi]表示一条从点fromi到点toi的有向边。
+//找到最小的点集使得从这些点出发能到达图中所有点。题目保证解存在且唯一。
+//你可以以任意顺序返回这些节点编号。
+vector<int> findSmallestSetOfVertices(int n, vector<vector<int>>& edges);
+
+//有 n 个房间，房间按从 0 到 n - 1 编号。最初，除 0 号房间外的其余所有房间都被锁住。你的目标是进入所有的房间。然而，你不能在没有获得钥匙的时候进入锁住的房间。
+//当你进入一个房间，你可能会在里面找到一套不同的钥匙，每把钥匙上都有对应的房间号，即表示钥匙可以打开的房间。你可以拿上所有钥匙去解锁其他房间。
+//给你一个数组 rooms 其中 rooms[i] 是你进入 i 号房间可以获得的钥匙集合。如果能进入 所有 房间返回 true，否则返回 false。
+bool canVisitAllRooms(vector<vector<int>>& rooms);
+
+
+
 
 
 

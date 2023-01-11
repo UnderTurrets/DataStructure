@@ -763,8 +763,27 @@ string BinTree<T>::serialize2String() {
 }
 // Decodes your encoded data to tree.
 template<typename T>
-BinTree<T>* Vector2BT(vector<BinTree<T>*>& v){
-/* 在反序列化时，既用到了节点数组v，又用到了队列q。两者都是层序，但v存储null，q不存储null
+BinTree<T>* deserialize2BT(string data) {
+    if(data[0] == '#') return nullptr;   // 特判
+    // 将序列化结果转化为节点vector（包含null）
+    vector<BinTree<T>*> v;
+    string str;
+    for(auto& c: data){
+        str.push_back(c);
+        // 按逗号分隔开
+        if(c == ','){
+            str.pop_back();
+            if(str == "#") v.emplace_back(nullptr);
+            else{
+                // 新建节点
+                BinTree<T>* tmp = new BinTree<T>(stoi(str));
+                v.emplace_back(tmp);
+            }
+            str.clear();
+        }
+    }
+
+    /* 在反序列化时，既用到了节点数组v，又用到了队列q。两者都是层序，但v存储null，q不存储null
  * 对于示例一：[1,2,3,null,null,4,5] ---- v = [1,2,3,null,null,4,5,null,null,null,null], q = [1,2,3,4,5]
  * 而对于示例二：[1,null,3,4,5] ---- v = [1,null,3,4,5,null,null,null,null], q = [1,3,4,5]
  * 不难发现：1. v.size == 2 * q.size() + 1;
@@ -789,28 +808,6 @@ BinTree<T>* Vector2BT(vector<BinTree<T>*>& v){
         cur += 2;
     }
     return v[0];
-}
-template<typename T>
-BinTree<T>* deserialize2BT(string data) {
-    if(data[0] == '#') return nullptr;   // 特判
-    // 将序列化结果转化为节点vector（包含null）
-    vector<BinTree<T>*> v;
-    string str;
-    for(auto& c: data){
-        str.push_back(c);
-        // 按逗号分隔开
-        if(c == ','){
-            str.pop_back();
-            if(str == "#") v.emplace_back(nullptr);
-            else{
-                // 新建节点
-                BinTree<T>* tmp = new BinTree<T>(stoi(str));
-                v.emplace_back(tmp);
-            }
-            str.clear();
-        }
-    }
-    return Vector2BT<T>(v);
 }
 
 
