@@ -1,7 +1,9 @@
 #include "leetcode.h"
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wc++17-extensions"
-//数组类
+#pragma clang diagnostic push
+#pragma ide diagnostic ignored "OCDFAInspection"
+//数组
 //判断一个数组中是否有相同元素
 bool containsDuplicate(vector<int>& nums) {
     bool ret=0;
@@ -15,6 +17,7 @@ bool containsDuplicate(vector<int>& nums) {
     }
     return ret;
 }
+#pragma clang diagnostic pop
 
 
 //寻找一个数组的最大子数组和
@@ -472,6 +475,13 @@ void PrintMs ( ){
 }
 
 
+
+
+
+
+
+
+
 //字符串
 //给定一个字符串 s ，找到 它的第一个不重复的字符，并返回它的索引 。如果不存在，则返回 -1 。
 int firstUniqChar(string s) {
@@ -715,6 +725,16 @@ string longestPalindrome_subseries(string s) {
     }
     return s.substr(start, end - start + 1);
 }
+
+
+
+
+
+
+
+
+
+
 
 //链表
     bool ListNode::operator< (ListNode that){
@@ -999,6 +1019,14 @@ void reorderList(ListNode* head){
     return;
 }
 
+
+
+
+
+
+
+
+
 //栈
 //请你仅使用两个栈实现先入先出队列。队列应当支持一般队列支持的所有操作（push、pop、peek、empty）：
 //实现 MyQueue 类：
@@ -1154,8 +1182,9 @@ string minRemoveToMakeValid(string s){
 
 
 
-//队列
 
+
+//队列
 //共有 n 名小伙伴一起做游戏。小伙伴们围成一圈，按 顺时针顺序 从 1 到 n 编号。确切地说，从第 i 名小伙伴顺时针移动一位会到达第 (i+1) 名小伙伴的位置，其中 1 <= i < n ，从第 n 名小伙伴顺时针移动一位会回到第 1 名小伙伴的位置。
 //游戏遵循如下规则：
 //从第 1 名小伙伴所在位置 开始 。
@@ -1228,6 +1257,78 @@ int findTheWinner(int n, int k){
             }
         }
     }
+
+
+
+
+
+//图
+//小镇里有 n 个人，按从 1 到 n 的顺序编号。传言称，这些人中有一个暗地里是小镇法官。
+//如果小镇法官真的存在，那么：
+//小镇法官不会信任任何人。
+//每个人（除了小镇法官）都信任这位小镇法官。
+//只有一个人同时满足属性 1 和属性 2 。
+//给你一个数组 trust ，其中 trust[i] = [ai, bi] 表示编号为 ai 的人信任编号为 bi 的人。
+//如果小镇法官存在并且可以确定他的身份，请返回该法官的编号；否则，返回 -1 。
+int findJudge(int n, vector<vector<int>>& trust) {
+    vector<int> inDegrees(n + 1);
+    vector<int> outDegrees(n + 1);
+    for (auto& edge : trust) {
+        int x = edge[0], y = edge[1];
+        ++inDegrees[y];
+        ++outDegrees[x];
+    }
+    for (int i = 1; i <= n; ++i) {
+        if (inDegrees[i] == n - 1 && outDegrees[i] == 0) {
+            return i;
+        }
+    }
+    return -1;
+}
+
+//给你一个 有向无环图， n个节点编号为 0到 n-1，以及一个边数组 edges，其中 edges[i] = [fromi, toi]表示一条从点fromi到点toi的有向边。
+//找到最小的点集使得从这些点出发能到达图中所有点。题目保证解存在且唯一。
+//你可以以任意顺序返回这些节点编号。
+vector<int> findSmallestSetOfVertices(int n, vector<vector<int>>& edges) {
+    vector<int> inDeegrees(n);
+    for (auto& edge : edges) inDeegrees[edge[1]]++;
+    vector<int> ans;
+    for (int i = 0; i < n; i++) if (inDeegrees[i] == 0) ans.emplace_back(i);
+    return ans;
+}
+
+//有 n 个房间，房间按从 0 到 n - 1 编号。最初，除 0 号房间外的其余所有房间都被锁住。你的目标是进入所有的房间。然而，你不能在没有获得钥匙的时候进入锁住的房间。
+//当你进入一个房间，你可能会在里面找到一套不同的钥匙，每把钥匙上都有对应的房间号，即表示钥匙可以打开的房间。你可以拿上所有钥匙去解锁其他房间。
+//给你一个数组 rooms 其中 rooms[i] 是你进入 i 号房间可以获得的钥匙集合。如果能进入 所有 房间返回 true，否则返回 false。
+bool canVisitAllRooms(vector<vector<int>>& rooms) {
+    unordered_map<int,bool>ans;queue<int>permit;
+    ans[0]=1;
+    for(int x:rooms[0]){
+        permit.push(x);
+    }
+    while(!permit.empty()){
+        int cur_room=permit.front();permit.pop();
+        if(ans[cur_room]==0){
+            ans[cur_room]=1;
+            for(int x:rooms[cur_room]){
+                permit.push(x);
+            }
+        }
+    }
+    if(ans.size()!=rooms.size()){
+        return false;
+    }else{
+        return true;
+    }
+}
+
+
+
+
+
+
+
+
 
 
 
