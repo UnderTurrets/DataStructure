@@ -1348,24 +1348,63 @@ vector<int> topKFrequent(vector<int>& nums, int k){
     auto f=[=](pair<int,int>a,pair<int,int>b){
         return a.second>b.second;
     };
-    vector<int>temp(nums);sort(temp.begin(),temp.end());
+    unordered_map<int,int>total;
     vector<pair<int,int>>ans;
-    for(int x:temp){
-        if(ans.empty() || x!=ans.back().first){
-            ans.push_back(make_pair(x,1));
-        }else if(x == ans.back().first){
-            ans.back().second++;
-        }
+    for(int x:nums){
+        total[x]++;
+    }
+    for(pair<int,int>x:total){
+        ans.push_back(x);
     }
     sort(ans.begin(),ans.end(),f);
-    vector<int>ret;
+    vector<int> ret;
     for(int i=0;i<k;i++){
         ret.push_back(ans[i].first);
     }
     return ret;
 }
 
+//给定一个字符串 s ，根据字符出现的 频率 对其进行 降序排序 。一个字符出现的 频率 是它出现在字符串中的次数。
+//返回 已排序的字符串。如果有多个答案，返回其中任何一个。
+string frequencySort(string s){
+    auto f=[=](pair<char,int>a,pair<char,int>b){
+        return a.second>b.second;
+    };
+    unordered_map<char,int>total;
+    vector<pair<char,int>>ans;
+    for(char x:s){
+        total[x]++;
+    }
+    for(pair<char,int>x:total){
+        ans.push_back(x);
+    }
+    sort(ans.begin(),ans.end(),f);
+    string ret;
+    for(auto x:ans){
+        ret.insert(ret.end(),x.second,x.first);
+    }
+    return ret;
+    }
 
+//给定一个数组 points，其中points[i] = [xi, yi]表示 X-Y 平面上的一个点，并且是一个整数 k ，返回离原点 (0,0) 最近的 k 个点。
+//这里，平面上两点之间的距离是欧几里德距离（√(x1- x2)2+ (y1- y2)2）。
+//你可以按 任何顺序 返回答案。除了点坐标的顺序之外，答案 确保 是 唯一 的。
+vector<vector<int>> kClosest(vector<vector<int>>& points, int k){
+    auto f=[=](pair<vector<int>,int>a,pair<vector<int>,int>b){
+        return a.second<b.second;
+    };
+    vector<pair<vector<int>,int>>ans;
+    for(auto x:points){
+        int distance= pow(x[0],2)+ pow(x[1],2);
+        ans.push_back(make_pair(x,distance));
+    }
+    sort(ans.begin(),ans.end(),f);
+    vector<vector<int>>ret;
+    for(int i=0;i<k;i++){
+        ret.push_back(ans[i].first);
+    }
+    return ret;
+    }
 
 
 

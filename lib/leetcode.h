@@ -413,6 +413,17 @@ int findKthLargest(vector<int>& nums, int k);
 //给你一个整数数组 nums 和一个整数 k ，请你返回其中出现频率前 k 高的元素。你可以按 任意顺序 返回答案。
 vector<int> topKFrequent(vector<int>& nums, int k);
 
+//给定一个字符串 s ，根据字符出现的 频率 对其进行 降序排序 。一个字符出现的 频率 是它出现在字符串中的次数。
+//返回 已排序的字符串。如果有多个答案，返回其中任何一个。
+string frequencySort(string s);
+
+//给定一个数组 points，其中points[i] = [xi, yi]表示 X-Y 平面上的一个点，并且是一个整数 k ，返回离原点 (0,0) 最近的 k 个点。
+//这里，平面上两点之间的距离是欧几里德距离（√(x1- x2)2+ (y1- y2)2）。
+//你可以按 任何顺序 返回答案。除了点坐标的顺序之外，答案 确保 是 唯一 的。
+vector<vector<int>> kClosest(vector<vector<int>>& points, int k);
+
+
+
 
 
 #endif
