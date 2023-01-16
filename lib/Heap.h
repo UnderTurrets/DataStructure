@@ -118,6 +118,8 @@ public:
     void TidyUp();
 };
 
-
+//用最小堆构建一个哈夫曼树
+template<typename T>
+BinTree<T> HuffMan (MinHeap<BinTree<T>>* minHeap);
 
 #endif
