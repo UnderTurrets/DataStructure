@@ -5,7 +5,7 @@
 
 //树
 template<typename T>
-class BinTree{
+ class BinTree{
 public:
     T val;
     BinTree<T> *left=nullptr;
@@ -219,5 +219,7 @@ public:
 
     bool hasNext();
 };
+
+
 
 #endif
