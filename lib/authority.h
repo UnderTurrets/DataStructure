@@ -1,9 +1,11 @@
 #ifndef __authority_h__
 #define __authority_h__
 
-#include <iostream>
+
 #include <iomanip>
 #include <fstream>
+#include <iostream>
+#include <exception>
 #include <memory>
 #include <functional>
 #include <exception>
