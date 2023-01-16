@@ -351,21 +351,47 @@
 
 //用最小堆构建一个哈夫曼树
 template<typename T>
-BinTree<T> HuffMan (MinHeap<BinTree<T>>* minHeap){
-    int i;BinTree<T>* temp;
-    minHeap->TidyUp();
-    for(i=1;i< minHeap->size;i++){
-        temp=new BinTree<T>;
-        BinTree<T>x1=minHeap->deleteMin();
-        BinTree<T>x2=minHeap->deleteMin();
-        temp->left = &x1;
-        temp->right= &x2;
-        temp->val=x1.val+x2.val;
-        minHeap->insert(*temp);
+BinTree<T>* MinHeap<T>::HuffMan (){
+    class helper{
+    public:
+        pair<BinTree<T>*,T>element;
+        helper(){}
+        helper(T val){
+            this->element.first=new BinTree<T>(val);
+            this->element.second=val;
+        }
+        helper(BinTree<T>*root,T val){
+            this->element.first=root;
+            this->element.second=val;
+        }
+        bool operator < (helper that){
+            return this->element.second<that.element.second;
+        }
+        bool operator <= (helper that){
+            return this->element.second<=that.element.second;
+        }
+        bool operator > (helper that){
+            return this->element.second>that.element.second;
+        }
+        bool operator >= (helper that){
+            return this->element.second>=that.element.second;
+        }
+    };
+    MinHeap<helper>minHeap(this->size);
+    for(int i=1;i<=this->size;i++){
+        minHeap.array[i]= helper(this->array[i]);
     }
-    BinTree<T>x=minHeap->deleteMin();
-    temp=&x;
-    return *temp;
+    minHeap.size= this->size;
+    int N=minHeap.size;
+    for(int i=1;i< N;i++){
+        BinTree<T>* temp=new BinTree<T>;
+        temp->left=minHeap.deleteMin().element.first;
+        temp->right=minHeap.deleteMin().element.first;
+        temp->val= temp->left->val + temp->right->val;
+        minHeap.insert(helper(temp,temp->val));
+    }
+    BinTree<T>* root=minHeap.deleteMin().element.first;
+    return root;
 }
 
 
