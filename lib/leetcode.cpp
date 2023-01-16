@@ -469,7 +469,7 @@ void PrintMs ( ){
         i++;
         return;
     }
-    long long result = (double)((current-last)/cv::getTickFrequency())*1000;
+    double result = (double)((current-last)/cv::getTickFrequency())*1000;
     i++;
     cout<<"间隔："<<result<<"ms"<<endl;
 }
