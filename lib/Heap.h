@@ -1,7 +1,6 @@
 #ifndef __Heap_h__
 #define __Heap_h__
 
-#include "authority.h"
 #include "Tree.h"
 
 //堆

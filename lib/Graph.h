@@ -1,6 +1,6 @@
 #ifndef __Graph_h__
 #define __Graph_h__
-#include "authority.h"
+
 #include "SetType.h"
 #include "Heap.h"
 
