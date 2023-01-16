@@ -116,10 +116,11 @@ public:
 
     //将这个堆整理成最小堆
     void TidyUp();
+
+    //用最小堆构建一个哈夫曼树
+    BinTree<T>* HuffMan ();
 };
 
-//用最小堆构建一个哈夫曼树
-template<typename T>
-BinTree<T> HuffMan (MinHeap<BinTree<T>>* minHeap);
+
 
 #endif
