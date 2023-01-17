@@ -1,16 +1,16 @@
 #include "Graph.h"
 
 //边
-bool EdgeNode::operator> (EdgeNode that){
+bool EdgeNode::operator> (const EdgeNode that){
     return this->Weight>that.Weight;
 }
-bool EdgeNode::operator>= (EdgeNode that){
+bool EdgeNode::operator>= (const EdgeNode that){
     return this->Weight>=that.Weight;
 }
-bool EdgeNode::operator< (EdgeNode that){
+bool EdgeNode::operator< (const EdgeNode that){
     return this->Weight<that.Weight;
 }
-bool EdgeNode::operator<= (EdgeNode that){
+bool EdgeNode::operator<= (const EdgeNode that){
     return this->Weight<=that.Weight;
 }
 
@@ -76,7 +76,7 @@ bool EdgeNode::operator<= (EdgeNode that){
         return;
     }
 
-    GraphList GraphList::operator= (GraphList that){
+    GraphList GraphList::operator= (const GraphList that){
         this->vertexNum=that.vertexNum;
         this->edgeNum=that.edgeNum;
         this->GraphHeadNodeVector=that.GraphHeadNodeVector;
@@ -100,7 +100,7 @@ bool EdgeNode::operator<= (EdgeNode that){
     }
 
     //创建一个没有边的图,指定顶点个数
-    GraphList::GraphList(int n){
+    GraphList::GraphList(const int n){
         this->vertexNum=n;
         this->edgeNum=0;
         this->dist_initialize();
@@ -112,7 +112,7 @@ bool EdgeNode::operator<= (EdgeNode that){
     }
 
     //插入一条有序边
-    void GraphList::InsertOrderedEdge(Edge E){
+    void GraphList::InsertOrderedEdge(const Edge E){
         //插入失败的情况
         if(E->source >= this->vertexNum){
             cout<<"Vertex "<<E->source<<":"<<"The vertex you has typed in doesn't exist!"<<endl;
@@ -144,7 +144,7 @@ bool EdgeNode::operator<= (EdgeNode that){
             temp->Next=NewNode;
         }
     };
-    void GraphList::InsertOrderedEdge(Vertex source,Vertex destination,WeightType weight){
+    void GraphList::InsertOrderedEdge(const Vertex source,const Vertex destination,const WeightType weight){
         //插入失败的情况
         if(source >= this->vertexNum){
             cout<<"Vertex "<<source<<":"<<"The vertex you has typed in doesn't exist!"<<endl;
@@ -178,7 +178,7 @@ bool EdgeNode::operator<= (EdgeNode that){
     };
 
     //插入一条无序边
-    void GraphList::InsertUnorderedEdge(Edge E){
+    void GraphList::InsertUnorderedEdge(const Edge E){
         //插入失败的情况
         if(E->source >= this->vertexNum){
             cout<<"Vertex "<<E->source<<":"<<"The vertex you has typed in doesn't exist!"<<endl;
@@ -226,7 +226,7 @@ bool EdgeNode::operator<= (EdgeNode that){
     };
 
     //给定一个顶点，DFS遍历其连通分量
-    void GraphList::DFS_ConnectedComponent_helper(Vertex squence){
+    void GraphList::DFS_ConnectedComponent_helper(const Vertex squence){
         //遍历失败的情况
         if(squence>=vertexNum){
             cout<<"Vertex "<<squence<<":"<<"The vertex you has typed in doesn't exist!"<<endl;
@@ -245,7 +245,7 @@ bool EdgeNode::operator<= (EdgeNode that){
         }
     }
 
-    void GraphList::DFS_ConnectedComponent(Vertex squence){
+    void GraphList::DFS_ConnectedComponent(const Vertex squence){
         this->Isvisited_initialize();
         DFS_ConnectedComponent_helper(squence);
         this->Isvisited_initialize();
@@ -263,7 +263,7 @@ bool EdgeNode::operator<= (EdgeNode that){
     }
 
     //给定一个顶点，BFS遍历其连通分量
-    void GraphList::BFS_ConnectedComponent_helper(Vertex squence){
+    void GraphList::BFS_ConnectedComponent_helper(const Vertex squence){
         //遍历失败的情况
         if(squence>=vertexNum){
             cout<<"Vertex "<<squence<<":"<<"The vertex you has typed in doesn't exist!"<<endl;
@@ -292,7 +292,7 @@ bool EdgeNode::operator<= (EdgeNode that){
         }
     }
 
-    void GraphList::BFS_ConnectedComponent(Vertex squence){
+    void GraphList::BFS_ConnectedComponent(const Vertex squence){
         this->Isvisited_initialize();
         BFS_ConnectedComponent_helper(squence);
         this->Isvisited_initialize();
@@ -310,7 +310,7 @@ bool EdgeNode::operator<= (EdgeNode that){
     }
 
     // 返回this->dist[source]中未被收录的顶点且weight最小者
-    Vertex GraphList::FindMinVertex(Vertex source){
+    Vertex GraphList::FindMinVertex(const Vertex source){
         if(source>=vertexNum){
             cout<<"Vertex "<<source<<":"<<"The vertex you has typed in doesn't exist!"<<endl;
             return UndeterminedVertex;
@@ -331,7 +331,7 @@ bool EdgeNode::operator<= (EdgeNode that){
     }
 
     //单源最短路径unsigned
-    bool GraphList::FindSingleMinWeight_helper (Vertex source){
+    bool GraphList::FindSingleMinWeight_helper (const Vertex source){
         if(source>=vertexNum){
             cout<<"Vertex "<<source<<":"<<"The vertex you has typed in doesn't exist!"<<endl;
             return false;
@@ -366,7 +366,7 @@ bool EdgeNode::operator<= (EdgeNode that){
         return true;
     }
 
-    bool GraphList::FindSingleMinWeight(Vertex source){
+    bool GraphList::FindSingleMinWeight(const Vertex source){
         this->Isvisited_initialize();
         bool ret=this->FindSingleMinWeight_helper(source);
         this->Isvisited_initialize();
@@ -423,7 +423,7 @@ bool EdgeNode::operator<= (EdgeNode that){
     }
 
     /* 邻接表存储 - 拓扑排序算法 */
-    bool GraphList::TopSort(vector<Vertex> TopOrder ){
+    bool GraphList::TopSort( vector<Vertex> TopOrder ){
         /* 对Graph进行拓扑排序,  TopOrder顺序存储排序后的顶点下标 */
         vector<int>Indegree(this->vertexNum);
         int cnt;
@@ -512,7 +512,7 @@ bool EdgeNode::operator<= (EdgeNode that){
         return;
     }
 
-    GraphRect GraphRect::operator= (GraphRect that){
+    GraphRect GraphRect::operator= (const GraphRect that){
         this->vertexNum=that.vertexNum;
         this->edgeNum=that.edgeNum;
         this->EdgeWeightRect=that.EdgeWeightRect;
@@ -536,7 +536,7 @@ bool EdgeNode::operator<= (EdgeNode that){
     }
 
     //指定顶点个数初始化一个图
-    GraphRect::GraphRect(Vertex n){
+    GraphRect::GraphRect(const Vertex n){
         this->vertexNum=n;
         this->edgeNum=0;
         this->dist_initialize();
@@ -566,7 +566,7 @@ bool EdgeNode::operator<= (EdgeNode that){
         //开始插入操作
         this->EdgeWeightRect[E->source][E->destination] = E->Weight;
     }
-    void GraphRect::InsertOrderedEdge( Vertex source,Vertex destinaiton,WeightType weight ){
+    void GraphRect::InsertOrderedEdge(const  Vertex source,const Vertex destinaiton,const WeightType weight ){
         //插入失败的情况
         if(source >= this->vertexNum){
             cout<<"Vertex "<<source<<":"<<"The vertex you has typed in doesn't exist!"<<endl;
@@ -587,7 +587,7 @@ bool EdgeNode::operator<= (EdgeNode that){
     }
 
     //插入一条无序边
-    void GraphRect::InsertUnorderedEdge( Edge E ){
+    void GraphRect::InsertUnorderedEdge(const  Edge E ){
         //插入失败的情况
         if(E->source >= this->vertexNum){
             cout<<"Vertex "<<E->source<<":"<<"The vertex you has typed in doesn't exist!"<<endl;
@@ -610,7 +610,7 @@ bool EdgeNode::operator<= (EdgeNode that){
     }
 
     //给定一个顶点，DFS遍历其连通分量
-    void GraphRect::DFS_ConnectedComponent_helper(Vertex squence){
+    void GraphRect::DFS_ConnectedComponent_helper(const Vertex squence){
         //遍历失败的情况
         if(squence>=vertexNum){
             cout<<"Vertex "<<squence<<":"<<"The vertex you has typed in doesn't exist!"<<endl;
@@ -633,7 +633,7 @@ bool EdgeNode::operator<= (EdgeNode that){
             }
         }
     }
-    void GraphRect::DFS_ConnectedComponent(Vertex squence){
+    void GraphRect::DFS_ConnectedComponent(const Vertex squence){
         this->Isvisited_initialize();
         DFS_ConnectedComponent_helper(squence);
         this->Isvisited_initialize();
@@ -649,7 +649,7 @@ bool EdgeNode::operator<= (EdgeNode that){
     }
 
     //给定一个顶点，BFS遍历其连通分量
-    void GraphRect::BFS_ConnectedComponent_helper(Vertex squence){
+    void GraphRect::BFS_ConnectedComponent_helper(const Vertex squence){
         //遍历失败的情况
         if(squence>=vertexNum){
             cout<<"Vertex "<<squence<<":"<<"The vertex you has typed in doesn't exist!"<<endl;
@@ -680,7 +680,7 @@ bool EdgeNode::operator<= (EdgeNode that){
         }
     }
 
-    void GraphRect::BFS_ConnectedComponent(Vertex squence){
+    void GraphRect::BFS_ConnectedComponent(const Vertex squence){
         this->Isvisited_initialize();
         BFS_ConnectedComponent_helper(squence);
         this->Isvisited_initialize();
@@ -696,7 +696,7 @@ bool EdgeNode::operator<= (EdgeNode that){
     }
 
     // 返回this->dist[source]中未被收录的顶点且weight最小者
-    Vertex GraphRect::FindMinVertex(Vertex source){
+    Vertex GraphRect::FindMinVertex(const Vertex source){
         Vertex minVertex,temp;WeightType minWeight=UndeterminedWeight;
         for ( temp=0; temp<this->vertexNum; temp++) {
             if ( !this->Isvisited[temp] && this->dist[source][temp]<minWeight) {
@@ -711,7 +711,7 @@ bool EdgeNode::operator<= (EdgeNode that){
     }
 
     //单源最短路径unsigned
-    bool GraphRect::FindSingleMinWeight_helper (Vertex source){
+    bool GraphRect::FindSingleMinWeight_helper (const Vertex source){
         //寻找失败的情况
         if(source>=vertexNum){
             cout<<"Vertex "<<source<<":"<<"The vertex you has typed in doesn't exist!"<<endl;
@@ -744,7 +744,7 @@ bool EdgeNode::operator<= (EdgeNode that){
         return true;
     }
 
-    bool GraphRect::FindSingleMinWeight(Vertex source){
+    bool GraphRect::FindSingleMinWeight(const Vertex source){
         this->Isvisited_initialize();
         bool ret=this->FindSingleMinWeight_helper(source);
         this->Isvisited_initialize();

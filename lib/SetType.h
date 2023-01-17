@@ -7,7 +7,7 @@ class SetTypeElement{
 public:
     T val;
     int parent=-1;
-    bool operator== (SetTypeElement<T>that);
+    inline bool operator== (SetTypeElement<T>that);
 };
 
 
@@ -20,19 +20,19 @@ public:
     SetType(int n);
 
     //初始化并查集
-    void Initialize();
+    inline void Initialize();
 
     //给出元素得到其在集合中的下标
-    int GetIndex(T set);
+    inline int GetIndex(const T set);
 
     //把集合合并,必须给出两个根节点
-    void Union(int Root1_index,int Root2_index);
+    inline void Union(const int Root1_index,const int Root2_index);
 
     //给出一个元素的下标，找到此元素的根
-    int Find(int index);
+    inline int Find(const int index);
 
 //给出两个元素的下标，检查两个元素是否属于同一集合
-    bool Check(int index1,int index2);
+    inline bool Check(const int index1,const int index2);
 
 };
 #endif

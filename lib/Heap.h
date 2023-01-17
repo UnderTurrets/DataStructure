@@ -14,22 +14,22 @@ public:
     T LimitData;    //这是一个大于或小于堆中所有元素的极限元素，目的是为了以后更快地操作
 
     //重载运算符进行赋值构造
-    Heap<T> operator= (Heap<T>that);
+    inline Heap<T> operator= (const Heap<T>that);
 
     //构造函数
-    Heap();
+    inline Heap();
 
     //拷贝构造（深拷贝）
-    Heap(Heap<T> &H );
+    inline Heap(const Heap<T> &H );
 
     //以某一容量创建一个堆
-    Heap(int Maxcapacity) ;
+    inline Heap(const int Maxcapacity) ;
 
     //以一个完全二叉树创建一个堆，输入的树必须是 完全二叉树！！！
-    Heap(BinTree<T> bt);
+    inline Heap(const BinTree<T> bt);
 
     //以一个数组创建一个堆
-    Heap(vector<T> v);
+    inline Heap(const vector<T> v);
 
     //判断是否满员
     inline bool IsFull();
@@ -46,34 +46,34 @@ template<typename T>
 class MaxHeap:public Heap<T>{
 public:
     //构造函数
-    MaxHeap();
+    inline MaxHeap();
 
     //重载运算符进行赋值构造
-    MaxHeap<T> operator= (MaxHeap<T>that);
+    inline MaxHeap<T> operator= (const MaxHeap<T>that);
 
     //拷贝构造
-    MaxHeap(MaxHeap<T> &H);
+    inline MaxHeap(MaxHeap<T> &H);
 
     //以某一容量创建一个堆
-    MaxHeap(int Maxcapacity);
+    inline MaxHeap(const int Maxcapacity);
 
     //以一个完全二叉树创建一个堆，记住：输入的树必须是 完全二叉树！！！
-    MaxHeap(BinTree<T> bt);
+    inline MaxHeap(const BinTree<T> bt);
 
     //以一个数组创建一个堆
-    MaxHeap(vector<T> v);
+    inline MaxHeap(const vector<T> v);
 
     //以其父类创建一个堆
-    MaxHeap(Heap<T> &H);
+    inline MaxHeap(const Heap<T> &H);
 
     //插入一个元素
-    void insert(T val) ;
+    void insert(const T val) ;
 
     //删除顶部元素,返回值就是顶部元素
     T deleteMax();
 
     //将这个堆中this->array[i]为根的子堆整理成最大堆
-    void PercDown(int i);
+    void PercDown(const int i);
 
     //将这个堆整理成最大堆
     void TidyUp();
@@ -84,34 +84,34 @@ template<typename T>
 class MinHeap:public Heap<T>{
 public:
     //构造函数
-    MinHeap();
+    inline MinHeap();
 
     //重载运算符进行赋值构造
-    MinHeap<T> operator= (MinHeap<T>that);
+    inline MinHeap<T> operator= (const MinHeap<T>that);
 
     //拷贝构造
-    MinHeap(MinHeap<T> &H);
+    inline MinHeap(const MinHeap<T> &H);
 
     //以某一容量创建一个堆
-    MinHeap(int Maxcapacity);
+    inline MinHeap(const int Maxcapacity);
 
     //以一个完全二叉树创建一个堆，记住：输入的树必须是 完全二叉树！！！
-    MinHeap(BinTree<T> bt);
+    inline MinHeap(const BinTree<T> bt);
 
     //以一个数组创建一个堆
-    MinHeap(vector<T> v);
+    inline MinHeap(const vector<T> v);
 
     //以其父类创建一个堆
-    MinHeap(Heap<T> &H);
+    inline MinHeap(const Heap<T> &H);
 
     //插入一个元素
-    void insert(T val);
+    void insert(const T val);
 
     //删除顶部元素,返回值就是顶部元素
     T deleteMin();
 
     //将这个堆中this->array[i]为根的子堆整理成最小堆
-    void PercDown(int i);
+    void PercDown(const int i);
 
     //将这个堆整理成最小堆
     void TidyUp();

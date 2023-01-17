@@ -11,8 +11,6 @@ Graph.h
 /home/xu736946693/Desktop/DataStructure/lib/Graph.h
 
 /home/xu736946693/Desktop/DataStructure/lib/Graph.h
-authority.h
-/home/xu736946693/Desktop/DataStructure/lib/authority.h
 SetType.h
 /home/xu736946693/Desktop/DataStructure/lib/SetType.h
 Heap.h
@@ -23,8 +21,6 @@ Heap.h
 /home/xu736946693/Desktop/DataStructure/lib/Heap.h
 
 /home/xu736946693/Desktop/DataStructure/lib/Heap.h
-authority.h
-/home/xu736946693/Desktop/DataStructure/lib/authority.h
 Tree.h
 /home/xu736946693/Desktop/DataStructure/lib/Tree.h
 
@@ -55,25 +51,13 @@ authority.h
 /home/xu736946693/Desktop/DataStructure/lib/authority.h
 
 /home/xu736946693/Desktop/DataStructure/lib/authority.h
+iomanip
+-
+fstream
+-
 iostream
 -
-vector
--
-list
--
-string
--
-stack
--
-queue
--
-map
--
-unordered_map
--
-set
--
-unordered_set
+exception
 -
 memory
 -

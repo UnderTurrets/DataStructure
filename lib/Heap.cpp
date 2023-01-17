@@ -4,7 +4,7 @@
 //堆
 
     template<typename T>
-    Heap<T> Heap<T>::operator= (Heap<T>that){
+    Heap<T> Heap<T>::operator= (const Heap<T>that){
         if(this->array)delete[] this->array;
         this->size=that.size;
         this->capacity=that.capacity;
@@ -26,7 +26,7 @@
 
     //拷贝构造（深拷贝）
     template<typename T>
-    Heap<T>::Heap(Heap<T> &H ){
+    Heap<T>::Heap(const Heap<T> &H ){
         if(this->array)delete[] this->array;
         this->array=new T[H.capacity+1];
         this->size=H.size;
@@ -39,7 +39,7 @@
 
     //以某一容量创建一个堆
     template<typename T>
-    Heap<T>::Heap(int Maxcapacity) {
+    Heap<T>::Heap(const int Maxcapacity) {
         if(this->array)delete[] this->array;
         this->array = new T[Maxcapacity + 1];
         this->size = 0;
@@ -49,7 +49,7 @@
 
     //以一个完全二叉树创建一个堆，记住：输入的树必须是 完全二叉树！！！
     template<typename T>
-    Heap<T>::Heap(BinTree<T> bt){
+    Heap<T>::Heap(const BinTree<T> bt){
         if(this->array)delete[] this->array;
         int x=pow(2,bt.GetHeight(&bt)+1);
         this->array=new T[x+1];
@@ -75,7 +75,7 @@
 
     //以一个数组创建一个堆
     template<typename T>
-    Heap<T>::Heap(vector<T> v){
+    Heap<T>::Heap(const vector<T> v){
         if(this->array)delete[] this->array;
         this->array=new T[v.capacity()+1];
         this->size=v.size();
@@ -120,7 +120,7 @@
     }
 
     template<typename T>
-    MaxHeap<T> MaxHeap<T>::operator= (MaxHeap<T>that){
+    MaxHeap<T> MaxHeap<T>::operator= (const MaxHeap<T>that){
         if(this->array)delete[] this->array;
         this->size=that.size;
         this->capacity=that.capacity;
@@ -137,29 +137,29 @@
 
     //以某一容量创建一个堆
     template<typename T>
-    MaxHeap<T>::MaxHeap(int Maxcapacity): Heap<T>(Maxcapacity){}
+    MaxHeap<T>::MaxHeap(const int Maxcapacity): Heap<T>(Maxcapacity){}
 
     //以一个完全二叉树创建一个堆，记住：输入的树必须是 完全二叉树！！！
     template<typename T>
-    MaxHeap<T>::MaxHeap(BinTree<T> bt): Heap<T>(bt){
+    MaxHeap<T>::MaxHeap(const BinTree<T> bt): Heap<T>(bt){
         this->TidyUp();
     }
 
     //以一个数组创建一个堆
     template<typename T>
-    MaxHeap<T>::MaxHeap(vector<T> v): Heap<T>(v){
+    MaxHeap<T>::MaxHeap(const vector<T> v): Heap<T>(v){
         this->TidyUp();
     }
 
     //以其父类创建一个堆
     template<typename T>
-    MaxHeap<T>::MaxHeap(Heap<T> &H): Heap<T>(H){
+    MaxHeap<T>::MaxHeap(const Heap<T> &H): Heap<T>(H){
         this->TidyUp();
     }
 
     //插入一个元素
     template<typename T>
-    void MaxHeap<T>::insert(T val) {
+    void MaxHeap<T>::insert(const T val) {
         if (this->IsFull()) {
             T *temp=this->array;
             this->array=NULL;
@@ -205,7 +205,7 @@
 
     //将这个堆中this->array[i]为根的子堆整理成最大堆
     template<typename T>
-    void MaxHeap<T>::PercDown(int i){
+    void MaxHeap<T>::PercDown(const int i){
         int parent,child;
         T x;
         x= this->array[i];
@@ -238,7 +238,7 @@
     MinHeap<T>::MinHeap(): Heap<T>(){}
 
     template<typename T>
-    MinHeap<T> MinHeap<T>::operator= (MinHeap<T>that){
+    MinHeap<T> MinHeap<T>::operator= (const MinHeap<T>that){
         if(this->array)delete[] this->array;
         this->size=that.size;
         this->capacity=that.capacity;
@@ -251,33 +251,33 @@
 
     //拷贝构造
     template<typename T>
-    MinHeap<T>::MinHeap(MinHeap<T> &H): Heap<T>(H){}
+    MinHeap<T>::MinHeap(const MinHeap<T> &H): Heap<T>(H){}
 
     //以某一容量创建一个堆
     template<typename T>
-    MinHeap<T>::MinHeap(int Maxcapacity): Heap<T>(Maxcapacity){}
+    MinHeap<T>::MinHeap(const int Maxcapacity): Heap<T>(Maxcapacity){}
 
     //以一个完全二叉树创建一个堆，记住：输入的树必须是 完全二叉树！！！
     template<typename T>
-    MinHeap<T>::MinHeap(BinTree<T> bt): Heap<T>(bt){
+    MinHeap<T>::MinHeap(const BinTree<T> bt): Heap<T>(bt){
         this->TidyUp();
     }
 
     //以一个数组创建一个堆
     template<typename T>
-    MinHeap<T>::MinHeap(vector<T> v): Heap<T>(v){
+    MinHeap<T>::MinHeap(const vector<T> v): Heap<T>(v){
         this->TidyUp();
     }
 
     //以其父类创建一个堆
     template<typename T>
-    MinHeap<T>::MinHeap(Heap<T> &H): Heap<T>(H){
+    MinHeap<T>::MinHeap(const Heap<T> &H): Heap<T>(H){
         this->TidyUp();
     }
 
     //插入一个元素
     template<typename T>
-    void MinHeap<T>::insert(T val){
+    void MinHeap<T>::insert(const T val){
         if (this->IsFull()) {
             T *temp=this->array;
             this->array=NULL;
@@ -323,7 +323,7 @@
 
     //将这个堆中this->array[i]为根的子堆整理成最大堆
     template<typename T>
-    void MinHeap<T>::PercDown(int i){
+    void MinHeap<T>::PercDown(const int i){
         int parent,child;
         T x;
         x= this->array[i];

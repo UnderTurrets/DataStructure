@@ -3,9 +3,9 @@
 
 //冒泡排序
 template<typename T>
-vector<T> BubbleSort(vector<T> input){
+vector<T> BubbleSort(const vector<T> input){
     vector<T>output(input);
-    for(int i=output.size()-1;i>=0;i++){
+    for(int i=output.size()-1;i>=0;i--){
         bool flag=0;
         for(int j=0;j<i;j++){
             if(output[j]>output[j+1]){
@@ -22,7 +22,7 @@ vector<T> BubbleSort(vector<T> input){
 
 //插入排序
 template<typename T>
-vector<T> InsertionSort(vector<T> input){
+vector<T> InsertionSort(const vector<T> input){
     vector<T>output(input);
     int P, i;
     T Tmp;
@@ -37,7 +37,7 @@ vector<T> InsertionSort(vector<T> input){
 
 //希尔排序
 template<typename T>
-vector<T> ShellSort(vector<T>input){
+vector<T> ShellSort(const vector<T>input){
     vector<T>output(input);
     int Si, D, P, i;
     T Tmp;
@@ -61,7 +61,7 @@ vector<T> ShellSort(vector<T>input){
 
 //堆排序
 template<typename T>
-vector<T> HeapSort(vector<T>input){
+vector<T> HeapSort(const vector<T>input){
     vector<T>output;
     MinHeap<T>temp(input);
     for ( int i=0;i<input.size(); i++ ) {
@@ -111,7 +111,7 @@ void Msort( vector<T>&A, vector<T>TmpA, int L, int RightEnd ){ /* 核心递归�
 }
 
 template<typename T>
-vector<T> MergeSortRecurrence( vector<T>A){ /* 归并排序 */
+vector<T> MergeSortRecurrence( const vector<T>A){ /* 归并排序 */
     vector<T>output(A);
     vector<T>TmpA;int N=output.size();
     TmpA.resize(N);
@@ -138,7 +138,7 @@ void Merge_pass(vector<T>A, vector<T>TmpA, int N, int length ){ /* 两两归并�
 }
 
 template<typename T>
-vector<T> MergeSortCommon( vector<T>A){
+vector<T> MergeSortCommon(const  vector<T>A){
     int length;int N=A.size();
     vector<T>TmpA;TmpA.resize(N);
     vector<T>output(A);
@@ -227,7 +227,7 @@ int GetDigit ( int X, int D ){ /* 默认次位D=1, 主位D<=MaxDigit */
     return d;
 }
 
-vector<int> LSDRadixSort(vector<int> input){ /* 基数排序 - 次位优先 */
+vector<int> LSDRadixSort(const vector<int> input){ /* 基数排序 - 次位优先 */
     vector<int>output(input);
     int D, Di, i;int N=input.size();
     Bucket B;
@@ -324,7 +324,7 @@ void MSD(vector<int> &input, int L, int R, int D ){
     }
 }
 
-vector<int> MSDRadixSort(vector<int> input)
+vector<int> MSDRadixSort(const vector<int> input)
 { /* 统一接口 */
     vector<int>ret(input);int N=input.size();
     MSD(ret, 0, N-1, MaxDigit);
