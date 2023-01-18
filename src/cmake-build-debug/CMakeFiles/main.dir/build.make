@@ -145,7 +145,6 @@ main: /usr/local/lib/libopencv_world.so.4.6.0
 main: /usr/local/lib/libopencv_world.so.4.6.0
 main: /usr/local/lib/libopencv_world.so.4.6.0
 main: /usr/local/lib/libopencv_world.so.4.6.0
-main: /home/xu736946693/Desktop/DataStructure/build/bin/libDataStructure_shared.so
 main: /usr/local/lib/libopencv_world.so.4.6.0
 main: CMakeFiles/main.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/xu736946693/Desktop/DataStructure/src/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable main"

@@ -1,3 +1,15 @@
 /home/xu736946693/Desktop/DataStructure/src/cmake-build-debug/CMakeFiles/main.dir
 /home/xu736946693/Desktop/DataStructure/src/cmake-build-debug/CMakeFiles/edit_cache.dir
 /home/xu736946693/Desktop/DataStructure/src/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/xu736946693/Desktop/DataStructure/src/cmake-build-debug/CMakeFiles/list_install_components.dir
+/home/xu736946693/Desktop/DataStructure/src/cmake-build-debug/CMakeFiles/install.dir
+/home/xu736946693/Desktop/DataStructure/src/cmake-build-debug/CMakeFiles/install/local.dir
+/home/xu736946693/Desktop/DataStructure/src/cmake-build-debug/CMakeFiles/install/strip.dir
+/home/xu736946693/Desktop/DataStructure/src/cmake-build-debug/lib/CMakeFiles/DataStructure_static.dir
+/home/xu736946693/Desktop/DataStructure/src/cmake-build-debug/lib/CMakeFiles/DataStructure_shared.dir
+/home/xu736946693/Desktop/DataStructure/src/cmake-build-debug/lib/CMakeFiles/edit_cache.dir
+/home/xu736946693/Desktop/DataStructure/src/cmake-build-debug/lib/CMakeFiles/rebuild_cache.dir
+/home/xu736946693/Desktop/DataStructure/src/cmake-build-debug/lib/CMakeFiles/list_install_components.dir
+/home/xu736946693/Desktop/DataStructure/src/cmake-build-debug/lib/CMakeFiles/install.dir
+/home/xu736946693/Desktop/DataStructure/src/cmake-build-debug/lib/CMakeFiles/install/local.dir
+/home/xu736946693/Desktop/DataStructure/src/cmake-build-debug/lib/CMakeFiles/install/strip.dir

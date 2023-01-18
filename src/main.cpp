@@ -7,8 +7,7 @@ int main(){
 for(auto x:v1){
     cout<<x<<endl;
 }
-BinTree<int>bt1(v1);
-cout<<bt1.IsValidBST();
+
 
 
 

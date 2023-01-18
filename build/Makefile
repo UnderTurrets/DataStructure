@@ -157,6 +157,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named main
+
+# Build rule for target.
+main: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 main
+.PHONY : main
+
+# fast build rule for target.
+main/fast:
+	$(MAKE) -f bin/CMakeFiles/main.dir/build.make bin/CMakeFiles/main.dir/build
+.PHONY : main/fast
+
+#=============================================================================
 # Target rules for targets named DataStructure_shared
 
 # Build rule for target.
@@ -166,7 +179,7 @@ DataStructure_shared: cmake_check_build_system
 
 # fast build rule for target.
 DataStructure_shared/fast:
-	$(MAKE) -f bin/CMakeFiles/DataStructure_shared.dir/build.make bin/CMakeFiles/DataStructure_shared.dir/build
+	$(MAKE) -f bin/lib/CMakeFiles/DataStructure_shared.dir/build.make bin/lib/CMakeFiles/DataStructure_shared.dir/build
 .PHONY : DataStructure_shared/fast
 
 #=============================================================================
@@ -179,7 +192,7 @@ DataStructure_static: cmake_check_build_system
 
 # fast build rule for target.
 DataStructure_static/fast:
-	$(MAKE) -f bin/CMakeFiles/DataStructure_static.dir/build.make bin/CMakeFiles/DataStructure_static.dir/build
+	$(MAKE) -f bin/lib/CMakeFiles/DataStructure_static.dir/build.make bin/lib/CMakeFiles/DataStructure_static.dir/build
 .PHONY : DataStructure_static/fast
 
 # Help Target
@@ -194,6 +207,7 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... main"
 	@echo "... DataStructure_shared"
 	@echo "... DataStructure_static"
 .PHONY : help

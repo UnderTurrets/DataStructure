@@ -71,75 +71,122 @@ clean: bin/clean
 # Directory level rules for directory bin
 
 # Recursive "all" directory target.
-bin/all: bin/CMakeFiles/DataStructure_shared.dir/all
-bin/all: bin/CMakeFiles/DataStructure_static.dir/all
+bin/all: bin/CMakeFiles/main.dir/all
+bin/all: bin/lib/all
 
 .PHONY : bin/all
 
 # Recursive "preinstall" directory target.
-bin/preinstall:
+bin/preinstall: bin/lib/preinstall
 
 .PHONY : bin/preinstall
 
 # Recursive "clean" directory target.
-bin/clean: bin/CMakeFiles/DataStructure_shared.dir/clean
-bin/clean: bin/CMakeFiles/DataStructure_static.dir/clean
+bin/clean: bin/CMakeFiles/main.dir/clean
+bin/clean: bin/lib/clean
 
 .PHONY : bin/clean
 
 #=============================================================================
-# Target rules for target bin/CMakeFiles/DataStructure_shared.dir
+# Directory level rules for directory bin/lib
+
+# Recursive "all" directory target.
+bin/lib/all: bin/lib/CMakeFiles/DataStructure_shared.dir/all
+bin/lib/all: bin/lib/CMakeFiles/DataStructure_static.dir/all
+
+.PHONY : bin/lib/all
+
+# Recursive "preinstall" directory target.
+bin/lib/preinstall:
+
+.PHONY : bin/lib/preinstall
+
+# Recursive "clean" directory target.
+bin/lib/clean: bin/lib/CMakeFiles/DataStructure_shared.dir/clean
+bin/lib/clean: bin/lib/CMakeFiles/DataStructure_static.dir/clean
+
+.PHONY : bin/lib/clean
+
+#=============================================================================
+# Target rules for target bin/CMakeFiles/main.dir
 
 # All Build rule for target.
-bin/CMakeFiles/DataStructure_shared.dir/all:
-	$(MAKE) -f bin/CMakeFiles/DataStructure_shared.dir/build.make bin/CMakeFiles/DataStructure_shared.dir/depend
-	$(MAKE) -f bin/CMakeFiles/DataStructure_shared.dir/build.make bin/CMakeFiles/DataStructure_shared.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/xu736946693/Desktop/DataStructure/build/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target DataStructure_shared"
-.PHONY : bin/CMakeFiles/DataStructure_shared.dir/all
+bin/CMakeFiles/main.dir/all:
+	$(MAKE) -f bin/CMakeFiles/main.dir/build.make bin/CMakeFiles/main.dir/depend
+	$(MAKE) -f bin/CMakeFiles/main.dir/build.make bin/CMakeFiles/main.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/xu736946693/Desktop/DataStructure/build/CMakeFiles --progress-num=15,16 "Built target main"
+.PHONY : bin/CMakeFiles/main.dir/all
 
 # Build rule for subdir invocation for target.
-bin/CMakeFiles/DataStructure_shared.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/xu736946693/Desktop/DataStructure/build/CMakeFiles 7
-	$(MAKE) -f CMakeFiles/Makefile2 bin/CMakeFiles/DataStructure_shared.dir/all
+bin/CMakeFiles/main.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/xu736946693/Desktop/DataStructure/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 bin/CMakeFiles/main.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/xu736946693/Desktop/DataStructure/build/CMakeFiles 0
-.PHONY : bin/CMakeFiles/DataStructure_shared.dir/rule
+.PHONY : bin/CMakeFiles/main.dir/rule
 
 # Convenience name for target.
-DataStructure_shared: bin/CMakeFiles/DataStructure_shared.dir/rule
+main: bin/CMakeFiles/main.dir/rule
+
+.PHONY : main
+
+# clean rule for target.
+bin/CMakeFiles/main.dir/clean:
+	$(MAKE) -f bin/CMakeFiles/main.dir/build.make bin/CMakeFiles/main.dir/clean
+.PHONY : bin/CMakeFiles/main.dir/clean
+
+#=============================================================================
+# Target rules for target bin/lib/CMakeFiles/DataStructure_shared.dir
+
+# All Build rule for target.
+bin/lib/CMakeFiles/DataStructure_shared.dir/all:
+	$(MAKE) -f bin/lib/CMakeFiles/DataStructure_shared.dir/build.make bin/lib/CMakeFiles/DataStructure_shared.dir/depend
+	$(MAKE) -f bin/lib/CMakeFiles/DataStructure_shared.dir/build.make bin/lib/CMakeFiles/DataStructure_shared.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/xu736946693/Desktop/DataStructure/build/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target DataStructure_shared"
+.PHONY : bin/lib/CMakeFiles/DataStructure_shared.dir/all
+
+# Build rule for subdir invocation for target.
+bin/lib/CMakeFiles/DataStructure_shared.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/xu736946693/Desktop/DataStructure/build/CMakeFiles 7
+	$(MAKE) -f CMakeFiles/Makefile2 bin/lib/CMakeFiles/DataStructure_shared.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/xu736946693/Desktop/DataStructure/build/CMakeFiles 0
+.PHONY : bin/lib/CMakeFiles/DataStructure_shared.dir/rule
+
+# Convenience name for target.
+DataStructure_shared: bin/lib/CMakeFiles/DataStructure_shared.dir/rule
 
 .PHONY : DataStructure_shared
 
 # clean rule for target.
-bin/CMakeFiles/DataStructure_shared.dir/clean:
-	$(MAKE) -f bin/CMakeFiles/DataStructure_shared.dir/build.make bin/CMakeFiles/DataStructure_shared.dir/clean
-.PHONY : bin/CMakeFiles/DataStructure_shared.dir/clean
+bin/lib/CMakeFiles/DataStructure_shared.dir/clean:
+	$(MAKE) -f bin/lib/CMakeFiles/DataStructure_shared.dir/build.make bin/lib/CMakeFiles/DataStructure_shared.dir/clean
+.PHONY : bin/lib/CMakeFiles/DataStructure_shared.dir/clean
 
 #=============================================================================
-# Target rules for target bin/CMakeFiles/DataStructure_static.dir
+# Target rules for target bin/lib/CMakeFiles/DataStructure_static.dir
 
 # All Build rule for target.
-bin/CMakeFiles/DataStructure_static.dir/all:
-	$(MAKE) -f bin/CMakeFiles/DataStructure_static.dir/build.make bin/CMakeFiles/DataStructure_static.dir/depend
-	$(MAKE) -f bin/CMakeFiles/DataStructure_static.dir/build.make bin/CMakeFiles/DataStructure_static.dir/build
+bin/lib/CMakeFiles/DataStructure_static.dir/all:
+	$(MAKE) -f bin/lib/CMakeFiles/DataStructure_static.dir/build.make bin/lib/CMakeFiles/DataStructure_static.dir/depend
+	$(MAKE) -f bin/lib/CMakeFiles/DataStructure_static.dir/build.make bin/lib/CMakeFiles/DataStructure_static.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/xu736946693/Desktop/DataStructure/build/CMakeFiles --progress-num=8,9,10,11,12,13,14 "Built target DataStructure_static"
-.PHONY : bin/CMakeFiles/DataStructure_static.dir/all
+.PHONY : bin/lib/CMakeFiles/DataStructure_static.dir/all
 
 # Build rule for subdir invocation for target.
-bin/CMakeFiles/DataStructure_static.dir/rule: cmake_check_build_system
+bin/lib/CMakeFiles/DataStructure_static.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/xu736946693/Desktop/DataStructure/build/CMakeFiles 7
-	$(MAKE) -f CMakeFiles/Makefile2 bin/CMakeFiles/DataStructure_static.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 bin/lib/CMakeFiles/DataStructure_static.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/xu736946693/Desktop/DataStructure/build/CMakeFiles 0
-.PHONY : bin/CMakeFiles/DataStructure_static.dir/rule
+.PHONY : bin/lib/CMakeFiles/DataStructure_static.dir/rule
 
 # Convenience name for target.
-DataStructure_static: bin/CMakeFiles/DataStructure_static.dir/rule
+DataStructure_static: bin/lib/CMakeFiles/DataStructure_static.dir/rule
 
 .PHONY : DataStructure_static
 
 # clean rule for target.
-bin/CMakeFiles/DataStructure_static.dir/clean:
-	$(MAKE) -f bin/CMakeFiles/DataStructure_static.dir/build.make bin/CMakeFiles/DataStructure_static.dir/clean
-.PHONY : bin/CMakeFiles/DataStructure_static.dir/clean
+bin/lib/CMakeFiles/DataStructure_static.dir/clean:
+	$(MAKE) -f bin/lib/CMakeFiles/DataStructure_static.dir/build.make bin/lib/CMakeFiles/DataStructure_static.dir/clean
+.PHONY : bin/lib/CMakeFiles/DataStructure_static.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
