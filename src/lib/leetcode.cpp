@@ -5,7 +5,7 @@
 #pragma ide diagnostic ignored "OCDFAInspection"
 //数组
 //判断一个数组中是否有相同元素
-bool containsDuplicate(vector<int>& nums) {
+bool containsDuplicate(vector<int> nums) {
     bool ret=0;
     sort(nums.begin(),nums.end());
     for(int i= 0;i<nums.size()-1;i++){
@@ -21,7 +21,7 @@ bool containsDuplicate(vector<int>& nums) {
 
 
 //寻找一个数组的最大子数组和
-int maxSubArray(vector<int>& nums) {
+int maxSubArray(vector<int> nums) {
     int sum=nums[0],x=0;
     for (vector<int>::iterator it1=nums.begin();it1!=nums.end();it1++){
         x=max(x+(*it1),*it1);
@@ -35,7 +35,7 @@ int maxSubArray(vector<int>& nums) {
 
 //    给定一个整数数组 nums和一个整数目标值 target，请你在该数组中找出 和为目标值 target 的那两个整数，并返回它们的数组下标。
 //    你可以假设每种输入只会对应一个答案。但是，数组中同一个元素在答案里不能重复出现。
-vector<int> twoSum  (vector<int>& nums, int target) {
+vector<int> twoSum  (vector<int> nums, int target) {
     int n = nums.size();
     for (int i = 0; i < n; ++i) {
         for (int j = i + 1; j < n; ++j) {
@@ -52,7 +52,7 @@ vector<int> twoSum  (vector<int>& nums, int target) {
 //给你两个按 非递减顺序 排列的整数数组nums1 和 nums2，另有两个整数 m 和 n ，分别表示 nums1 和 nums2 中的元素数目。
 //请你 合并 nums2 到 nums1 中，使合并后的数组同样按 非递减顺序 排列。
 //注意：最终，合并后数组不应由函数返回，而是存储在数组 nums1 中。为了应对这种情况，nums1 的初始长度为 m + n，其中前 m 个元素表示应合并的元素，后 n 个元素为 0 ，应忽略。nums2 的长度为 n 。
-void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
+void merge(vector<int> nums1, int m, vector<int> nums2, int n) {
     int j=0;
     for(int i=m;i<m+n;i++){
         nums1[i]=nums2[j];
@@ -64,7 +64,7 @@ void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
 
 
 //给你两个整数数组nums1 和 nums2 ，请你以数组形式返回两数组的交集。返回结果中每个元素出现的次数，应与元素在两个数组中都出现的次数一致（如果出现次数不一致，则考虑取较小值）。可以不考虑输出结果的顺序。
-vector<int> intersect(vector<int>& nums1, vector<int>& nums2) {
+vector<int> intersect(vector<int> nums1, vector<int> nums2) {
     vector<int> ret;int j=0;
     sort(nums1.begin(),nums1.end());
     sort(nums2.begin(),nums2.end());
@@ -85,7 +85,7 @@ vector<int> intersect(vector<int>& nums1, vector<int>& nums2) {
 
 //给你一个 非空 整数数组 nums ，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。
 //你必须设计并实现线性时间复杂度的算法来解决此问题，且该算法只使用常量额外空间。
-int singleNumber(vector<int>& nums) {
+int singleNumber(vector<int> nums) {
     unordered_set<int> S;
     for(int i=0;i<nums.size();i++){
         if(S.count(nums[i])){
@@ -99,7 +99,7 @@ int singleNumber(vector<int>& nums) {
 
 //给定一个大小为 n 的数组nums ，返回其中的多数元素。多数元素是指在数组中出现次数 大于⌊ n/2 ⌋的元素。
 //你可以假设数组是非空的，并且给定的数组总是存在多数元素。
-int majorityElement(vector<int>& nums) {
+int majorityElement(vector<int> nums) {
     unordered_map<int ,int > M;
     int ret=0;int times=0;
     for(int i=0;i<nums.size();i++){
@@ -119,7 +119,7 @@ int majorityElement(vector<int>& nums) {
 //给你一个整数数组 nums ，判断是否存在三元组 [nums[i], nums[j], nums[k]] 满足 i != j、i != k 且 j != k ，同时还满足 nums[i] + nums[j] + nums[k] == 0 。请
 //你返回所有和为 0 且不重复的三元组。
 //注意：答案中不可以包含重复的三元组。
-vector<vector<int>> threeSum(vector<int>& nums) {
+vector<vector<int>> threeSum(vector<int> nums) {
     int n = nums.size();
     sort(nums.begin(), nums.end());
     vector<vector<int>> ans;
@@ -158,7 +158,7 @@ vector<vector<int>> threeSum(vector<int>& nums) {
 //    给定一个数组 prices ，它的第i 个元素prices[i] 表示一支给定股票第 i 天的价格。
 //    你只能选择 某一天 买入这只股票，并选择在 未来的某一个不同的日子 卖出该股票。设计一个算法来计算你所能获取的最大利润。
 //    返回你可以从这笔交易中获取的最大利润。如果你不能获取任何利润，返回 0 。
-int maxProfit(vector<int>& prices) {
+int maxProfit(vector<int> prices) {
     int ret=0;int min=prices[0];
     for (vector<int>::iterator it=prices.begin();it!=prices.end();it++){
         if(*it<min){
@@ -172,7 +172,7 @@ int maxProfit(vector<int>& prices) {
 //给定一个包含红色、白色和蓝色、共n 个元素的数组nums，原地对它们进行排序，使得相同颜色的元素相邻，并按照红色、白色、蓝色顺序排列。
 //我们使用整数 0、1 和 2 分别表示红色、白色和蓝色。
 //必须在不使用库内置的 sort 函数的情况下解决这个问题。
-void sortColors(vector<int>& nums) {
+void sortColors(vector<int> nums) {
     int n = nums.size();
     int ptr = 0;
     for (int i = 0; i < n; ++i) {
@@ -190,7 +190,7 @@ void sortColors(vector<int>& nums) {
 }
 
 //以数组 intervals 表示若干个区间的集合，其中单个区间为 intervals[i] = [starti, endi] 。请你合并所有重叠的区间，并返回一个不重叠的区间数组，该数组需恰好覆盖输入中的所有区间。
-vector<vector<int>> merge(vector<vector<int>>& intervals) {
+vector<vector<int>> merge(vector<vector<int>> intervals) {
     if (intervals.size() == 0) {
         return {};
     }
@@ -210,7 +210,7 @@ vector<vector<int>> merge(vector<vector<int>>& intervals) {
 
 //给你一个整数数组nums ，判断这个数组中是否存在长度为 3 的递增子序列。
 //如果存在这样的三元组下标 (i, j, k)且满足 i < j < k ，使得nums[i] < nums[j] < nums[k] ，返回 true ；否则，返回 false 。
-bool increasingTriplet(vector<int>& nums){
+bool increasingTriplet(vector<int> nums){
     int min=nums[0],median=INT_MAX;
     for(int i=0;i<nums.size();i++){
         if(nums[i]<min){
@@ -227,7 +227,7 @@ bool increasingTriplet(vector<int>& nums){
 //给你一个整数数组nums，返回 数组answer，其中answer[i]等于nums中除nums[i]之外其余各元素的乘积。
 //题目数据 保证 数组nums之中任意元素的全部前缀元素和后缀的乘积都在 32 位 整数范围内。
 //请不要使用除法，且在O(n) 时间复杂度内完成此题。
-vector<int> productExceptSelf(vector<int>& nums){
+vector<int> productExceptSelf(vector<int> nums){
     int length = nums.size();
     vector<int> answer(length);
 
@@ -251,7 +251,7 @@ vector<int> productExceptSelf(vector<int>& nums){
 }
 
 //给你一个整数数组 nums 和一个整数 k ，请你统计并返回 该数组中和为 k 的连续子数组的个数 。
-int subarraySum(vector<int>& nums, int k){
+int subarraySum(vector<int> nums, int k){
     unordered_map<int, int> mp;
     mp.insert(make_pair(0,1));
     int ret = 0, sum = 0;
@@ -270,7 +270,7 @@ int subarraySum(vector<int>& nums, int k){
 //    给你一个由二维数组 mat 表示的m x n 矩阵，以及两个正整数 r 和 c ，分别表示想要的重构的矩阵的行数和列数。
 //    重构后的矩阵需要将原始矩阵的所有元素以相同的 行遍历顺序 填充。
 //    如果具有给定参数的 reshape 操作是可行且合理的，则输出新的重塑矩阵；否则，输出原始矩阵。
-vector<vector<int>> matrixReshape(vector<vector<int>>& mat, int r, int c) {
+vector<vector<int>> matrixReshape(vector<vector<int>> mat, int r, int c) {
     if ((mat.size()*mat[0].size())==(r*c)){
         vector<int>cols(c,0);
         vector<vector<int>>des(r,cols);
@@ -332,7 +332,7 @@ bool find_repeat(vector<char> v){
     }
     return ret;
 }
-bool isValidSudoku(vector<vector<char>>& board) {
+bool isValidSudoku(vector<vector<char>> board) {
     bool ret=1;bool x=1;
     for(int i=1;i<board.size();i+=3){
         for(int j=1;j<board[0].size();j+=3){
@@ -360,7 +360,7 @@ bool isValidSudoku(vector<vector<char>>& board) {
 
 
 //给定一个 m x n 的矩阵，如果一个元素为 0 ，则将其所在行和列的所有元素都设为 0 。请使用 原地 算法。
-void setZeroes(vector<vector<int>>& matrix) {
+void setZeroes(vector<vector<int>> matrix) {
     vector<vector<int>>input(matrix);
     for(int i=0;i<input.size();i++){
         for(int j=0;j<input[i].size();j++){
@@ -399,7 +399,7 @@ vector<vector<int>> generateMatrix(int n) {
 
 //给定一个 n×n 的二维矩阵matrix 表示一个图像。请你将图像顺时针旋转 90 度。
 //你必须在 原地 旋转图像，这意味着你需要直接修改输入的二维矩阵。请不要 使用另一个矩阵来旋转图像。
-void rotate(vector<vector<int>>& matrix) {
+void rotate(vector<vector<int>> matrix) {
     int n = matrix.size();
     for (int i = 0; i < n / 2; i++) {
         for (int j = 0; j < (n + 1) / 2; j++) {
@@ -415,7 +415,7 @@ void rotate(vector<vector<int>>& matrix) {
 //编写一个高效的算法来搜索mxn矩阵 matrix 中的一个目标值 target 。该矩阵具有以下特性：
 //每行的元素从左到右升序排列。
 //每列的元素从上到下升序排列。
-bool searchMatrix(vector<vector<int>>& matrix, int target) {
+bool searchMatrix(vector<vector<int>> matrix, int target) {
     for(int i=0;i<matrix.size();i++){
         if(matrix[i].front()<=target && matrix[i].back()>=target){
             for(int j=0;j<matrix[i].size();j++){
@@ -429,7 +429,7 @@ bool searchMatrix(vector<vector<int>>& matrix, int target) {
 }
 
 //给定一个区间的集合intervals，其中 intervals[i] = [starti, endi]。返回 需要移除区间的最小数量，使剩余区间互不重叠。
-int eraseOverlapIntervals(vector<vector<int>>& intervals) {
+int eraseOverlapIntervals(vector<vector<int>> intervals) {
     if (intervals.empty()) {
         return 0;
     }
@@ -627,7 +627,7 @@ vector<int> partitionLabels(string s){
 
 //给你一个字符串数组，请你将 字母异位词 组合在一起。可以按任意顺序返回结果列表。
 //字母异位词 是由重新排列源单词的字母得到的一个新单词，所有源单词中的字母通常恰好只用一次。
-vector<vector<string>> groupAnagrams(vector<string>& strs){
+vector<vector<string>> groupAnagrams(vector<string> strs){
     unordered_map<string, vector<string>> mp;
     for (string& str: strs) {
         string key = str;
@@ -1270,7 +1270,7 @@ int findTheWinner(int n, int k){
 //只有一个人同时满足属性 1 和属性 2 。
 //给你一个数组 trust ，其中 trust[i] = [ai, bi] 表示编号为 ai 的人信任编号为 bi 的人。
 //如果小镇法官存在并且可以确定他的身份，请返回该法官的编号；否则，返回 -1 。
-int findJudge(int n, vector<vector<int>>& trust) {
+int findJudge(int n, vector<vector<int>> trust) {
     vector<int> inDegrees(n + 1);
     vector<int> outDegrees(n + 1);
     for (auto& edge : trust) {
@@ -1289,7 +1289,7 @@ int findJudge(int n, vector<vector<int>>& trust) {
 //给你一个 有向无环图， n个节点编号为 0到 n-1，以及一个边数组 edges，其中 edges[i] = [fromi, toi]表示一条从点fromi到点toi的有向边。
 //找到最小的点集使得从这些点出发能到达图中所有点。题目保证解存在且唯一。
 //你可以以任意顺序返回这些节点编号。
-vector<int> findSmallestSetOfVertices(int n, vector<vector<int>>& edges) {
+vector<int> findSmallestSetOfVertices(int n, vector<vector<int>> edges) {
     vector<int> inDeegrees(n);
     for (auto& edge : edges) inDeegrees[edge[1]]++;
     vector<int> ans;
@@ -1300,7 +1300,7 @@ vector<int> findSmallestSetOfVertices(int n, vector<vector<int>>& edges) {
 //有 n 个房间，房间按从 0 到 n - 1 编号。最初，除 0 号房间外的其余所有房间都被锁住。你的目标是进入所有的房间。然而，你不能在没有获得钥匙的时候进入锁住的房间。
 //当你进入一个房间，你可能会在里面找到一套不同的钥匙，每把钥匙上都有对应的房间号，即表示钥匙可以打开的房间。你可以拿上所有钥匙去解锁其他房间。
 //给你一个数组 rooms 其中 rooms[i] 是你进入 i 号房间可以获得的钥匙集合。如果能进入 所有 房间返回 true，否则返回 false。
-bool canVisitAllRooms(vector<vector<int>>& rooms) {
+bool canVisitAllRooms(vector<vector<int>> rooms) {
     unordered_map<int,bool>ans;queue<int>permit;
     ans[0]=1;
     for(int x:rooms[0]){
@@ -1336,7 +1336,7 @@ bool canVisitAllRooms(vector<vector<int>>& rooms) {
 //给定整数数组 nums 和整数 k，请返回数组中第 k 个最大的元素。
 //请注意，你需要找的是数组排序后的第 k 个最大的元素，而不是第 k 个不同的元素。
 //你必须设计并实现时间复杂度为 O(n) 的算法解决此问题。
-    int findKthLargest(vector<int>& nums, int k){
+    int findKthLargest(vector<int> nums, int k){
         vector<int>ans(nums);
         sort(ans.begin(),ans.end());
         reverse(ans.begin(),ans.end());
@@ -1344,7 +1344,7 @@ bool canVisitAllRooms(vector<vector<int>>& rooms) {
     }
 
 //给你一个整数数组 nums 和一个整数 k ，请你返回其中出现频率前 k 高的元素。你可以按 任意顺序 返回答案。
-vector<int> topKFrequent(vector<int>& nums, int k){
+vector<int> topKFrequent(vector<int> nums, int k){
     auto f=[=](pair<int,int>a,pair<int,int>b){
         return a.second>b.second;
     };
@@ -1389,7 +1389,7 @@ string frequencySort(string s){
 //给定一个数组 points，其中points[i] = [xi, yi]表示 X-Y 平面上的一个点，并且是一个整数 k ，返回离原点 (0,0) 最近的 k 个点。
 //这里，平面上两点之间的距离是欧几里德距离（√(x1- x2)2+ (y1- y2)2）。
 //你可以按 任何顺序 返回答案。除了点坐标的顺序之外，答案 确保 是 唯一 的。
-vector<vector<int>> kClosest(vector<vector<int>>& points, int k){
+vector<vector<int>> kClosest(vector<vector<int>> points, int k){
     auto f=[=](pair<vector<int>,int>a,pair<vector<int>,int>b){
         return a.second<b.second;
     };

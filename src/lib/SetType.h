@@ -5,7 +5,7 @@
 template<typename T>
 class SetTypeElement{
 public:
-    T val;
+    mutable T val;
     int parent=-1;
     inline bool operator== (SetTypeElement<T>that);
 };

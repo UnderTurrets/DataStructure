@@ -7,7 +7,7 @@
 template<typename T>
  class BinTree{
 public:
-    T val;
+    mutable T val;
     BinTree<T> *left=nullptr;
     BinTree<T> *right=nullptr;
     inline BinTree();

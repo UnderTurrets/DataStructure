@@ -8,9 +8,9 @@
 template<typename T>
 class Heap {
 public:
-    T *array=NULL;    //从下标1开始存储
-    int size=0;    //不包含this->array[0]
-    int capacity=0;    //不包含this->array[0]
+    mutable T *array=NULL;    //从下标1开始存储
+    mutable int size=0;    //不包含this->array[0]
+    mutable int capacity=0;    //不包含this->array[0]
     T LimitData;    //这是一个大于或小于堆中所有元素的极限元素，目的是为了以后更快地操作
 
     //重载运算符进行赋值构造
@@ -52,7 +52,7 @@ public:
     inline MaxHeap<T> operator= (const MaxHeap<T>that);
 
     //拷贝构造
-    inline MaxHeap(MaxHeap<T> &H);
+    inline MaxHeap(const MaxHeap<T> &H);
 
     //以某一容量创建一个堆
     inline MaxHeap(const int Maxcapacity);

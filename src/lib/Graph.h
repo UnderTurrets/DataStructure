@@ -15,8 +15,8 @@ typedef string VertexDataType;        /* 顶点存储的数据类型设为字符
 typedef class EdgeNode* Edge;
 class EdgeNode{
 public:
-    Vertex source, destination;      /* 边连接的两个顶点 */
-    WeightType Weight;  /* 边权重 */
+    mutable Vertex source, destination;      /* 边连接的两个顶点 */
+    mutable WeightType Weight;  /* 边权重 */
 
     //构造函数
     EdgeNode():source(UndeterminedVertex),destination(UndeterminedVertex),Weight(UndeterminedWeight){}
@@ -33,9 +33,9 @@ public:
 /* 不作链表头的邻接点结点的定义 */
 class GraphCommonNode{
 public:
-    Vertex index=UndeterminedVertex;        /* 这个邻接点的下标 */
-    GraphCommonNode* Next=NULL;    /* 指向下一个邻接点的指针 */
-    WeightType Weight=UndeterminedWeight;  /* 从链表头顶点到这个点之间的边的权重 */
+    mutable Vertex index=UndeterminedVertex;        /* 这个邻接点的下标 */
+    mutable GraphCommonNode* Next=NULL;    /* 指向下一个邻接点的指针 */
+    mutable WeightType Weight=UndeterminedWeight;  /* 从链表头顶点到这个点之间的边的权重 */
 
     //构造函数
     GraphCommonNode():index(UndeterminedVertex),Next(NULL),Weight(UndeterminedWeight){}
@@ -45,8 +45,8 @@ public:
 //多一个存储顶点的数据
 class GraphHeadNode{
 public:
-    GraphCommonNode* FirstNode;/* 边表头指针 */
-    VertexDataType Data;            /* 存顶点的数据 */
+    mutable GraphCommonNode* FirstNode;/* 边表头指针 */
+    mutable VertexDataType Data;            /* 存顶点的数据 */
     /* 注意：很多情况下，顶点无数据，此时Data可以不用出现 */
 
     //构造函数
@@ -57,13 +57,13 @@ public:
 class GraphList{
 public:
     int vertexNum;     /* 顶点数 */
-    int edgeNum;     /* 边数   */
+    mutable int edgeNum;     /* 边数   */
     MinHeap<EdgeNode>EdgeHeap; /*边构成的最小堆*/
     vector<GraphHeadNode> GraphHeadNodeVector;  /* 邻接表 */
     vector<bool>Isvisited;   /*判断顶点是否被访问过*/
-    vector<vector<WeightType>> dist; /*dist[index1][index2]表示index1到index2的最短距离，不考虑权重为负数*/
-    vector<vector<Vertex>> path;  /*path[index1][index2]表示index1到index2经过的某顶点，不考虑权重为负数*/
-    WeightType TotalWeight;   /*最小生成树的权重和*/
+    mutable vector<vector<WeightType>> dist; /*dist[index1][index2]表示index1到index2的最短距离，不考虑权重为负数*/
+    mutable vector<vector<Vertex>> path;  /*path[index1][index2]表示index1到index2经过的某顶点，不考虑权重为负数*/
+    mutable WeightType TotalWeight;   /*最小生成树的权重和*/
 
 private:
     //Edge的初始化方法
@@ -156,14 +156,14 @@ public:
 class GraphRect{
 public:
     int vertexNum;  /* 顶点数 */
-    int edgeNum;  /* 边数   */
+    mutable int edgeNum;  /* 边数   */
     vector<vector<WeightType>> EdgeWeightRect; /* 邻接矩阵 */
     vector<VertexDataType>Data;      /* 存顶点的数据 */
-    vector<bool>Isvisited;   /*判断顶点是否被访问过*/
+    mutable vector<bool>Isvisited;   /*判断顶点是否被访问过*/
     /* 注意：很多情况下，顶点无数据，此时Data[]可以不用出现 */
-    vector<vector<WeightType>> dist; /*dist[index1][index2]表示index1到index2的最短距离，不考虑权重为负数*/
-    vector<vector<Vertex>> path;  /*path[index1][index2]表示index1到index2经过的某顶点，不考虑权重为负数*/
-    WeightType TotalWeight;   /*最小生成树的权重和*/
+    mutable vector<vector<WeightType>> dist; /*dist[index1][index2]表示index1到index2的最短距离，不考虑权重为负数*/
+    mutable vector<vector<Vertex>> path;  /*path[index1][index2]表示index1到index2经过的某顶点，不考虑权重为负数*/
+    mutable WeightType TotalWeight;   /*最小生成树的权重和*/
 
 private:
     //EdgeWeightRect的初始化方法

@@ -8,63 +8,63 @@
 static bool containsDuplicate(vector<int>& nums);
 
 //寻找一个数组的最大子数组和
-static int maxSubArray(vector<int>& nums);
+static int maxSubArray(vector<int> nums);
 
 //    给定一个整数数组 nums和一个整数目标值 target，请你在该数组中找出 和为目标值 target 的那两个整数，并返回它们的数组下标。
 //    你可以假设每种输入只会对应一个答案。但是，数组中同一个元素在答案里不能重复出现。
-static vector<int> twoSum  (vector<int>& nums, int target);
+static vector<int> twoSum  (vector<int> nums, int target);
 
 //给你两个按 非递减顺序 排列的整数数组nums1 和 nums2，另有两个整数 m 和 n ，分别表示 nums1 和 nums2 中的元素数目。
 //请你 合并 nums2 到 nums1 中，使合并后的数组同样按 非递减顺序 排列。
 //注意：最终，合并后数组不应由函数返回，而是存储在数组 nums1 中。为了应对这种情况，nums1 的初始长度为 m + n，其中前 m 个元素表示应合并的元素，后 n 个元素为 0 ，应忽略。nums2 的长度为 n 。
-static void merge(vector<int>& nums1, int m, vector<int>& nums2, int n);
+static void merge(vector<int> nums1, int m, vector<int> nums2, int n);
 
 //给你两个整数数组nums1 和 nums2 ，请你以数组形式返回两数组的交集。返回结果中每个元素出现的次数，应与元素在两个数组中都出现的次数一致（如果出现次数不一致，则考虑取较小值）。可以不考虑输出结果的顺序。
-static vector<int> intersect(vector<int>& nums1, vector<int>& nums2);
+static vector<int> intersect(vector<int> nums1, vector<int> nums2);
 
 //给你一个 非空 整数数组 nums ，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。
 //你必须设计并实现线性时间复杂度的算法来解决此问题，且该算法只使用常量额外空间。
-static int singleNumber(vector<int>& nums);
+static int singleNumber(vector<int> nums);
 
 //给定一个大小为 n 的数组nums ，返回其中的多数元素。多数元素是指在数组中出现次数 大于⌊ n/2 ⌋的元素。
 //你可以假设数组是非空的，并且给定的数组总是存在多数元素。
-static int majorityElement(vector<int>& nums);
+static int majorityElement(vector<int> nums);
 
 //给你一个整数数组 nums ，判断是否存在三元组 [nums[i], nums[j], nums[k]] 满足 i != j、i != k 且 j != k ，同时还满足 nums[i] + nums[j] + nums[k] == 0 。请
 //你返回所有和为 0 且不重复的三元组。
 //注意：答案中不可以包含重复的三元组。
-static vector<vector<int>> threeSum(vector<int>& nums);
+static vector<vector<int>> threeSum(vector<int> nums);
 
 //    给定一个数组 prices ，它的第i 个元素prices[i] 表示一支给定股票第 i 天的价格。
 //    你只能选择 某一天 买入这只股票，并选择在 未来的某一个不同的日子 卖出该股票。设计一个算法来计算你所能获取的最大利润。
 //    返回你可以从这笔交易中获取的最大利润。如果你不能获取任何利润，返回 0 。
-static int maxProfit(vector<int>& prices);
+static int maxProfit(vector<int> prices);
 
 //给定一个包含红色、白色和蓝色、共n 个元素的数组nums，原地对它们进行排序，使得相同颜色的元素相邻，并按照红色、白色、蓝色顺序排列。
 //我们使用整数 0、1 和 2 分别表示红色、白色和蓝色。
 //必须在不使用库内置的 sort 函数的情况下解决这个问题。
-static void sortColors(vector<int>& nums);
+static void sortColors(vector<int> nums);
 
 //以数组 intervals 表示若干个区间的集合，其中单个区间为 intervals[i] = [starti, endi] 。请你合并所有重叠的区间，并返回一个不重叠的区间数组，该数组需恰好覆盖输入中的所有区间。
-static vector<vector<int>> merge(vector<vector<int>>& intervals);
+static vector<vector<int>> merge(vector<vector<int>> intervals);
 
 //给你一个整数数组nums ，判断这个数组中是否存在长度为 3 的递增子序列。
 //如果存在这样的三元组下标 (i, j, k)且满足 i < j < k ，使得nums[i] < nums[j] < nums[k] ，返回 true ；否则，返回 false 。
-static bool increasingTriplet(vector<int>& nums);
+static bool increasingTriplet(vector<int> nums);
 
 //给你一个整数数组nums，返回 数组answer，其中answer[i]等于nums中除nums[i]之外其余各元素的乘积。
 //题目数据 保证 数组nums之中任意元素的全部前缀元素和后缀的乘积都在 32 位 整数范围内。
 //请不要使用除法，且在O(n) 时间复杂度内完成此题。
-static vector<int> productExceptSelf(vector<int>& nums);
+static vector<int> productExceptSelf(vector<int> nums);
 
 //给你一个整数数组 nums 和一个整数 k ，请你统计并返回 该数组中和为 k 的连续子数组的个数 。
-static int subarraySum(vector<int>& nums, int k);
+static int subarraySum(vector<int> nums, int k);
 
 //    在 MATLAB 中，有一个非常有用的函数 reshape ，它可以将一个m x n 矩阵重塑为另一个大小不同（r x c）的新矩阵，但保留其原始数据。
 //    给你一个由二维数组 mat 表示的m x n 矩阵，以及两个正整数 r 和 c ，分别表示想要的重构的矩阵的行数和列数。
 //    重构后的矩阵需要将原始矩阵的所有元素以相同的 行遍历顺序 填充。
 //    如果具有给定参数的 reshape 操作是可行且合理的，则输出新的重塑矩阵；否则，输出原始矩阵。
-static vector<vector<int>> matrixReshape(vector<vector<int>>& mat, int r, int c);
+static vector<vector<int>> matrixReshape(vector<vector<int>> mat, int r, int c);
 
 //给定一个非负整数 numRows，生成「杨辉三角」的前 numRows 行。
 static vector<vector<int>> generate(int numRows);
@@ -74,25 +74,25 @@ static vector<vector<int>> generate(int numRows);
 //数字1-9在每一列只能出现一次。
 //数字1-9在每一个以粗实线分隔的3x3宫内只能出现一次。（请参考示例图）
 static bool find_repeat(vector<char> v);
-static bool isValidSudoku(vector<vector<char>>& board);
+static bool isValidSudoku(vector<vector<char>> board);
 
 //给定一个 m x n 的矩阵，如果一个元素为 0 ，则将其所在行和列的所有元素都设为 0 。请使用 原地 算法。
-static void setZeroes(vector<vector<int>>& matrix);
+static void setZeroes(vector<vector<int>> matrix);
 
 //给你一个正整数 n ，生成一个包含 1 到 n2 所有元素，且元素按顺时针顺序螺旋排列的 n x n 正方形矩阵 matrix 。
 static vector<vector<int>> generateMatrix(int n);
 
 //给定一个 n×n 的二维矩阵matrix 表示一个图像。请你将图像顺时针旋转 90 度。
 //你必须在 原地 旋转图像，这意味着你需要直接修改输入的二维矩阵。请不要 使用另一个矩阵来旋转图像。
-static void rotate(vector<vector<int>>& matrix);
+static void rotate(vector<vector<int>> matrix);
 
 //编写一个高效的算法来搜索mxn矩阵 matrix 中的一个目标值 target 。该矩阵具有以下特性：
 //每行的元素从左到右升序排列。
 //每列的元素从上到下升序排列。
-static bool searchMatrix(vector<vector<int>>& matrix, int target);
+static bool searchMatrix(vector<vector<int>> matrix, int target);
 
 //给定一个区间的集合intervals，其中 intervals[i] = [starti, endi]。返回 需要移除区间的最小数量，使剩余区间互不重叠。
-static int eraseOverlapIntervals(vector<vector<int>>& intervals);
+static int eraseOverlapIntervals(vector<vector<int>> intervals);
 
 
 
@@ -132,7 +132,7 @@ static vector<int> partitionLabels(string s);
 
 //给你一个字符串数组，请你将 字母异位词 组合在一起。可以按任意顺序返回结果列表。
 //字母异位词 是由重新排列源单词的字母得到的一个新单词，所有源单词中的字母通常恰好只用一次。
-static vector<vector<string>> groupAnagrams(vector<string>& strs);
+static vector<vector<string>> groupAnagrams(vector<string> strs);
 
 //给定两个以字符串形式表示的非负整数num1和num2，返回num1和num2的乘积，它们的乘积也表示为字符串形式。
 //注意：不能使用任何内置的 BigInteger 库或直接将输入转换为整数。
@@ -159,7 +159,7 @@ static string longestPalindrome_subseries(string s);
 //链表定义
 class ListNode {
 public:
-    int val;
+    mutable int val;
     ListNode *next;
     inline ListNode() : val(0), next(nullptr) {}
     inline ListNode(const int x) : val(x), next(nullptr) {}
@@ -387,17 +387,17 @@ public:
 //只有一个人同时满足属性 1 和属性 2 。
 //给你一个数组 trust ，其中 trust[i] = [ai, bi] 表示编号为 ai 的人信任编号为 bi 的人。
 //如果小镇法官存在并且可以确定他的身份，请返回该法官的编号；否则，返回 -1 。
-static int findJudge(int n, vector<vector<int>>& trust);
+static int findJudge(int n, vector<vector<int>> trust);
 
 //给你一个 有向无环图， n个节点编号为 0到 n-1，以及一个边数组 edges，其中 edges[i] = [fromi, toi]表示一条从点fromi到点toi的有向边。
 //找到最小的点集使得从这些点出发能到达图中所有点。题目保证解存在且唯一。
 //你可以以任意顺序返回这些节点编号。
-static vector<int> findSmallestSetOfVertices(int n, vector<vector<int>>& edges);
+static vector<int> findSmallestSetOfVertices(int n, vector<vector<int>> edges);
 
 //有 n 个房间，房间按从 0 到 n - 1 编号。最初，除 0 号房间外的其余所有房间都被锁住。你的目标是进入所有的房间。然而，你不能在没有获得钥匙的时候进入锁住的房间。
 //当你进入一个房间，你可能会在里面找到一套不同的钥匙，每把钥匙上都有对应的房间号，即表示钥匙可以打开的房间。你可以拿上所有钥匙去解锁其他房间。
 //给你一个数组 rooms 其中 rooms[i] 是你进入 i 号房间可以获得的钥匙集合。如果能进入 所有 房间返回 true，否则返回 false。
-static bool canVisitAllRooms(vector<vector<int>>& rooms);
+static bool canVisitAllRooms(vector<vector<int>> rooms);
 
 
 
@@ -408,10 +408,10 @@ static bool canVisitAllRooms(vector<vector<int>>& rooms);
 //给定整数数组 nums 和整数 k，请返回数组中第 k 个最大的元素。
 //请注意，你需要找的是数组排序后的第 k 个最大的元素，而不是第 k 个不同的元素。
 //你必须设计并实现时间复杂度为 O(n) 的算法解决此问题。
-static int findKthLargest(vector<int>& nums, int k);
+static int findKthLargest(vector<int> nums, int k);
 
 //给你一个整数数组 nums 和一个整数 k ，请你返回其中出现频率前 k 高的元素。你可以按 任意顺序 返回答案。
-static vector<int> topKFrequent(vector<int>& nums, int k);
+static vector<int> topKFrequent(vector<int> nums, int k);
 
 //给定一个字符串 s ，根据字符出现的 频率 对其进行 降序排序 。一个字符出现的 频率 是它出现在字符串中的次数。
 //返回 已排序的字符串。如果有多个答案，返回其中任何一个。
@@ -420,7 +420,7 @@ static string frequencySort(string s);
 //给定一个数组 points，其中points[i] = [xi, yi]表示 X-Y 平面上的一个点，并且是一个整数 k ，返回离原点 (0,0) 最近的 k 个点。
 //这里，平面上两点之间的距离是欧几里德距离（√(x1- x2)2+ (y1- y2)2）。
 //你可以按 任何顺序 返回答案。除了点坐标的顺序之外，答案 确保 是 唯一 的。
-static vector<vector<int>> kClosest(vector<vector<int>>& points, int k);
+static vector<vector<int>> kClosest(vector<vector<int>> points, int k);
 
 
 
