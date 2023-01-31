@@ -21,12 +21,12 @@ SET(LIB_LIST DataStructure.h
 ADD_LIBRARY(DataStructure_static STATIC ${LIB_LIST} )
 SET_TARGET_PROPERTIES(DataStructure_static PROPERTIES 
                       OUTPUT_NAME "DataStructure"
-                      CLEAN_DIRECT_OUPUT 1)
+                      CLEAN_DIRECT_OUTPUT 1)
                       
 ADD_LIBRARY(DataStructure_shared SHARED ${LIB_LIST} )
 SET_TARGET_PROPERTIES(DataStructure_shared PROPERTIES 
                       OUTPUT_NAME "DataStructure"
-                      CLEAN_DIRECT_OUPUT 1)
+                      CLEAN_DIRECT_OUTPUT 1)
                       
 INSTALL(FILES DataStructure.h DESTINATION include/DataStructure/)
 INSTALL(FILES authority.h DESTINATION include/DataStructure/)
