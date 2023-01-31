@@ -133,7 +133,7 @@
 
     //拷贝构造
     template<typename T>
-    MaxHeap<T>::MaxHeap(MaxHeap<T> &H):Heap<T>(H){}
+    MaxHeap<T>::MaxHeap(const MaxHeap<T> &H):Heap<T>(H){}
 
     //以某一容量创建一个堆
     template<typename T>

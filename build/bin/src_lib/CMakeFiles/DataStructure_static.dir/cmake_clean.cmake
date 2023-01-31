@@ -5,8 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/DataStructure_static.dir/Sort.cpp.o"
   "CMakeFiles/DataStructure_static.dir/Tree.cpp.o"
   "CMakeFiles/DataStructure_static.dir/leetcode.cpp.o"
-  "libDataStructure_static.a"
-  "libDataStructure_static.pdb"
+  "libDataStructure.a"
+  "libDataStructure.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

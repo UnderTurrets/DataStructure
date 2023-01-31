@@ -179,7 +179,7 @@ DataStructure_shared: cmake_check_build_system
 
 # fast build rule for target.
 DataStructure_shared/fast:
-	$(MAKE) -f bin/lib/CMakeFiles/DataStructure_shared.dir/build.make bin/lib/CMakeFiles/DataStructure_shared.dir/build
+	$(MAKE) -f bin/src_lib/CMakeFiles/DataStructure_shared.dir/build.make bin/src_lib/CMakeFiles/DataStructure_shared.dir/build
 .PHONY : DataStructure_shared/fast
 
 #=============================================================================
@@ -192,7 +192,7 @@ DataStructure_static: cmake_check_build_system
 
 # fast build rule for target.
 DataStructure_static/fast:
-	$(MAKE) -f bin/lib/CMakeFiles/DataStructure_static.dir/build.make bin/lib/CMakeFiles/DataStructure_static.dir/build
+	$(MAKE) -f bin/src_lib/CMakeFiles/DataStructure_static.dir/build.make bin/src_lib/CMakeFiles/DataStructure_static.dir/build
 .PHONY : DataStructure_static/fast
 
 # Help Target
