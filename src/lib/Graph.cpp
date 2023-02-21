@@ -14,6 +14,12 @@ bool EdgeNode::operator<= (const EdgeNode that){
     return this->Weight<=that.Weight;
 }
 
+EdgeNode::~EdgeNode() {
+    delete &this->source;
+    delete &this->destination;
+    delete &this->Weight;
+}
+
 /* 用邻接表定义的图 */
     //EdgeHeap的初始化方法
     void GraphList::EdgeHeap_initialize(){
@@ -466,6 +472,10 @@ bool EdgeNode::operator<= (const EdgeNode that){
             return true;
     }
 
+GraphList::~GraphList() {
+        delete this;
+}
+
 
 /* 用邻接矩阵定义的图 */
     //EdgeWeightRect的初始化方法
@@ -820,11 +830,18 @@ bool EdgeNode::operator<= (const EdgeNode that){
         }/* 算法执行完毕，返回 */
     }
 
+GraphRect::~GraphRect() {
+        delete this;
+}
 
 
+GraphCommonNode::~GraphCommonNode() {
+        delete this->Next;
+        delete &this->index;
+        delete &this->Weight;
+}
 
-
-
-
-
-
+GraphHeadNode::~GraphHeadNode() {
+        delete this->FirstNode;
+        delete &this->Data;
+}

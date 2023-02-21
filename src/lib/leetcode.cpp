@@ -744,6 +744,11 @@ string longestPalindrome_subseries(string s) {
         return this->val>=that.val;
     }
 
+ListNode::~ListNode() {
+    delete this->next;
+    delete &this->val;
+}
+
 //设计链表的实现。您可以选择使用单链表或双链表。单链表中的节点应该具有两个属性：valV_front和V_frontnext。valV_front是当前节点的值，nextV_front是指向下一个节点的指针/引用。如果要使用双向链表，则还需要一个属性V_frontprevV_front以指示链表中的上一个节点。假设链表中的所有节点都是 0-index 的。
 //在链表类中实现这些功能：
 //get(index)：获取链表中第V_frontindexV_front个节点的值。如果索引无效，则返回-1。
@@ -803,6 +808,10 @@ string longestPalindrome_subseries(string s) {
         pred->next = pred->next->next;
         delete p;
     }
+
+MyLinkedList::~MyLinkedList() {
+    delete this;
+}
 
 //给你一个链表的头节点 head ，判断链表中是否有环。
 //如果链表中有某个节点，可以通过连续跟踪 next 指针再次到达，则链表中存在环。 为了表示给定链表中的环，评测系统内部使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。注意：pos 不作为参数进行传递。仅仅是为了标识链表的实际情况。
@@ -1076,6 +1085,11 @@ void reorderList(ListNode* head){
         return instack.empty()&&outstack.empty();
     }
 
+template<class T>
+MyQueue<T>::~MyQueue() {
+    delete this;
+}
+
 //设计一个支持 push ，pop ，top 操作，并能在常数时间内检索到最小元素的栈。
 //实现 MinStack 类:
 //MinStack() 初始化堆栈对象。
@@ -1116,6 +1130,11 @@ T MinStack<T>::top(){
 template<typename T>
 T MinStack<T>::getMin(){
     return min.top();
+}
+
+template<typename T>
+MinStack<T>::~MinStack() {
+    delete this;
 }
 
 //给定一个只包括 '('，')'，'{'，'}'，'['，']'的字符串 s ，判断字符串是否有效。
@@ -1258,8 +1277,9 @@ int findTheWinner(int n, int k){
         }
     }
 
-
-
+MyHashMap::~MyHashMap() {
+        delete this;
+}
 
 
 //图

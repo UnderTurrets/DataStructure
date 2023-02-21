@@ -11,6 +11,7 @@ public:
     BinTree<T> *left=nullptr;
     BinTree<T> *right=nullptr;
     inline BinTree();
+    inline ~BinTree();
     inline BinTree( T x);
     inline BinTree( const BinTree<T> &that);
 
@@ -213,6 +214,7 @@ public:
     T operator* ();
 
     InOrderBtIter();
+    ~InOrderBtIter();
     InOrderBtIter(BinTree<T>* root);
 
     T next();

@@ -73,3 +73,8 @@ bool SetType<T>::Check(const int index1,const int index2){
         return false;
     }
 }
+
+template<typename T>
+SetType<T>::~SetType() {
+    delete this;
+}

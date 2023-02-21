@@ -19,8 +19,9 @@ public:
     mutable WeightType Weight;  /* 边权重 */
 
     //构造函数
-    EdgeNode():source(UndeterminedVertex),destination(UndeterminedVertex),Weight(UndeterminedWeight){}
-    EdgeNode(Vertex x,Vertex y,WeightType value):source(x),destination(y),Weight(value){}
+    inline EdgeNode():source(UndeterminedVertex),destination(UndeterminedVertex),Weight(UndeterminedWeight){}
+    inline EdgeNode(Vertex x,Vertex y,WeightType value):source(x),destination(y),Weight(value){}
+    inline ~EdgeNode();
 
     //重载运算符，基于权重进行比较
     inline bool operator> (const EdgeNode that);
@@ -38,7 +39,8 @@ public:
     mutable WeightType Weight=UndeterminedWeight;  /* 从链表头顶点到这个点之间的边的权重 */
 
     //构造函数
-    GraphCommonNode():index(UndeterminedVertex),Next(NULL),Weight(UndeterminedWeight){}
+    inline GraphCommonNode():index(UndeterminedVertex),Next(NULL),Weight(UndeterminedWeight){}
+    inline ~GraphCommonNode();
 };
 
 /* 作链表头的顶点结点的定义 */
@@ -50,7 +52,8 @@ public:
     /* 注意：很多情况下，顶点无数据，此时Data可以不用出现 */
 
     //构造函数
-    GraphHeadNode():FirstNode(NULL){}
+    inline GraphHeadNode():FirstNode(NULL){}
+    inline ~GraphHeadNode();
 };
 
 /* 用邻接表定义的图 */
@@ -85,6 +88,7 @@ private:
     inline void TotalWeight_initialize();
 
 public:
+    inline ~GraphList();
     //创建一个没有边的图,默认100个顶点
     inline GraphList();
 
@@ -182,6 +186,7 @@ private:
     void TotalWeight_initialize();
 
 public:
+    inline ~GraphRect();
     //初始化一个图,默认100个顶点
     inline GraphRect();
 

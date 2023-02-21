@@ -106,6 +106,11 @@
         cout<<endl;
     }
 
+template<typename T>
+Heap<T>::~Heap() {
+    delete this;
+}
+
 
 
 //最大堆
@@ -230,6 +235,11 @@
             this->PercDown(i);
         }
     }
+
+template<typename T>
+MaxHeap<T>::~MaxHeap() {
+    delete this;
+}
 
 
 //最小堆
@@ -392,6 +402,11 @@ BinTree<T>* MinHeap<T>::HuffMan (){
     }
     BinTree<T>* root=minHeap.deleteMin().element.first;
     return root;
+}
+
+template<typename T>
+MinHeap<T>::~MinHeap() {
+    delete this;
 }
 
 

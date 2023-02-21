@@ -126,8 +126,8 @@
 				</MakeCommands>
 			</Target>
 			<Target title="DataStructure_static">
-				<Option output="/home/xu736946693/Desktop/DataStructure/src/cmake-build-debug/lib/libDataStructure_static.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/xu736946693/Desktop/DataStructure/src/cmake-build-debug/lib"/>
+				<Option output="/home/xu736946693/Desktop/DataStructure/src/cmake-build-debug/src_lib/libDataStructure.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/xu736946693/Desktop/DataStructure/src/cmake-build-debug/src_lib"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
@@ -143,15 +143,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j6 -f &quot;/home/xu736946693/Desktop/DataStructure/src/cmake-build-debug/lib/Makefile&quot;  VERBOSE=1 DataStructure_static"/>
-					<CompileFile command="/usr/bin/make -j6 -f &quot;/home/xu736946693/Desktop/DataStructure/src/cmake-build-debug/lib/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j6 -f &quot;/home/xu736946693/Desktop/DataStructure/src/cmake-build-debug/lib/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j6 -f &quot;/home/xu736946693/Desktop/DataStructure/src/cmake-build-debug/lib/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j6 -f &quot;/home/xu736946693/Desktop/DataStructure/src/cmake-build-debug/src_lib/Makefile&quot;  VERBOSE=1 DataStructure_static"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/home/xu736946693/Desktop/DataStructure/src/cmake-build-debug/src_lib/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/home/xu736946693/Desktop/DataStructure/src/cmake-build-debug/src_lib/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/home/xu736946693/Desktop/DataStructure/src/cmake-build-debug/src_lib/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="DataStructure_static/fast">
-				<Option output="/home/xu736946693/Desktop/DataStructure/src/cmake-build-debug/lib/libDataStructure_static.a" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/xu736946693/Desktop/DataStructure/src/cmake-build-debug/lib"/>
+				<Option output="/home/xu736946693/Desktop/DataStructure/src/cmake-build-debug/src_lib/libDataStructure.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/xu736946693/Desktop/DataStructure/src/cmake-build-debug/src_lib"/>
 				<Option object_output="./"/>
 				<Option type="2"/>
 				<Option compiler="gcc"/>
@@ -167,15 +167,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j6 -f &quot;/home/xu736946693/Desktop/DataStructure/src/cmake-build-debug/lib/Makefile&quot;  VERBOSE=1 DataStructure_static/fast"/>
-					<CompileFile command="/usr/bin/make -j6 -f &quot;/home/xu736946693/Desktop/DataStructure/src/cmake-build-debug/lib/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j6 -f &quot;/home/xu736946693/Desktop/DataStructure/src/cmake-build-debug/lib/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j6 -f &quot;/home/xu736946693/Desktop/DataStructure/src/cmake-build-debug/lib/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j6 -f &quot;/home/xu736946693/Desktop/DataStructure/src/cmake-build-debug/src_lib/Makefile&quot;  VERBOSE=1 DataStructure_static/fast"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/home/xu736946693/Desktop/DataStructure/src/cmake-build-debug/src_lib/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/home/xu736946693/Desktop/DataStructure/src/cmake-build-debug/src_lib/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/home/xu736946693/Desktop/DataStructure/src/cmake-build-debug/src_lib/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="DataStructure_shared">
-				<Option output="/home/xu736946693/Desktop/DataStructure/src/cmake-build-debug/lib/libDataStructure_shared.so" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/xu736946693/Desktop/DataStructure/src/cmake-build-debug/lib"/>
+				<Option output="/home/xu736946693/Desktop/DataStructure/src/cmake-build-debug/src_lib/libDataStructure.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/xu736946693/Desktop/DataStructure/src/cmake-build-debug/src_lib"/>
 				<Option object_output="./"/>
 				<Option type="3"/>
 				<Option compiler="gcc"/>
@@ -191,15 +191,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j6 -f &quot;/home/xu736946693/Desktop/DataStructure/src/cmake-build-debug/lib/Makefile&quot;  VERBOSE=1 DataStructure_shared"/>
-					<CompileFile command="/usr/bin/make -j6 -f &quot;/home/xu736946693/Desktop/DataStructure/src/cmake-build-debug/lib/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j6 -f &quot;/home/xu736946693/Desktop/DataStructure/src/cmake-build-debug/lib/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j6 -f &quot;/home/xu736946693/Desktop/DataStructure/src/cmake-build-debug/lib/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j6 -f &quot;/home/xu736946693/Desktop/DataStructure/src/cmake-build-debug/src_lib/Makefile&quot;  VERBOSE=1 DataStructure_shared"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/home/xu736946693/Desktop/DataStructure/src/cmake-build-debug/src_lib/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/home/xu736946693/Desktop/DataStructure/src/cmake-build-debug/src_lib/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/home/xu736946693/Desktop/DataStructure/src/cmake-build-debug/src_lib/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="DataStructure_shared/fast">
-				<Option output="/home/xu736946693/Desktop/DataStructure/src/cmake-build-debug/lib/libDataStructure_shared.so" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/xu736946693/Desktop/DataStructure/src/cmake-build-debug/lib"/>
+				<Option output="/home/xu736946693/Desktop/DataStructure/src/cmake-build-debug/src_lib/libDataStructure.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/xu736946693/Desktop/DataStructure/src/cmake-build-debug/src_lib"/>
 				<Option object_output="./"/>
 				<Option type="3"/>
 				<Option compiler="gcc"/>
@@ -215,10 +215,10 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j6 -f &quot;/home/xu736946693/Desktop/DataStructure/src/cmake-build-debug/lib/Makefile&quot;  VERBOSE=1 DataStructure_shared/fast"/>
-					<CompileFile command="/usr/bin/make -j6 -f &quot;/home/xu736946693/Desktop/DataStructure/src/cmake-build-debug/lib/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j6 -f &quot;/home/xu736946693/Desktop/DataStructure/src/cmake-build-debug/lib/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j6 -f &quot;/home/xu736946693/Desktop/DataStructure/src/cmake-build-debug/lib/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j6 -f &quot;/home/xu736946693/Desktop/DataStructure/src/cmake-build-debug/src_lib/Makefile&quot;  VERBOSE=1 DataStructure_shared/fast"/>
+					<CompileFile command="/usr/bin/make -j6 -f &quot;/home/xu736946693/Desktop/DataStructure/src/cmake-build-debug/src_lib/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j6 -f &quot;/home/xu736946693/Desktop/DataStructure/src/cmake-build-debug/src_lib/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j6 -f &quot;/home/xu736946693/Desktop/DataStructure/src/cmake-build-debug/src_lib/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>

@@ -762,6 +762,14 @@ string BinTree<T>::serialize2String() {
     }
     return ans;
 }
+
+template<typename T>
+BinTree<T>::~BinTree() {
+    delete this->right;
+    delete this->left;
+    delete &this->val;
+}
+
 // Decodes your encoded data to tree.
 template<typename T>
 BinTree<T>* deserialize2BT(const string data) {
@@ -871,6 +879,12 @@ BinTree<T>* deserialize2BT(const string data) {
     bool InOrderBtIter<T>::hasNext() {
         return !this->S.empty();
     }
+
+template<typename T>
+InOrderBtIter<T>::~InOrderBtIter() {
+    delete this->target;
+    delete this->S;
+}
 
 
 

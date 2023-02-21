@@ -18,6 +18,7 @@ public:
     int totalNumber;
     SetType();
     SetType(int n);
+    ~SetType();
 
     //初始化并查集
     void Initialize();

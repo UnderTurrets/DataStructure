@@ -17,6 +17,7 @@ public:
     inline Heap<T> operator= (const Heap<T>that);
 
     //构造函数
+    inline ~Heap();
     inline Heap();
 
     //拷贝构造（深拷贝）
@@ -45,6 +46,7 @@ public:
 template<typename T>
 class MaxHeap:public Heap<T>{
 public:
+    inline ~MaxHeap();
     //构造函数
     inline MaxHeap();
 
@@ -83,6 +85,7 @@ public:
 template<typename T>
 class MinHeap:public Heap<T>{
 public:
+    ~MinHeap();
     //构造函数
     MinHeap();
      

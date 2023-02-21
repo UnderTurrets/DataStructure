@@ -164,6 +164,7 @@ public:
     inline ListNode() : val(0), next(nullptr) {}
     inline ListNode(const int x) : val(x), next(nullptr) {}
     inline ListNode(const int x, ListNode *next) : val(x), next(next) {}
+    inline ~ListNode();
     inline bool operator< (const ListNode that);
     inline bool operator> (const ListNode that);
 };
@@ -180,6 +181,7 @@ class MyLinkedList {
 public:
 
     inline MyLinkedList();
+    inline ~MyLinkedList();
 
     int get(int index);
 
@@ -271,7 +273,8 @@ class MyQueue {
 public:
     stack<T>instack;
     stack<T>outstack;
-    inline MyQueue<T>();
+    inline MyQueue();
+    inline ~MyQueue();
 
     __attribute__((unused)) void push(T x);
 
@@ -292,7 +295,8 @@ public:
 template<typename T>
 class MinStack {
 public:
-    MinStack();
+    inline MinStack();
+    inline ~MinStack();
 
     inline void push(T val);
 
@@ -363,6 +367,7 @@ private:
 public:
     /** Initialize your data structure here. */
     inline MyHashMap() ;
+    inline ~MyHashMap();
 
     /** value will always be non-negative. */
     inline void put(int key, int value) ;

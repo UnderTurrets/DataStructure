@@ -254,9 +254,9 @@
 			"destination" : "lib/DataStructure",
 			"paths" : 
 			[
-				"lib/libDataStructure_static.a"
+				"src_lib/libDataStructure.a"
 			],
-			"targetId" : "DataStructure_static::@306ed2d68c6501e8728f",
+			"targetId" : "DataStructure_static::@bae1c8933dbdb8caedf4",
 			"targetIndex" : 1,
 			"type" : "target"
 		},
@@ -266,16 +266,16 @@
 			"destination" : "lib/DataStructure",
 			"paths" : 
 			[
-				"lib/libDataStructure_shared.so"
+				"src_lib/libDataStructure.so"
 			],
-			"targetId" : "DataStructure_shared::@306ed2d68c6501e8728f",
+			"targetId" : "DataStructure_shared::@bae1c8933dbdb8caedf4",
 			"targetIndex" : 0,
 			"type" : "target"
 		}
 	],
 	"paths" : 
 	{
-		"build" : "lib",
+		"build" : "src_lib",
 		"source" : "lib"
 	}
 }

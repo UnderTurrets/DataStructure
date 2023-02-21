@@ -1,9 +1,8 @@
 {
-	"archive" : {},
 	"artifacts" : 
 	[
 		{
-			"path" : "lib/libDataStructure_static.a"
+			"path" : "src_lib/libDataStructure.so"
 		}
 	],
 	"backtrace" : 1,
@@ -28,7 +27,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 21,
+				"line" : 26,
 				"parent" : 0
 			},
 			{
@@ -60,10 +59,16 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g"
+					"fragment" : "-g -fPIC"
 				},
 				{
 					"fragment" : "-std=gnu++17"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"define" : "DataStructure_shared_EXPORTS"
 				}
 			],
 			"includes" : 
@@ -97,11 +102,15 @@
 			]
 		}
 	],
-	"id" : "DataStructure_static::@306ed2d68c6501e8728f",
+	"id" : "DataStructure_shared::@bae1c8933dbdb8caedf4",
 	"install" : 
 	{
 		"destinations" : 
 		[
+			{
+				"backtrace" : 2,
+				"path" : "lib/DataStructure"
+			},
 			{
 				"backtrace" : 2,
 				"path" : "lib/DataStructure"
@@ -112,11 +121,22 @@
 			"path" : "/usr/local"
 		}
 	},
-	"name" : "DataStructure_static",
-	"nameOnDisk" : "libDataStructure_static.a",
+	"link" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "",
+				"role" : "flags"
+			}
+		],
+		"language" : "CXX"
+	},
+	"name" : "DataStructure_shared",
+	"nameOnDisk" : "libDataStructure.so",
 	"paths" : 
 	{
-		"build" : "lib",
+		"build" : "src_lib",
 		"source" : "lib"
 	},
 	"sourceGroups" : 
@@ -227,5 +247,5 @@
 			"sourceGroupIndex" : 1
 		}
 	],
-	"type" : "STATIC_LIBRARY"
+	"type" : "SHARED_LIBRARY"
 }
