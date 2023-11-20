@@ -1,1 +1,0 @@
-/usr/bin/c++ -fPIC   -shared -Wl,-soname,libDataStructure.so -o libDataStructure.so CMakeFiles/DataStructure_shared.dir/Heap.cpp.o CMakeFiles/DataStructure_shared.dir/leetcode.cpp.o CMakeFiles/DataStructure_shared.dir/Tree.cpp.o CMakeFiles/DataStructure_shared.dir/SetType.cpp.o CMakeFiles/DataStructure_shared.dir/Graph.cpp.o CMakeFiles/DataStructure_shared.dir/Sort.cpp.o 

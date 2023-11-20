@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="DataStructure_exe"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\cmake\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/xu736946693/Desktop/DataStructure/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/xu736946693/Desktop/DataStructure/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/xu736946693/Desktop/DataStructure/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/xu736946693/Desktop/DataStructure/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/xu736946693/Desktop/DataStructure/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="DataStructure_exe">
+				<Option output="/home/xu736946693/Desktop/DataStructure/cmake-build-debug/DataStructure_exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/xu736946693/Desktop/DataStructure/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/xu736946693/Desktop/DataStructure"/>
+					<Add directory="/home/xu736946693/Desktop/DataStructure/cmake-build-debug"/>
+					<Add directory="/home/xu736946693/Desktop/DataStructure/lib"/>
+					<Add directory="/home/xu736946693/Desktop/DataStructure/lib/Graph"/>
+					<Add directory="/home/xu736946693/Desktop/DataStructure/lib/Heap"/>
+					<Add directory="/home/xu736946693/Desktop/DataStructure/lib/leetcode"/>
+					<Add directory="/home/xu736946693/Desktop/DataStructure/lib/SetType"/>
+					<Add directory="/home/xu736946693/Desktop/DataStructure/lib/Sort"/>
+					<Add directory="/home/xu736946693/Desktop/DataStructure/lib/Tree"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/xu736946693/Desktop/DataStructure/cmake-build-debug/Makefile&quot;  VERBOSE=1 DataStructure_exe"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/xu736946693/Desktop/DataStructure/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/xu736946693/Desktop/DataStructure/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/xu736946693/Desktop/DataStructure/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="DataStructure_exe/fast">
+				<Option output="/home/xu736946693/Desktop/DataStructure/cmake-build-debug/DataStructure_exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/xu736946693/Desktop/DataStructure/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/xu736946693/Desktop/DataStructure"/>
+					<Add directory="/home/xu736946693/Desktop/DataStructure/cmake-build-debug"/>
+					<Add directory="/home/xu736946693/Desktop/DataStructure/lib"/>
+					<Add directory="/home/xu736946693/Desktop/DataStructure/lib/Graph"/>
+					<Add directory="/home/xu736946693/Desktop/DataStructure/lib/Heap"/>
+					<Add directory="/home/xu736946693/Desktop/DataStructure/lib/leetcode"/>
+					<Add directory="/home/xu736946693/Desktop/DataStructure/lib/SetType"/>
+					<Add directory="/home/xu736946693/Desktop/DataStructure/lib/Sort"/>
+					<Add directory="/home/xu736946693/Desktop/DataStructure/lib/Tree"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/xu736946693/Desktop/DataStructure/cmake-build-debug/Makefile&quot;  VERBOSE=1 DataStructure_exe/fast"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/xu736946693/Desktop/DataStructure/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/xu736946693/Desktop/DataStructure/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/xu736946693/Desktop/DataStructure/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/xu736946693/Desktop/DataStructure/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/xu736946693/Desktop/DataStructure/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/xu736946693/Desktop/DataStructure/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/xu736946693/Desktop/DataStructure/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/xu736946693/Desktop/DataStructure/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/xu736946693/Desktop/DataStructure/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/xu736946693/Desktop/DataStructure/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/xu736946693/Desktop/DataStructure/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/xu736946693/Desktop/DataStructure/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/xu736946693/Desktop/DataStructure/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="list_install_components">
+				<Option working_dir="/home/xu736946693/Desktop/DataStructure/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/xu736946693/Desktop/DataStructure/cmake-build-debug/Makefile&quot;  VERBOSE=1 list_install_components"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/xu736946693/Desktop/DataStructure/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/xu736946693/Desktop/DataStructure/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/xu736946693/Desktop/DataStructure/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install">
+				<Option working_dir="/home/xu736946693/Desktop/DataStructure/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/xu736946693/Desktop/DataStructure/cmake-build-debug/Makefile&quot;  VERBOSE=1 install"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/xu736946693/Desktop/DataStructure/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/xu736946693/Desktop/DataStructure/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/xu736946693/Desktop/DataStructure/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/local">
+				<Option working_dir="/home/xu736946693/Desktop/DataStructure/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/xu736946693/Desktop/DataStructure/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/local"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/xu736946693/Desktop/DataStructure/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/xu736946693/Desktop/DataStructure/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/xu736946693/Desktop/DataStructure/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/strip">
+				<Option working_dir="/home/xu736946693/Desktop/DataStructure/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -f &quot;/home/xu736946693/Desktop/DataStructure/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/strip"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/xu736946693/Desktop/DataStructure/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/xu736946693/Desktop/DataStructure/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/xu736946693/Desktop/DataStructure/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/xu736946693/Desktop/DataStructure/main.cpp">
+			<Option target="DataStructure_exe"/>
+		</Unit>
+		<Unit filename="/home/xu736946693/Desktop/DataStructure/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/xu736946693/Desktop/DataStructure/cmake/DataStructureConfig.cmake.in">
+			<Option virtualFolder="CMake Files\cmake\"/>
+		</Unit>
+		<Unit filename="/home/xu736946693/Desktop/DataStructure/cmake/DataStructureConfigVersion.cmake.in">
+			<Option virtualFolder="CMake Files\cmake\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

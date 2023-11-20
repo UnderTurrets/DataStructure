@@ -1,0 +1,114 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install"
+		],
+		"files" : 
+		[
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 60,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 65,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 69,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 90,
+				"parent" : 0
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : "/usr/local/include/DataStructure-1.0",
+			"paths" : 
+			[
+				"lib/DataStructure.h",
+				"lib/Graph/Graph.cpp",
+				"lib/Graph/Graph.h",
+				"lib/Heap/Heap.cpp",
+				"lib/Heap/Heap.h",
+				"lib/SetType/SetType.cpp",
+				"lib/SetType/SetType.h",
+				"lib/Sort/Sort.cpp",
+				"lib/Sort/Sort.h",
+				"lib/Tree/Tree.cpp",
+				"lib/Tree/Tree.h",
+				"lib/leetcode/leetcode.cpp",
+				"lib/leetcode/leetcode.h"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 2,
+			"component" : "Unspecified",
+			"destination" : "/usr/local/lib/DataStructure-1.0",
+			"paths" : 
+			[
+				"DataStructure_exe"
+			],
+			"targetId" : "DataStructure_exe::@6890427a1f51a3e7e1df",
+			"targetIndex" : 0,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 3,
+			"component" : "Unspecified",
+			"destination" : "/usr/local/lib/DataStructure-1.0",
+			"exportName" : "DataStructure-1.0-targets",
+			"exportTargets" : 
+			[
+				{
+					"id" : "DataStructure_exe::@6890427a1f51a3e7e1df",
+					"index" : 0
+				}
+			],
+			"paths" : 
+			[
+				"CMakeFiles/Export/_usr/local/lib/DataStructure-1.0/DataStructure-1.0-targets.cmake"
+			],
+			"type" : "export"
+		},
+		{
+			"backtrace" : 4,
+			"component" : "Unspecified",
+			"destination" : "/usr/local/lib/DataStructure-1.0",
+			"paths" : 
+			[
+				"cmake-build-debug/DataStructureConfig.cmake",
+				"cmake-build-debug/DataStructureConfigVersion.cmake"
+			],
+			"type" : "file"
+		}
+	],
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	}
+}

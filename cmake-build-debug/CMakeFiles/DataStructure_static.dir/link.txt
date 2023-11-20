@@ -1,0 +1,2 @@
+/usr/bin/ar qc libDataStructure_static.a  CMakeFiles/DataStructure_static.dir/lib/Graph/src/Graph.cpp.o CMakeFiles/DataStructure_static.dir/lib/Heap/src/Heap.cpp.o CMakeFiles/DataStructure_static.dir/lib/leetcode/src/leetcode.cpp.o CMakeFiles/DataStructure_static.dir/lib/SetType/src/SetType.cpp.o CMakeFiles/DataStructure_static.dir/lib/Sort/src/Sort.cpp.o CMakeFiles/DataStructure_static.dir/lib/Tree/src/Tree.cpp.o
+/usr/bin/ranlib libDataStructure_static.a

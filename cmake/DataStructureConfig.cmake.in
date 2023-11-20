@@ -1,0 +1,7 @@
+# Compute installation prefix relative to this file.
+get_filename_component (_dir "${CMAKE_CURRENT_LIST_FILE}" PATH)
+get_filename_component (_prefix "${_dir}/../.." ABSOLUTE)
+# Import the targets.
+include ("${_prefix}/lib/@LIB_NAME@-@version@/@LIB_NAME@-@version@-targets.cmake")
+# Report other information.
+set (@LIB_NAME@_INCLUDE_DIRS "${_prefix}/include/@LIB_NAME@-@version@")
